@@ -1,0 +1,174 @@
+/* ============================================================
+   app/globals.css — Wayfinder Design System (Tailwind v4)
+   Palette concept: "Dawn / Horizon" — first-light sky, warm
+   sun-amber for action, deep forest green for trust & ground,
+   warm cream canvas, topographic ridgeline motif.
+   Mirrors the "Wayfinder Landing A — Horizon" design.
+   Ramp names (clay/harbor/sand) are kept so existing components
+   reskin automatically; only the colors changed.
+   ============================================================ */
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand / Primary: sun-amber (dawn light, action, warmth) ---- */
+  --color-clay-50:  #fdf7ee;
+  --color-clay-100: #fbeacd;
+  --color-clay-200: #f6d6a0;
+  --color-clay-300: #f0c074;
+  --color-clay-400: #e8a24a;   /* the sun */
+  --color-clay-500: #e0934a;   /* PRIMARY */
+  --color-clay-600: #c77e33;   /* primary hover / pressed */
+  --color-clay-700: #8a5214;   /* amber text on light (AA) */
+  --color-clay-800: #6b3f12;
+  --color-clay-900: #4e2f0e;
+
+  /* ---- Trust anchor: deep forest green (calm, grounded, links) ---- */
+  --color-harbor-50:  #edf5ef;
+  --color-harbor-100: #d6e8db;
+  --color-harbor-200: #abd0b5;
+  --color-harbor-300: #79b98c;   /* bright trail green */
+  --color-harbor-400: #4e9468;
+  --color-harbor-500: #3c7a5a;   /* SECONDARY / trust */
+  --color-harbor-600: #2c5e45;   /* hover / links */
+  --color-harbor-700: #234a37;
+  --color-harbor-800: #173225;
+  --color-harbor-900: #0f2117;
+
+  /* ---- Neutral: warm cream → deep forest text (NOT cold stone) ---- */
+  --color-sand-50:  #fbf6ee;   /* canvas */
+  --color-sand-100: #f4ecde;   /* sunken / feature band / hover */
+  --color-sand-200: #ebdfcb;   /* borders */
+  --color-sand-300: #dbcbad;   /* strong borders */
+  --color-sand-400: #bba988;
+  --color-sand-500: #9a8463;   /* text-faint (warm tan) */
+  --color-sand-600: #5a6358;   /* text-muted (greened) */
+  --color-sand-700: #3c4a40;
+  --color-sand-800: #2a352c;
+  --color-sand-900: #1a271f;   /* body text — deep forest */
+
+  /* ---- Semantic status (distinct AND colorblind-safe) ---- */
+  --color-success-50:  #eaf5ec;
+  --color-success-100: #cde8d3;
+  --color-success-600: #2c7a4e;   /* likely_eligible */
+  --color-success-700: #1e5c39;
+
+  --color-caution-50:  #fbf0d8;
+  --color-caution-100: #f6e1ae;
+  --color-caution-600: #9a6b00;   /* maybe_eligible (amber, AA text) */
+  --color-caution-700: #7a5400;
+
+  --color-review-50:  #fbeede;
+  --color-review-100: #f6d8b8;
+  --color-review-600: #b45309;    /* needs_human_review (burnt orange) */
+  --color-review-700: #8a3f07;
+
+  --color-danger-50:  #fbeae6;
+  --color-danger-100: #f6d2cb;
+  --color-danger-600: #c23b2e;    /* not_eligible / errors */
+  --color-danger-700: #9a2c22;
+
+  /* ---- Semantic role aliases (use these in components) ---- */
+  --color-background: var(--color-sand-50);
+  --color-surface:    #fffefb;
+  --color-surface-2:  var(--color-sand-100);   /* sunken / expanded panels */
+  --color-border:     var(--color-sand-200);
+  --color-border-strong: var(--color-sand-300);
+  --color-text:       var(--color-sand-900);   /* body */
+  --color-text-muted: var(--color-sand-600);   /* secondary */
+  --color-text-faint: var(--color-sand-500);   /* timestamps */
+  --color-primary:        var(--color-clay-500);
+  --color-primary-hover:  var(--color-clay-600);
+  --color-on-primary:     #241a0c;             /* dark ink on amber (AA) */
+  --color-secondary:       var(--color-harbor-500);
+  --color-secondary-hover: var(--color-harbor-600);
+  --color-link:            var(--color-harbor-600);
+  --color-ring:            var(--color-harbor-400);
+
+  /* Hero dawn-sky + ridgeline ink (used by the landing) */
+  --color-ink:        #1a271f;   /* deep forest, headlines on light */
+  --color-eyebrow:    #c08a3e;   /* gold section label */
+
+  /* ---- Typography (Hanken Grotesk, wired to next/font) ---- */
+  --font-display: var(--font-hanken), system-ui, "Noto Sans", sans-serif;
+  --font-sans:    var(--font-hanken), system-ui, "Noto Sans", sans-serif;
+
+  /* Type scale (1.25 major-third) — large base for readability */
+  --text-xs:   0.8125rem;  /* 13px */
+  --text-sm:   0.9375rem;  /* 15px */
+  --text-base: 1.0625rem;  /* 17px — body */
+  --text-lg:   1.25rem;    /* 20px */
+  --text-xl:   1.5rem;     /* 24px */
+  --text-2xl:  1.875rem;   /* 30px */
+  --text-3xl:  2.375rem;   /* 38px */
+  --text-4xl:  3rem;       /* 48px */
+  --text-5xl:  3.75rem;    /* 60px */
+
+  /* ---- Radii (soft, friendly, generous) ---- */
+  --radius-sm:  0.5rem;    /* 8px */
+  --radius-md:  0.8125rem; /* 13px — inputs, buttons */
+  --radius-lg:  1.375rem;  /* 22px — cards */
+  --radius-xl:  1.875rem;  /* 30px — hero panels, dark cards */
+  --radius-full: 9999px;
+
+  /* ---- Shadows (warm-tinted, soft — never harsh black) ---- */
+  --shadow-xs: 0 1px 2px 0 rgba(60, 50, 30, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(60, 50, 30, 0.08), 0 1px 2px -1px rgba(60, 50, 30, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(60, 50, 30, 0.10), 0 2px 6px -2px rgba(60, 50, 30, 0.06);
+  --shadow-lg: 0 12px 28px -6px rgba(60, 50, 30, 0.16), 0 4px 10px -4px rgba(60, 50, 30, 0.08);
+  --shadow-focus: 0 0 0 4px rgba(78, 148, 104, 0.35);
+}
+
+/* ---- Base layer ---- */
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-text);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: #f2c892; color: #1a271f; }
+
+/* Display font utility (headings) — tight, confident */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+/* Always-visible focus ring for keyboard users */
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Landing / brand motion ---- */
+@keyframes wf-roll   { to { transform: translateX(-1440px); } }
+@keyframes wf-marquee{ 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes wf-glow {
+  0%, 100% { opacity: .85; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.04); }
+}
+@keyframes wf-float  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Min tap target safety net for any interactive element */
+button, a[role="button"], [type="button"], select { min-height: 44px; }

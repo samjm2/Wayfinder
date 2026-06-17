@@ -1,0 +1,508 @@
+{
+  "nav": {
+    "signIn": "Seenuun Galchuu",
+    "signOut": "Ba'uu",
+    "dashboard": "Dashibordii Koo",
+    "documents": "Warqaa Koo",
+    "findHelp": "Gargaarsa Barbaadi",
+    "settings": "Qindaa'inni"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Akkaami falma",
+      "features": "Dandeettii",
+      "languages": "Afaan",
+      "signIn": "Seenuun Galchuu",
+      "getStarted": "Jalqaba"
+    },
+    "hero": {
+      "headline": "Manaa haaraa jalqaba karaa beekuudhaaf jalqaba.",
+      "subheadline": "Wayfinder faayidaa fi hojii warqaa ati miidhaaf gaariin argamsiisa, waan hundaa afaan keetiin ibsa, fi tarkaanfi tarkaaniif si geessisa, yeroo dhaameef dura.",
+      "cardLabel": "Afaan keetin jalqaba",
+      "searchPlaceholder": "Afaan 100+ barbaadi…",
+      "cta": "Kana kallattii jalqaba"
+    },
+    "how": {
+      "eyebrow": "Akkaami falma",
+      "title": "Tarkaanfi sadii: galii irraa gara plana caalaa.",
+      "steps": [
+        {
+          "title": "Seenaa kee natti hime",
+          "body": "Gaaffii laaftee tokkaa tokkaa deebii, afaan keetin. Barruun guddaa, jechaa salphaa, yeroo hin qabne."
+        },
+        {
+          "title": "Waan isaanii barbaadu arganna",
+          "body": "Wayfinder kuusaa seeraa faayidaa USA murtaa'e sakatta'a, waan ati miidhaaf gaariin argamsiisa, bu'aa citutti kaasaa, kunuu hin tilmaamnu."
+        },
+        {
+          "title": "Yeroo keessa hojjedh",
+          "body": "Plana dhaameef qindaa'e argatuu, foormaalaan hundaa ibsa, fi gargaarsi namaa dhugaa yeroo barbaachisu ni jiru."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Hiriyaa kee",
+      "title": "Waan barbaaddu hundaa, iddoo walii dubbisuu keessa.",
+      "items": [
+        {
+          "title": "Plana Hojii Koo",
+          "body": "Faayidaa kee dhaameef qindaa'e, tokkoon tokkoon sababii jechaa salphaa ati miidhaaf gaariin argamsiisu fi hirphaa dhaameef lakkaa'uu."
+        },
+        {
+          "title": "Gargaarsi AI Foormaa",
+          "body": "Wayfinder kutaa tokkoon tokkoon ibsa, deebii foormaalatti koo afaan keettin qajeela. Lakkoo waariitu hin tuquun, foormaalaa hunda keessan hin ergitu."
+        },
+        {
+          "title": "Aantii Warqaa",
+          "body": "Paspoorti, I-94, fi EAD kee iddoo tokko itti ijaaraa, nam dhuunfaa qofa. Dhuunfaa, fi waan eegaa seera hin qoratuu."
+        },
+        {
+          "title": "Gargaarsa Barbaadi",
+          "body": "Waan seera akka hunda keessaniif, Wayfinder si waliin qajeessiisa aboogaadii itti galaa yookiin eegaa itti galaa karaa kee jiru. Nama tokkaa, kunuu hin tilmaamnu."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Afaan kamuu",
+      "title": "Jechaa keetin, sceena jalqabaa irra jalqabee.",
+      "body": "Afaan kee jalqaba filadhu dura seenuun galchuu, Wayfinder keessaa jechaa keesa dubbata, tarkaanfi hundaa."
+    },
+    "trust": {
+      "badge": "Galchituun kee jalqaba",
+      "title": "Odeeffannaa kee eegaa seera hin qoratuu.",
+      "body": "Warqaawwan kee ijaaraa, nam dhuunfaa qofa. Wayfinder lakkoo waariitu hin tuquun, foormaalaa hin ergitu, fi murtii seera hundaa namni itti galaa, kunuu maashiinan hin godhu.",
+      "points": [
+        "Ijaaraa fi dhuunfaa",
+        "Bu'aa akka sakatta'e",
+        "Namni isaaniitti sakatta'e"
+      ]
+    },
+    "finalCta": {
+      "title": "Karaan kee kallee fixaa.",
+      "body": "Kana kallattii, dhuunfaa, fi afaan keetin. Waan ati miidhaaf gaariin argamsiisu miseensa keessa argama.",
+      "primary": "Kana kallattii jalqaba",
+      "secondary": "Akkaami falma ilaalaa"
+    },
+    "footer": {
+      "tagline": "Gorsa seera hin taane · Namni sakatta'e taasisa"
+    },
+    "translating": "Fuula hiikuu jira…"
+  },
+  "auth": {
+    "createAccount": "Akkauntii kee ijaar",
+    "email": "Teessoo imeeylii",
+    "password": "Seensuu",
+    "signUp": "Akkauntii ijaar",
+    "signIn": "Seenuun Galchuu",
+    "haveAccount": "Akkauntii dura jiraa?",
+    "noAccount": "Akkauntii hin qabaattuu?",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "Seensuu filadhu",
+    "signingUp": "Akkauntii ijaaruu jira…",
+    "signingIn": "Seenuun galchuu jira…"
+  },
+  "onboarding": {
+    "progressLabel": "Tarkaanfi {current} of {total}",
+    "nav": {
+      "next": "Itti Aanu",
+      "back": "Duuba Deebuu",
+      "confirmContinue": "Mirkanaa'uu fi Itti Aanu",
+      "findBenefits": "Faayidaa Koo Barbaadi",
+      "saving": "Kuusuu jira…",
+      "skipNotSure": "Skip — Ana Hin Jahuu"
+    },
+    "yes": "Iye",
+    "no": "Lakkaa",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Jallaaba",
+        "note": "Kutaa 207 seera keessa raawwatamte"
+      },
+      "asylee_208": {
+        "label": "Mana oaffaa argmamte",
+        "note": "Mana oaffaa kutaa 208 keessatti raawwatamte"
+      },
+      "siv": {
+        "label": "Beeksisaa Biiroo Addaa (SIV)",
+        "note": "Afgani yookiin Iraaqi"
+      },
+      "afghan_parolee": {
+        "label": "Jallaaba mirgaa Afghanistan"
+      },
+      "ukrainian_parolee": {
+        "label": "Jallaaba mirgaa Ukraine"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Gumaachuu Cuuba yookiin Haiti"
+      },
+      "trafficking_victim": {
+        "label": "Rakkinaan dhaami ragga gaggaari",
+        "note": "Viiza T yookiin warqaa ORR"
+      },
+      "amerasian": {
+        "label": "Jaarraa Amerasian"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Kaardhaa ciyaa jallaaba, mana oaffaa, yookiin mirgaa haala jiraachuu keessaa",
+        "note": "Kun mirgaa SNAP fi Medicaid deebisa"
+      },
+      "lpr_other": {
+        "label": "Kaardhaa ciyaa karaa biraa keessaa"
+      },
+      "us_citizen": {
+        "label": "Seera Jabaa yookiin Seera Jabaa Dhabbataa"
+      },
+      "other_none": {
+        "label": "Biraa, hin jahuu, yookiin isaan midhaa hin taane"
+      }
+    },
+    "language": {
+      "question": "Afaan kamuu barbaadda?",
+      "hint": "Waan hundaa afaan kanaan agarsiisa."
+    },
+    "scan": {
+      "question": "Warqaawwan qabda? Foonii tiiruudhaan yeroo kuusi",
+      "intro": "Foonii tiiruudhaa I-94 kee (fi beeksisa hojjechuu, kaardhaa ciyaa, yookiin warqaa mana oaffaa yoo qabaatte). Miira seera fi guyyoota keessanii dubbisu niin beekuu yommuu baasu qubannoo hin galchinu.",
+      "secureLine": "Warqaawwan kee gaaffii keessatti dhuunfaa keessa hojjedha, kuusuu seera isaa yookiin eegaa seera hin qoratuu. Kutaa muraasaa tarkaanfii faayidaa keessatti sakatta'u qofa dubbisu — lakkoo Social Security yookiin A-Lakkoo keessaniin hin dubbinnu.",
+      "uploadAriaLabel": "Foonii yookiin PDF warqaa mirgaa seera hiika",
+      "chooseDifferent": "Foonii biraa filad",
+      "chooseFile": "Foonii tiiruudhaa yookiin faayilii filad",
+      "fileTypes": "JPEG, PNG, yookiin PDF · warqaa 4 kamiiloomaa",
+      "reading": "Warqaawwan kee dubbisuu jira…",
+      "readDocuments": "Warqaa Koo Dubbisa",
+      "skip": "Warqaa koo hin qabaachuu — gaaffii deebii kennuu",
+      "errorReadFailed": "Warqaa kee dubbisuu hin dandeenyee. Irra deebi, yookiin skip gochuu fi gaaffii deebii kennuu.",
+      "errorUnreachable": "Gargaarsi warqaa dubbisu mul'atu hin dandeenyee. Irra deebi, yookiin skip gochuu fi gaaffii deebii kennuu."
+    },
+    "confirm": {
+      "question": "Waan warqaa keessaa dubbisuu keessa jiran mirkana'aa",
+      "intro": "Bu'aa faayidaa kee gatiiwwan kana irraa galuu, yeroo muraasaa mirkana'aa mee. Kutaa tokkoon tuquudhaaf tuqii.",
+      "secureLine": "Dhuunfaa keessa dubbisuu, kuusuu hin jiru.",
+      "detectedPrefix": "Dubbisoofnee:",
+      "lowConfidence": "Gatiiwwan tokko-tokko dubbisuu rakkise (Dubbisuun mirkana'u sanaf mallattee). Isaan jalqaba mirkana'aa mee.",
+      "pleaseCheck": "Dubbisuun mirkana'u",
+      "fromDocument": "Warqaa keessaa",
+      "fields": {
+        "immigrationStatus": "Mirgaa seera",
+        "selectStatus": "Mirgaa kee filad",
+        "fullName": "Maqaa guutuu",
+        "fullNameHint": "Galmee keetiif qofa — midhaa hin oolchu.",
+        "fullNamePlaceholder": "Maqaa guutuu kee",
+        "dateOfBirth": "Guyyaa dhalumsaa",
+        "dateOfBirthHint": "Umrii keetiif progiramoota umrif hundaasaniin saagi.",
+        "age": "Umrii",
+        "countryOfOrigin": "Biyya jalqabaa",
+        "countryOfOriginHint": "Galmee keetiif qofa.",
+        "countryPlaceholder": "Biyya",
+        "arrivalDate": "Guyyaa USA keessatti geettee",
+        "eligibilityDate": "Guyyaa midhaa ORR",
+        "eligibilityDateHint": "Waagga dhaameef RCA/RMA jalqaba.",
+        "statusGrantDate": "Guyyaa mirgaa raawwatamte",
+        "statusGrantDateHint": "Guyyaa mirgaa jallaaba/mana oaffaa (SSI waagga 7). Dirqama hin taane."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Beeksisa hojjechuu (EAD)",
+        "green_card": "Kaardhaa ciyaa",
+        "asylum_letter": "Warqaa mana oaffaa",
+        "ssn_card": "Kaardhaa Social Security",
+        "other": "warqaa"
+      }
+    },
+    "status": {
+      "question": "Mirgaa seera kee amma maali?",
+      "hint": "Tokko itti midhaa siif hojjetu filad. Kunis seeraa faayidaa hundaa midhaa ibsa."
+    },
+    "documents": {
+      "question": "Gaaffii warqaa laaftee tokko-tokko",
+      "hint": "Iye yookiin Lakkaa tuqaa. Warqaa tokko-tokko hin qabaatuu sirraa gaarii.",
+      "fromDocsPrefix": "Warqaa keessaa dubbisoofnee",
+      "fromDocsI94": " I-94 kee",
+      "fromDocsAnd": " fi",
+      "fromDocsEad": " beeksisa hojjechuu kee (EAD)",
+      "i94Label": "Galmee Geettuu/Buusu I-94",
+      "i94Hint": "Ragga geettuu. I-94 kutaa §207 yookiin 'Viiza 93' koodi mirgaa jallaaba ragga.",
+      "eadLabel": "Beeksisa Hojjechuu (EAD kaardhaa)",
+      "eadHint": "Galmee Raawwii Hojjechuu. EAD koodii A03 mirgaa jallaaba ragga.",
+      "ssnLabel": "Lakkoo Social Security (SSN) qabaadha?",
+      "ssnHint": "Yoo qabaatte beekuu qofa barbaadna — lakkoon isaatiin hin dubbinnu."
+    },
+    "orrLetter": {
+      "question": "Warqaa mirkanaa'ii yookiin midhaa ORR qabaadha?",
+      "hint": "Dhaami rakkina seera waan hojjechuu warqaa kanaa barbaadu (I-94 hin taane) faayidaa ORR akkaa RCA fi RMA keessatti argamsuuf."
+    },
+    "eligibilityDate": {
+      "question": "Gargaarsi jallaaba kee yeroo ofkaataa jalqamte?",
+      "hint": "Kun guyyaa midhaa ORR kee — yeroo baayyee guyyaa geettuu yookiin guyyaa mirgaa raawwatamte, kamiin duuba. karaan guddaa filad."
+    },
+    "arrivalDate": {
+      "question": "USA keessatti yeroo geettee?",
+      "hint": "Hojii fi seera mirgaa guddaan waagga 5 keessatti guyyaa kanaa jalqaba."
+    },
+    "statusGrantDate": {
+      "question": "Mirgaa jallaaba yookiin mana oaffaa yeroo raawwatamdhe?",
+      "hint": "Midhaa SSI waggaa 7 keessatti yaakkuu taanee dhumaatuu. Yoo hin jahiin hin jajoobin."
+    },
+    "location": {
+      "question": "Mootumma kamuu keessatti jiraadha?",
+      "hint": "Faayidaa fi gargaarsi naannoo mootummaa irraa garaa garaa. Magalaa fi ZIP dirqama hin taane.",
+      "stateLabel": "Mootumma",
+      "selectState": "Mootumma kee filad",
+      "cityLabel": "Magalaa (dirqama hin taane)",
+      "cityPlaceholder": "Magalaa",
+      "zipLabel": "Koodii ZIP (dirqama hin taane)",
+      "zipPlaceholder": "Koodii ZIP"
+    },
+    "household": {
+      "question": "Mana kee waa natti himi",
+      "hint": "Deebii kun mal'attii gelii keetiif saagi. Dhuunfaa.",
+      "ageLabel": "Umrii kee",
+      "agePlaceholder": "Umrii kee",
+      "ageFromDoc": "Umrii kee ({age}) warqaa keessaa saagame. Kunoo galmee mirkanaa'uu keessa jijjiruun dandeessu.",
+      "sizeLabel": "Namni murtaa'e jira, siiyuu haamnee?",
+      "sizePlaceholder": "ex: 3",
+      "incomeLabel": "Mala manaa kee tokkoon tokkoon jiidha, kuufii dura (doolaara USA). 0 galchi yoo hin jiraane.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ ji'a"
+    },
+    "children": {
+      "question": "Ijoollee mana kee jira, murtaa'e?",
+      "under19Label": "Ijoollee umri 19 gaheessaa mana kee jira?",
+      "under19Hint": "0 galchi yoo hin jiraane.",
+      "under18Label": "Ishee keessaa umri 18 gaheessaa murtaa'e?",
+      "under5Label": "Ishee keessaa umri 5 gaheessaa murtaa'e?",
+      "subsetHint": "Kun lakka sadi irraa xiqqaa."
+    },
+    "pregnantCash": {
+      "question": "Gaaffii mana kee irraa laaftee",
+      "pregnantLabel": "Nama tokko mana keessa amma jiddaa qaama qabuun jira?",
+      "pregnantHint": "WIC fi progiramoota Medicaid tokko-tokko dubbartotaa jiddaa qaama qabuun duraa.",
+      "cashLabel": "Gargaarsi mala (TANF, SSI, yookiin gargaarsi waliigalaa) dura argatta?",
+      "cashHint": "Kunis midhaa Refugee Cash Assistance fi SNAP midhaa irraa galuu irraa galuu ibsa."
+    },
+    "special": {
+      "question": "Haala addaa tokko-tokko",
+      "hint": "Tokko tokkoof Iye yookiin Lakkaa tuqaa.",
+      "unaccompaniedLabel": "Umri 18 gaheessaa USA keessa abba yookiin eegaa hin qabaattuu jirta?",
+      "unaccompaniedHint": "Progiraamota Jallaaba Iji Hin Qaban (URM) keessatti.",
+      "disabledLabel": "Midhaa hojjechuu irraa hidhaa dandenya?",
+      "disabledHint": "SSI fi SSDI keessatti.",
+      "blindLabel": "Ijaa hin argamtu yookiin ijaa xiqqaa sirraa?",
+      "blindHint": "Kutaa SSI/SSDI addaa.",
+      "workQuartersLabel": "Si yookiin namesaddii yookiin abba keessaniif USA keessa waggaa 10 ilaalche hojjete?",
+      "workQuartersHint": "Kredii hojjechuu 40 tokko tokko seeraa 5 waggaa SSI fi SNAP keessatti kufuu danda'a."
+    },
+    "goals": {
+      "question": "Waan barbaaddu maali gargaarsa keessatti?",
+      "hint": "Kunis progiramoota siif gaariin argamsiisu akka dandeessu isin gargaarsa.",
+      "employmentLabel": "Hojjedhu yookiin hojjechuu barbaaddu yookiin leenjii hojjechuu barbaadda?",
+      "employmentHint": "Seera hojjechuu, gargaarsi ijoollee, Mataa Dukkanaa.",
+      "businessLabel": "Dukkaanaa keetiif jalqabuun yookiin midhaa barbaadda?",
+      "businessHint": "Hojii kan xi'aasuu fi Akauntii Midhaa Nama Tokkaa (IDA).",
+      "englishLabel": "Barumsa Ingliffa (ESL) barbaadda? (dirqama hin taane)",
+      "englishHint": "Leenjii afaan Ingliffa kallattii Seera Jallaaba keessaa.",
+      "interpreterLabel": "Hiikaa yookiin gargaarsa hiika barbaadda? (dirqama hin taane)",
+      "interpreterHint": "Gargaarsi hiika kallattii progiramoota jallaaba keessaa ni jira."
+    },
+    "settingsForm": {
+      "i94Label": "Galmee Geettuu/Buusu I-94 qabaadha?",
+      "eadLabel": "Beeksisa Hojjechuu (EAD kaardhaa) qabaadha?",
+      "eligibilityDateLabel": "Gargaarsi jallaaba kee yeroo ofkaataa jalqamte? (Guyyaa midhaa ORR)",
+      "arrivalDateLabel": "USA keessatti yeroo geettee?",
+      "statusGrantDateLabel": "Mirgaa jallaaba yookiin mana oaffaa yeroo raawwatamdhe? (dirqama hin taane)"
+    },
+    "errors": {
+      "saveFailed": "Deebii kee kuusuu hin dandeenyee: {message}. Yoo walakkaa hin jiiraate, mallaattirtii kuusuu (supabase/migration_v2.sql) itti hin argamsifamne.",
+      "profileNotFound": "Galmee kee barbaadhuun deebii kuusuu hin dandeenyee. Ba'uu fi seenuun deebii galchuu, irra deebi.",
+      "profileNotFoundShort": "Galmee kee barbaadhuun kuusuu hin dandeenyee. Ba'uu fi seenuun deebii galchuu, irra deebi."
+    }
+  },
+  "processing": {
+    "title": "Faayidaa kee barbaaduu jira…",
+    "subtitle": "Deebii kee seera faayidaa USA ofkaataa irraa of ilaallisa. Kunis yeroo guddaan sekondi 30 keessatti.",
+    "step1": "Seeraa faayidaa fe'uun",
+    "step2": "Midhaa kee sakatta'uu",
+    "step3": "Bu'aa mirkanaa'uu",
+    "step4": "Dhaameef qindaa'uu",
+    "ready": "Plana kee danqee!",
+    "readySubtitle": "Faayidaa ati miidhaaf gaariin argamsiisu arganne.",
+    "goToDashboard": "Plana koo ilaalaa"
+  },
+  "dashboard": {
+    "welcome": "Baga Nagaan Dhuuftan",
+    "tabs": {
+      "actionPlan": "Plana Hojii Koo",
+      "documents": "Warqaa Koo",
+      "formHelper": "Gargaarsi Foormaa",
+      "explainer": "Warqaa Hiikuu",
+      "findHelp": "Gargaarsa Barbaadi",
+      "progress": "Midhaa Koo"
+    },
+    "actionPlan": {
+      "title": "Plana Hojii Koo",
+      "subtitle": "Dhaameef guddaa jalqabaa qindaa'e.",
+      "rulesChecked": "Seeraa faayidaa irra dhaabbate:",
+      "daysLeft": "{days} guyyaa hafuu",
+      "urgent": "Guddaa — yaaqaa hojjedh",
+      "deadlinePassed": "Dhaameef itti gahe",
+      "noDeadline": "Dhaameef murtaa'e hin jiru",
+      "startButton": "Jalqaba",
+      "continueButton": "Itti Aanu",
+      "sourceLink": "Bu'aa ofkaataa",
+      "attorney": "Kunis aboogaadii yookiin eegaa itti galaa barbaada.",
+      "noResults": "Faayidaa midhaa hin argamne. Gaaffii hedduu deebii kennuu yookiin tokko karaa keessaa tokko quunnamtaa gargaarsa barbaadi.",
+      "statusBadges": {
+        "likely_eligible": "Midhaa sirraa jira",
+        "maybe_eligible": "Midhaa ta'uu danda'a",
+        "needs_human_review": "Sakatta'ii barbaada",
+        "not_eligible": "Midhaa hin taane"
+      },
+      "details": "Bal'inni Hedduu",
+      "getFormHelp": "Gargaarsi foormaa argatuu",
+      "daysLeftToApply": "{days} guyyaa kaasuu kaasuu hafuu",
+      "oneDayLeftToApply": "1 guyyaa kaasuu hafuu",
+      "deadlinePassedClear": "Dhaameef kanaa itti gahe",
+      "whatYouNeed": "Barbaadduu",
+      "whereHowToApply": "Karaa fi akka kaasuu",
+      "requiredDocuments": "Warqaa barbaachisaa",
+      "nextSteps": "Tarkaanfi itti aanu",
+      "applyOnline": "Online kaasuu",
+      "formNeeded": "Foormaa guuttuu"
+    },
+    "documents": {
+      "title": "Warqaa Koo",
+      "subtitle": "Faayiliin kee ijaaraa fi dhuunfaa. Eegaa seera hin qoratuu.",
+      "upload": "Warqaa seenuun galchuu",
+      "dragDrop": "Faayilii hiikuu, yookiin tuquudhaaf filad",
+      "supportedTypes": "Goora: PDF, JPG, PNG",
+      "extracting": "Warqaa dubbisuu jira…",
+      "noDocuments": "Warqaa seenuun galchuu hin jiru.",
+      "deleteConfirm": "Warqaa kanaa hafduu barbaadda?",
+      "open": "Banuu",
+      "preview": "Duraa ilaalchuu",
+      "close": "Cufuu",
+      "detectedType": "Gora sirreeffame",
+      "secureLine": "Warqaawwan kee dhuunfaa keessa hojjedha, eegaa seera hin qoratuu.",
+      "types": {
+        "passport": "Paspoorti",
+        "i-94": "Galmee Geettuu I-94",
+        "ead": "Beeksisa Hojjechuu (EAD)",
+        "birth_certificate": "Galmee Dhalumsaa",
+        "status_letter": "Warqaa Mirgaa",
+        "other": "Biraa"
+      }
+    },
+    "formHelper": {
+      "title": "Gargaarsi Foormaa",
+      "subtitle": "Foormaa hubachuu fi guuttuu keessatti gargaarsa argatuu. SSN, A-lakkoo, bal'iinni banki, yookiin lakkoo paspoorti keessan hin guutu — dhuunfaa taataataa.",
+      "pasteInstructions": "Maqaa foormaa yookiin URL seenuun galchuu, yookiin akka barbaaddu ibsa:",
+      "placeholder": "Fakkeenya: I-765 Raawwii Hojjechuu, yookiin \"Medicaid kaasuu keessatti natti gargaarsa koo\"",
+      "ask": "Gargaarsa argatuu",
+      "sensitiveNote": "Kutaan [ATI GUUTUU] mallattee odeeffannaa waariitudhaan hojjedha — kana ofkeetin guutuu.",
+      "legalNote": "Foormaa kanaa mirgaa seera keesan ifatti qabaata. Aboogaadii itti galaa yookiin eegaa itti galaa DOJ waliin hojjedhu.",
+      "thinking": "Foormaa dubbisuu jira…",
+      "uploadFiles": "Faayilii seenuun galchuu",
+      "openInFiller": "Guuttuu foormaa keessa banuu",
+      "secureLine": "Warqaawwan kee dhuunfaa keessa hojjedha, eegaa seera hin qoratuu.",
+      "send": "Erguu",
+      "contextNote": "Wayfinder odeeffannaa dha siif duraan kennite fayyadamuun haala keetiif deebii kenna.",
+      "suggestionsLabel": "Gaaffii baay'ee"
+    },
+    "explainer": {
+      "title": "Warqaa yookiin Foormaa Hiikuu",
+      "subtitle": "Warqaa yookiin warqaa hiikua hin jaarratu seenuun galchuu. Ibsa jechaa salphaa keessatti kenna.",
+      "pasteLabel": "Warqaa kunaan seenuun galchuu:",
+      "placeholder": "Warqaa yookiin foormaa warqaa kunaan seenuun galchuu…",
+      "orUpload": "Yookiin foonii yookiin skaani warqaa seenuun galchuu:",
+      "explain": "Hiikuu",
+      "thinking": "Warqaa kee dubbisuu jira…"
+    },
+    "findHelp": {
+      "title": "Gargaarsa Karaa Kee Jiru Barbaadi",
+      "subtitle": "Namni gargaarsa kennu waliin qubannoo — seera jallaaba, gargaarsi seera, fi ofisaa mootummaa jallaaba.",
+      "resettlement": "Ageejoota Yeroo Haaraa",
+      "legalAid": "Gargaarsi Seera Mirgaa",
+      "stateOffice": "Ofisaa Mootummaa Jallaaba",
+      "national": "Gargaarsi Ulfarsa",
+      "attorneyWarning": "Barbaachisaa: Waan seera mirgaa keesan ifatti qabaatanif qofa, aboogaadii itti galaa yookiin eegaa itti galaa DOJ qofa gorsa seera kennuu fi sidir sammuudhaa danda'u.",
+      "call": "Waamu",
+      "visit": "Tuulii interneetii galchuu",
+      "noState": "Mootummaa kee mootummaa tokko filad gargaarsa naannoo ilaalchu."
+    },
+    "progress": {
+      "title": "Midhaa Koo",
+      "subtitle": "Faayidaa tokkoon tokkoon karaa itti jirtu lakka.",
+      "statuses": {
+        "not_started": "Hin jalqabne",
+        "in_progress": "Hojii keessatti",
+        "documents_ready": "Warqaa danqe",
+        "submitted": "Ergame",
+        "needs_attorney": "Aboogaadii barbaada",
+        "done": "Xumame"
+      },
+      "updateStatus": "Midhaa haareesu"
+    },
+    "pdf": {
+      "download": "Plana koo (PDF) hiike",
+      "generating": "PDF ijaaruu jira…"
+    },
+    "dismiss": "Bahuu",
+    "footer": {
+      "privacy": "Odeeffannaa kee ijaaraa fi dhuunfaa. Eegaa seera hin qoratuu.",
+      "disclaimer": "Wayfinder gorsa seera hin kennu."
+    },
+    "settings": {
+      "title": "Qindaa'inni",
+      "subtitle": "Afaan kee jijjiruun yookiin deebii seenuun galchuu yeroo hareesu.",
+      "language": "Afaan",
+      "languageHint": "Afaan app hundaa filad. Sirraa ala taasisa.",
+      "editInfo": "Odeeffannaa Koo Guuttuu",
+      "editInfoHint": "Deebii seenuun galchuu yeroo jijjiruun. Faayidaa kee irra sakatta'ina.",
+      "recheck": "Faayidaa Koo Duubatti Sakatta'uu",
+      "backToDashboard": "Dashibordii geessuu",
+      "saved": "Kuuse",
+      "saving": "Kuusuu jira…"
+    },
+    "formFill": {
+      "title": "Foormaa Koo Guutuu",
+      "intro": "Waan duraan beeknu guuteena. Guuttuu dura warqaa hundaa mirkana'aa.",
+      "secureLine": "Foormaa kee browser keessa guuteeffama, eegaa seera hin qoratuu.",
+      "autoFilled": "Odeeffannaa kee irraa guuteeffame",
+      "missing": "Hin jiru — barruun galchi",
+      "sensitive": "Waariituun — kunis akka hin qabdan. Ofkeetin galchi.",
+      "download": "Foormaa guuteeffame hiike",
+      "downloading": "Foormaa kee qophaa'uu jira…",
+      "reviewAll": "Kutaa hundaa mirkana'aa",
+      "noFields": "Foormaa kanaa kutaa guuttuu hin jiru. Tuulii mallattaan barruun danda'a.",
+      "openPrompt": "Foormaa banuu guutuu",
+      "loading": "Foormaa koo banuu jira…",
+      "loadError": "Foormaa kanaa banuu hin dandeenyee. Faayilii biraa yaaluun mee.",
+      "uploadHint": "I-94, beeksisa hojjechuu, yookiin warqaa biraa Warqaa keessa seenuun galchuu foormaa kanaa hedduu guuttuu."
+    }
+  },
+  "errors": {
+    "generic": "Wanti tokko dogoggore. Irra yaaluun mee.",
+    "signIn": "Imeeylii yookiin seensuu sirrii hin taane.",
+    "signUp": "Akkauntii ijaaruu hin dandeenyee. Irra yaaluun mee.",
+    "eligibility": "Faayidaa kee fe'uu hin dandeenyee. Irra yaaluun mee.",
+    "upload": "Seenuun galchuu dhaggale. Faayilii xiqqaa yookiin gora biraa yaaluun mee.",
+    "required": "Kutaan kanaa barbaachisaa."
+  },
+  "common": {
+    "loading": "Fe'uu jira…",
+    "yes": "Iye",
+    "no": "Lakkaa",
+    "save": "Kuusuu",
+    "cancel": "Bahuu",
+    "close": "Cufuu",
+    "back": "Duuba Deebuu",
+    "next": "Itti Aanu",
+    "submit": "Erguu",
+    "or": "yookiin",
+    "edit": "Guuttuu",
+    "download": "Hiike",
+    "open": "Banuu",
+    "settings": "Qindaa'inni",
+    "dismiss": "Bahuu"
+  }
+}

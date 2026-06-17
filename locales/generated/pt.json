@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "Entrar",
+    "signOut": "Sair",
+    "dashboard": "Meu Painel",
+    "documents": "Meus Documentos",
+    "findHelp": "Encontrar Ajuda",
+    "settings": "Configurações"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Como funciona",
+      "features": "Recursos",
+      "languages": "Idiomas",
+      "signIn": "Entrar",
+      "getStarted": "Começar"
+    },
+    "hero": {
+      "headline": "Um novo lar começa quando você sabe o caminho.",
+      "subheadline": "Wayfinder encontra os benefícios e papéis que você tem direito, explica tudo no seu idioma, e guia você passo a passo, antes dos prazos passarem.",
+      "cardLabel": "Comece no seu idioma",
+      "searchPlaceholder": "Procure mais de 100 idiomas…",
+      "cta": "Comece grátis"
+    },
+    "how": {
+      "eyebrow": "Como funciona",
+      "title": "Três passos de chegada até um plano claro.",
+      "steps": [
+        {
+          "title": "Conte sua história",
+          "body": "Responda algumas perguntas simples, uma por vez, no seu próprio idioma. Letras grandes, palavras claras, sem pressa."
+        },
+        {
+          "title": "Encontramos o que serve",
+          "body": "Wayfinder verifica um banco de dados selecionado de regras de benefícios dos EUA e mostra exatamente o que você tem direito, com fontes, nunca adivinha."
+        },
+        {
+          "title": "Aja a tempo",
+          "body": "Receba um plano ordenado por prazo, com cada formulário explicado e ajuda de uma pessoa de verdade perto de você quando importa."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Seu companheiro",
+      "title": "Tudo que você precisa, em um lugar calmo.",
+      "items": [
+        {
+          "title": "Meu Plano de Ação",
+          "body": "Seus benefícios ordenados pelo prazo mais próximo, cada um com uma razão em linguagem clara de por que você tem direito e uma contagem regressiva para nada passar despercebido."
+        },
+        {
+          "title": "Assistente de Formulário de IA",
+          "body": "Wayfinder explica cada campo e escreve respostas no seu idioma. Nunca toca em números sensíveis, e nunca envia nada por você."
+        },
+        {
+          "title": "Cofre de Documentos",
+          "body": "Guarde seu passaporte, I-94, e EAD em um único lugar criptografado, apenas seu. Privado, e nunca compartilhado com órgãos de aplicação."
+        },
+        {
+          "title": "Encontrar Ajuda",
+          "body": "Para qualquer assunto legal, Wayfinder conecta você a um advogado licenciado ou representante credenciado perto de você. Uma pessoa de verdade, não uma adivinhação."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Qualquer idioma",
+      "title": "Nas suas palavras, desde a primeira tela.",
+      "body": "Escolha seu idioma antes de se inscrever, e Wayfinder fala em todo lugar, a cada passo do caminho."
+    },
+    "trust": {
+      "badge": "Sua segurança vem em primeiro lugar",
+      "title": "Nunca compartilhamos suas informações com órgãos de imigração.",
+      "body": "Seus documentos são criptografados e apenas seu. Wayfinder nunca preenche identificadores sensíveis, nunca envia formulários, e cada decisão legal é feita por uma pessoa de verdade, licenciada, não por uma máquina.",
+      "points": [
+        "Criptografado e privado",
+        "Fontes que você pode verificar",
+        "Revisado por pessoas"
+      ]
+    },
+    "finalCta": {
+      "title": "Seu caminho começa hoje.",
+      "body": "Grátis, privado, e no seu idioma. Descubra o que você tem direito em minutos.",
+      "primary": "Comece grátis",
+      "secondary": "Veja como funciona"
+    },
+    "footer": {
+      "tagline": "Não é aconselhamento legal · Sempre confirmado por uma pessoa"
+    },
+    "translating": "Traduzindo a página…"
+  },
+  "auth": {
+    "createAccount": "Crie sua conta",
+    "email": "Endereço de e-mail",
+    "password": "Senha",
+    "signUp": "Criar conta",
+    "signIn": "Entrar",
+    "haveAccount": "Já tem uma conta?",
+    "noAccount": "Não tem uma conta?",
+    "emailPlaceholder": "seu@email.com",
+    "passwordPlaceholder": "Escolha uma senha",
+    "signingUp": "Criando conta...",
+    "signingIn": "Entrando..."
+  },
+  "onboarding": {
+    "progressLabel": "Passo {current} de {total}",
+    "nav": {
+      "next": "Próximo",
+      "back": "Voltar",
+      "confirmContinue": "Confirmar e continuar",
+      "findBenefits": "Encontrar meus benefícios",
+      "saving": "Salvando...",
+      "skipNotSure": "Pular — Não tenho certeza"
+    },
+    "yes": "Sim",
+    "no": "Não",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Refugiado",
+        "note": "Admitido sob seção 207"
+      },
+      "asylee_208": {
+        "label": "Asilado",
+        "note": "Asilo concedido sob seção 208"
+      },
+      "siv": {
+        "label": "Titular de Visto de Imigrante Especial (SIV)",
+        "note": "Afegão ou iraquiano"
+      },
+      "afghan_parolee": {
+        "label": "Libertado humanitário afegão"
+      },
+      "ukrainian_parolee": {
+        "label": "Libertado humanitário ucraniano"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Entrante cubano ou haitiano"
+      },
+      "trafficking_victim": {
+        "label": "Vítima certificada de tráfico",
+        "note": "Visto T ou carta ORR"
+      },
+      "amerasian": {
+        "label": "Imigrante Amerásio"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Cartão verde de status de refugiado, asilado, ou humanitário",
+        "note": "Isso restaura elegibilidade de SNAP e Medicaid"
+      },
+      "lpr_other": {
+        "label": "Cartão verde de outro caminho"
+      },
+      "us_citizen": {
+        "label": "Cidadão dos EUA ou Nacional dos EUA"
+      },
+      "other_none": {
+        "label": "Outro, não tenho certeza, ou nenhum destes"
+      }
+    },
+    "language": {
+      "question": "Qual idioma você prefere?",
+      "hint": "Mostraremos tudo neste idioma."
+    },
+    "scan": {
+      "question": "Tem seus papéis? Tire uma foto para economizar tempo",
+      "intro": "Fotografe seu I-94 (e seu permissão de trabalho, cartão verde, ou carta de asilo se tiver). Leremos seu status e datas para você não precisar digitar.",
+      "secureLine": "Seus documentos são processados com segurança no momento e nunca são salvos em nossos servidores ou compartilhados com órgãos de imigração. Lemos apenas os poucos campos necessários para verificar seus benefícios — nunca seu número de Seguro Social ou número A.",
+      "uploadAriaLabel": "Envie uma foto ou PDF de seus documentos de imigração",
+      "chooseDifferent": "Escolher fotos diferentes",
+      "chooseFile": "Tire uma foto ou escolha um arquivo",
+      "fileTypes": "JPEG, PNG, ou PDF · até 4 documentos",
+      "reading": "Lendo seus documentos…",
+      "readDocuments": "Ler meus documentos",
+      "skip": "Não tenho meus documentos — responder perguntas em vez disso",
+      "errorReadFailed": "Não conseguimos ler seu documento. Tente novamente, ou pule e responda as perguntas.",
+      "errorUnreachable": "Não conseguimos alcançar o leitor de documentos. Tente novamente, ou pule e responda as perguntas."
+    },
+    "confirm": {
+      "question": "Por favor, verifique o que lemos de seus documentos",
+      "intro": "Seus resultados de benefícios dependem desses valores, então reserve um momento para confirmá-los. Toque em qualquer campo para corrigi-lo.",
+      "secureLine": "Lido com segurança e não salvo.",
+      "detectedPrefix": "Detectamos:",
+      "lowConfidence": "Alguns valores foram difíceis de ler (marcados Por favor, verifique). Por favor, verifique primeiro aqueles.",
+      "pleaseCheck": "Por favor, verifique",
+      "fromDocument": "Do seu documento",
+      "fields": {
+        "immigrationStatus": "Status de imigração",
+        "selectStatus": "Selecione seu status",
+        "fullName": "Nome completo",
+        "fullNameHint": "Apenas para seus registros — não usado para elegibilidade.",
+        "fullNamePlaceholder": "Seu nome completo",
+        "dateOfBirth": "Data de nascimento",
+        "dateOfBirthHint": "Define sua idade para programas baseados em idade.",
+        "age": "Idade",
+        "countryOfOrigin": "País de origem",
+        "countryOfOriginHint": "Apenas para seus registros.",
+        "countryPlaceholder": "País",
+        "arrivalDate": "Data em que chegou nos EUA",
+        "eligibilityDate": "Data de elegibilidade ORR",
+        "eligibilityDateHint": "Inicia o relógio de prazo RCA/RMA.",
+        "statusGrantDate": "Data em que o status foi concedido",
+        "statusGrantDateHint": "Data de concessão de refugiado/asilado (relógio de 7 anos de SSI). Opcional."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Permissão de trabalho (EAD)",
+        "green_card": "Cartão verde",
+        "asylum_letter": "Carta de asilo",
+        "ssn_card": "Cartão de Seguro Social",
+        "other": "documento"
+      }
+    },
+    "status": {
+      "question": "Qual é seu status de imigração agora?",
+      "hint": "Escolha o que melhor se encaixa em você. Isso molda quase toda regra de benefício."
+    },
+    "documents": {
+      "question": "Algumas perguntas rápidas sobre documentos",
+      "hint": "Toque em Sim ou Não. Tudo bem se você não tiver alguns.",
+      "fromDocsPrefix": "Dos seus documentos anotamos",
+      "fromDocsI94": " seu I-94",
+      "fromDocsAnd": " e",
+      "fromDocsEad": " sua permissão de trabalho (EAD)",
+      "i94Label": "Registro de Chegada/Saída I-94",
+      "i94Hint": "Prova de entrada. Um I-94 codificado §207 ou 'Visto 93' prova status de refugiado.",
+      "eadLabel": "Permissão de Trabalho (cartão EAD)",
+      "eadHint": "Documento de Autorização de Emprego. Código EAD A03 também prova status de refugiado.",
+      "ssnLabel": "Você tem um número de Seguro Social (SSN)?",
+      "ssnHint": "Só precisamos saber se você tem um — nunca o número em si."
+    },
+    "orrLetter": {
+      "question": "Você tem uma carta de certificação ou elegibilidade ORR?",
+      "hint": "Vítimas de tráfico precisam dessa carta (não um I-94) para acessar benefícios ORR como RCA e RMA."
+    },
+    "eligibilityDate": {
+      "question": "Quando sua ajuda de refugiado oficialmente começou?",
+      "hint": "Esta é sua data de elegibilidade ORR — geralmente sua data de chegada ou a data em que seu status foi concedido, o que for mais tarde.",
+      "deadlineLabel": "Prazo importante:",
+      "deadlineBody": " O relógio para Assistência em Dinheiro para Refugiados (RCA) e assistência médica começa a partir desta data — solicite já."
+    },
+    "arrivalDate": {
+      "question": "Quando você veio para os Estados Unidos?",
+      "hint": "A maioria dos serviços de emprego e integração funciona até 5 anos a partir desta data."
+    },
+    "statusGrantDate": {
+      "question": "Quando você recebeu status de refugiado ou asilado?",
+      "hint": "Elegibilidade de SSI termina 7 anos a partir desta data. Deixe em branco se não tiver certeza."
+    },
+    "location": {
+      "question": "Em qual estado você vive?",
+      "hint": "Benefícios e ajuda local variam por estado. Cidade e CEP são opcionais.",
+      "stateLabel": "Estado",
+      "selectState": "Selecione seu estado",
+      "cityLabel": "Cidade (opcional)",
+      "cityPlaceholder": "Cidade",
+      "zipLabel": "CEP (opcional)",
+      "zipPlaceholder": "CEP"
+    },
+    "household": {
+      "question": "Nos diga sobre sua família",
+      "hint": "Essas respostas definem seus limites de renda. Elas são privadas.",
+      "ageLabel": "Sua idade",
+      "agePlaceholder": "Sua idade",
+      "ageFromDoc": "Sua idade ({age}) é definida do seu documento. Você pode mudar na tela de confirmação.",
+      "sizeLabel": "Quantas pessoas moram com você, contando você?",
+      "sizePlaceholder": "ex: 3",
+      "incomeLabel": "Dinheiro que sua família recebe cada mês, antes de impostos (dólares dos EUA). Digite 0 se nenhum.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ mês"
+    },
+    "children": {
+      "question": "Quantas crianças moram com você?",
+      "under19Label": "Quantas crianças menores de 19 anos moram com você?",
+      "under19Hint": "Digite 0 se nenhuma.",
+      "under18Label": "Dessas, quantas têm menos de 18 anos?",
+      "under5Label": "Dessas, quantas têm menos de 5 anos?",
+      "subsetHint": "Esta é uma parte menor do número acima."
+    },
+    "pregnantCash": {
+      "question": "Duas perguntas rápidas sobre sua casa",
+      "pregnantLabel": "Alguém em sua casa está grávida agora?",
+      "pregnantHint": "WIC e alguns programas de Medicaid priorizam mulheres grávidas.",
+      "cashLabel": "Você já recebe ajuda em dinheiro (TANF, SSI, ou assistência geral)?",
+      "cashHint": "Isso afeta elegibilidade para Assistência em Dinheiro para Refugiados e SNAP."
+    },
+    "special": {
+      "question": "Algumas situações especiais",
+      "hint": "Toque Sim ou Não para cada.",
+      "unaccompaniedLabel": "Você tem menos de 18 anos e está nos EUA sem pai ou guardião?",
+      "unaccompaniedHint": "Para o programa de Menores Refugiados Desacompanhados (URM).",
+      "disabledLabel": "Você tem uma deficiência que limita seu trabalho?",
+      "disabledHint": "Para SSI e SSDI.",
+      "blindLabel": "Você é cego ou tem visão muito limitada?",
+      "blindHint": "Uma categoria especial de SSI/SSDI.",
+      "workQuartersLabel": "Você ou um cônjuge ou pai trabalhou nos EUA cerca de 10 anos?",
+      "workQuartersHint": "40 créditos de trabalho podem contornar alguns bloqueios de 5 anos para SSI e SNAP."
+    },
+    "goals": {
+      "question": "Com o que você gostaria de ajuda?",
+      "hint": "Isso nos ajuda a encontrar os programas certos para você.",
+      "employmentLabel": "Você está trabalhando ou procurando trabalho ou treinamento de trabalho?",
+      "employmentHint": "Serviços de emprego, apoio a cuidados infantis, Matching Grant.",
+      "businessLabel": "Você quer começar ou crescer seu próprio negócio?",
+      "businessHint": "Desenvolvimento de microempresas e Contas de Desenvolvimento Individual (IDA).",
+      "englishLabel": "Gostaria de aulas de inglês (ESL)? (opcional)",
+      "englishHint": "Treinamento de idioma inglês gratuito através de Serviços de Suporte a Refugiados.",
+      "interpreterLabel": "Você precisa de um intérprete ou ajuda de tradução? (opcional)",
+      "interpreterHint": "Serviços de interpretação gratuitos estão disponíveis através de programas de refugiados."
+    },
+    "settingsForm": {
+      "i94Label": "Você tem um Registro de Chegada/Saída I-94?",
+      "eadLabel": "Você tem uma Permissão de Trabalho (cartão EAD)?",
+      "eligibilityDateLabel": "Quando sua ajuda de refugiado oficialmente começou? (data de elegibilidade ORR)",
+      "arrivalDateLabel": "Quando você veio para os Estados Unidos?",
+      "statusGrantDateLabel": "Quando você recebeu status de refugiado ou asilado? (opcional)"
+    },
+    "errors": {
+      "saveFailed": "Não conseguimos salvar suas respostas: {message}. Se isso mencionar uma coluna faltante, a migração de banco de dados (supabase/migration_v2.sql) ainda não foi aplicada.",
+      "profileNotFound": "Não conseguimos encontrar seu perfil para salvar suas respostas. Por favor, saia e faça login novamente, depois tente novamente.",
+      "profileNotFoundShort": "Não conseguimos encontrar seu perfil para salvar. Por favor, saia e faça login novamente, depois tente novamente."
+    }
+  },
+  "processing": {
+    "title": "Encontrando seus benefícios...",
+    "subtitle": "Estamos revisando suas respostas contra programas oficiais de benefícios dos EUA. Isso geralmente leva cerca de 30 segundos.",
+    "step1": "Carregando regras de benefícios",
+    "step2": "Verificando sua elegibilidade",
+    "step3": "Verificando resultados",
+    "step4": "Ordenando por prazo",
+    "ready": "Seu plano está pronto!",
+    "readySubtitle": "Encontramos benefícios que você pode se qualificar.",
+    "goToDashboard": "Ver meu plano"
+  },
+  "dashboard": {
+    "welcome": "Bem-vindo",
+    "tabs": {
+      "actionPlan": "Meu Plano de Ação",
+      "documents": "Meus Documentos",
+      "formHelper": "Assistente de Formulário",
+      "explainer": "Explicar uma Carta",
+      "findHelp": "Encontrar Ajuda",
+      "progress": "Meu Progresso"
+    },
+    "actionPlan": {
+      "title": "Seu Plano de Ação",
+      "subtitle": "Ordenado pelo prazo mais urgente primeiro.",
+      "rulesChecked": "Regras de benefício verificadas pela última vez:",
+      "daysLeft": "{days} dias restantes",
+      "urgent": "Urgente — aja em breve",
+      "deadlinePassed": "O prazo pode ter passado",
+      "noDeadline": "Sem prazo fixo",
+      "startButton": "Começar",
+      "continueButton": "Continuar",
+      "sourceLink": "Fonte oficial",
+      "attorney": "Isso exige um advogado ou representante credenciado.",
+      "noResults": "Nenhum benefício elegível encontrado. Responda mais perguntas ou entre em contato com uma organização local para ajuda.",
+      "statusBadges": {
+        "likely_eligible": "Provável elegível",
+        "maybe_eligible": "Pode ser elegível",
+        "needs_human_review": "Precisa de revisão",
+        "not_eligible": "Não elegível"
+      },
+      "details": "Detalhes",
+      "getFormHelp": "Obter ajuda com formulário",
+      "daysLeftToApply": "{days} dias restantes para solicitar",
+      "oneDayLeftToApply": "1 dia restante para solicitar",
+      "deadlinePassedClear": "Este prazo passou",
+      "whatYouNeed": "O que você precisa",
+      "whereHowToApply": "Onde e como solicitar",
+      "requiredDocuments": "Documentos necessários",
+      "nextSteps": "Próximos passos",
+      "applyOnline": "Solicitar online",
+      "formNeeded": "Formulário para completar"
+    },
+    "documents": {
+      "title": "Meus Documentos",
+      "subtitle": "Seus arquivos são criptografados e privados. Nunca os compartilhamos com órgãos de imigração.",
+      "upload": "Enviar um documento",
+      "dragDrop": "Arraste e solte um arquivo, ou clique para escolher",
+      "supportedTypes": "Suportado: PDF, JPG, PNG",
+      "extracting": "Lendo documento...",
+      "noDocuments": "Nenhum documento enviado ainda.",
+      "deleteConfirm": "Tem certeza que quer deletar este documento?",
+      "open": "Abrir",
+      "preview": "Visualizar",
+      "close": "Fechar",
+      "detectedType": "Tipo detectado",
+      "secureLine": "Seus documentos são processados com segurança e nunca compartilhados com órgãos de imigração.",
+      "types": {
+        "passport": "Passaporte",
+        "i-94": "Registro de Chegada I-94",
+        "ead": "Permissão de Trabalho (EAD)",
+        "birth_certificate": "Certidão de Nascimento",
+        "status_letter": "Carta de Status",
+        "other": "Outro"
+      }
+    },
+    "formHelper": {
+      "title": "Assistente de Formulário",
+      "subtitle": "Obtenha ajuda entendendo e preenchendo um formulário. Nunca preenchemos seu SSN, número A, detalhes bancários, ou número de passaporte — esses ficam privados.",
+      "pasteInstructions": "Cole o nome do formulário ou URL, ou descreva com o que você precisa de ajuda:",
+      "placeholder": "Exemplo: I-765 Autorização de Emprego, ou \"me ajude a preencher uma aplicação de Medicaid\"",
+      "ask": "Obter ajuda",
+      "sensitiveNote": "Campos marcados [VOCÊ PREENCHE] contêm informações sensíveis — complete estes você mesmo.",
+      "legalNote": "Este formulário envolve seu status de imigração. Por favor, trabalhe com um advogado licenciado ou representante credenciado pelo DOJ.",
+      "thinking": "Lendo o formulário...",
+      "uploadFiles": "Enviar arquivos",
+      "openInFiller": "Abrir em preenchedor de formulário",
+      "secureLine": "Seus documentos são processados com segurança e nunca compartilhados com órgãos de imigração.",
+      "send": "Enviar",
+      "contextNote": "Wayfinder usa as informações que você já forneceu para responder para sua situação.",
+      "suggestionsLabel": "Perguntas comuns"
+    },
+    "explainer": {
+      "title": "Explicar uma Carta ou Formulário",
+      "subtitle": "Cole ou envie uma carta ou documento confuso. Explicaremos em linguagem clara.",
+      "pasteLabel": "Cole o texto aqui:",
+      "placeholder": "Cole o texto da carta ou formulário aqui...",
+      "orUpload": "Ou envie uma foto ou scan do documento:",
+      "explain": "Explicar isto",
+      "thinking": "Lendo seu documento..."
+    },
+    "findHelp": {
+      "title": "Encontrar Ajuda Perto de Você",
+      "subtitle": "Conecte com pessoas que podem ajudar — serviços de assentamento gratuitos, ajuda legal, e seu escritório estadual de refugiados.",
+      "resettlement": "Agências de Assentamento",
+      "legalAid": "Ajuda Legal de Imigração",
+      "stateOffice": "Escritório Estadual de Refugiados",
+      "national": "Recursos Nacionais",
+      "attorneyWarning": "Importante: Para qualquer assunto legal envolvendo seu status de imigração, apenas um advogado licenciado ou representante credenciado pelo DOJ pode lhe dar aconselhamento legal e representá-lo.",
+      "call": "Ligar",
+      "visit": "Visitar site",
+      "noState": "Selecione seu estado para ver organizações locais."
+    },
+    "progress": {
+      "title": "Meu Progresso",
+      "subtitle": "Acompanhe onde você está com cada benefício.",
+      "statuses": {
+        "not_started": "Não iniciado",
+        "in_progress": "Em progresso",
+        "documents_ready": "Documentos prontos",
+        "submitted": "Enviado",
+        "needs_attorney": "Precisa de advogado",
+        "done": "Feito"
+      },
+      "updateStatus": "Atualizar status"
+    },
+    "pdf": {
+      "download": "Baixar meu plano (PDF)",
+      "generating": "Gerando PDF..."
+    },
+    "dismiss": "Descartar",
+    "footer": {
+      "privacy": "Suas informações são criptografadas e privadas. Nunca as compartilhamos com órgãos de imigração.",
+      "disclaimer": "Wayfinder não fornece aconselhamento legal."
+    },
+    "settings": {
+      "title": "Configurações",
+      "subtitle": "Mude seu idioma ou atualize as respostas que deu durante o sign-up.",
+      "language": "Idioma",
+      "languageHint": "Escolha o idioma para todo o app. Atualiza imediatamente.",
+      "editInfo": "Editar minhas informações",
+      "editInfoHint": "Mude as respostas que deu durante o sign-up. Verificaremos seus benefícios novamente.",
+      "recheck": "Reverificar meus benefícios",
+      "backToDashboard": "Voltar ao painel",
+      "saved": "Salvo",
+      "saving": "Salvando..."
+    },
+    "formFill": {
+      "title": "Preencha seu formulário",
+      "intro": "Preenchemos o que já sabemos. Por favor, revise cada campo antes de baixar.",
+      "secureLine": "Seu formulário é preenchido no seu navegador e nunca compartilhado com órgãos de imigração.",
+      "autoFilled": "Preenchido a partir de suas informações",
+      "missing": "Faltando — por favor, digite isso",
+      "sensitive": "Sensível — não compartilhe isso conosco. Digite você mesmo.",
+      "download": "Baixar formulário preenchido",
+      "downloading": "Preparando seu formulário...",
+      "reviewAll": "Revise cada campo",
+      "noFields": "Este formulário não tem caixas preenchíveis. Você pode digitar sobre os spots destacados.",
+      "openPrompt": "Abrir um formulário para preencher",
+      "loading": "Abrindo seu formulário...",
+      "loadError": "Não conseguimos abrir este formulário. Por favor, tente outro arquivo.",
+      "uploadHint": "Envie seu I-94, permissão de trabalho, ou outro documento em Documentos para preencher mais deste formulário automaticamente."
+    }
+  },
+  "errors": {
+    "generic": "Algo deu errado. Por favor, tente novamente.",
+    "signIn": "E-mail ou senha incorretos.",
+    "signUp": "Não conseguimos criar conta. Por favor, tente novamente.",
+    "eligibility": "Não conseguimos carregar seus benefícios. Por favor, tente novamente.",
+    "upload": "Envio falhou. Por favor, tente um arquivo menor ou formato diferente.",
+    "required": "Este campo é obrigatório."
+  },
+  "common": {
+    "loading": "Carregando...",
+    "yes": "Sim",
+    "no": "Não",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "submit": "Enviar",
+    "or": "ou",
+    "edit": "Editar",
+    "download": "Baixar",
+    "open": "Abrir",
+    "settings": "Configurações",
+    "dismiss": "Descartar"
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "Ingia",
+    "signOut": "Toka",
+    "dashboard": "Dashibodi Yangu",
+    "documents": "Hati Zangu",
+    "findHelp": "Tafuta Msaada",
+    "settings": "Mipangilio"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Jinsi inavyofanya kazi",
+      "features": "Sifa",
+      "languages": "Lugha",
+      "signIn": "Ingia",
+      "getStarted": "Anza"
+    },
+    "hero": {
+      "headline": "Nyumba mpya huanza kwa kujua njia yako.",
+      "subheadline": "Wayfinder inapata faida na karatasi unazostahili, inaeleza kila kitu katika lugha yako, na inakuongoza hatua kwa hatua, kabla mihaano ipite.",
+      "cardLabel": "Anza katika lugha yako",
+      "searchPlaceholder": "Tafuta lugha 100+…",
+      "cta": "Anza bila malipo"
+    },
+    "how": {
+      "eyebrow": "Jinsi inavyofanya kazi",
+      "title": "Hatua tatu kutoka kuwasili hadi suluhu safi.",
+      "steps": [
+        {
+          "title": "Tuambie hadithi yako",
+          "body": "Jibu maswali machache madogo, moja kwa moja, katika lugha yako mwenyewe. Maandishi makubwa, maneno rahisi, hakuna kucheza."
+        },
+        {
+          "title": "Tunapata kile kinachofaa",
+          "body": "Wayfinder inaangalia hifadhidata iliyohakikishwa ya sheria za faida za Marekani na kuonyesha kwa hasa kile unachostahili, na vyanzo, hakikisha simu."
+        },
+        {
+          "title": "Kuwezesha kwa wakati",
+          "body": "Pata mpango unaotofautiana na mihaano, na kila fomu iliyoelezwa na msaada wa binadamu halisi juu karibu wakati unapohitajika."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Rafiki yako",
+      "title": "Kila kitu unachohitaji, katika mahali moja yenye amani.",
+      "items": [
+        {
+          "title": "Mpango Wangu wa Vitendo",
+          "body": "Faida zako unazoitofautiana kwa mihaano ya haraka, kila moja na sababu iliyoelezwa kwa maneno rahisi kwamba unastahili na kuhesabu kupungua ili hakuna kile kinachorudi nyuma."
+        },
+        {
+          "title": "Msaidizi wa Fomu ya AI",
+          "body": "Wayfinder inaeleza kila sehemu na kuandika majibu katika lugha yako. Haiguzi namba nyeti, na haiwezi kuwasilisha kile chochote kwa ajili yako."
+        },
+        {
+          "title": "Hazina ya Hati",
+          "body": "Hifadhi pasipoti yako, I-94, na EAD katika mahali moja iliyosimba, ambayo ni siri ya mmiliki tu. Faragha, na haiwezi kugawanywa na kutekeleza."
+        },
+        {
+          "title": "Tafuta Msaada",
+          "body": "Kwa kile chochote halali, Wayfinder inakuunganisha na wakili uliyepata leseni au mmwakilishi aliyekubali karibu na wewe. Mtu, si dhani."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Lugha yoyote",
+      "title": "Katika maneno yako, kutoka skrini ya kwanza.",
+      "body": "Chagua lugha yako kabla kujiandikisha, na Wayfinder inasema katika kila mahali, kila hatua ya njia."
+    },
+    "trust": {
+      "badge": "Usalama wako huja kwanza",
+      "title": "Hatuwezi kubadilisha taarifa yako na kutekeleza shambulio la wahamiaji.",
+      "body": "Hati zako zimeandaliwa na faragha ya mmiliki tu. Wayfinder haiwezi kuandika viashiria vya nyeti, haiwezi kuwasilisha fomu, na kila uamuzi halali unafanywa na mtu halisi aliyepata leseni, si na mashine.",
+      "points": [
+        "Andaliwa na siri",
+        "Vyanzo unaweza kuangalia",
+        "Zilizokaguliwa na binadamu"
+      ]
+    },
+    "finalCta": {
+      "title": "Njia yako mbele huanza leo.",
+      "body": "Bila malipo, faragha, na katika lugha yako. Tafuta kile unachostahili katika dakika.",
+      "primary": "Anza bila malipo",
+      "secondary": "Angalia jinsi inavyofanya kazi"
+    },
+    "footer": {
+      "tagline": "Sio ushauri wa kisheria · Daima kuthibitishwa na mtu"
+    },
+    "translating": "Inatafsiri ukurasa…"
+  },
+  "auth": {
+    "createAccount": "Tengeneza akaunti yako",
+    "email": "Anwani ya barua pepe",
+    "password": "Neno la siri",
+    "signUp": "Tengeneza akaunti",
+    "signIn": "Ingia",
+    "haveAccount": "Tayari una akaunti?",
+    "noAccount": "Huna akaunti?",
+    "emailPlaceholder": "yako@barua.com",
+    "passwordPlaceholder": "Chagua neno la siri",
+    "signingUp": "Kutengeneza akaunti…",
+    "signingIn": "Kuingia…"
+  },
+  "onboarding": {
+    "progressLabel": "Hatua {current} ya {total}",
+    "nav": {
+      "next": "Inayofuata",
+      "back": "Nyuma",
+      "confirmContinue": "Thibitisha na endelea",
+      "findBenefits": "Tafuta faida zangu",
+      "saving": "Inakuhifadhi…",
+      "skipNotSure": "Ruka — sijui"
+    },
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Mgeni ajinga",
+        "note": "Kukubaliwa chini ya sehemu 207"
+      },
+      "asylee_208": {
+        "label": "Mgeni wa hifadhi",
+        "note": "Hifadhi iliyotolewa chini ya sehemu 208"
+      },
+      "siv": {
+        "label": "Mdhamini wa Visa Maalum (SIV)",
+        "note": "Mgeni wa Kiafgani au Kiiraki"
+      },
+      "afghan_parolee": {
+        "label": "Mgeni wa humanitari wa Kiafgani"
+      },
+      "ukrainian_parolee": {
+        "label": "Mgeni wa humanitari wa Kiukraini"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Mgeni wa Kikuba au Kihaiti"
+      },
+      "trafficking_victim": {
+        "label": "Mgeni aliyethibitika wa mitumba",
+        "note": "Visa ya T au barua ya ORR"
+      },
+      "amerasian": {
+        "label": "Mgeni wa Kiamerika-Kiasia"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Kadi ya kijani kutoka kwa mgeni ajinga, mgeni wa hifadhi, au hadhi ya humanitari",
+        "note": "Hii inarudisha SNAP na kubadilika kwa Medicaid"
+      },
+      "lpr_other": {
+        "label": "Kadi ya kijani kutoka njia nyingine"
+      },
+      "us_citizen": {
+        "label": "Raia wa Marekani au Taifa la Marekani"
+      },
+      "other_none": {
+        "label": "Nyingine, sijui, au hakuna hizi"
+      }
+    },
+    "language": {
+      "question": "Ni lugha gani unayopendelea?",
+      "hint": "Tutaonyesha kila kitu katika lugha hii."
+    },
+    "scan": {
+      "question": "Una karatasi? Jifoto ili kuokoa muda",
+      "intro": "Jifoto I-94 yako (na leseni yako ya kazi, kadi ya kijani, au barua yako ya hifadhi ikiwa unayo). Tutasoma hadhi yako na tarehe ili usijue kuandika.",
+      "secureLine": "Hati zako zinachakatwa kwa usalama katika sasa na hazipondi kwenye seva zetu au kugawanywa na kutekeleza shambulio la wahamiaji. Tunasoma sehemu chache tu zinazoitajika kuangalia faida zako — haiwezi kuhesabu Nambari yako ya Usalama wa Kijamii au Nambari ya A.",
+      "uploadAriaLabel": "Pakia picha au PDF ya hati zako za wahamiaji",
+      "chooseDifferent": "Chagua picha tofauti",
+      "chooseFile": "Jifoto au chagua faili",
+      "fileTypes": "JPEG, PNG, au PDF · hadi hati 4",
+      "reading": "Inasoma hati zako…",
+      "readDocuments": "Soma hati zangu",
+      "skip": "Sina hati zangu — jibu maswali badala yake",
+      "errorReadFailed": "Hatuwezi kusoma hati yako. Jaribu tena, au ruka na jibu maswali.",
+      "errorUnreachable": "Hatuwezi kufikia kinasoma hati. Jaribu tena, au ruka na jibu maswali."
+    },
+    "confirm": {
+      "question": "Tafadhali angalia kile tulichosoma kutoka kwa hati zako",
+      "intro": "Matokeo ya faida yako yanategemea thamani hizi, kwa hiyo chukua wakati ili kuthiritisha. Gonga sehemu yoyote ili kurekebisha.",
+      "secureLine": "Ilisomwa kwa usalama na haiwezi kuhifadhwa.",
+      "detectedPrefix": "Tuligundua:",
+      "lowConfidence": "Thamani zingine zilikuwa ngumu kusoma (zilizowekwa Tafadhali angalia hapa chini). Tafadhali angalia zile kwanza.",
+      "pleaseCheck": "Tafadhali angalia",
+      "fromDocument": "Kutoka hati yako",
+      "fields": {
+        "immigrationStatus": "Hadhi ya wahamiaji",
+        "selectStatus": "Chagua hadhi yako",
+        "fullName": "Jina kamili",
+        "fullNameHint": "Kwa kumbukumbu zako tu — si kutumiwa kwa haki.",
+        "fullNamePlaceholder": "Jina lako kamili",
+        "dateOfBirth": "Tarehe ya kuzaliwa",
+        "dateOfBirthHint": "Kuweka umri wako kwa ajili ya programu zinazotegemea umri.",
+        "age": "Umri",
+        "countryOfOrigin": "Nchi ya asili",
+        "countryOfOriginHint": "Kwa kumbukumbu zako tu.",
+        "countryPlaceholder": "Nchi",
+        "arrivalDate": "Tarehe ulipoingia Marekani",
+        "eligibilityDate": "Tarehe ya kustahili kwa ORR",
+        "eligibilityDateHint": "Huanza saa ya mihaano ya RCA/RMA.",
+        "statusGrantDate": "Tarehe hadhi iliyotolewa",
+        "statusGrantDateHint": "Tarehe ya kusadikwa kwa mgeni ajinga/hifadhi (saa ya SSI ya miaka 7). Hiari."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Leseni ya kazi (EAD)",
+        "green_card": "Kadi ya kijani",
+        "asylum_letter": "Barua ya hifadhi",
+        "ssn_card": "Kadi ya Usalama wa Kijamii",
+        "other": "hati"
+      }
+    },
+    "status": {
+      "question": "Ni hadhi gani ya wahamiaji sasa?",
+      "hint": "Chagua ile inayolingana zaidi. Hii inabadilisha sheria ya kila kitu karibu kila faida."
+    },
+    "documents": {
+      "question": "Maswali machache ya haraka ya hati",
+      "hint": "Gonga Ndiyo au Hapana. Ni sawa ikiwa huna zingine.",
+      "fromDocsPrefix": "Kutoka hati zako tuliziona",
+      "fromDocsI94": " I-94 yako",
+      "fromDocsAnd": " na",
+      "fromDocsEad": " leseni yako ya kazi (EAD)",
+      "i94Label": "I-94 Kulingana/Kujitokeza",
+      "i94Hint": "Uthibitisho wa kuingizwa. I-94 iliyosimbwa §207 au 'Visa 93' inathibitisha hadhi ya mgeni ajinga.",
+      "eadLabel": "Leseni ya Kazi (kadi ya EAD)",
+      "eadHint": "Hati ya Idhini ya Ajira. Kanuni ya EAD A03 pia inathibitisha hadhi ya mgeni ajinga.",
+      "ssnLabel": "Je! Una Nambari ya Usalama wa Kijamii (SSN)?",
+      "ssnHint": "Tunahitaji kujua tu kama unayo — haiwezi nambari yenyewe."
+    },
+    "orrLetter": {
+      "question": "Je! Una barua ya uthibitisho au haki ya ORR?",
+      "hint": "Wacheza wahamiaji wanahitaji barua hii (si I-94) kufikia faida za ORR kama RCA na RMA."
+    },
+    "eligibilityDate": {
+      "question": "Ni lini msaada wa mgeni ajinga ulianza rasmi?",
+      "hint": "Hii ni tarehe yako ya kustahili kwa ORR — kawaida tarehe yako ya kuwasili au tarehe hadhi yako iliyotolewa, iliyofika baadaye.",
+      "deadlineLabel": "Mihaano muhimu:",
+      "deadlineBody": " Saa ya Msaada wa Pesa ya Wageni Ajinga (RCA) na msaada wa kimatibabu huanza kutoka tarehe hii — omba sasa hivi."
+    },
+    "arrivalDate": {
+      "question": "Ni lini ulijokuja Marekani?",
+      "hint": "Huduma nyingi za ajira na ujumuishaji zimeendesha hadi miaka 5 kutoka tarehe hii."
+    },
+    "statusGrantDate": {
+      "question": "Ni lini ulipokubaliwa hadhi ya mgeni ajinga au hifadhi?",
+      "hint": "Haki ya SSI inaishia miaka 7 kutoka tarehe hii. Acha tupu ikiwa sio uhakika."
+    },
+    "location": {
+      "question": "Je! Unakaa katika taifa gani?",
+      "hint": "Faida na msaada wa ndani yanatofautiana kwa taifa. Jiji na ZIP hiari.",
+      "stateLabel": "Taifa",
+      "selectState": "Chagua taifa lako",
+      "cityLabel": "Jiji (hiari)",
+      "cityPlaceholder": "Jiji",
+      "zipLabel": "Nambari ya ZIP (hiari)",
+      "zipPlaceholder": "Nambari ya ZIP"
+    },
+    "household": {
+      "question": "Tuambie kuhusu kaya yako",
+      "hint": "Majibu haya yanaweka mipaka yako ya mapato. Ni siri.",
+      "ageLabel": "Umri wako",
+      "agePlaceholder": "Umri wako",
+      "ageFromDoc": "Umri wako ({age}) umewekwa kutoka hati yako. Unaweza kuibadilisha kwenye skrini ya uthibitisho.",
+      "sizeLabel": "Watu wangapi wanakaa na wewe, kwa kuhesabu wewe?",
+      "sizePlaceholder": "kwa mfano 3",
+      "incomeLabel": "Pesa kaya yako inapokeleza kila mwezi, kabla kodi (dola za Marekani). Ingiza 0 ikiwa hakuna.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ kila mwezi"
+    },
+    "children": {
+      "question": "Watoto wangapi wanakaa na wewe?",
+      "under19Label": "Watoto wangapi chini ya miaka 19 wanakaa na wewe?",
+      "under19Hint": "Ingiza 0 ikiwa hakuna.",
+      "under18Label": "Kati yao, wangapi wanakaa chini ya miaka 18?",
+      "under5Label": "Kati yao, wangapi wanakaa chini ya miaka 5?",
+      "subsetHint": "Hii ni sehemu ndogo ya nambari hiyo hapo juu."
+    },
+    "pregnantCash": {
+      "question": "Maswali mawili ya haraka kuhusu nyumba yako",
+      "pregnantLabel": "Je! Mtu yeyote katika nyumba yako ana mtoto sasa?",
+      "pregnantHint": "WIC na programu zingine za Medicaid zinaprioritize wanawake wanamtoto.",
+      "cashLabel": "Je! Tayari unapokea msaada wa pesa (TANF, SSI, au msaada wa kawaida)?",
+      "cashHint": "Hii inaathiri haki ya Msaada wa Pesa ya Wageni Ajinga na SNAP."
+    },
+    "special": {
+      "question": "Hali chache maalum",
+      "hint": "Gonga Ndiyo au Hapana kwa kila moja.",
+      "unaccompaniedLabel": "Je! Uko chini ya miaka 18 na Marekani bila mzazi au mtu anayekukamatia?",
+      "unaccompaniedHint": "Kwa ajili ya programu ya Wahamiaji Ajinga wasiosanikiliwa (URM).",
+      "disabledLabel": "Je! Una kasoro kinachokuzuia kazi?",
+      "disabledHint": "Kwa ajili ya SSI na SSDI.",
+      "blindLabel": "Je! Wewe mpofu au unakuwa na macho sana mazuri?",
+      "blindHint": "Jamii maalum ya SSI/SSDI.",
+      "workQuartersLabel": "Je! Wewe au mwenzi au mzazi amesomeka katika Marekani kuhusu miaka 10?",
+      "workQuartersHint": "Mikutano 40 ya kazi inaweza kupita baadhi ya mihaano ya miaka 5 kwa ajili ya SSI na SNAP."
+    },
+    "goals": {
+      "question": "Ni nini unatakaosaidiwaje?",
+      "hint": "Hii inatusaidia kutafuta programu za haki kwa ajili yako.",
+      "employmentLabel": "Je! Unajifanya kazi au anatafuta kazi au mafunzo ya kazi?",
+      "employmentHint": "Huduma za ajira, msaada wa baada ya watoto, Kuzingatia Kikubali.",
+      "businessLabel": "Je! Unataka kuanza au kuwa na biashara yako mwenyewe?",
+      "businessHint": "Maendeleo ya biashara ndogo na Akaunti za Maendeleo ya Mtu (IDA).",
+      "englishLabel": "Je! Ungependa madarasa ya Kiingereza (ESL)? (hiari)",
+      "englishHint": "Mafunzo ya Kiingereza bila malipo kupitia Huduma za Msaada wa Wageni Ajinga.",
+      "interpreterLabel": "Je! Unahitaji mtafsiri au msaada wa tafsiri? (hiari)",
+      "interpreterHint": "Huduma za tafsiri bila malipo zinapatikana kupitia programu za wageni ajinga."
+    },
+    "settingsForm": {
+      "i94Label": "Je! Una I-94 Kulingana/Kujitokeza?",
+      "eadLabel": "Je! Una Leseni ya Kazi (kadi ya EAD)?",
+      "eligibilityDateLabel": "Ni lini msaada wa mgeni ajinga ulianza rasmi? (tarehe ya kustahili kwa ORR)",
+      "arrivalDateLabel": "Ni lini ulijokuja Marekani?",
+      "statusGrantDateLabel": "Ni lini ulipokubaliwa hadhi ya mgeni ajinga au hifadhi? (hiari)"
+    },
+    "errors": {
+      "saveFailed": "Hatuwezi kuhifadhi majibu yako: {message}. Ikiwa hii inaambukiza safu lisilolipwa, haijinga hifadhidata (supabase/migration_v2.sql) bado.",
+      "profileNotFound": "Hatuwezi kupata muhtasari wako ili kuhifadhi majibu yako. Tafadhali toka na uingie tena, kisha jaribu tena.",
+      "profileNotFoundShort": "Hatuwezi kupata muhtasari wako ili kuhifadhi. Tafadhali toka na uingie tena, kisha jaribu tena."
+    }
+  },
+  "processing": {
+    "title": "Inatafuta faida zako…",
+    "subtitle": "Tunakagua majibu yako dhidi ya programu za faida rasmi za Marekani. Kawaida hii inachukua sekunde kuhusu 30.",
+    "step1": "Inakuhamia sheria za faida",
+    "step2": "Inakagua haki yako",
+    "step3": "Inathiritisha matokeo",
+    "step4": "Inarangisha kwa mihaano",
+    "ready": "Mpango wako upo tayari!",
+    "readySubtitle": "Tuligundua faida unaweza kustahili.",
+    "goToDashboard": "Angalia mpango wangu"
+  },
+  "dashboard": {
+    "welcome": "Karibu",
+    "tabs": {
+      "actionPlan": "Mpango Wangu wa Vitendo",
+      "documents": "Hati Zangu",
+      "formHelper": "Msaidizi wa Fomu",
+      "explainer": "Eleza Barua",
+      "findHelp": "Tafuta Msaada",
+      "progress": "Maendeleo Yangu"
+    },
+    "actionPlan": {
+      "title": "Mpango Wako wa Vitendo",
+      "subtitle": "Unaowekwa kulingana na mihaano ya haraka zaidi kwanza.",
+      "rulesChecked": "Sheria za faida zilizokaguliwa kwa mwisho:",
+      "daysLeft": "Siku {days} zimesalia",
+      "urgent": "Haraka — fanya kazi upesi",
+      "deadlinePassed": "Mihaano inaweza kuwa imepita",
+      "noDeadline": "Hakuna mihaano iliyowekwa",
+      "startButton": "Anza",
+      "continueButton": "Endelea",
+      "sourceLink": "Chanzo rasmi",
+      "attorney": "Hii inahitaji wakili au mmwakilishi aliyekubali.",
+      "noResults": "Hakuna faida inayostahili iliyopatikana. Jibu maswali zaidi au wasiliana na shirika la ndani kwa msaada.",
+      "statusBadges": {
+        "likely_eligible": "Kuna uwezekano mkubwa wa kustahili",
+        "maybe_eligible": "Inaweza kustahili",
+        "needs_human_review": "Inahitaji ukaguzi",
+        "not_eligible": "Sio stahili"
+      },
+      "details": "Maelezo",
+      "getFormHelp": "Pata msaada wa fomu",
+      "daysLeftToApply": "Siku {days} zimesalia kuomba",
+      "oneDayLeftToApply": "Siku 1 imesalia kuomba",
+      "deadlinePassedClear": "Mihaano hii imepita",
+      "whatYouNeed": "Kile unachohitaji",
+      "whereHowToApply": "Mahali na jinsi ya kuomba",
+      "requiredDocuments": "Hati inayohitajika",
+      "nextSteps": "Hatua zinazofuata",
+      "applyOnline": "Omba mtandaoni",
+      "formNeeded": "Fomu ili kukamilisha"
+    },
+    "documents": {
+      "title": "Hati Zangu",
+      "subtitle": "Faili zako zimeandaliwa na siri. Hatuwezi kugawanya nao na kutekeleza shambulio la wahamiaji.",
+      "upload": "Pakia hati",
+      "dragDrop": "Buruta na kuangusha faili, au gonga kuichagua",
+      "supportedTypes": "Inayotumika: PDF, JPG, PNG",
+      "extracting": "Inasoma hati…",
+      "noDocuments": "Hakuna hati iliyopakiwa bado.",
+      "deleteConfirm": "Je! Una hakika unataka kufuta hati hii?",
+      "open": "Fungua",
+      "preview": "Angalia hapo",
+      "close": "Funga",
+      "detectedType": "Aina iliyogundulika",
+      "secureLine": "Hati zako zinachakatwa kwa usalama na haiwezi kugawanywa na kutekeleza shambulio la wahamiaji.",
+      "types": {
+        "passport": "Pasipoti",
+        "i-94": "I-94 Kulingana",
+        "ead": "Leseni ya Kazi (EAD)",
+        "birth_certificate": "Cheti cha Kuzaliwa",
+        "status_letter": "Barua ya Hadhi",
+        "other": "Nyingine"
+      }
+    },
+    "formHelper": {
+      "title": "Msaidizi wa Fomu",
+      "subtitle": "Pata msaada wa kuelewa na kujaza fomu. Hatuwezi kujaza SSN yako, Nambari ya A, maelezo ya benki, au nambari ya pasipoti — hizi zimebaki siri.",
+      "pasteInstructions": "Bandika jina la fomu au URL, au eleza kile unachohitaji msaada nalo:",
+      "placeholder": "Mfano: I-765 Idhini ya Ajira, au \"nisaidizie kuwajaza maombi ya Medicaid\"",
+      "ask": "Pata msaada",
+      "sensitiveNote": "Sehemu zilizowekwa [WEWE JAZA] zina maelezo ya nyeti — kamili hizi wewe mwenyewe.",
+      "legalNote": "Fomu hii inahusika na hadhi yako ya wahamiaji. Tafadhali fanya kazi na wakili uliyepata leseni au DOJ-aliyekubali mmwakilishi.",
+      "thinking": "Inasoma fomu…",
+      "uploadFiles": "Pakia faili",
+      "openInFiller": "Fungua katika kijaza fomu",
+      "secureLine": "Hati zako zinachakatwa kwa usalama na haiwezi kugawanywa na kutekeleza shambulio la wahamiaji.",
+      "send": "Tuma",
+      "contextNote": "Wayfinder inatumia maelezo ambayo tayari umesema kujibu kwa ajili ya hali yako.",
+      "suggestionsLabel": "Maswali ya kawaida"
+    },
+    "explainer": {
+      "title": "Eleza Barua au Fomu",
+      "subtitle": "Bandika au pakia barua au hati inayotatanisha. Tutaeleza kwa maneno rahisi.",
+      "pasteLabel": "Bandika maandishi hapa:",
+      "placeholder": "Bandika maandishi ya barua au fomu hapa…",
+      "orUpload": "Au pakia picha au kupiga hati:",
+      "explain": "Eleza hii",
+      "thinking": "Inasoma hati yako…"
+    },
+    "findHelp": {
+      "title": "Tafuta Msaada Karibu na Wewe",
+      "subtitle": "Unganisha na watu wanaweza kusaidia — huduma za uhamisho bila malipo, msaada wa kisheria, na ofisi yako ya taifa ya wageni ajinga.",
+      "resettlement": "Wakala wa Uhamisho",
+      "legalAid": "Msaada wa Kisheria wa Wahamiaji",
+      "stateOffice": "Ofisi ya Taifa ya Wageni Ajinga",
+      "national": "Rasilimali za Kitaifa",
+      "attorneyWarning": "Muhimu: Kwa ajili ya jambo lolote la kisheria linalohusika hadhi yako ya wahamiaji, tu wakili uliyepata leseni au DOJ-aliyekubali mmwakilishi anaweza kukupa ushauri wa kisheria na kukuwakilisha.",
+      "call": "Piga",
+      "visit": "Tembelea tovuti",
+      "noState": "Chagua taifa lako ili kuona mashirika ya ndani."
+    },
+    "progress": {
+      "title": "Maendeleo Yangu",
+      "subtitle": "Fuatilia mahali upo na kila faida.",
+      "statuses": {
+        "not_started": "Haijaimuwa",
+        "in_progress": "Inagenekezwa",
+        "documents_ready": "Hati zipo tayari",
+        "submitted": "Imetolewa",
+        "needs_attorney": "Inahitaji wakili",
+        "done": "Imekamilika"
+      },
+      "updateStatus": "Sasisha hadhi"
+    },
+    "pdf": {
+      "download": "Pakua mpango wangu (PDF)",
+      "generating": "Kutengeneza PDF…"
+    },
+    "dismiss": "Ondoa",
+    "footer": {
+      "privacy": "Taarifa yako imeandaliwa na siri. Hatuwezi kugawanya nao na kutekeleza shambulio la wahamiaji.",
+      "disclaimer": "Wayfinder haitoi ushauri wa kisheria."
+    },
+    "settings": {
+      "title": "Mipangilio",
+      "subtitle": "Badilisha lugha yako au sasisha majibu uliyoyatoa wakati wa kujiandikisha.",
+      "language": "Lugha",
+      "languageHint": "Chagua lugha kwa ajili ya programu nzima. Inasasisha sasa hivi.",
+      "editInfo": "Hariri taarifa zangu",
+      "editInfoHint": "Badilisha majibu uliyoyatoa wakati wa kujiandikisha. Tutakagua faida zako tena.",
+      "recheck": "Kaaguza faida zangu tena",
+      "backToDashboard": "Nyuma kwa dashibodi",
+      "saved": "Kuhifadhwa",
+      "saving": "Inakuhifadhi…"
+    },
+    "formFill": {
+      "title": "Jaza fomu yako",
+      "intro": "Tulijaza kile tunacho jua. Tafadhali kagua kila sehemu kabla kupakua.",
+      "secureLine": "Fomu yako imejazwa katika kivinjari chako na haiwezi kugawanywa na kutekeleza shambulio la wahamiaji.",
+      "autoFilled": "Iliyajazwa kutoka kwa taarifa zako",
+      "missing": "Haikupatikana — tafadhali andika hii",
+      "sensitive": "Nyeti — usigawanye hii nao. Jibu wewe mwenyewe.",
+      "download": "Pakua fomu iliyojazwa",
+      "downloading": "Inaandaa fomu yako…",
+      "reviewAll": "Kagua kila sehemu",
+      "noFields": "Fomu hii haina sanduku linachojazwa. Unaweza kuandika juu ya maeneo yaliyotofautishwa.",
+      "openPrompt": "Fungua fomu ili kujaza",
+      "loading": "Inafungua fomu yako…",
+      "loadError": "Hatuwezi kufungua fomu hii. Tafadhali jaribu faili nyingine.",
+      "uploadHint": "Pakia I-94 yako, leseni ya kazi, au hati nyingine katika Hati ili kujaza fomu hii kwa otomatiki zaidi."
+    }
+  },
+  "errors": {
+    "generic": "Kitu fulani kikaenda vibaya. Tafadhali jaribu tena.",
+    "signIn": "Barua pepe au neno la siri lisilolotea.",
+    "signUp": "Hatuwezi kutengeneza akaunti. Tafadhali jaribu tena.",
+    "eligibility": "Hatuwezi kueneza faida zako. Tafadhali jaribu tena.",
+    "upload": "Pakua likakosa. Tafadhali jaribu faili ndogo zaidi au muundo tofauti.",
+    "required": "Sehemu hii inahitajika."
+  },
+  "common": {
+    "loading": "Inakuhamia…",
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "close": "Funga",
+    "back": "Nyuma",
+    "next": "Inayofuata",
+    "submit": "Wasilisha",
+    "or": "au",
+    "edit": "Hariri",
+    "download": "Pakua",
+    "open": "Fungua",
+    "settings": "Mipangilio",
+    "dismiss": "Ondoa"
+  }
+}

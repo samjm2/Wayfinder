@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "Magparehistro",
+    "signOut": "Mag-logout",
+    "dashboard": "Ang Aking Dashboard",
+    "documents": "Ang Aking Mga Dokumento",
+    "findHelp": "Maghanap ng Tulong",
+    "settings": "Mga Setting"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Paano ito gumagana",
+      "features": "Mga Feature",
+      "languages": "Mga Wika",
+      "signIn": "Magparehistro",
+      "getStarted": "Magsimula"
+    },
+    "hero": {
+      "headline": "Ang bagong tahanan ay nagsisimula sa pag-alam ng iyong daan.",
+      "subheadline": "Ang Wayfinder ay nakahanap ng mga benepisyo at papeles na karapat-dapat mo, inaano lahat sa iyong wika, at gabay ka hakbang sa hakbang, bago dumating ang deadline.",
+      "cardLabel": "Magsimula sa iyong wika",
+      "searchPlaceholder": "Maghanap ng 100+ wika…",
+      "cta": "Magsimula nang libre"
+    },
+    "how": {
+      "eyebrow": "Paano ito gumagana",
+      "title": "Tatlong hakbang mula pagdating hanggang malinaw na plano.",
+      "steps": [
+        {
+          "title": "Ikuwento sa amin ang iyong kuwento",
+          "body": "Sagutin ang ilang simpleng katanungan, isa-isa, sa iyong sariling wika. Malaking titik, simpleng salita, walang bilisan."
+        },
+        {
+          "title": "Hanapin namin kung ano ang akma",
+          "body": "Sinisuri ng Wayfinder ang isang nilikha na database ng U.S. benepisyo at ipinapakita kung saan ka karapat-dapat, kasama ang mga pinagkukunan, hindi hula."
+        },
+        {
+          "title": "Kumilos sa tamang oras",
+          "body": "Makakuha ng plano na inihanda ayon sa deadline, lahat ng form ay napaliwanag at may tunay na tulong malapit kung kailangan mo."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Ang iyong kasama",
+      "title": "Lahat ng kailangan mo, sa isang tahimik na lugar.",
+      "items": [
+        {
+          "title": "Ang Aking Aksyon Plan",
+          "body": "Ang iyong mga benepisyo inihanda ayon sa pinakamabilis na deadline, bawat isa ay may simpleng dahilan kung bakit karapat-dapat ka at countdown para walang makaligtaan."
+        },
+        {
+          "title": "AI Form Assistant",
+          "body": "Inaano ng Wayfinder bawat larangan at gumagawa ng mga sagot sa iyong wika. Hindi ito humahawak ng sensitibong mga numero, at hindi kailanman nagsusumite ng anuman para sa iyo."
+        },
+        {
+          "title": "Document Vault",
+          "body": "Itago ang iyong pasaporte, I-94, at EAD sa isang encrypted, sa-may-ari lamang na lugar. Pribado, at hindi kailanman ibinabahagi sa enforcement."
+        },
+        {
+          "title": "Maghanap ng Tulong",
+          "body": "Para sa anumang legal na bagay, ikonekta ka ng Wayfinder sa isang lisensyadong abogado o awtoridad malapit sa iyo. Isang tao, hindi hula."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Anumang wika",
+      "title": "Sa iyong mga salita, mula sa unang screen pa lamang.",
+      "body": "Piliin ang iyong wika bago ka mag-sign up, at nagsasalita ang Wayfinder nito sa lahat ng lugar, bawat hakbang ng daan."
+    },
+    "trust": {
+      "badge": "Ang iyong kaligtasan ay una",
+      "title": "Hindi kami nagbabahagi ng iyong impormasyon sa immigration enforcement.",
+      "body": "Ang iyong mga dokumento ay encrypted at sa-may-ari lamang. Ang Wayfinder ay hindi kailanman pumuputol ng sensitibong mga pagkakakilanlan, hindi kailanman nagsusumite ng mga form, at bawat legal na desisyon ay ginawa ng isang tunay, lisensyadong tao, hindi ng isang machine.",
+      "points": [
+        "Encrypted at pribado",
+        "Mga pinagkukunan na maaari mong tingnan",
+        "Sinuri ng mga tao"
+      ]
+    },
+    "finalCta": {
+      "title": "Ang iyong daan ay nagsisimula ngayon.",
+      "body": "Libre, pribado, at sa iyong wika. Hanapin ang karapat-dapat mo sa loob ng ilang minuto.",
+      "primary": "Magsimula nang libre",
+      "secondary": "Tingnan kung paano ito gumagana"
+    },
+    "footer": {
+      "tagline": "Hindi legal na payo · Laging kumpirmado ng isang tao"
+    },
+    "translating": "Isinasalin ang pahina…"
+  },
+  "auth": {
+    "createAccount": "Lumikha ng iyong account",
+    "email": "Email address",
+    "password": "Password",
+    "signUp": "Lumikha ng account",
+    "signIn": "Magparehistro",
+    "haveAccount": "Mayroon na bang account?",
+    "noAccount": "Walang account?",
+    "emailPlaceholder": "iyong@email.com",
+    "passwordPlaceholder": "Pumili ng password",
+    "signingUp": "Lumilikha ng account...",
+    "signingIn": "Nagpaparehistro..."
+  },
+  "onboarding": {
+    "progressLabel": "Hakbang {current} ng {total}",
+    "nav": {
+      "next": "Susunod",
+      "back": "Bumalik",
+      "confirmContinue": "Kumpirmahin at magpatuloy",
+      "findBenefits": "Hanapin ang aking mga benepisyo",
+      "saving": "Sinasave...",
+      "skipNotSure": "Laktawan — hindi ako sigurado"
+    },
+    "yes": "Oo",
+    "no": "Hindi",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Refugee",
+        "note": "Tinanggap sa ilalim ng seksyon 207"
+      },
+      "asylee_208": {
+        "label": "Asylee",
+        "note": "Asylum na ibinigay sa ilalim ng seksyon 208"
+      },
+      "siv": {
+        "label": "Special Immigrant Visa (SIV) holder",
+        "note": "Afghan o Iraqi"
+      },
+      "afghan_parolee": {
+        "label": "Afghan humanitarian parolee"
+      },
+      "ukrainian_parolee": {
+        "label": "Ukrainian humanitarian parolee"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Cuban o Haitian entrant"
+      },
+      "trafficking_victim": {
+        "label": "Certified na biktima ng trafficking",
+        "note": "T-visa o ORR letter"
+      },
+      "amerasian": {
+        "label": "Amerasian immigrant"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Green card mula sa refugee, asylee, o humanitarian status",
+        "note": "Ito ay nagbabalik ng SNAP at Medicaid eligibility"
+      },
+      "lpr_other": {
+        "label": "Green card mula sa ibang daan"
+      },
+      "us_citizen": {
+        "label": "U.S. Citizen o U.S. National"
+      },
+      "other_none": {
+        "label": "Iba, hindi sigurado, o walang ito"
+      }
+    },
+    "language": {
+      "question": "Aling wika ang gusto mo?",
+      "hint": "Ipinapakita namin ang lahat sa wikang ito."
+    },
+    "scan": {
+      "question": "Mayroon ka bang mga papel? Kumuha ng larawan upang makatipid ng oras",
+      "intro": "I-snap ang larawan ng iyong I-94 (at ang iyong work permit, green card, o asylum letter kung mayroon ka). Babasa kami ng iyong status at mga petsa para hindi mo na kailangang i-type ang mga ito.",
+      "secureLine": "Ang iyong mga dokumento ay ginagawa nang secure sa sandaling iyon at hindi kailanman sinasave sa aming mga server o ibinabahagi sa immigration enforcement. Binabasa lang namin ang iilan na larangan na kailangan upang suriin ang iyong mga benepisyo — hindi kailanman ang iyong Social Security number o A-Number.",
+      "uploadAriaLabel": "I-upload ang isang larawan o PDF ng iyong immigration documents",
+      "chooseDifferent": "Pumili ng iba pang mga larawan",
+      "chooseFile": "Kumuha ng larawan o pumili ng isang file",
+      "fileTypes": "JPEG, PNG, o PDF · hanggang 4 na mga dokumento",
+      "reading": "Binabasa ang iyong mga dokumento…",
+      "readDocuments": "Basahin ang aking mga dokumento",
+      "skip": "Walang aking mga dokumento — sagutin ang mga katanungan sa halip",
+      "errorReadFailed": "Hindi namin mababasa ang iyong dokumento. Subukan muli, o laktawan at sagutin ang mga katanungan.",
+      "errorUnreachable": "Hindi namin maaabot ang document reader. Subukan muli, o laktawan at sagutin ang mga katanungan."
+    },
+    "confirm": {
+      "question": "Pakisuri ang nabasa namin sa iyong mga dokumento",
+      "intro": "Ang iyong resulta ng benepisyo ay nakasalalay sa mga halaga na ito, kaya kumuha ng ilang sandali upang kumpirmahin ang mga ito. I-tap ang anumang larangan upang ayusin ito.",
+      "secureLine": "Nabasa nang secure at hindi sinave.",
+      "detectedPrefix": "Natuklasan namin:",
+      "lowConfidence": "Ang ilang mga halaga ay mahirap basahin (minarkahan Pakisuri sa ibaba). Pakisuri muna ang mga iyon.",
+      "pleaseCheck": "Pakisuri",
+      "fromDocument": "Mula sa iyong dokumento",
+      "fields": {
+        "immigrationStatus": "Immigration status",
+        "selectStatus": "Piliin ang iyong status",
+        "fullName": "Buong pangalan",
+        "fullNameHint": "Para sa iyong mga record lamang — hindi ginagamit para sa eligibility.",
+        "fullNamePlaceholder": "Ang iyong buong pangalan",
+        "dateOfBirth": "Araw ng kapanganakan",
+        "dateOfBirthHint": "Nagtakda ng iyong edad para sa edad-based na mga programa.",
+        "age": "Edad",
+        "countryOfOrigin": "Bansa ng pinagmulan",
+        "countryOfOriginHint": "Para sa iyong mga record lamang.",
+        "countryPlaceholder": "Bansa",
+        "arrivalDate": "Araw na dumating ka sa U.S.",
+        "eligibilityDate": "ORR eligibility date",
+        "eligibilityDateHint": "Nagsisimula ng RCA/RMA deadline clock.",
+        "statusGrantDate": "Araw na ibigay ang status",
+        "statusGrantDateHint": "Refugee/asylee grant date (SSI 7-taong orasan). Opsyonal."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Work permit (EAD)",
+        "green_card": "Green card",
+        "asylum_letter": "Asylum letter",
+        "ssn_card": "Social Security card",
+        "other": "dokumento"
+      }
+    },
+    "status": {
+      "question": "Ano ang iyong immigration status ngayon?",
+      "hint": "Pumili ng isa na umaayon sa iyo nang mahusay. Ito ay bumubuo ng halos bawat benepisyo rule."
+    },
+    "documents": {
+      "question": "Ilang mabilis na document na katanungan",
+      "hint": "I-tap ang Oo o Hindi. Okay kung wala kang ilan.",
+      "fromDocsPrefix": "Mula sa iyong mga dokumento napansin namin",
+      "fromDocsI94": " ang iyong I-94",
+      "fromDocsAnd": " at",
+      "fromDocsEad": " ang iyong work permit (EAD)",
+      "i94Label": "I-94 Arrival/Departure Record",
+      "i94Hint": "Patunay ng entry. Ang I-94 na may code §207 o 'Visa 93' ay napatunayan ang refugee status.",
+      "eadLabel": "Work Permit (EAD card)",
+      "eadHint": "Employment Authorization Document. Ang EAD code A03 ay nagpapatunay din ng refugee status.",
+      "ssnLabel": "Mayroon ka bang Social Security Number (SSN)?",
+      "ssnHint": "Kailangan lang naming malaman kung mayroon ka ng isa — hindi kailanman ang numero mismo."
+    },
+    "orrLetter": {
+      "question": "Mayroon ka bang ORR certification o eligibility letter?",
+      "hint": "Kailangan ng trafficking victims ang sulat na ito (hindi I-94) upang maaccess ang ORR benefits tulad ng RCA at RMA."
+    },
+    "eligibilityDate": {
+      "question": "Kailan nagsimula ang iyong refugee tulong nang opisyal?",
+      "hint": "Ito ang iyong ORR eligibility date — karaniwang ang iyong araw ng pagdating o ang araw na ibigay ang iyong status, alin man ang mas huli.",
+      "deadlineLabel": "Mahalagang deadline:",
+      "deadlineBody": " Ang orasan para sa Refugee Cash Assistance (RCA) at medical assistance ay nagsisimula mula sa petsa na ito — mag-apply kaagad."
+    },
+    "arrivalDate": {
+      "question": "Kailan ka dumating sa United States?",
+      "hint": "Karamihan ng employment at integration services ay tumatakbo hanggang 5 taon mula sa petsa na ito."
+    },
+    "statusGrantDate": {
+      "question": "Kailan ka na-grant ng refugee o asylee status?",
+      "hint": "Ang SSI eligibility ay nagtatapos 7 taon mula sa petsa na ito. Iwanan ang blangko kung hindi ka sigurado."
+    },
+    "location": {
+      "question": "Alin ang estado kung saan ka nakatira?",
+      "hint": "Ang mga benepisyo at lokal na tulong ay nag-iiba depende sa estado. Ang lungsod at ZIP ay opsyonal.",
+      "stateLabel": "Estado",
+      "selectState": "Piliin ang iyong estado",
+      "cityLabel": "Lungsod (opsyonal)",
+      "cityPlaceholder": "Lungsod",
+      "zipLabel": "ZIP code (opsyonal)",
+      "zipPlaceholder": "ZIP code"
+    },
+    "household": {
+      "question": "Sabihin sa amin tungkol sa iyong tahanan",
+      "hint": "Ang mga sagot na ito ay nagtakda ng iyong income limits. Sila ay pribado.",
+      "ageLabel": "Ang iyong edad",
+      "agePlaceholder": "Ang iyong edad",
+      "ageFromDoc": "Ang iyong edad ({age}) ay itinakda mula sa iyong dokumento. Maaari mong baguhin ito sa confirmation screen.",
+      "sizeLabel": "Ilang tao ang nakatira sa iyo, kasama ka?",
+      "sizePlaceholder": "hal. 3",
+      "incomeLabel": "Pera na nakukuha ng iyong tahanan bawat buwan, bago mga buwis (US dollars). I-enter ang 0 kung walang.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ buwwan"
+    },
+    "children": {
+      "question": "Ilang mga bata ang nakatira sa iyo?",
+      "under19Label": "Ilang mga bata sa ilalim ng 19 ang nakatira sa iyo?",
+      "under19Hint": "I-enter ang 0 kung walang.",
+      "under18Label": "Ng mga iyon, ilang ang sa ilalim ng 18?",
+      "under5Label": "Ng mga iyon, ilang ang sa ilalim ng 5?",
+      "subsetHint": "Ito ay isang mas maliit na bahagi ng numero sa itaas."
+    },
+    "pregnantCash": {
+      "question": "Dalawang mabilis na katanungan tungkol sa iyong tahanan",
+      "pregnantLabel": "Mayroon ba sa iyong tahanan na buntis ngayon?",
+      "pregnantHint": "Ang WIC at ilang Medicaid programa ay nagbibigay-priyoridad sa mga babaeng buntis.",
+      "cashLabel": "Mayroon ka na bang cash tulong (TANF, SSI, o pangalawang tulong)?",
+      "cashHint": "Ito ay nakakaapekto sa eligibility para sa Refugee Cash Assistance at SNAP."
+    },
+    "special": {
+      "question": "Ilang espesyal na sitwasyon",
+      "hint": "I-tap ang Oo o Hindi para sa bawat isa.",
+      "unaccompaniedLabel": "Nasa ilalim ka ba ng 18 at nasa U.S. nang walang magulang o tagapangalaga?",
+      "unaccompaniedHint": "Para sa Unaccompanied Refugee Minors (URM) programa.",
+      "disabledLabel": "Mayroon ka ba ng disability na limitahan ang iyong trabaho?",
+      "disabledHint": "Para sa SSI at SSDI.",
+      "blindLabel": "Ikaw ba ay bulag o may napakaikling paningin?",
+      "blindHint": "Isang espesyal na SSI/SSDI kategorya.",
+      "workQuartersLabel": "Ikaw o isang asawa o magulang ba ay nagtrabaho sa U.S. mga 10 taon?",
+      "workQuartersHint": "40 work credits ay maaaring bypass ang ilang 5-taong bar para sa SSI at SNAP."
+    },
+    "goals": {
+      "question": "Ano ang gusto mo ng tulong dito?",
+      "hint": "Ito ay tumutulong sa amin na hanapin ang tamang mga programa para sa iyo.",
+      "employmentLabel": "Ikaw ba ay gumagana o naghahanap ng trabaho o job training?",
+      "employmentHint": "Employment services, childcare support, Matching Grant.",
+      "businessLabel": "Gusto mo ba na magsimula o lumaki ng iyong sariling negosyo?",
+      "businessHint": "Microenterprise development at Individual Development Accounts (IDA).",
+      "englishLabel": "Gusto mo ba ng English (ESL) na mga klase? (opsyonal)",
+      "englishHint": "Libreng pagsasanay sa wikang Ingles sa pamamagitan ng Refugee Support Services.",
+      "interpreterLabel": "Kailangan mo ba ng interpreter o translation tulong? (opsyonal)",
+      "interpreterHint": "Libre ang interpretation services sa pamamagitan ng refugee programs."
+    },
+    "settingsForm": {
+      "i94Label": "Mayroon ka bang I-94 Arrival/Departure Record?",
+      "eadLabel": "Mayroon ka bang Work Permit (EAD card)?",
+      "eligibilityDateLabel": "Kailan nagsimula ang iyong refugee tulong nang opisyal? (ORR eligibility date)",
+      "arrivalDateLabel": "Kailan ka dumating sa United States?",
+      "statusGrantDateLabel": "Kailan ka na-grant ng refugee o asylee status? (opsyonal)"
+    },
+    "errors": {
+      "saveFailed": "Hindi namin masave ang iyong mga sagot: {message}. Kung ito ay nagsasabing kulang ang haligi, ang database migration (supabase/migration_v2.sql) ay hindi pa naisama.",
+      "profileNotFound": "Hindi namin mahanap ang iyong profile upang i-save ang iyong mga sagot. Mangyaring mag-logout at bumalik, pagkatapos ay subukan muli.",
+      "profileNotFoundShort": "Hindi namin mahanap ang iyong profile upang i-save. Mangyaring mag-logout at bumalik, pagkatapos ay subukan muli."
+    }
+  },
+  "processing": {
+    "title": "Hinahanap ang iyong mga benepisyo...",
+    "subtitle": "Sinusuri namin ang iyong mga sagot laban sa mga opisyal na U.S. benefit na programa. Ito ay karaniwang tumatagal ng tungkol sa 30 segundo.",
+    "step1": "Naglo-load ng benefit rules",
+    "step2": "Sinusuri ang iyong eligibility",
+    "step3": "Nag-verify ng resulta",
+    "step4": "Inihahanda ayon sa deadline",
+    "ready": "Handa na ang iyong plano!",
+    "readySubtitle": "Nahanap namin ang mga benepisyo na maaari kang maging karapat-dapat.",
+    "goToDashboard": "Tingnan ang aking plano"
+  },
+  "dashboard": {
+    "welcome": "Maligayang pagdating",
+    "tabs": {
+      "actionPlan": "Ang Aking Aksyon Plan",
+      "documents": "Ang Aking Mga Dokumento",
+      "formHelper": "Form Assistant",
+      "explainer": "Ipaliwanag ang Isang Sulat",
+      "findHelp": "Maghanap ng Tulong",
+      "progress": "Ang Aking Pag-unlad"
+    },
+    "actionPlan": {
+      "title": "Ang Iyong Aksyon Plan",
+      "subtitle": "Inihanda ayon sa pinakaurgenteng deadline una.",
+      "rulesChecked": "Benefit rules na huling nag-verify:",
+      "daysLeft": "{days} araw na natitira",
+      "urgent": "Urgent — kumilos na",
+      "deadlinePassed": "Ang deadline ay maaaring lumipas",
+      "noDeadline": "Walang nakaayos na deadline",
+      "startButton": "Magsimula",
+      "continueButton": "Magpatuloy",
+      "sourceLink": "Opisyal na pinagkukunan",
+      "attorney": "Ito ay nangangailangan ng isang abogado o awtoridad.",
+      "noResults": "Walang karapat-dapat na benepisyo na nahanap. Sagutin ang marami pang mga katanungan o makipag-ugnayan sa isang lokal na organisasyon para sa tulong.",
+      "statusBadges": {
+        "likely_eligible": "Malamang na karapat-dapat",
+        "maybe_eligible": "Maaaring karapat-dapat",
+        "needs_human_review": "Kailangan ng pagsusuri",
+        "not_eligible": "Hindi karapat-dapat"
+      },
+      "details": "Mga Detalye",
+      "getFormHelp": "Makakuha ng form tulong",
+      "daysLeftToApply": "{days} araw na natitira upang mag-apply",
+      "oneDayLeftToApply": "1 araw na natitira upang mag-apply",
+      "deadlinePassedClear": "Ang deadline na ito ay lumipas",
+      "whatYouNeed": "Ano ang kailangan mo",
+      "whereHowToApply": "Kung saan at paano mag-apply",
+      "requiredDocuments": "Kailangan na mga dokumento",
+      "nextSteps": "Susunod na hakbang",
+      "applyOnline": "Mag-apply online",
+      "formNeeded": "Form na makumpleto"
+    },
+    "documents": {
+      "title": "Ang Aking Mga Dokumento",
+      "subtitle": "Ang iyong mga file ay encrypted at pribado. Hindi kami nagbabahagi ng mga ito sa immigration enforcement.",
+      "upload": "I-upload ang isang dokumento",
+      "dragDrop": "I-drag at i-drop ang isang file, o i-click upang pumili",
+      "supportedTypes": "Sinusuportahan: PDF, JPG, PNG",
+      "extracting": "Binabasa ang dokumento...",
+      "noDocuments": "Walang naka-upload na mga dokumento pa.",
+      "deleteConfirm": "Sigurado ka na gusto mong burahin ang dokumentong ito?",
+      "open": "Buksan",
+      "preview": "Paunang tanaw",
+      "close": "Isara",
+      "detectedType": "Natuklasang uri",
+      "secureLine": "Ang iyong mga dokumento ay prosesado nang secure at hindi kailanman ibinabahagi sa immigration enforcement.",
+      "types": {
+        "passport": "Pasaporte",
+        "i-94": "I-94 Arrival Record",
+        "ead": "Work Permit (EAD)",
+        "birth_certificate": "Birth Certificate",
+        "status_letter": "Status Letter",
+        "other": "Iba"
+      }
+    },
+    "formHelper": {
+      "title": "Form Assistant",
+      "subtitle": "Kunin ang tulong sa pag-unawa at pag-puno ng isang form. Hindi kami pumuputol ng iyong SSN, A-number, bank details, o passport number — ang mga ito ay nanatiling pribado.",
+      "pasteInstructions": "I-paste ang pangalan ng form o URL, o ilarawan kung ano ang kailangan mo ng tulong:",
+      "placeholder": "Halimbawa: I-765 Employment Authorization, o \"tulungan ako na puno ang isang Medicaid application\"",
+      "ask": "Kunin ang tulong",
+      "sensitiveNote": "Ang mga larangan na minarkahan [IKAW ANG PUNO] ay naglalaman ng sensitibong impormasyon — kumpleto ang mga ito nang iyong sarili.",
+      "legalNote": "Ang form na ito ay may kakaibang kaugnayan sa iyong immigration status. Mangyaring magtrabaho kasama ang isang lisensyadong abogado o DOJ-awtoridad.",
+      "thinking": "Binabasa ang form...",
+      "uploadFiles": "I-upload ang mga file",
+      "openInFiller": "Buksan sa form filler",
+      "secureLine": "Ang iyong mga dokumento ay prosesado nang secure at hindi kailanman ibinabahagi sa immigration enforcement.",
+      "send": "Magpadala",
+      "contextNote": "Gumagamit ang Wayfinder ng impormasyon na mayroon ka na upang sagutin para sa iyong sitwasyon.",
+      "suggestionsLabel": "Mga karaniwang katanungan"
+    },
+    "explainer": {
+      "title": "Ipaliwanag ang isang Sulat o Form",
+      "subtitle": "I-paste o i-upload ang isang nakakaubos na sulat o dokumento. Ipaliwanag namin ito sa simpleng wika.",
+      "pasteLabel": "I-paste ang teksto dito:",
+      "placeholder": "I-paste ang sulat o form teksto dito...",
+      "orUpload": "O i-upload ang isang larawan o scan ng dokumento:",
+      "explain": "Ipaliwanag ito",
+      "thinking": "Binabasa ang iyong dokumento..."
+    },
+    "findHelp": {
+      "title": "Maghanap ng Tulong Malapit Sa Iyo",
+      "subtitle": "Kumonekta sa mga taong makakatulong — libreng resettlement services, legal aid, at ang iyong state refugee office.",
+      "resettlement": "Resettlement Agencies",
+      "legalAid": "Immigration Legal Aid",
+      "stateOffice": "State Refugee Office",
+      "national": "National Resources",
+      "attorneyWarning": "Mahalaga: Para sa anumang legal na bagay na may kakaibang kaugnayan sa iyong immigration status, ang isang lisensyadong abogado o DOJ-awtoridad lamang ang maaaring magbigay ng legal advice at kumatawan sa iyo.",
+      "call": "Tumawag",
+      "visit": "Bisitahin ang website",
+      "noState": "Piliin ang iyong estado upang makita ang mga lokal na organisasyon."
+    },
+    "progress": {
+      "title": "Ang Aking Pag-unlad",
+      "subtitle": "Subaybayan kung nasaan ka kasama ng bawat benepisyo.",
+      "statuses": {
+        "not_started": "Hindi nagsimula",
+        "in_progress": "Sa progreso",
+        "documents_ready": "Mga dokumento ay handa",
+        "submitted": "Naipadala",
+        "needs_attorney": "Kailangan ng abogado",
+        "done": "Tapos"
+      },
+      "updateStatus": "I-update ang status"
+    },
+    "pdf": {
+      "download": "I-download ang aking plano (PDF)",
+      "generating": "Lumilikha ng PDF..."
+    },
+    "dismiss": "Pasalamatan",
+    "footer": {
+      "privacy": "Ang iyong impormasyon ay encrypted at pribado. Hindi kami kailanman nagbabahagi nito sa immigration enforcement.",
+      "disclaimer": "Hindi nagbibigay ng legal advice ang Wayfinder."
+    },
+    "settings": {
+      "title": "Mga Setting",
+      "subtitle": "Baguhin ang iyong wika o i-update ang mga sagot na ibinigay mo sa panahon ng sign-up.",
+      "language": "Wika",
+      "languageHint": "Pumili ng wika para sa buong app. Ito ay nag-update kaagad.",
+      "editInfo": "I-edit ang aking impormasyon",
+      "editInfoHint": "Baguhin ang mga sagot na ibinigay mo sa panahon ng sign-up. Susuriin namin ang iyong mga benepisyo muli.",
+      "recheck": "Muling suriin ang aking mga benepisyo",
+      "backToDashboard": "Bumalik sa dashboard",
+      "saved": "Naisave",
+      "saving": "Sinasave..."
+    },
+    "formFill": {
+      "title": "Punan ang iyong form",
+      "intro": "Pinuno namin ang alam na namin. Pakisuri ang bawat larangan bago ka mag-download.",
+      "secureLine": "Ang iyong form ay napuno sa iyong browser at hindi kailanman ibinabahagi sa immigration enforcement.",
+      "autoFilled": "Napuno mula sa iyong impormasyon",
+      "missing": "Kulang — mangyaring i-type ito",
+      "sensitive": "Sensitibo — huwag ibahagi ito sa amin. I-enter ito nang iyong sarili.",
+      "download": "I-download ang napunong form",
+      "downloading": "Inihahanda ang iyong form...",
+      "reviewAll": "Suriin ang bawat larangan",
+      "noFields": "Ang form na ito ay walang fillable boxes. Maaari kang mag-type sa mga naka-highlight na lugar.",
+      "openPrompt": "Buksan ang isang form upang mapuno",
+      "loading": "Binubuksan ang iyong form...",
+      "loadError": "Hindi namin mabuksan ang form na ito. Subukan ang iba pang file.",
+      "uploadHint": "I-upload ang iyong I-94, work permit, o iba pang dokumento sa Mga Dokumento upang maging awtomatiko ang puno ng maraming bahagi ng form na ito."
+    }
+  },
+  "errors": {
+    "generic": "May nangyari na nagkamali. Subukan ulit.",
+    "signIn": "Maling email o password.",
+    "signUp": "Hindi makagawa ng account. Subukan ulit.",
+    "eligibility": "Hindi maload ang iyong mga benepisyo. Subukan ulit.",
+    "upload": "Nabigong i-upload. Subukan ang mas maliit na file o ibang format.",
+    "required": "Kailangan ng larangan na ito."
+  },
+  "common": {
+    "loading": "Naglo-load...",
+    "yes": "Oo",
+    "no": "Hindi",
+    "save": "I-save",
+    "cancel": "Kanselahin",
+    "close": "Isara",
+    "back": "Bumalik",
+    "next": "Susunod",
+    "submit": "Ipadala",
+    "or": "o",
+    "edit": "I-edit",
+    "download": "I-download",
+    "open": "Buksan",
+    "settings": "Mga Setting",
+    "dismiss": "Pasalamatan"
+  }
+}

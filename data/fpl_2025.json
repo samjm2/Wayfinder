@@ -1,0 +1,27 @@
+{
+  "_note": "2025 HHS Federal Poverty Level guidelines — 48 contiguous states + DC. Alaska and Hawaii have higher thresholds (not yet in this table; fall back to these values).",
+  "_source": "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines",
+  "_year": 2025,
+  "annual_by_household_size": {
+    "1": 15650,
+    "2": 21150,
+    "3": 26650,
+    "4": 32150,
+    "5": 37650,
+    "6": 43150,
+    "7": 48650,
+    "8": 54150
+  },
+  "each_additional_person": 5500,
+  "monthly_by_household_size": {
+    "1": 1304,
+    "2": 1763,
+    "3": 2221,
+    "4": 2679,
+    "5": 3138,
+    "6": 3596,
+    "7": 4054,
+    "8": 4513
+  },
+  "monthly_each_additional": 458
+}

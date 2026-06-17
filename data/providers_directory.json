@@ -1,0 +1,406 @@
+{
+  "_note": "Keyed by U.S. state abbreviation. Each entry has resettlement agencies, legal aid, and state refugee office. Falls back to national resources if state not listed.",
+  "national": {
+    "resources": [
+      {
+        "name": "Immigration Advocates Network (IAN) — Find Legal Help",
+        "type": "legal_aid",
+        "description": "National directory of free and low-cost immigration legal aid organizations by state and city.",
+        "website": "https://www.immigrationadvocates.org/nonprofit/legaldirectory/",
+        "phone": null
+      },
+      {
+        "name": "211 — Local Health and Human Services",
+        "type": "general",
+        "description": "Call or text 211 to find local food, housing, health, and refugee services in any U.S. state.",
+        "website": "https://www.211.org",
+        "phone": "211"
+      },
+      {
+        "name": "immi.org — Free Immigration Help",
+        "type": "legal_aid",
+        "description": "Free immigration legal help and resources. Includes attorney matching.",
+        "website": "https://www.immi.org",
+        "phone": null
+      },
+      {
+        "name": "Office of Refugee Resettlement (ORR) — State Contacts",
+        "type": "government",
+        "description": "Federal agency overseeing refugee resettlement. Find your state refugee coordinator.",
+        "website": "https://www.acf.hhs.gov/orr/state-programs-annual-overview",
+        "phone": null
+      },
+      {
+        "name": "Refugee Processing Center",
+        "type": "government",
+        "description": "Information on the U.S. refugee admissions program.",
+        "website": "https://www.wrapsnet.org",
+        "phone": null
+      },
+      {
+        "name": "National Immigration Law Center (NILC)",
+        "type": "legal_aid",
+        "description": "Policy and legal resources on immigrant rights and benefits eligibility.",
+        "website": "https://www.nilc.org",
+        "phone": null
+      }
+    ]
+  },
+  "CA": {
+    "stateRefugeeOffice": {
+      "name": "California Department of Social Services — Refugee Programs Bureau",
+      "website": "https://www.cdss.ca.gov/refugee-programs",
+      "phone": "916-651-8848"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "International Rescue Committee (IRC) — Los Angeles",
+        "website": "https://www.rescue.org/united-states/los-angeles-ca",
+        "phone": "213-386-6700",
+        "cities": ["Los Angeles"]
+      },
+      {
+        "name": "IRC — San Diego",
+        "website": "https://www.rescue.org/united-states/san-diego-ca",
+        "phone": "619-641-7510",
+        "cities": ["San Diego"]
+      },
+      {
+        "name": "IRC — Sacramento",
+        "website": "https://www.rescue.org/united-states/sacramento-ca",
+        "phone": "916-433-3600",
+        "cities": ["Sacramento"]
+      },
+      {
+        "name": "Catholic Charities of San Francisco",
+        "website": "https://www.ccsf.org/en/our-services/immigration-and-refugee-services.html",
+        "phone": "415-972-1200",
+        "cities": ["San Francisco", "Bay Area"]
+      },
+      {
+        "name": "Jewish Family Service of Los Angeles",
+        "website": "https://www.jfsla.org/services/new-americans/",
+        "phone": "323-937-5900",
+        "cities": ["Los Angeles"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Public Counsel — Immigrants' Rights Project",
+        "website": "https://www.publiccounsel.org/practices?id=0004",
+        "phone": "213-385-2977",
+        "cities": ["Los Angeles"]
+      },
+      {
+        "name": "Bay Area Legal Aid — Immigrant Program",
+        "website": "https://baylegal.org/get-help/immigration/",
+        "phone": "415-982-1300",
+        "cities": ["San Francisco", "Bay Area"]
+      },
+      {
+        "name": "CLINIC — Catholic Legal Immigration Network",
+        "website": "https://cliniclegal.org/find-help",
+        "phone": null,
+        "cities": ["Statewide"]
+      }
+    ]
+  },
+  "TX": {
+    "stateRefugeeOffice": {
+      "name": "Texas Health and Human Services — Refugee Services",
+      "website": "https://www.hhs.texas.gov/providers/health-services-providers/refugee-health-program",
+      "phone": "512-438-3011"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "IRC — Dallas",
+        "website": "https://www.rescue.org/united-states/dallas-tx",
+        "phone": "214-855-0870",
+        "cities": ["Dallas"]
+      },
+      {
+        "name": "Refugee Services of Texas (RST) — Austin",
+        "website": "https://www.rst.org",
+        "phone": "512-499-8402",
+        "cities": ["Austin"]
+      },
+      {
+        "name": "Catholic Charities of Houston",
+        "website": "https://catholiccharities.org/what-we-do/immigration-and-refugee-services/",
+        "phone": "713-526-4611",
+        "cities": ["Houston"]
+      },
+      {
+        "name": "YMCA International Services — Houston",
+        "website": "https://www.ymcahouston.org/international-services",
+        "phone": "713-339-9015",
+        "cities": ["Houston"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Raices Texas",
+        "website": "https://www.raicestexas.org",
+        "phone": "210-222-0964",
+        "cities": ["San Antonio", "Dallas", "Houston"]
+      },
+      {
+        "name": "Texas RioGrande Legal Aid (TRLA)",
+        "website": "https://www.trla.org",
+        "phone": "888-988-9996",
+        "cities": ["South Texas", "West Texas"]
+      }
+    ]
+  },
+  "NY": {
+    "stateRefugeeOffice": {
+      "name": "New York State Office of Temporary and Disability Assistance — Refugee Assistance Program",
+      "website": "https://otda.ny.gov/programs/refugee-assistance/",
+      "phone": "518-474-9321"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "IRC — New York City",
+        "website": "https://www.rescue.org/united-states/new-york-ny",
+        "phone": "212-551-3000",
+        "cities": ["New York City"]
+      },
+      {
+        "name": "HIAS New York",
+        "website": "https://hias.org",
+        "phone": "212-967-4100",
+        "cities": ["New York City"]
+      },
+      {
+        "name": "Catholic Charities of New York",
+        "website": "https://www.catholiccharitiesny.org/immigration",
+        "phone": "212-371-1000",
+        "cities": ["New York City"]
+      },
+      {
+        "name": "Journey's End Refugee Services — Buffalo",
+        "website": "https://www.jersbuffalo.org",
+        "phone": "716-882-4963",
+        "cities": ["Buffalo"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Legal Aid Society — Immigration Law Unit",
+        "website": "https://legalaidnyc.org/programs-projects-units/immigration-law-unit/",
+        "phone": "212-577-3300",
+        "cities": ["New York City"]
+      },
+      {
+        "name": "New York Legal Assistance Group (NYLAG)",
+        "website": "https://nylag.org/what-we-do/immigration/",
+        "phone": "212-613-5000",
+        "cities": ["New York City"]
+      }
+    ]
+  },
+  "FL": {
+    "stateRefugeeOffice": {
+      "name": "Florida Department of Children and Families — Refugee Services Program",
+      "website": "https://www.myflfamilies.com/service-programs/refugee-services",
+      "phone": "850-922-4691"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "Church World Service — Miami",
+        "website": "https://cwsglobal.org/find-an-office/miami-fl/",
+        "phone": "786-369-5100",
+        "cities": ["Miami"]
+      },
+      {
+        "name": "Catholic Charities of the Archdiocese of Miami",
+        "website": "https://www.ccadm.org/immigration",
+        "phone": "305-754-2444",
+        "cities": ["Miami"]
+      },
+      {
+        "name": "Lutheran Services Florida — Tampa",
+        "website": "https://www.lsfnet.org/refugee-services/",
+        "phone": "813-875-2819",
+        "cities": ["Tampa"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Americans for Immigrant Justice (AIJ)",
+        "website": "https://aijustice.org",
+        "phone": "305-573-1106",
+        "cities": ["Miami", "Statewide"]
+      },
+      {
+        "name": "Florida Immigrant Coalition",
+        "website": "https://floridaimmigrant.org/find-help/",
+        "phone": null,
+        "cities": ["Statewide"]
+      }
+    ]
+  },
+  "MN": {
+    "stateRefugeeOffice": {
+      "name": "Minnesota Department of Human Services — Refugee Services",
+      "website": "https://mn.gov/dhs/partners-and-providers/program-overviews/adult-mental-health/refugee-health/",
+      "phone": "651-431-3809"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "International Institute of Minnesota",
+        "website": "https://iimn.org",
+        "phone": "651-647-0191",
+        "cities": ["Minneapolis", "Saint Paul"]
+      },
+      {
+        "name": "Lutheran Social Service of Minnesota — Refugee & Immigration Services",
+        "website": "https://www.lssmn.org/services/refugees",
+        "phone": "651-999-1300",
+        "cities": ["Minneapolis", "Saint Paul"]
+      },
+      {
+        "name": "Catholic Charities of St. Paul and Minneapolis",
+        "website": "https://www.cctwincities.org/programs/refugee-and-immigrant-services/",
+        "phone": "651-222-3001",
+        "cities": ["Minneapolis", "Saint Paul"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Volunteer Lawyers Network — Immigration",
+        "website": "https://www.vlnmn.org",
+        "phone": "612-752-6677",
+        "cities": ["Minneapolis", "Saint Paul"]
+      },
+      {
+        "name": "Mid-Minnesota Legal Aid — Immigration",
+        "website": "https://mylegalaid.org",
+        "phone": "612-334-5970",
+        "cities": ["Minneapolis"]
+      }
+    ]
+  },
+  "WA": {
+    "stateRefugeeOffice": {
+      "name": "Washington State Office of Refugee and Immigrant Assistance (ORIA)",
+      "website": "https://www.dshs.wa.gov/esa/community-services-division/office-refugee-and-immigrant-assistance",
+      "phone": "360-664-5888"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "IRC — Seattle",
+        "website": "https://www.rescue.org/united-states/seattle-wa",
+        "phone": "206-623-2105",
+        "cities": ["Seattle"]
+      },
+      {
+        "name": "World Relief Seattle",
+        "website": "https://worldrelief.org/seattle/",
+        "phone": "206-343-1016",
+        "cities": ["Seattle"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Northwest Immigrant Rights Project (NWIRP)",
+        "website": "https://www.nwirp.org",
+        "phone": "206-587-4009",
+        "cities": ["Seattle", "Statewide"]
+      }
+    ]
+  },
+  "IL": {
+    "stateRefugeeOffice": {
+      "name": "Illinois Department of Human Services — Bureau of Refugee and Immigrant Services",
+      "website": "https://www.dhs.state.il.us/page.aspx?item=30363",
+      "phone": "312-793-7080"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "Heartland Alliance — Refugee and Immigrant Services",
+        "website": "https://www.heartlandalliance.org/immigration/",
+        "phone": "312-660-1300",
+        "cities": ["Chicago"]
+      },
+      {
+        "name": "World Relief Chicago",
+        "website": "https://worldrelief.org/chicago/",
+        "phone": "847-965-0150",
+        "cities": ["Chicago"]
+      },
+      {
+        "name": "Catholic Charities of Chicago",
+        "website": "https://www.catholiccharities.net/GetHelp/OurServices/ImmigrantRefugeeServices.aspx",
+        "phone": "312-655-7000",
+        "cities": ["Chicago"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "National Immigrant Justice Center (NIJC)",
+        "website": "https://immigrantjustice.org",
+        "phone": "312-660-1370",
+        "cities": ["Chicago", "Statewide"]
+      }
+    ]
+  },
+  "GA": {
+    "stateRefugeeOffice": {
+      "name": "Georgia Department of Human Services — Refugee Resettlement Program",
+      "website": "https://dfcs.georgia.gov/programs/refugee-services",
+      "phone": "404-657-3433"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "IRC — Atlanta",
+        "website": "https://www.rescue.org/united-states/atlanta-ga",
+        "phone": "678-636-0990",
+        "cities": ["Atlanta"]
+      },
+      {
+        "name": "New American Pathways",
+        "website": "https://www.newamericanpathways.org",
+        "phone": "404-299-6099",
+        "cities": ["Atlanta"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Georgia Legal Services Program — Immigration",
+        "website": "https://www.glsp.org",
+        "phone": "404-524-5811",
+        "cities": ["Atlanta", "Statewide"]
+      }
+    ]
+  },
+  "OH": {
+    "stateRefugeeOffice": {
+      "name": "Ohio Department of Job and Family Services — Refugee Services",
+      "website": "https://jfs.ohio.gov/ocomm/pdf/Refugee-Services-Program-Overview.pdf",
+      "phone": "614-466-4815"
+    },
+    "resettlementAgencies": [
+      {
+        "name": "Catholic Charities Diocese of Cleveland",
+        "website": "https://www.ccdocle.org/refugee-immigration-services",
+        "phone": "216-334-2900",
+        "cities": ["Cleveland"]
+      },
+      {
+        "name": "US Together — Columbus",
+        "website": "https://www.ustogether.us",
+        "phone": "614-946-9590",
+        "cities": ["Columbus"]
+      }
+    ],
+    "legalAid": [
+      {
+        "name": "Ohio State Legal Services — Immigration",
+        "website": "https://www.ohiolegalservices.org",
+        "phone": "614-222-0034",
+        "cities": ["Columbus", "Statewide"]
+      }
+    ]
+  }
+}

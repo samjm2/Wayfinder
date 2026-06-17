@@ -1,0 +1,508 @@
+{
+  "nav": {
+    "signIn": "Konekte",
+    "signOut": "Dekonekte",
+    "dashboard": "Tablewo Mwen",
+    "documents": "Dokiman Mwen",
+    "findHelp": "Jwenn Èd",
+    "settings": "Paramèt"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Kouman li travay",
+      "features": "Karakteristik",
+      "languages": "Lang",
+      "signIn": "Konekte",
+      "getStarted": "Kòmanse"
+    },
+    "hero": {
+      "headline": "Yon kay nouvo kòmanse lè ou konnen chemen ou.",
+      "subheadline": "Wayfinder jwenn avantaj ak dokiman ou ka jwenn, eksplike tou sa nan lang ou, epi gide ou etap pa etap, anvan delè yo pase.",
+      "cardLabel": "Kòmanse nan lang ou",
+      "searchPlaceholder": "Chèche 100+ lang…",
+      "cta": "Kòmanse gratis"
+    },
+    "how": {
+      "eyebrow": "Kouman li travay",
+      "title": "Twa etap depi ou rive rive nan yon plan klè.",
+      "steps": [
+        {
+          "title": "Di nou istwa ou",
+          "body": "Reponn kèk kesyon senp, youn apre youn, nan lang ou. Gwo tèks, mo senp, pa gen presyon."
+        },
+        {
+          "title": "Nou jwenn ki sa ki bon pou ou",
+          "body": "Wayfinder verifye yon baz done règ avantaj Ameriken epi montre egzakteman sa ou ka jwenn, avèk sous, pa gen devinèt."
+        },
+        {
+          "title": "Aji a tan",
+          "body": "Jwenn yon plan klase pa delè, avèk chak fòm eksplike epi èd yon moun reyèl tou pre lè sa enpòtan."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Konpayi ou",
+      "title": "Tou sa ou bezwen, nan yon sèl plas ki kalm.",
+      "items": [
+        {
+          "title": "Plan Aksyon Mwen",
+          "body": "Avantaj ou klase pa delè ki plis prèse, chak avèk yon rezon nan lang senp poukisa ou ka jwenn li epi yon konptaj desann pou anyen pa dwe yo bliye."
+        },
+        {
+          "title": "Asistan Fòm AI",
+          "body": "Wayfinder eksplike chak kaz epi desen reponn nan lang ou. Li pa janm tache nimewo sansib, epi li pa janm voye anyen pou ou."
+        },
+        {
+          "title": "Depo Dokiman",
+          "body": "Konsève paspo ou, I-94, epi EAD ou nan yon sèl plas chifre, jis pou pwòpriyetè a. Prive, epi pa janm pataje avèk fòs la."
+        },
+        {
+          "title": "Jwenn Èd",
+          "body": "Pou nenpòt sa legal, Wayfinder konekte ou avèk yon avoka ki pèmèt oswa yon reprezantan akredite tou pre ou. Yon moun, pa yon devinèt."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Nenpòt lang",
+      "title": "Nan mo ou yo, depi premye ekran.",
+      "body": "Chwazi lang ou anvan ou siyen, epi Wayfinder pale li patou, chak etap sou chak etap."
+    },
+    "trust": {
+      "badge": "Sekirite ou vini an premye",
+      "title": "Nou pa janm pataje enfòmasyon ou avèk fòs imigrasyon.",
+      "body": "Dokiman ou yo chifre epi jis pou pwòpriyetè a. Wayfinder pa janm ranpli idantifyan sansib, pa janm voye fòm, epi chak desizyon legal se yon moun reyèl, ki pèmèt, ki fè li, pa yon machin.",
+      "points": [
+        "Chifre & prive",
+        "Sous ou ka verifye",
+        "Revize pa moun"
+      ]
+    },
+    "finalCta": {
+      "title": "Chemen ou an devan kòmanse jodi a.",
+      "body": "Gratis, prive, epi nan lang ou. Jwenn sa ou ka jwenn an kèk minit.",
+      "primary": "Kòmanse gratis",
+      "secondary": "Gade kouman li travay"
+    },
+    "footer": {
+      "tagline": "Pa konsey legal · Toujou konfirme pa yon moun"
+    },
+    "translating": "Ap tradwi paj la…"
+  },
+  "auth": {
+    "createAccount": "Kreye kont ou",
+    "email": "Adrès imel",
+    "password": "Modpas",
+    "signUp": "Kreye kont",
+    "signIn": "Konekte",
+    "haveAccount": "Ou gen deja yon kont?",
+    "noAccount": "Ou pa gen kont?",
+    "emailPlaceholder": "ou@imel.com",
+    "passwordPlaceholder": "Chwazi yon modpas",
+    "signingUp": "Ap kreye kont...",
+    "signingIn": "Ap konekte..."
+  },
+  "onboarding": {
+    "progressLabel": "Etap {current} sou {total}",
+    "nav": {
+      "next": "Suivant",
+      "back": "Retou",
+      "confirmContinue": "Konfime epi kontinye",
+      "findBenefits": "Jwenn avantaj mwen",
+      "saving": "Ap save...",
+      "skipNotSure": "Vlope — mwen pa sèten"
+    },
+    "yes": "Wi",
+    "no": "Non",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Refijye",
+        "note": "Admis anba seksyon 207"
+      },
+      "asylee_208": {
+        "label": "Asile",
+        "note": "Asi grante anba seksyon 208"
+      },
+      "siv": {
+        "label": "Detantan Visa Imigran Espesyal (SIV)",
+        "note": "Afgan oswa Irakyen"
+      },
+      "afghan_parolee": {
+        "label": "Pawolit imanitè Afgan"
+      },
+      "ukrainian_parolee": {
+        "label": "Pawolit imanitè Ikrenyen"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Antran Kiben oswa Ayisyen"
+      },
+      "trafficking_victim": {
+        "label": "Viktim sètifye trafik",
+        "note": "T-visa oswa lèt ORR"
+      },
+      "amerasian": {
+        "label": "Imigran Amerazyen"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Kat vè depi refijye, asile, oswa estati imanitè",
+        "note": "Sa a restorit SNAP epi eligibilite Medicaid"
+      },
+      "lpr_other": {
+        "label": "Kat vè depi yon lot chemen"
+      },
+      "us_citizen": {
+        "label": "Sitwayen Ameriken oswa Nasyonal Ameriken"
+      },
+      "other_none": {
+        "label": "Lòt, pa sèten, oswa okenn nan sa yo"
+      }
+    },
+    "language": {
+      "question": "Ki lang ou prefere?",
+      "hint": "Nou va montre tou sa nan lang sa a."
+    },
+    "scan": {
+      "question": "Ou gen papye ou? Pran yon foto pou sove tan",
+      "intro": "Pran foto I-94 ou (epi pèmi travay ou, kat vè, oswa lèt asi ou si ou gen yo). Nou va li estati ou epi dat yo pou ou pa bezwen tape yo.",
+      "secureLine": "Dokiman ou yo trete sekireman nan moman an epi yo pa janm save sou sèvè nou oswa pataje avèk fòs imigrasyon. Nou lis jis kèk kaz ou bezwen pou verifye avantaj ou — pa nimewo Sosyal Sekirite ou oswa Nimewo A ou.",
+      "uploadAriaLabel": "Telechaje foto oswa PDF dokiman imigrasyon ou",
+      "chooseDifferent": "Chwazi foto diferan",
+      "chooseFile": "Pran yon foto oswa chwazi yon dosye",
+      "fileTypes": "JPEG, PNG, oswa PDF · jiska 4 dokiman",
+      "reading": "Ap li dokiman ou…",
+      "readDocuments": "Li dokiman mwen",
+      "skip": "Mwen pa gen dokiman mwen — reponn kesyon pito",
+      "errorReadFailed": "Nou pa ka li dokiman ou. Eseye ankò, oswa vlope epi reponn kesyon yo.",
+      "errorUnreachable": "Nou pa ka rive nan lizè dokiman. Eseye ankò, oswa vlope epi reponn kesyon yo."
+    },
+    "confirm": {
+      "question": "Tanpri verifye sa nou li depi dokiman ou",
+      "intro": "Rezilta avantaj ou depann sou valè sa yo, donk pran yon moman pou konfime yo. Tape nenpòt kaz pou fèl li.",
+      "secureLine": "Li sekireman epi pa save.",
+      "detectedPrefix": "Nou detekte:",
+      "lowConfidence": "Gen kèk valè ki te difisil pou li (mak Tanpri verifye anba). Tanpri double-check sa yo premye.",
+      "pleaseCheck": "Tanpri verifye",
+      "fromDocument": "Depi dokiman ou",
+      "fields": {
+        "immigrationStatus": "Estati imigrasyon",
+        "selectStatus": "Chwazi estati ou",
+        "fullName": "Non konplè",
+        "fullNameHint": "Pou dosye ou sèlman — pa itilize pou eligibilite.",
+        "fullNamePlaceholder": "Non konplè ou",
+        "dateOfBirth": "Dat nesans",
+        "dateOfBirthHint": "Mete laj ou pou pwogram ki baze sou laj.",
+        "age": "Laj",
+        "countryOfOrigin": "Peyi orijin",
+        "countryOfOriginHint": "Pou dosye ou sèlman.",
+        "countryPlaceholder": "Peyi",
+        "arrivalDate": "Dat ou rive nan Etazini",
+        "eligibilityDate": "Dat eligibilite ORR",
+        "eligibilityDateHint": "Kòmanse relorloj delè RCA/RMA.",
+        "statusGrantDate": "Dat estati a te grante",
+        "statusGrantDateHint": "Dat granti refijye/asile (relorloj 7-ane SSI). Opsyonèl."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Pèmi travay (EAD)",
+        "green_card": "Kat vè",
+        "asylum_letter": "Lèt asi",
+        "ssn_card": "Kat Sosyal Sekirite",
+        "other": "dokiman"
+      }
+    },
+    "status": {
+      "question": "Ki estati imigrasyon ou genyen kounye a?",
+      "hint": "Chwazi youn ki pi bon pou ou. Sa forme pwèske chak règ avantaj."
+    },
+    "documents": {
+      "question": "Kèk kesyon vit sou dokiman",
+      "hint": "Tape Wi oswa Non. Se normal si ou pa gen kèk.",
+      "fromDocsPrefix": "Depi dokiman nou note",
+      "fromDocsI94": " I-94 ou",
+      "fromDocsAnd": " epi",
+      "fromDocsEad": " pèmi travay ou (EAD)",
+      "i94Label": "Dosye Arive/Deplase I-94",
+      "i94Hint": "Prèv antre. Yon I-94 kode §207 oswa 'Visa 93' pwouve estati refijye.",
+      "eadLabel": "Pèmi Travay (kat EAD)",
+      "eadHint": "Dokiman Otorizasyon Travay. Kòd EAD A03 tou pwouve estati refijye.",
+      "ssnLabel": "Ou gen yon Nimewo Sosyal Sekirite (SSN)?",
+      "ssnHint": "Nou jis bezwen konnen si ou gen youn — pa nimewo a li-menm."
+    },
+    "orrLetter": {
+      "question": "Ou gen yon lèt sètifikasyon oswa eligibilite ORR?",
+      "hint": "Viktim trafik bezwen lèt sa a (pa yon I-94) pou jwenn avantaj ORR tankou RCA epi RMA."
+    },
+    "eligibilityDate": {
+      "question": "Kilè èd refijye ou te sifisyèlman kòmanse?",
+      "hint": "Sa se dat eligibilite ORR ou — nòmalman dat arive ou oswa dat estati grante ou, kichèl ki pi ta."
+    },
+    "arrivalDate": {
+      "question": "Kilè ou te vini Etazini?",
+      "hint": "Pifò sèvis travay epi entegrasyon kouri pou 5 ane depi dat sa a."
+    },
+    "statusGrantDate": {
+      "question": "Kilè ou te grante estati refijye oswa asile?",
+      "hint": "Eligibilite SSI fini 7 ane depi dat sa a. Kite blank si ou pa sèten."
+    },
+    "location": {
+      "question": "Ki leta ou rete?",
+      "hint": "Avantaj epi èd lokal varye pa leta. Vil epi ZIP opsyonèl.",
+      "stateLabel": "Leta",
+      "selectState": "Chwazi leta ou",
+      "cityLabel": "Vil (opsyonèl)",
+      "cityPlaceholder": "Vil",
+      "zipLabel": "Kòd ZIP (opsyonèl)",
+      "zipPlaceholder": "Kòd ZIP"
+    },
+    "household": {
+      "question": "Di nou sou fanmi ou",
+      "hint": "Reponn sa yo mete limit revni ou. Yo prive.",
+      "ageLabel": "Laj ou",
+      "agePlaceholder": "Laj ou",
+      "ageFromDoc": "Laj ou ({age}) mete depi dokiman ou. Ou ka chanje li sou ekran konfimyon.",
+      "sizeLabel": "Konbyen moun rete avèk ou, konte ou?",
+      "sizePlaceholder": "egzanp. 3",
+      "incomeLabel": "Lajan fanmi ou resevwa chak mwa, anvan taks (dola ameriken). Antre 0 si pa gen.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ mwa"
+    },
+    "children": {
+      "question": "Konbyen timoun rete avèk ou?",
+      "under19Label": "Konbyen timoun anba 19 rete avèk ou?",
+      "under19Hint": "Antre 0 si pa gen.",
+      "under18Label": "Nan sa yo, konbyen anba 18?",
+      "under5Label": "Nan sa yo, konbyen anba 5?",
+      "subsetHint": "Sa se yon pi piti pati nimewo anwo a."
+    },
+    "pregnantCash": {
+      "question": "De kesyon vit sou kay ou",
+      "pregnantLabel": "Eske nenpèn nan kay ou ansent kounye a?",
+      "pregnantHint": "WIC epi kèk pwogram Medicaid bay men priorite fanm ansent.",
+      "cashLabel": "Ou deja resevwa èd lajan (TANF, SSI, oswa asistans jeneral)?",
+      "cashHint": "Sa a afekte eligibilite pou Asistans Lajan Refijye epi SNAP."
+    },
+    "special": {
+      "question": "Kèk situasyon espesyal",
+      "hint": "Tape Wi oswa Non pou chak.",
+      "unaccompaniedLabel": "Ou anba 18 epi nan Etazini san paran oswa gadyen?",
+      "unaccompaniedHint": "Pou pwogram Refijye Menò San Akompanyman (URM).",
+      "disabledLabel": "Ou gen yon enfimite ki limite travay ou?",
+      "disabledHint": "Pou SSI epi SSDI.",
+      "blindLabel": "Ou avèg oswa gen vizyon trè limite?",
+      "blindHint": "Yon kategori espesyal SSI/SSDI.",
+      "workQuartersLabel": "Ou oswa konj ou oswa paran ou te travay nan Etazini vèsan 10 ane?",
+      "workQuartersHint": "40 kredi travay ka evite kèk ba 5-ane pou SSI epi SNAP."
+    },
+    "goals": {
+      "question": "Ki sa ou ta renmen èd avèk?",
+      "hint": "Sa ede nou jwenn bon pwogram pou ou.",
+      "employmentLabel": "Ou ap travay oswa chèche travay oswa antrenman travay?",
+      "employmentHint": "Sèvis travay, sipò gardri, Matching Grant.",
+      "businessLabel": "Ou vle kòmanse oswa fè gwo pwòp biznis ou?",
+      "businessHint": "Devlopman microentrepriz epi Kont Devlopman Endivyidwèl (IDA).",
+      "englishLabel": "Ou ta renmen klas Anglè (ESL)? (opsyonèl)",
+      "englishHint": "Antrenman lang anglè gratis atravè Sèvis Sipò Refijye.",
+      "interpreterLabel": "Ou bezwen yon entèprèt oswa èd tradwi? (opsyonèl)",
+      "interpreterHint": "Sèvis entèpretasyon gratis disponib atravè pwogram refijye."
+    },
+    "settingsForm": {
+      "i94Label": "Ou gen yon Dosye Arive/Deplase I-94?",
+      "eadLabel": "Ou gen yon Pèmi Travay (kat EAD)?",
+      "eligibilityDateLabel": "Kilè èd refijye ou te sifisyèlman kòmanse? (dat eligibilite ORR)",
+      "arrivalDateLabel": "Kilè ou te vini Etazini?",
+      "statusGrantDateLabel": "Kilè ou te grante estati refijye oswa asile? (opsyonèl)"
+    },
+    "errors": {
+      "saveFailed": "Nou pa ka save reponn ou: {message}. Si sa fè mansyon yon kolòn ki mank, migrasyon baz done (supabase/migration_v2.sql) pa dwe aplike ankò.",
+      "profileNotFound": "Nou pa ka jwenn pwofil ou pou save reponn ou. Tanpri dekonekte epi konekte ankò, apre eseye ankò.",
+      "profileNotFoundShort": "Nou pa ka jwenn pwofil ou pou save. Tanpri dekonekte epi konekte ankò, apre eseye ankò."
+    }
+  },
+  "processing": {
+    "title": "Ap chèche avantaj ou…",
+    "subtitle": "Nou ap revize reponn ou kont pwogram avantaj Ameriken ofisyèl. Sa nòmalman pran sou 30 segonn.",
+    "step1": "Ap chaje règ avantaj",
+    "step2": "Ap verifye eligibilite ou",
+    "step3": "Ap konfime rezilta",
+    "step4": "Ap klase pa delè",
+    "ready": "Plan ou pre!",
+    "readySubtitle": "Nou jwenn avantaj ou ka jwenn.",
+    "goToDashboard": "Gade plan mwen"
+  },
+  "dashboard": {
+    "welcome": "Byenveni",
+    "tabs": {
+      "actionPlan": "Plan Aksyon Mwen",
+      "documents": "Dokiman Mwen",
+      "formHelper": "Asistan Fòm",
+      "explainer": "Eksplike yon Lèt",
+      "findHelp": "Jwenn Èd",
+      "progress": "Pwogre Mwen"
+    },
+    "actionPlan": {
+      "title": "Plan Aksyon Ou",
+      "subtitle": "Klase pa delè ki pi ijan premye.",
+      "rulesChecked": "Règ avantaj dènye verifye:",
+      "daysLeft": "{days} jou ki rete",
+      "urgent": "Ijan — aji vit",
+      "deadlinePassed": "Delè ka dwe pase",
+      "noDeadline": "Pa gen delè fiks",
+      "startButton": "Kòmanse",
+      "continueButton": "Kontinye",
+      "sourceLink": "Sous ofisyèl",
+      "attorney": "Sa egzije yon avoka oswa reprezentan akredite.",
+      "noResults": "Pa jwenn avantaj eligible. Reponn plis kesyon oswa kontak yon òganizasyon lokal pou èd.",
+      "statusBadges": {
+        "likely_eligible": "Pwobab eligible",
+        "maybe_eligible": "Ka eligible",
+        "needs_human_review": "Bezwen revizyon",
+        "not_eligible": "Pa eligible"
+      },
+      "details": "Detay",
+      "getFormHelp": "Jwenn èd fòm",
+      "daysLeftToApply": "{days} jou pou aplike",
+      "oneDayLeftToApply": "1 jou pou aplike",
+      "deadlinePassedClear": "Delè sa a pase",
+      "whatYouNeed": "Sa ou bezwen",
+      "whereHowToApply": "Kote epi kouman pou aplike",
+      "requiredDocuments": "Dokiman nesesè",
+      "nextSteps": "Etap pwochen",
+      "applyOnline": "Aplike online",
+      "formNeeded": "Fòm pou ranpli"
+    },
+    "documents": {
+      "title": "Dokiman Mwen",
+      "subtitle": "Dosye ou yo chifre epi prive. Nou pa janm pataje yo avèk fòs imigrasyon.",
+      "upload": "Telechaje yon dokiman",
+      "dragDrop": "Tren epi lage yon dosye, oswa klik pou chwazi",
+      "supportedTypes": "Sipòte: PDF, JPG, PNG",
+      "extracting": "Ap li dokiman…",
+      "noDocuments": "Okenn dokiman telechaje ankò.",
+      "deleteConfirm": "Eske ou sèten ou vle efase dokiman sa a?",
+      "open": "Louvri",
+      "preview": "Gade",
+      "close": "Fèmen",
+      "detectedType": "Tip detekte",
+      "secureLine": "Dokiman ou yo trete sekireman epi pa janm pataje avèk fòs imigrasyon.",
+      "types": {
+        "passport": "Paspo",
+        "i-94": "Dosye Arive I-94",
+        "ead": "Pèmi Travay (EAD)",
+        "birth_certificate": "Sètifika Nesans",
+        "status_letter": "Lèt Estati",
+        "other": "Lòt"
+      }
+    },
+    "formHelper": {
+      "title": "Asistan Fòm",
+      "subtitle": "Jwenn èd konprann epi ranpli yon fòm. Nou pa janm ranpli SSN ou, A-nimewo ou, detay bank ou, oswa nimewo paspo ou — yo rete prive.",
+      "pasteInstructions": "Mete non fòm oswa URL, oswa dekri sa ou bezwen èd avèk:",
+      "placeholder": "Egzanp: Otorisasyon Travay I-765, oswa \"èd mwen ranpli aplikasyon Medicaid\"",
+      "ask": "Jwenn èd",
+      "sensitiveNote": "Kaz make [OU RANPLI] genyen enfòmasyon sansib — ranpli sa yo tèt ou.",
+      "legalNote": "Fòm sa a enplike estati imigrasyon ou. Tanpri travay avèk yon avoka ki pèmèt oswa yon reprezentan akredite DOJ.",
+      "thinking": "Ap li fòm…",
+      "uploadFiles": "Telechaje dosye",
+      "openInFiller": "Louvri nan ranplisè fòm",
+      "secureLine": "Dokiman ou yo trete sekireman epi pa janm pataje avèk fòs imigrasyon.",
+      "send": "Voye",
+      "contextNote": "Wayfinder itilize enfòmasyon ou te deja bay pou reponn pou sitiyasyon ou.",
+      "suggestionsLabel": "Kesyon kòman yo"
+    },
+    "explainer": {
+      "title": "Eksplike yon Lèt oswa Fòm",
+      "subtitle": "Mete oswa telechaje yon lèt oswa dokiman ki konfoze. Nou va eksplike li nan lang senp.",
+      "pasteLabel": "Mete tèks la isit:",
+      "placeholder": "Mete tèks lèt oswa fòm la isit…",
+      "orUpload": "Oswa telechaje yon foto oswa iskan dokiman:",
+      "explain": "Eksplike sa a",
+      "thinking": "Ap li dokiman ou…"
+    },
+    "findHelp": {
+      "title": "Jwenn Èd Tou Pre Ou",
+      "subtitle": "Konekte avèk moun ki ka ede — sèvis resèt gratis, èd legal, epi biwo estati refijye eta ou.",
+      "resettlement": "Ajans Resèt",
+      "legalAid": "Èd Legal Imigrasyon",
+      "stateOffice": "Biwo Estati Refijye",
+      "national": "Resous Nasyonal",
+      "attorneyWarning": "Enpòtan: Pou nenpòt afè legal ki enplike estati imigrasyon ou, jis yon avoka ki pèmèt oswa yon reprezentan akredite DOJ ka ba ou konsey legal epi reprezante ou.",
+      "call": "Rele",
+      "visit": "Vizite sit entènèt",
+      "noState": "Chwazi leta ou pou wè òganizasyon lokal."
+    },
+    "progress": {
+      "title": "Pwogre Mwen",
+      "subtitle": "Swiv kote ou ye avèk chak avantaj.",
+      "statuses": {
+        "not_started": "Pa kòmanse",
+        "in_progress": "An pwogre",
+        "documents_ready": "Dokiman pre",
+        "submitted": "Soumis",
+        "needs_attorney": "Bezwen avoka",
+        "done": "Fè"
+      },
+      "updateStatus": "Mete jou estati"
+    },
+    "pdf": {
+      "download": "Telechaje plan mwen (PDF)",
+      "generating": "Ap jenere PDF…"
+    },
+    "dismiss": "Refe",
+    "footer": {
+      "privacy": "Enfòmasyon ou yo chifre epi prive. Nou pa janm pataje avèk fòs imigrasyon.",
+      "disclaimer": "Wayfinder pa bay konsey legal."
+    },
+    "settings": {
+      "title": "Paramèt",
+      "subtitle": "Chanje lang ou oswa mete jou reponn ou te bay pandan siyen.",
+      "language": "Lang",
+      "languageHint": "Chwazi lang pou tout aplikasyon. Li mete jou sa a.",
+      "editInfo": "Edite enfòmasyon mwen",
+      "editInfoHint": "Chanje reponn ou te bay pandan siyen. Nou va verifye avantaj ou ankò.",
+      "recheck": "Reverifye avantaj mwen",
+      "backToDashboard": "Retou nan tablewo",
+      "saved": "Save",
+      "saving": "Ap save…"
+    },
+    "formFill": {
+      "title": "Ranpli fòm ou",
+      "intro": "Nou ranpli sa nou deja konnen. Tanpli revize chak kaz anvan ou telechaje.",
+      "secureLine": "Fòm ou ranpli nan navigatè ou epi pa janm pataje avèk fòs imigrasyon.",
+      "autoFilled": "Ranpli depi enfòmasyon ou",
+      "missing": "Mank — tanpli tape sa a",
+      "sensitive": "Sansib — pa pataje avèk nou. Antre li tèt ou.",
+      "download": "Telechaje fòm ranpli",
+      "downloading": "Ap prepare fòm ou…",
+      "reviewAll": "Revize chak kaz",
+      "noFields": "Fòm sa pa gen kaz pou ranpli. Ou ka tape sou kaz yo make yo.",
+      "openPrompt": "Louvri yon fòm pou ranpli",
+      "loading": "Ap louvri fòm ou…",
+      "loadError": "Nou pa ka louvri fòm sa. Tanpli eseye yon lòt dosye.",
+      "uploadHint": "Telechaje I-94 ou, pèmi travay, oswa lòt dokiman nan Dokiman pou ranpli plis fòm sa otomatikman."
+    }
+  },
+  "errors": {
+    "generic": "Yon bagay pa bon. Tanpli eseye ankò.",
+    "signIn": "Imel oswa modpas pa kòrèk.",
+    "signUp": "Pa ka kreye kont. Tanpli eseye ankò.",
+    "eligibility": "Pa ka chaje avantaj ou. Tanpli eseye ankò.",
+    "upload": "Telechaj echwe. Tanpli eseye yon dosye pi piti oswa diferan fòma.",
+    "required": "Kaz sa obligatwa."
+  },
+  "common": {
+    "loading": "Ap chaje…",
+    "yes": "Wi",
+    "no": "Non",
+    "save": "Save",
+    "cancel": "Anile",
+    "close": "Fèmen",
+    "back": "Retou",
+    "next": "Suivant",
+    "submit": "Soumèt",
+    "or": "oswa",
+    "edit": "Edite",
+    "download": "Telechaje",
+    "open": "Louvri",
+    "settings": "Paramèt",
+    "dismiss": "Refe"
+  }
+}

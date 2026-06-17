@@ -1,0 +1,508 @@
+{
+  "nav": {
+    "signIn": "Shiga",
+    "signOut": "Fita",
+    "dashboard": "Dasaborin Nawa",
+    "documents": "Takardan Nawa",
+    "findHelp": "Nemo Taimakon",
+    "settings": "Saitunan"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Yadda ake aiki",
+      "features": "Abubuwan",
+      "languages": "Harsuna",
+      "signIn": "Shiga",
+      "getStarted": "Fara"
+    },
+    "hero": {
+      "headline": "Sabon gida yana farawa da sanin tuni.",
+      "subheadline": "Wayfinder yana neman abubuwan taimakon da kuka cancanta, yayi ma'ana a harshensa, kuma yana gabatarwa mataki-mataki, kafin lokaci ya wuce.",
+      "cardLabel": "Fara a harshinka",
+      "searchPlaceholder": "Nema harsuna 100+…",
+      "cta": "Fara bure"
+    },
+    "how": {
+      "eyebrow": "Yadda ake aiki",
+      "title": "Mataki uku daga iso zuwa shawara.",
+      "steps": [
+        {
+          "title": "Ka gida domin mu san labarika",
+          "body": "Amsa wasu tambaye masu saukit, ɗaya-ɗaya, a harshinka. Manyan rubutu, saukin sauki, babu gaggawa."
+        },
+        {
+          "title": "Mu nemo abin da ya dace",
+          "body": "Wayfinder yana bincika maye-maye abubuwan taimakon Amurka da yana nuna abin da ka cancanta jiya, tare da tushen, ba tsikici ba."
+        },
+        {
+          "title": "Aiki a lokaci",
+          "body": "Ka sami shawara da aka rangama da dako, tare da bayani na kowane takarda da gida gaida sa tumanin iko kusa."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Abokin bide",
+      "title": "Komai da kake bukatar, a wuri gida.",
+      "items": [
+        {
+          "title": "Shawara na Aiki Nawa",
+          "body": "Abubuwan taimakon nawa da aka rangama da kofar dako kari, kowannensu tare da dalilin sarili haushi ka cancanta da kirja dago lokaci."
+        },
+        {
+          "title": "AI Gida Taimakon Takarda",
+          "body": "Wayfinder yana bayani kowane fili kuma yana tsara amsa a harshinka. Kai ba ya taɓa hannu lamarin sirri ba, kuma kai ba ya taɓa ikirau komai ba."
+        },
+        {
+          "title": "Akwatin Takarada",
+          "body": "Ajiye pasipota, I-94, da EAD a wuri gida na gida. Sirri, kuma kai ba a taɓa karata tare ba."
+        },
+        {
+          "title": "Nemo Taimakon",
+          "body": "Don abin kariya, Wayfinder yana tabbatar ka zuwa kariya mai-laisini ko kuma mai-izini kusa. Mutum, ba tsikici ba."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Kowane harshi",
+      "title": "A kalaman ka, daga nuni na farko.",
+      "body": "Zaɓi harshinka kafin ka bugi, kuma Wayfinder yana magana a harshinti ko'ina, mataki-mataki."
+    },
+    "trust": {
+      "badge": "Kariyarka yana gida da farko",
+      "title": "Mu kai ba sa taɓa karata ba tare da jiya kariya ba.",
+      "body": "Takarada naka yana kulle kuma kai gida kawai. Wayfinder kai ba ya taɓa tunani lamarin sirli ba, kai ba ya taɓa ikirau takardun ba, kuma komai kariya yana yanke da gaida, ba na jiya ba.",
+      "points": [
+        "Kulle & sirli",
+        "Tushen da ka iya dube",
+        "Bincika jida"
+      ]
+    },
+    "finalCta": {
+      "title": "Tunininka yana farawa jiya.",
+      "body": "Bure, sirli, kuma a harshinka. Nemo abin da ka cancanta a mintuna.",
+      "primary": "Fara bure",
+      "secondary": "Ga yadda ake aiki"
+    },
+    "footer": {
+      "tagline": "Ba shawara kariya ba · Koyaushe an tabbatar da jida"
+    },
+    "translating": "Yana fassara shafi…"
+  },
+  "auth": {
+    "createAccount": "Ƙirƙira akauntinka",
+    "email": "Antuwan imel",
+    "password": "Kalmar sirri",
+    "signUp": "Ƙirƙira akaunt",
+    "signIn": "Shiga",
+    "haveAccount": "Ka yisan akaunt?",
+    "noAccount": "Ba ka da akaunt?",
+    "emailPlaceholder": "nawa@imel.com",
+    "passwordPlaceholder": "Zaɓi kalmar sirri",
+    "signingUp": "Yana ƙirƙira akaunt…",
+    "signingIn": "Yana shiga…"
+  },
+  "onboarding": {
+    "progressLabel": "Mataki {current} daga {total}",
+    "nav": {
+      "next": "Gida",
+      "back": "Baya",
+      "confirmContinue": "Tabbata kuma ci gaba",
+      "findBenefits": "Nemo abubuwan taimakon nawa",
+      "saving": "Yana ajiye…",
+      "skipNotSure": "Tsalle — Ba ni sure ba"
+    },
+    "yes": "Ee",
+    "no": "A'a",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Mahara jiya",
+        "note": "An shigar da wannan karya 207"
+      },
+      "asylee_208": {
+        "label": "Asylee",
+        "note": "An gamata karya karya 208"
+      },
+      "siv": {
+        "label": "Takaitaccen Visa na Shigita (SIV)",
+        "note": "Afghan ko Iraki"
+      },
+      "afghan_parolee": {
+        "label": "Mahara jiya Afghan"
+      },
+      "ukrainian_parolee": {
+        "label": "Mahara jiya Ukrainian"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Cuban ko Haitian shigari"
+      },
+      "trafficking_victim": {
+        "label": "Tabbatacciyar ɓatacciyar saci",
+        "note": "T-visa ko ORR wasikar"
+      },
+      "amerasian": {
+        "label": "Amerasian mahimmin ba"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Karuwar kura daga mahara, asylee, ko karya",
+        "note": "Wannan yana maido da SNAP da Medicaid karya"
+      },
+      "lpr_other": {
+        "label": "Karuwar kura daga jiya"
+      },
+      "us_citizen": {
+        "label": "Amurka Ƙasa ko Amurka Ƙasa Mutane"
+      },
+      "other_none": {
+        "label": "Waje, ba ni sure, ko babu su"
+      }
+    },
+    "language": {
+      "question": "Wane harshi ka fi so?",
+      "hint": "Za mu nuna komai a harshinin nan."
+    },
+    "scan": {
+      "question": "Ka da takardan? Ɗauki hoto domin a kuɓuta lokaci",
+      "intro": "Snapu hoto na I-94 (da takarda aiki, karuwar kura, ko wasikar karya idan ka da su). Za mu karanta halinka da zayita don ba ka da bugu.",
+      "secureLine": "Takardan naka ana aiki tare da kulle a wannan lokaci kuma kai ba a taɓa ajiye su a saiki ba ko karata tare da jiya kariya. Mu ƙaranta gida fili kawai - kai ba iyakar Haɓaka ba ko A-Lambar ba.",
+      "uploadAriaLabel": "Ajiye hoto ko PDF na takardan karya",
+      "chooseDifferent": "Zaɓi hotuna daban",
+      "chooseFile": "Ɗauki hoto ko zaɓi fili",
+      "fileTypes": "JPEG, PNG, ko PDF · har zuwa takardan 4",
+      "reading": "Yana karanta takardan naka…",
+      "readDocuments": "Karanta takardan nawa",
+      "skip": "Ba ni da takardan - amsa tambaye a maimakon sa",
+      "errorReadFailed": "Ba mu iya karanta takardan ba. Jita zai gaida amma, ko tsalle kuma amsa tambaye.",
+      "errorUnreachable": "Ba mu iya kai karanta ba. Jita zai gaida amma, ko tsalle kuma amsa tambaye."
+    },
+    "confirm": {
+      "question": "Jira karbe abin da mu karanta daga takardan",
+      "intro": "Kariyar taimakon naka ta dogara a abubuwan nan, sabili haka ka dauki lokaci domin tabbata. Taɓa fili komai domin gyara.",
+      "secureLine": "Kulle karanta kuma ba ajiye ba.",
+      "detectedPrefix": "Mu gano:",
+      "lowConfidence": "Wasu abubuwan sun kasance masu wahala karanta (nadi tabbatarwa). Jira zaɓi waɗansu da farko.",
+      "pleaseCheck": "Jira zaɓi",
+      "fromDocument": "Daga takardan",
+      "fields": {
+        "immigrationStatus": "Halinka karya",
+        "selectStatus": "Zaɓi halinka",
+        "fullName": "Sunanka duka",
+        "fullNameHint": "Domin takaradun naka kawai - ba amiƙi karya ba.",
+        "fullNamePlaceholder": "Sunanka duka",
+        "dateOfBirth": "Ranar haihuwa",
+        "dateOfBirthHint": "Saita shekara naka domin shawara na shekara.",
+        "age": "Shekara",
+        "countryOfOrigin": "Kasua fito",
+        "countryOfOriginHint": "Domin takaradun naka kawai.",
+        "countryPlaceholder": "Kasa",
+        "arrivalDate": "Ranar ka zo Amurka",
+        "eligibilityDate": "Ranar aminci ORR",
+        "eligibilityDateHint": "Yana farawa RCA/RMA dako kirja.",
+        "statusGrantDate": "Ranar halinka an bayar",
+        "statusGrantDateHint": "Mahara/asylee bayar ranar (SSI shekara 7 kirja). Bayani ba wajib ba."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Takarda aiki (EAD)",
+        "green_card": "Karuwar kura",
+        "asylum_letter": "Wasikar karya",
+        "ssn_card": "Takarda Lambar Gidajiya",
+        "other": "takarda"
+      }
+    },
+    "status": {
+      "question": "Menene halinka karya a yanzu?",
+      "hint": "Zaɓi gida da ya dace kaɗan. Wannan yana bugi kusan kowane kariya kaida."
+    },
+    "documents": {
+      "question": "Wasu tambaye masu sauki na takardan",
+      "hint": "Taɓa Ee ko A'a. Ba matsala idan ba ka da waje.",
+      "fromDocsPrefix": "Daga takardan mu nadi",
+      "fromDocsI94": " I-94 naka",
+      "fromDocsAnd": " da",
+      "fromDocsEad": " takarda aiki (EAD)",
+      "i94Label": "I-94 Shiga/Fita Takardan",
+      "i94Hint": "Shaidar shiga. I-94 na karuwa §207 ko 'Visa 93' yana tabbatar halinka mahara.",
+      "eadLabel": "Takarda Aiki (karuwan EAD)",
+      "eadHint": "Taimakon Amiƙi Aiki. EAD karuwa A03 kuma yana tabbatar halinka mahara.",
+      "ssnLabel": "Ka da Lambar Gidajiya (SSN)?",
+      "ssnHint": "Mu ƙaƙa na san idan ka da gida - kai ba lambar nan ba."
+    },
+    "orrLetter": {
+      "question": "Ka da wasikar ƙarfafawa ORR ko aminci?",
+      "hint": "Masu jiya saci suke bukar wasikar nan (ba I-94 ba) domin shiga abubuwan taimakon ORR kamar RCA da RMA."
+    },
+    "eligibilityDate": {
+      "question": "Yaushe taimakon mahara naka ya farawa offishali?",
+      "hint": "Wannan shine ranar aminci ORR - yawancin lokaci ranar zo ko ranar halinka, ko zai yi banza."
+    },
+    "arrivalDate": {
+      "question": "Yaushe ka zo Amurka?",
+      "hint": "Yawancin aiki kuma haɓaka abubuwan yana yin zuwa shekara 5 daga wannan ranar."
+    },
+    "statusGrantDate": {
+      "question": "Yaushe an bayar maka halinka mahara ko asylee?",
+      "hint": "Karya SSI yana ƙare shekara 7 daga wannan ranar. Tsalle idan ba ka sure ba."
+    },
+    "location": {
+      "question": "Wane jihar ka zauna?",
+      "hint": "Abubuwan taimakon da gida taimakon sune daban da jiha. Gari kuma ZIP sun bayani ba wajib.",
+      "stateLabel": "Jiha",
+      "selectState": "Zaɓi jiha",
+      "cityLabel": "Gari (bayani ba wajib)",
+      "cityPlaceholder": "Gari",
+      "zipLabel": "ZIP karuwa (bayani ba wajib)",
+      "zipPlaceholder": "ZIP karuwa"
+    },
+    "household": {
+      "question": "Gida domin mu san gidanka",
+      "hint": "Waɗannan amsa yana saita lamarin akai. Su ne sirli.",
+      "ageLabel": "Shekara naka",
+      "agePlaceholder": "Shekara naka",
+      "ageFromDoc": "Shekara naka ({age}) an saita daga takardan. Ka iya jiya a tabbatarwa shafi.",
+      "sizeLabel": "Nawa mutane suke zauna tare, da ka?",
+      "sizePlaceholder": "misali 3",
+      "incomeLabel": "Kuɗi gidanka ke samu kowa, kafin haraaji (Dolayin Amurka). Ajiye 0 idan babu.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ wata"
+    },
+    "children": {
+      "question": "Nawa yara suke zauna tare?",
+      "under19Label": "Nawa yara da kasua 19 suke zauna tare?",
+      "under19Hint": "Ajiye 0 idan babu.",
+      "under18Label": "Daga waɗannan, nawa da kasua 18?",
+      "under5Label": "Daga waɗannan, nawa da kasua 5?",
+      "subsetHint": "Wannan ƙarami ɓangare na lamarin saanan."
+    },
+    "pregnantCash": {
+      "question": "Tambaye biyu masu sauki game da gidanka",
+      "pregnantLabel": "Ka da dan ciki a gidanka yanzu?",
+      "pregnantHint": "WIC da waje Medicaid abubuwan yana kara dan ciki.",
+      "cashLabel": "Ka yisan kuɗi taimakon (TANF, SSI, ko gida taimakon)?",
+      "cashHint": "Wannan yana bugi aminci domin Mahara Kuɗi Taimakon kuma SNAP."
+    },
+    "special": {
+      "question": "Waje na takaita abubuwan",
+      "hint": "Taɓa Ee ko A'a domin kowa.",
+      "unaccompaniedLabel": "Ka kasua 18 kuma a Amurka babu iyaye ko mai-kunna?",
+      "unaccompaniedHint": "Domin shawara na Mahara Walaye ba Taimakon.",
+      "disabledLabel": "Ka da rashin iya aiki?",
+      "disabledHint": "Domin SSI kuma SSDI.",
+      "blindLabel": "Ka faru ko ba ka da wajen da ya kusan ba?",
+      "blindHint": "Takaita SSI/SSDI kaida.",
+      "workQuartersLabel": "Kai ko kanka ko iyayen naka sun aiki a Amurka kusan shekara 10?",
+      "workQuartersHint": "Aiki karya 40 za ta bugi waje karya domin SSI kuma SNAP."
+    },
+    "goals": {
+      "question": "Menene abubuwan da ka so abubuwa?",
+      "hint": "Wannan yana bugi mu nemo shawaran gida domin ka.",
+      "employmentLabel": "Ka aiki ko nema aiki ko horo aiki?",
+      "employmentHint": "Abubuwan aiki, taimakon yara, Daidaita Bayani.",
+      "businessLabel": "Ka so farawa ko haɓaka nawa kasua?",
+      "businessHint": "Rasta haɓaka da Jiya Haɓaka Akai (IDA).",
+      "englishLabel": "Ka so kalantu Turanci (ESL)? (bayani ba wajib)",
+      "englishHint": "Bure Turanci harshi horo ta Mahara Taimakon.",
+      "interpreterLabel": "Ka bukar mai-janya ko taimakon fassara? (bayani ba wajib)",
+      "interpreterHint": "Bure janya abubuwan yana samuwa ta mahara abubuwan."
+    },
+    "settingsForm": {
+      "i94Label": "Ka da I-94 Shiga/Fita Takarda?",
+      "eadLabel": "Ka da Takarda Aiki (karuwan EAD)?",
+      "eligibilityDateLabel": "Yaushe taimakon mahara naka ya farawa offishali? (ranar aminci ORR)",
+      "arrivalDateLabel": "Yaushe ka zo Amurka?",
+      "statusGrantDateLabel": "Yaushe an bayar maka halinka mahara ko asylee? (bayani ba wajib)"
+    },
+    "errors": {
+      "saveFailed": "Ba mu iya ajiye amsa naka ba: {message}. Idan wannan ya nada tsara ba da jiya, kaida gyara (supabase/migration_v2.sql) ba ta aiwatar ba.",
+      "profileNotFound": "Ba mu iya nemo profaila naka domin ajiye amsa. Jira fita kuma shiga, sannan jita zai gaida.",
+      "profileNotFoundShort": "Ba mu iya nemo profaila domin ajiye. Jira fita kuma shiga, sannan jita zai gaida."
+    }
+  },
+  "processing": {
+    "title": "Neman abubuwan taimakon naka…",
+    "subtitle": "Mu yana jira amsa naka dangane da kaida U.S. abubuwan taimakon. Wannan yawancin lokaci ya dauki kusan sakunin 30.",
+    "step1": "Lodi abubuwan taimakon kaida",
+    "step2": "Bincika aminci naka",
+    "step3": "Tabbata sakamako",
+    "step4": "Rangama da dako",
+    "ready": "Shawara naka tana shirka!",
+    "readySubtitle": "Mu gano abubuwan taimakon ka iya canacanta.",
+    "goToDashboard": "Ga shawara nawa"
+  },
+  "dashboard": {
+    "welcome": "Sannu",
+    "tabs": {
+      "actionPlan": "Shawara na Aiki Nawa",
+      "documents": "Takardan Nawa",
+      "formHelper": "Taimakon Takarda",
+      "explainer": "Fassara Wasikar",
+      "findHelp": "Nemo Taimakon",
+      "progress": "Ci Gaban Nawa"
+    },
+    "actionPlan": {
+      "title": "Shawara na Aiki Naka",
+      "subtitle": "Rangama da dako mafi gaggawa ta farko.",
+      "rulesChecked": "Kaida taimakon ta ƙare tabbatarwa:",
+      "daysLeft": "{days} yini jiya",
+      "urgent": "Gaggawa — yin aiki sannan",
+      "deadlinePassed": "Dako za ta taɓa wuce",
+      "noDeadline": "Ba fixed dako",
+      "startButton": "Fara",
+      "continueButton": "Ci gaba",
+      "sourceLink": "Tunani tushe",
+      "attorney": "Wannan yana bukar attoney ko aminci mai-izini.",
+      "noResults": "Ba abubuwan taimakon aminci gano. Amsa waje tambaye ko tunani gida masaniya domin taimakon.",
+      "statusBadges": {
+        "likely_eligible": "Aminci da za",
+        "maybe_eligible": "Aminci za",
+        "needs_human_review": "Bukar jira",
+        "not_eligible": "Ba aminci"
+      },
+      "details": "Saunin",
+      "getFormHelp": "Ka takarda taimakon",
+      "daysLeftToApply": "{days} yini jiya domin bugi",
+      "oneDayLeftToApply": "1 yini jiya domin bugi",
+      "deadlinePassedClear": "Wannan dako ya wuce",
+      "whatYouNeed": "Abin da ka bukar",
+      "whereHowToApply": "Ina da yadda ake bugi",
+      "requiredDocuments": "Takardan da aka bukar",
+      "nextSteps": "Mataki na gida",
+      "applyOnline": "Bugi a jiya",
+      "formNeeded": "Takarda domin jimawa"
+    },
+    "documents": {
+      "title": "Takardan Nawa",
+      "subtitle": "Fili naka yana kulle kuma sirli. Mu kai ba sa taɓa karata tare da jiya kariya ba.",
+      "upload": "Ajiye takardan",
+      "dragDrop": "Juye kuma tsada fili, ko taɓa domin zaɓi",
+      "supportedTypes": "Mai-izini: PDF, JPG, PNG",
+      "extracting": "Yana karanta takardan…",
+      "noDocuments": "Ba takardan ajiye ba daram.",
+      "deleteConfirm": "Ka tabbata ka so tsoke takardan nan?",
+      "open": "Bufi",
+      "preview": "Duba",
+      "close": "Kulle",
+      "detectedType": "Gano kaida",
+      "secureLine": "Takardan naka ana aiki tare da kulle kuma kai ba a taɓa karata tare da jiya kariya ba.",
+      "types": {
+        "passport": "Pasipota",
+        "i-94": "I-94 Shiga Takardan",
+        "ead": "Takarda Aiki (EAD)",
+        "birth_certificate": "Takarda Haihuwa",
+        "status_letter": "Wasikar Halinka",
+        "other": "Waje"
+      }
+    },
+    "formHelper": {
+      "title": "Taimakon Takarda",
+      "subtitle": "Ka taimakon tunanin kuma cika takarda. Mu kai ba sa bugi SSN, A-lambar, banki ɗaya, ko pasipota lambar - su ne sirli.",
+      "pasteInstructions": "Baki-baki sunin takarda ko URL, ko bayani abin da ka bukar taimakon:",
+      "placeholder": "Misali: I-765 Amiƙi Aiki, ko \"taimakon cika Medicaid bugi\"",
+      "ask": "Ka taimakon",
+      "sensitiveNote": "Filin da aka nadi [KA CIKI] ta lamari sirli - ƙare waɗannan da ka.",
+      "legalNote": "Wannan takarda ta bugi halinka karya naka. Jira yin aiki tare da attoney mai-laisini ko DOJ-aminci mai-izini.",
+      "thinking": "Yana karanta takarda…",
+      "uploadFiles": "Ajiye fili",
+      "openInFiller": "Bufi a cikakken takarda",
+      "secureLine": "Fili naka ana aiki tare da kulle kuma kai ba a taɓa karata tare da jiya kariya ba.",
+      "send": "Aika",
+      "contextNote": "Wayfinder yana amfani da bayani da ka yisan ta hadaddiya domin amsa domin yanayin naka.",
+      "suggestionsLabel": "Tambaye da akai"
+    },
+    "explainer": {
+      "title": "Fassara Wasikar ko Takarda",
+      "subtitle": "Baki-baki ko ajiye wasikar ko takardan da ba ta fahimta. Za mu fassara a saukin sauki.",
+      "pasteLabel": "Baki-baki rubutu a nan:",
+      "placeholder": "Baki-baki rubutu na wasikar ko takarda a nan…",
+      "orUpload": "Ko ajiye hoto ko scan na takardan:",
+      "explain": "Fassara wannan",
+      "thinking": "Yana karanta takardan…"
+    },
+    "findHelp": {
+      "title": "Nemo Taimakon Kusa",
+      "subtitle": "Tabbatar tare da mutane da suke bugar - bure gyara abubuwan, kariya taimakon, da jihar mahara ofis.",
+      "resettlement": "Abubuwan Gyara Masaniya",
+      "legalAid": "Kariya Kariya Taimakon",
+      "stateOffice": "Jihar Mahara Ofis",
+      "national": "Tunani na Kasa",
+      "attorneyWarning": "Mahimmi: Domin abin kariya da bugi halinka karya naka, gida attoney mai-laisini ko DOJ-aminci mai-izini za ta ka ba shawara kariya kuma iya wakilta.",
+      "call": "Kira",
+      "visit": "Ziyarci website",
+      "noState": "Zaɓi jiha domin ga gida masaniya."
+    },
+    "progress": {
+      "title": "Ci Gaban Nawa",
+      "subtitle": "Bincika ina ka tare da kowa ne taimakon.",
+      "statuses": {
+        "not_started": "Ba farawa",
+        "in_progress": "Yana aiki",
+        "documents_ready": "Takardan shirka",
+        "submitted": "An bugi",
+        "needs_attorney": "Bukar attoney",
+        "done": "Ƙare"
+      },
+      "updateStatus": "Sabunta halinka"
+    },
+    "pdf": {
+      "download": "Sauke shawara nawa (PDF)",
+      "generating": "Yana ƙirƙira PDF…"
+    },
+    "dismiss": "Kawar",
+    "footer": {
+      "privacy": "Bayani naka yana kulle kuma sirli. Mu kai ba sa taɓa karata tare da jiya kariya ba.",
+      "disclaimer": "Wayfinder ba ta ba shawara kariya ba."
+    },
+    "settings": {
+      "title": "Saitunan",
+      "subtitle": "Badi harshi ko sabunta amsa da ka bayar wajen bugi.",
+      "language": "Harshi",
+      "languageHint": "Zaɓi harshi domin komai app. Yana sabunta sannan.",
+      "editInfo": "Gyara bayani nawa",
+      "editInfoHint": "Badi amsa da ka bayar wajen bugi. Za mu jira abubuwan taimakon kaida.",
+      "recheck": "Jira abubuwan taimakon nawa",
+      "backToDashboard": "Baya zuwa dasaborin",
+      "saved": "Ajiye",
+      "saving": "Yana ajiye…"
+    },
+    "formFill": {
+      "title": "Cika takarda naka",
+      "intro": "Mu cika abin da mu yisan. Jira jira kowa fili kafin sauke.",
+      "secureLine": "Takarda naka yana cika a browser kuma kai ba a taɓa karata tare da jiya kariya ba.",
+      "autoFilled": "Cika daga bayani naka",
+      "missing": "Babu — jira rubutu abin nan",
+      "sensitive": "Sirli — ba ka karhe tare ba. Ajiye kafau.",
+      "download": "Sauke takarda cikakke",
+      "downloading": "Yana shirka takarda…",
+      "reviewAll": "Jira kowa fili",
+      "noFields": "Wannan takarda ba ta da fillable akwati. Ka iya rubutu olova wurin da aka nadi.",
+      "openPrompt": "Bufi takarda domin cika",
+      "loading": "Yana bufi takarda…",
+      "loadError": "Ba mu iya bufi takarda nan ba. Jira takarda daban.",
+      "uploadHint": "Ajiye I-94, takarda aiki, ko waje takardan a Takardan domin cika abubuwan nan akai."
+    }
+  },
+  "errors": {
+    "generic": "Abubuwa sun dace. Jira zai gaida.",
+    "signIn": "Imel ko kalmar sirri ba daidai ba.",
+    "signUp": "Ba mu iya ƙirƙira akaunt ba. Jira zai gaida.",
+    "eligibility": "Ba mu iya lodi abubuwan taimakon ba. Jira zai gaida.",
+    "upload": "Ajiye ta gaji. Jira fili karama ko kaida daban.",
+    "required": "Wannan fili yana bukar."
+  },
+  "common": {
+    "loading": "Yana lodi…",
+    "yes": "Ee",
+    "no": "A'a",
+    "save": "Ajiye",
+    "cancel": "Sakasai",
+    "close": "Kulle",
+    "back": "Baya",
+    "next": "Gida",
+    "submit": "Aika",
+    "or": "ko",
+    "edit": "Gyara",
+    "download": "Sauke",
+    "open": "Bufi",
+    "settings": "Saitunan",
+    "dismiss": "Kawar"
+  }
+}

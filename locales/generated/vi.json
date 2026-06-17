@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "dashboard": "Bảng điều khiển của tôi",
+    "documents": "Tài liệu của tôi",
+    "findHelp": "Tìm trợ giúp",
+    "settings": "Cài đặt"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Cách hoạt động",
+      "features": "Tính năng",
+      "languages": "Ngôn ngữ",
+      "signIn": "Đăng nhập",
+      "getStarted": "Bắt đầu"
+    },
+    "hero": {
+      "headline": "Một ngôi nhà mới bắt đầu bằng cách biết con đường của bạn.",
+      "subheadline": "Wayfinder tìm những lợi ích và giấy tờ bạn đủ điều kiện, giải thích mọi thứ bằng ngôn ngữ của bạn, và hướng dẫn bạn từng bước, trước khi hạn chót đó.",
+      "cardLabel": "Bắt đầu bằng ngôn ngữ của bạn",
+      "searchPlaceholder": "Tìm kiếm 100+ ngôn ngữ…",
+      "cta": "Bắt đầu miễn phí"
+    },
+    "how": {
+      "eyebrow": "Cách hoạt động",
+      "title": "Ba bước từ khi đến cho đến một kế hoạch rõ ràng.",
+      "steps": [
+        {
+          "title": "Kể cho chúng tôi câu chuyện của bạn",
+          "body": "Trả lời một vài câu hỏi đơn giản, một lần một, bằng ngôn ngữ của riêng bạn. Chữ lớn, từ ngữ đơn giản, không vội vàng."
+        },
+        {
+          "title": "Chúng tôi tìm thứ phù hợp",
+          "body": "Wayfinder kiểm tra một cơ sở dữ liệu các quy tắc lợi ích của Mỹ và chỉ cho bạn chính xác những gì bạn đủ điều kiện, với các nguồn, không bao giờ đoán."
+        },
+        {
+          "title": "Hành động kịp thời",
+          "body": "Nhận một kế hoạch xếp hạng theo hạn chót, với mọi mẫu được giải thích và sự trợ giúp của con người thực tế gần đó khi nó quan trọng."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Người bạn đồng hành",
+      "title": "Mọi thứ bạn cần, trong một nơi tĩnh lặng.",
+      "items": [
+        {
+          "title": "Kế hoạch hành động của tôi",
+          "body": "Những lợi ích của bạn xếp hạng theo hạn chót sớm nhất, mỗi cái có một lý do bằng ngôn ngữ đơn giản mà bạn đủ điều kiện và một đếm ngược để không có gì bị bỏ lỡ."
+        },
+        {
+          "title": "Trợ lý mẫu AI",
+          "body": "Wayfinder giải thích từng trường và soạn thảo câu trả lời bằng ngôn ngữ của bạn. Nó không bao giờ chạm vào các con số nhạy cảm, và không bao giờ gửi bất cứ thứ gì cho bạn."
+        },
+        {
+          "title": "Kho tài liệu",
+          "body": "Giữ hộ chiếu, I-94, và EAD của bạn trong một nơi được mã hóa, chỉ chủ sở hữu. Riêng tư, và không bao giờ chia sẻ với thực thi luật."
+        },
+        {
+          "title": "Tìm trợ giúp",
+          "body": "Đối với bất kỳ vấn đề pháp lý nào, Wayfinder kết nối bạn với một luật sư có giấy phép hoặc đại diện được công nhận gần bạn. Một người, không phải một đoán."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Bất kỳ ngôn ngữ nào",
+      "title": "Bằng các từ của bạn, từ màn hình đầu tiên.",
+      "body": "Chọn ngôn ngữ của bạn trước khi bạn đăng ký, và Wayfinder sẽ nói nó ở khắp nơi, mỗi bước của con đường."
+    },
+    "trust": {
+      "badge": "An toàn của bạn là ưu tiên hàng đầu",
+      "title": "Chúng tôi không bao giờ chia sẻ thông tin của bạn với cơ quan thực thi nhập cư.",
+      "body": "Tài liệu của bạn được mã hóa và chỉ dành cho chủ sở hữu. Wayfinder không bao giờ điền các mã nhận dạng nhạy cảm, không bao giờ gửi mẫu, và mọi quyết định pháp lý được đưa ra bởi một người thực tế, có giấy phép, không phải bởi một máy.",
+      "points": [
+        "Được mã hóa & riêng tư",
+        "Nguồn bạn có thể kiểm tra",
+        "Được con người xem xét"
+      ]
+    },
+    "finalCta": {
+      "title": "Con đường phía trước của bạn bắt đầu hôm nay.",
+      "body": "Miễn phí, riêng tư, và bằng ngôn ngữ của bạn. Tìm thứ bạn đủ điều kiện trong vài phút.",
+      "primary": "Bắt đầu miễn phí",
+      "secondary": "Xem cách hoạt động"
+    },
+    "footer": {
+      "tagline": "Không phải lời khuyên pháp lý · Luôn được xác nhận bởi một người"
+    },
+    "translating": "Dịch trang…"
+  },
+  "auth": {
+    "createAccount": "Tạo tài khoản của bạn",
+    "email": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "signUp": "Tạo tài khoản",
+    "signIn": "Đăng nhập",
+    "haveAccount": "Đã có tài khoản?",
+    "noAccount": "Không có tài khoản?",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "Chọn mật khẩu",
+    "signingUp": "Tạo tài khoản...",
+    "signingIn": "Đăng nhập..."
+  },
+  "onboarding": {
+    "progressLabel": "Bước {current} của {total}",
+    "nav": {
+      "next": "Tiếp theo",
+      "back": "Quay lại",
+      "confirmContinue": "Xác nhận và tiếp tục",
+      "findBenefits": "Tìm lợi ích của tôi",
+      "saving": "Đang lưu...",
+      "skipNotSure": "Bỏ qua — tôi không chắc chắn"
+    },
+    "yes": "Có",
+    "no": "Không",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Người tị nạn",
+        "note": "Được thừa nhận theo phần 207"
+      },
+      "asylee_208": {
+        "label": "Người được cấp quyền tị nạn",
+        "note": "Được cấp tị nạn theo phần 208"
+      },
+      "siv": {
+        "label": "Chủ sở hữu Visa nhập cư đặc biệt (SIV)",
+        "note": "Afghan hoặc Iraq"
+      },
+      "afghan_parolee": {
+        "label": "Người được phỏng thích nhân đạo Afghanistan"
+      },
+      "ukrainian_parolee": {
+        "label": "Người được phỏng thích nhân đạo Ukraine"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Người nhập cư Cuba hoặc Haiti"
+      },
+      "trafficking_victim": {
+        "label": "Nạn nhân được xác nhận buôn bán",
+        "note": "T-visa hoặc ORR letter"
+      },
+      "amerasian": {
+        "label": "Người nhập cư Amerasian"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Thẻ xanh từ tị nạn, asylee, hoặc tình trạng nhân đạo",
+        "note": "Điều này khôi phục lại sự đủ điều kiện SNAP và Medicaid"
+      },
+      "lpr_other": {
+        "label": "Thẻ xanh từ một con đường khác"
+      },
+      "us_citizen": {
+        "label": "Công dân Mỹ hoặc Công dân Mỹ"
+      },
+      "other_none": {
+        "label": "Khác, không chắc chắn, hoặc không có gì trong số này"
+      }
+    },
+    "language": {
+      "question": "Bạn thích ngôn ngữ nào?",
+      "hint": "Chúng tôi sẽ hiển thị mọi thứ bằng ngôn ngữ này."
+    },
+    "scan": {
+      "question": "Có giấy tờ của bạn? Chụp ảnh để tiết kiệm thời gian",
+      "intro": "Chụp ảnh I-94 của bạn (và giấy phép làm việc, thẻ xanh, hoặc thư tị nạn của bạn nếu bạn có). Chúng tôi sẽ đọc tình trạng và ngày của bạn để bạn không phải nhập.",
+      "secureLine": "Tài liệu của bạn được xử lý an toàn tại thời điểm đó và không bao giờ được lưu trữ trên máy chủ của chúng tôi hoặc chia sẻ với cơ quan thực thi nhập cư. Chúng tôi chỉ đọc một vài trường cần thiết để kiểm tra lợi ích của bạn — không bao giờ là Số An sinh xã hội hoặc Số A của bạn.",
+      "uploadAriaLabel": "Tải lên ảnh hoặc PDF của tài liệu nhập cư của bạn",
+      "chooseDifferent": "Chọn ảnh khác",
+      "chooseFile": "Chụp ảnh hoặc chọn tệp",
+      "fileTypes": "JPEG, PNG, hoặc PDF · tối đa 4 tài liệu",
+      "reading": "Đang đọc tài liệu của bạn…",
+      "readDocuments": "Đọc tài liệu của tôi",
+      "skip": "Tôi không có tài liệu của tôi — trả lời câu hỏi thay vào đó",
+      "errorReadFailed": "Chúng tôi không thể đọc tài liệu của bạn. Vui lòng thử lại, hoặc bỏ qua và trả lời các câu hỏi.",
+      "errorUnreachable": "Chúng tôi không thể kết nối với trình đọc tài liệu. Vui lòng thử lại, hoặc bỏ qua và trả lời các câu hỏi."
+    },
+    "confirm": {
+      "question": "Vui lòng kiểm tra những gì chúng tôi đã đọc từ tài liệu của bạn",
+      "intro": "Kết quả lợi ích của bạn phụ thuộc vào các giá trị này, vì vậy hãy dành một chút thời gian để xác nhận chúng. Nhấn vào bất kỳ trường nào để sửa nó.",
+      "secureLine": "Đọc an toàn và không được lưu.",
+      "detectedPrefix": "Chúng tôi phát hiện:",
+      "lowConfidence": "Một số giá trị khó đọc (được đánh dấu Vui lòng kiểm tra dưới đây). Vui lòng kiểm tra kỹ những giá trị đó trước.",
+      "pleaseCheck": "Vui lòng kiểm tra",
+      "fromDocument": "Từ tài liệu của bạn",
+      "fields": {
+        "immigrationStatus": "Tình trạng nhập cư",
+        "selectStatus": "Chọn tình trạng của bạn",
+        "fullName": "Tên đầy đủ",
+        "fullNameHint": "Chỉ để lưu giữ hồ sơ — không được sử dụng để đủ điều kiện.",
+        "fullNamePlaceholder": "Tên đầy đủ của bạn",
+        "dateOfBirth": "Ngày sinh",
+        "dateOfBirthHint": "Đặt tuổi của bạn cho các chương trình dựa trên tuổi.",
+        "age": "Tuổi",
+        "countryOfOrigin": "Quốc gia gốc",
+        "countryOfOriginHint": "Chỉ để lưu giữ hồ sơ.",
+        "countryPlaceholder": "Quốc gia",
+        "arrivalDate": "Ngày bạn đến Mỹ",
+        "eligibilityDate": "Ngày đủ điều kiện ORR",
+        "eligibilityDateHint": "Bắt đầu đồng hồ hạn chót RCA/RMA.",
+        "statusGrantDate": "Ngày cấp tình trạng",
+        "statusGrantDateHint": "Ngày cấp tị nạn/asylee (SSI 7 năm đồng hồ). Tùy chọn."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Giấy phép làm việc (EAD)",
+        "green_card": "Thẻ xanh",
+        "asylum_letter": "Thư tị nạn",
+        "ssn_card": "Thẻ An sinh xã hội",
+        "other": "tài liệu"
+      }
+    },
+    "status": {
+      "question": "Tình trạng nhập cư hiện tại của bạn là gì?",
+      "hint": "Chọn cái phù hợp nhất với bạn. Điều này hình thành hầu hết mọi quy tắc lợi ích."
+    },
+    "documents": {
+      "question": "Một vài câu hỏi tài liệu nhanh chóng",
+      "hint": "Nhấn Có hoặc Không. Không sao nếu bạn không có một số.",
+      "fromDocsPrefix": "Từ tài liệu của bạn chúng tôi lưu ý",
+      "fromDocsI94": " I-94 của bạn",
+      "fromDocsAnd": " và",
+      "fromDocsEad": " giấy phép làm việc (EAD) của bạn",
+      "i94Label": "Bản ghi Tới/Rời I-94",
+      "i94Hint": "Bằng chứng nhập cảnh. Một I-94 được mã hóa §207 hoặc 'Visa 93' chứng minh tình trạng tị nạn.",
+      "eadLabel": "Giấy phép làm việc (thẻ EAD)",
+      "eadHint": "Tài liệu phép làm việc. Mã EAD A03 cũng chứng minh tình trạng tị nạn.",
+      "ssnLabel": "Bạn có Số An sinh xã hội (SSN)?",
+      "ssnHint": "Chúng tôi chỉ cần biết nếu bạn có một — không bao giờ là số."
+    },
+    "orrLetter": {
+      "question": "Bạn có thư chứng thực hoặc đủ điều kiện ORR?",
+      "hint": "Nạn nhân buôn bán cần thư này (không phải I-94) để truy cập lợi ích ORR như RCA và RMA."
+    },
+    "eligibilityDate": {
+      "question": "Khi nào trợ giúp tị nạn chính thức của bạn bắt đầu?",
+      "hint": "Đây là ngày đủ điều kiện ORR của bạn — thường là ngày đến của bạn hoặc ngày cấp tình trạng của bạn, cái nào sau này.",
+      "deadlineLabel": "Hạn chót quan trọng:",
+      "deadlineBody": " Đồng hồ cho Trợ cấp Tị nạn (RCA) và hỗ trợ y tế bắt đầu từ ngày này — hãy nộp ngay."
+    },
+    "arrivalDate": {
+      "question": "Bạn đến Hoa Kỳ khi nào?",
+      "hint": "Hầu hết các dịch vụ việc làm và hội nhập chạy lên tới 5 năm từ ngày này."
+    },
+    "statusGrantDate": {
+      "question": "Bạn được cấp tình trạng tị nạn hoặc asylee khi nào?",
+      "hint": "Sự đủ điều kiện SSI kết thúc 7 năm từ ngày này. Để trống nếu bạn không chắc chắn."
+    },
+    "location": {
+      "question": "Bạn sống ở bang nào?",
+      "hint": "Lợi ích và trợ giúp địa phương khác nhau theo bang. Thành phố và ZIP là tùy chọn.",
+      "stateLabel": "Bang",
+      "selectState": "Chọn bang của bạn",
+      "cityLabel": "Thành phố (tùy chọn)",
+      "cityPlaceholder": "Thành phố",
+      "zipLabel": "Mã ZIP (tùy chọn)",
+      "zipPlaceholder": "Mã ZIP"
+    },
+    "household": {
+      "question": "Kể cho chúng tôi về gia đình của bạn",
+      "hint": "Những câu trả lời này đặt giới hạn thu nhập của bạn. Chúng là riêng tư.",
+      "ageLabel": "Tuổi của bạn",
+      "agePlaceholder": "Tuổi của bạn",
+      "ageFromDoc": "Tuổi của bạn ({age}) được đặt từ tài liệu của bạn. Bạn có thể thay đổi nó trên màn hình xác nhận.",
+      "sizeLabel": "Có bao nhiêu người sống với bạn, kể cả bạn?",
+      "sizePlaceholder": "ví dụ: 3",
+      "incomeLabel": "Tiền gia đình của bạn nhận được mỗi tháng, trước thuế (đô la Mỹ). Nhập 0 nếu không có.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ tháng"
+    },
+    "children": {
+      "question": "Có bao nhiêu trẻ em sống với bạn?",
+      "under19Label": "Có bao nhiêu trẻ em dưới 19 tuổi sống với bạn?",
+      "under19Hint": "Nhập 0 nếu không có.",
+      "under18Label": "Trong số đó, có bao nhiêu dưới 18?",
+      "under5Label": "Trong số đó, có bao nhiêu dưới 5?",
+      "subsetHint": "Đây là một phần nhỏ hơn của số trên."
+    },
+    "pregnantCash": {
+      "question": "Hai câu hỏi nhanh chóng về nhà của bạn",
+      "pregnantLabel": "Có ai trong nhà của bạn đang mang thai bây giờ không?",
+      "pregnantHint": "WIC và một số chương trình Medicaid ưu tiên phụ nữ mang thai.",
+      "cashLabel": "Bạn đã nhận trợ giúp tiền mặt (TANF, SSI, hoặc hỗ trợ chung)?",
+      "cashHint": "Điều này ảnh hưởng đến sự đủ điều kiện cho Trợ cấp Tị nạn và SNAP."
+    },
+    "special": {
+      "question": "Một vài tình huống đặc biệt",
+      "hint": "Nhấn Có hoặc Không cho mỗi cái.",
+      "unaccompaniedLabel": "Bạn dưới 18 tuổi và ở Mỹ mà không có cha mẹ hoặc người bảo vệ?",
+      "unaccompaniedHint": "Cho chương trình Trẻ tị nạn không có người hỗ trợ (URM).",
+      "disabledLabel": "Bạn có khuyết tật giới hạn công việc của bạn?",
+      "disabledHint": "Cho SSI và SSDI.",
+      "blindLabel": "Bạn bị mù hoặc tầm nhìn rất hạn chế?",
+      "blindHint": "Một danh mục SSI/SSDI đặc biệt.",
+      "workQuartersLabel": "Bạn hoặc vợ/chồng hoặc cha mẹ đã làm việc ở Mỹ khoảng 10 năm?",
+      "workQuartersHint": "40 tín chỉ công việc có thể vượt qua một số thanh 5 năm cho SSI và SNAP."
+    },
+    "goals": {
+      "question": "Bạn muốn được trợ giúp với gì?",
+      "hint": "Điều này giúp chúng tôi tìm các chương trình phù hợp cho bạn.",
+      "employmentLabel": "Bạn đang làm việc hoặc tìm kiếm công việc hoặc đào tạo công việc?",
+      "employmentHint": "Dịch vụ việc làm, hỗ trợ chăm sóc trẻ em, Khoán phù hợp.",
+      "businessLabel": "Bạn có muốn bắt đầu hoặc phát triển kinh doanh của riêng bạn?",
+      "businessHint": "Phát triển doanh nghiệp vi mô và Tài khoản phát triển cá nhân (IDA).",
+      "englishLabel": "Bạn có muốn học lớp tiếng Anh (ESL)? (tùy chọn)",
+      "englishHint": "Đào tạo tiếng Anh miễn phí thông qua Dịch vụ hỗ trợ Tị nạn.",
+      "interpreterLabel": "Bạn có cần phiên dịch viên hoặc trợ giúp dịch thuật? (tùy chọn)",
+      "interpreterHint": "Dịch vụ phiên dịch miễn phí có sẵn thông qua các chương trình tị nạn."
+    },
+    "settingsForm": {
+      "i94Label": "Bạn có Bản ghi Tới/Rời I-94?",
+      "eadLabel": "Bạn có Giấy phép làm việc (thẻ EAD)?",
+      "eligibilityDateLabel": "Khi nào trợ giúp tị nạn chính thức của bạn bắt đầu? (ngày đủ điều kiện ORR)",
+      "arrivalDateLabel": "Bạn đến Hoa Kỳ khi nào?",
+      "statusGrantDateLabel": "Bạn được cấp tình trạng tị nạn hoặc asylee khi nào? (tùy chọn)"
+    },
+    "errors": {
+      "saveFailed": "Chúng tôi không thể lưu câu trả lời của bạn: {message}. Nếu điều này đề cập đến một cột bị thiếu, quá trình di chuyển cơ sở dữ liệu (supabase/migration_v2.sql) chưa được áp dụng.",
+      "profileNotFound": "Chúng tôi không thể tìm thấy hồ sơ của bạn để lưu câu trả lời của bạn. Vui lòng đăng xuất và đăng nhập lại, sau đó thử lại.",
+      "profileNotFoundShort": "Chúng tôi không thể tìm thấy hồ sơ của bạn để lưu. Vui lòng đăng xuất và đăng nhập lại, sau đó thử lại."
+    }
+  },
+  "processing": {
+    "title": "Tìm lợi ích của bạn...",
+    "subtitle": "Chúng tôi đang xem xét câu trả lời của bạn so với các chương trình lợi ích chính thức của Mỹ. Điều này thường mất khoảng 30 giây.",
+    "step1": "Tải quy tắc lợi ích",
+    "step2": "Kiểm tra sự đủ điều kiện của bạn",
+    "step3": "Xác minh kết quả",
+    "step4": "Xếp hạng theo hạn chót",
+    "ready": "Kế hoạch của bạn đã sẵn sàng!",
+    "readySubtitle": "Chúng tôi tìm thấy lợi ích bạn có thể đủ điều kiện.",
+    "goToDashboard": "Xem kế hoạch của tôi"
+  },
+  "dashboard": {
+    "welcome": "Chào mừng",
+    "tabs": {
+      "actionPlan": "Kế hoạch hành động của tôi",
+      "documents": "Tài liệu của tôi",
+      "formHelper": "Trợ lý mẫu",
+      "explainer": "Giải thích một thư",
+      "findHelp": "Tìm trợ giúp",
+      "progress": "Tiến độ của tôi"
+    },
+    "actionPlan": {
+      "title": "Kế hoạch hành động của bạn",
+      "subtitle": "Sắp xếp theo hạn chót gấp gáp nhất trước.",
+      "rulesChecked": "Quy tắc lợi ích lần cuối được xác minh:",
+      "daysLeft": "{days} ngày còn lại",
+      "urgent": "Gấp — hành động sớm",
+      "deadlinePassed": "Hạn chót có thể đã qua",
+      "noDeadline": "Không có hạn chót cố định",
+      "startButton": "Bắt đầu",
+      "continueButton": "Tiếp tục",
+      "sourceLink": "Nguồn chính thức",
+      "attorney": "Điều này yêu cầu một luật sư hoặc đại diện được công nhận.",
+      "noResults": "Không tìm thấy lợi ích đủ điều kiện. Trả lời thêm câu hỏi hoặc liên hệ với một tổ chức địa phương để được trợ giúp.",
+      "statusBadges": {
+        "likely_eligible": "Có khả năng đủ điều kiện",
+        "maybe_eligible": "Có thể đủ điều kiện",
+        "needs_human_review": "Cần xem xét",
+        "not_eligible": "Không đủ điều kiện"
+      },
+      "details": "Chi tiết",
+      "getFormHelp": "Nhận trợ giúp mẫu",
+      "daysLeftToApply": "{days} ngày còn lại để nộp đơn",
+      "oneDayLeftToApply": "1 ngày còn lại để nộp đơn",
+      "deadlinePassedClear": "Hạn chót này đã qua",
+      "whatYouNeed": "Những gì bạn cần",
+      "whereHowToApply": "Nơi và cách nộp đơn",
+      "requiredDocuments": "Tài liệu bắt buộc",
+      "nextSteps": "Bước tiếp theo",
+      "applyOnline": "Nộp đơn trực tuyến",
+      "formNeeded": "Mẫu để hoàn thành"
+    },
+    "documents": {
+      "title": "Tài liệu của tôi",
+      "subtitle": "Các tệp của bạn được mã hóa và riêng tư. Chúng tôi không bao giờ chia sẻ chúng với cơ quan thực thi nhập cư.",
+      "upload": "Tải lên tài liệu",
+      "dragDrop": "Kéo và thả tệp, hoặc nhấp để chọn",
+      "supportedTypes": "Hỗ trợ: PDF, JPG, PNG",
+      "extracting": "Đang đọc tài liệu...",
+      "noDocuments": "Chưa tải lên tài liệu nào.",
+      "deleteConfirm": "Bạn có chắc chắn muốn xóa tài liệu này?",
+      "open": "Mở",
+      "preview": "Xem trước",
+      "close": "Đóng",
+      "detectedType": "Loại được phát hiện",
+      "secureLine": "Tài liệu của bạn được xử lý an toàn và không bao giờ chia sẻ với cơ quan thực thi nhập cư.",
+      "types": {
+        "passport": "Hộ chiếu",
+        "i-94": "Bản ghi Tới của I-94",
+        "ead": "Giấy phép làm việc (EAD)",
+        "birth_certificate": "Giấy khai sinh",
+        "status_letter": "Thư tình trạng",
+        "other": "Khác"
+      }
+    },
+    "formHelper": {
+      "title": "Trợ lý mẫu",
+      "subtitle": "Nhận trợ giúp hiểu và điền vào mẫu. Chúng tôi không bao giờ điền SSN, số A, chi tiết ngân hàng, hoặc số hộ chiếu của bạn — những thứ đó vẫn riêng tư.",
+      "pasteInstructions": "Dán tên mẫu hoặc URL, hoặc mô tả những gì bạn cần trợ giúp:",
+      "placeholder": "Ví dụ: I-765 Ủy quyền làm việc, hoặc \"giúp tôi điền đơn xin Medicaid\"",
+      "ask": "Nhận trợ giúp",
+      "sensitiveNote": "Các trường được đánh dấu [BẠN ĐIỀN VÀO] chứa thông tin nhạy cảm — hoàn thành những thứ này bởi chính bạn.",
+      "legalNote": "Mẫu này liên quan đến tình trạng nhập cư của bạn. Vui lòng làm việc với một luật sư có giấy phép hoặc đại diện được DOJ công nhận.",
+      "thinking": "Đang đọc mẫu...",
+      "uploadFiles": "Tải lên tệp",
+      "openInFiller": "Mở trong trình điền mẫu",
+      "secureLine": "Tài liệu của bạn được xử lý an toàn và không bao giờ chia sẻ với cơ quan thực thi nhập cư.",
+      "send": "Gửi",
+      "contextNote": "Wayfinder sử dụng thông tin bạn đã cung cấp để trả lời cho tình huống của bạn.",
+      "suggestionsLabel": "Câu hỏi phổ biến"
+    },
+    "explainer": {
+      "title": "Giải thích một thư hoặc mẫu",
+      "subtitle": "Dán hoặc tải lên một thư hoặc tài liệu gây nhầm lẫn. Chúng tôi sẽ giải thích nó bằng ngôn ngữ đơn giản.",
+      "pasteLabel": "Dán văn bản ở đây:",
+      "placeholder": "Dán văn bản thư hoặc mẫu ở đây...",
+      "orUpload": "Hoặc tải lên ảnh hoặc quét tài liệu:",
+      "explain": "Giải thích điều này",
+      "thinking": "Đang đọc tài liệu của bạn..."
+    },
+    "findHelp": {
+      "title": "Tìm trợ giúp gần bạn",
+      "subtitle": "Kết nối với những người có thể trợ giúp — dịch vụ định cư miễn phí, hỗ trợ pháp lý, và văn phòng tị nạn của bang bạn.",
+      "resettlement": "Cơ quan Định cư",
+      "legalAid": "Trợ giúp pháp lý nhập cư",
+      "stateOffice": "Văn phòng tị nạn của bang",
+      "national": "Tài nguyên quốc gia",
+      "attorneyWarning": "Quan trọng: Đối với bất kỳ vấn đề pháp lý nào liên quan đến tình trạng nhập cư của bạn, chỉ một luật sư có giấy phép hoặc đại diện được DOJ công nhận mới có thể cung cấp lời khuyên pháp lý và đại diện cho bạn.",
+      "call": "Gọi",
+      "visit": "Truy cập trang web",
+      "noState": "Chọn bang của bạn để xem các tổ chức địa phương."
+    },
+    "progress": {
+      "title": "Tiến độ của tôi",
+      "subtitle": "Theo dõi bạn ở đâu với mỗi lợi ích.",
+      "statuses": {
+        "not_started": "Chưa bắt đầu",
+        "in_progress": "Đang diễn ra",
+        "documents_ready": "Tài liệu sẵn sàng",
+        "submitted": "Đã nộp",
+        "needs_attorney": "Cần luật sư",
+        "done": "Hoàn thành"
+      },
+      "updateStatus": "Cập nhật trạng thái"
+    },
+    "pdf": {
+      "download": "Tải kế hoạch của tôi (PDF)",
+      "generating": "Tạo PDF..."
+    },
+    "dismiss": "Loại bỏ",
+    "footer": {
+      "privacy": "Thông tin của bạn được mã hóa và riêng tư. Chúng tôi không bao giờ chia sẻ nó với cơ quan thực thi nhập cư.",
+      "disclaimer": "Wayfinder không cung cấp lời khuyên pháp lý."
+    },
+    "settings": {
+      "title": "Cài đặt",
+      "subtitle": "Thay đổi ngôn ngữ của bạn hoặc cập nhật câu trả lời bạn đã cung cấp trong khi đăng ký.",
+      "language": "Ngôn ngữ",
+      "languageHint": "Chọn ngôn ngữ cho toàn bộ ứng dụng. Nó cập nhật ngay lập tức.",
+      "editInfo": "Chỉnh sửa thông tin của tôi",
+      "editInfoHint": "Thay đổi câu trả lời bạn đã cung cấp khi đăng ký. Chúng tôi sẽ kiểm tra lợi ích của bạn lại.",
+      "recheck": "Kiểm tra lại lợi ích của tôi",
+      "backToDashboard": "Quay lại bảng điều khiển",
+      "saved": "Đã lưu",
+      "saving": "Đang lưu..."
+    },
+    "formFill": {
+      "title": "Điền mẫu của bạn",
+      "intro": "Chúng tôi đã điền những thứ chúng tôi đã biết. Vui lòng xem xét từng trường trước khi bạn tải xuống.",
+      "secureLine": "Mẫu của bạn được điền trong trình duyệt của bạn và không bao giờ chia sẻ với cơ quan thực thi nhập cư.",
+      "autoFilled": "Điền từ thông tin của bạn",
+      "missing": "Thiếu — vui lòng nhập cái này",
+      "sensitive": "Nhạy cảm — đừng chia sẻ cái này với chúng tôi. Nhập nó bởi chính bạn.",
+      "download": "Tải mẫu được điền",
+      "downloading": "Chuẩn bị mẫu của bạn...",
+      "reviewAll": "Xem xét từng trường",
+      "noFields": "Mẫu này không có hộp có thể điền. Bạn có thể nhập qua các chỗ được đánh dấu sáng.",
+      "openPrompt": "Mở mẫu để điền",
+      "loading": "Đang mở mẫu của bạn...",
+      "loadError": "Chúng tôi không thể mở mẫu này. Vui lòng thử tệp khác.",
+      "uploadHint": "Tải lên I-94, giấy phép làm việc, hoặc tài liệu khác trong Tài liệu để tự động điền thêm mẫu này."
+    }
+  },
+  "errors": {
+    "generic": "Có lỗi xảy ra. Vui lòng thử lại.",
+    "signIn": "Email hoặc mật khẩu không chính xác.",
+    "signUp": "Không thể tạo tài khoản. Vui lòng thử lại.",
+    "eligibility": "Không thể tải lợi ích của bạn. Vui lòng thử lại.",
+    "upload": "Tải lên thất bại. Vui lòng thử tệp nhỏ hơn hoặc định dạng khác.",
+    "required": "Trường này là bắt buộc."
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "yes": "Có",
+    "no": "Không",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "submit": "Nộp",
+    "or": "hoặc",
+    "edit": "Chỉnh sửa",
+    "download": "Tải xuống",
+    "open": "Mở",
+    "settings": "Cài đặt",
+    "dismiss": "Loại bỏ"
+  }
+}

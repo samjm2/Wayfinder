@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "Giriş Yap",
+    "signOut": "Çıkış Yap",
+    "dashboard": "Benim Panom",
+    "documents": "Belgelerim",
+    "findHelp": "Yardım Bul",
+    "settings": "Ayarlar"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Nasıl çalışır",
+      "features": "Özellikler",
+      "languages": "Diller",
+      "signIn": "Giriş Yap",
+      "getStarted": "Başla"
+    },
+    "hero": {
+      "headline": "Yeni bir ev, yolunuzu bilmekle başlar.",
+      "subheadline": "Wayfinder, hak ettiğiniz yardımları ve belgeleri bulur, her şeyi dilinde açıklar ve son tarih geçmeden adım adım size rehberlik eder.",
+      "cardLabel": "Dilinizde başlayın",
+      "searchPlaceholder": "100+ dili ara…",
+      "cta": "Ücretsiz başla"
+    },
+    "how": {
+      "eyebrow": "Nasıl çalışır",
+      "title": "Gelişten net bir plana üç adım.",
+      "steps": [
+        {
+          "title": "Hikayenizi anlatın",
+          "body": "Birkaç basit soruyu, birer birer, kendi dilinizde cevaplayın. Büyük yazı, sade kelimeler, acele yok."
+        },
+        {
+          "title": "Uygun olanı buluruz",
+          "body": "Wayfinder, seçilmiş ABD yardım kurallarını kontrol eder ve tam olarak neye hak kazandığınızı kaynakla gösterir, asla tahminde bulunmaz."
+        },
+        {
+          "title": "Zamanında hareket edin",
+          "body": "Son tarihe göre sıralanmış bir plan alın, her form açıklanmış ve çok önemli olduğunda gerçek bir kişiye yardım yapılabilir."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Sizin arkadaşınız",
+      "title": "İhtiyacınız olan her şey, bir sakin yerde.",
+      "items": [
+        {
+          "title": "Benim İşlem Planı",
+          "body": "Yardımlarınız en yakın son tarihe göre sıralanmış, her birinin hak kazandığınızın sade dildeki nedeni ve hiçbir şey kaçmaması için geri sayım."
+        },
+        {
+          "title": "Yapay Zeka Form Yardımcısı",
+          "body": "Wayfinder her alanı açıklar ve dilinde cevapları taslaklandırır. Asla hassas numaralara dokunmaz ve hiçbir şeyi sizin için göndermeye bakmaz."
+        },
+        {
+          "title": "Belge Kasası",
+          "body": "Pasaportunuzu, I-94'ünüzü ve EAD'inizi bir şifreli, yalnız sahibine ait yerde tutun. Gizli ve hiçbir zaman uygulamayla paylaşılmaz."
+        },
+        {
+          "title": "Yardım Bul",
+          "body": "Herhangi bir yasal konu için Wayfinder sizi yakınında lisanslı bir avukat veya akredite bir temsilciyle bağlantılandırır. Kişi, tahminden başka bir şey değil."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Herhangi bir dil",
+      "title": "Kendi kelimelerinizle, çok ilk ekrandan itibaren.",
+      "body": "Kaydolmadan önce dilinizi seçin ve Wayfinder her yerde, her adımda bunu konuşur."
+    },
+    "trust": {
+      "badge": "Güvenliğiniz ilk gelir",
+      "title": "Bilgilerinizi hiçbir zaman göçmenlik uygulaması ile paylaşmayız.",
+      "body": "Belgeleriniz şifreli ve yalnız sahibine ait. Wayfinder asla hassas kimlik bilgilerini doldurmaz, hiçbir şekilde form göndermez ve her yasal karar gerçek, lisanslı bir kişi tarafından yapılır, bir makine tarafından değil.",
+      "points": [
+        "Şifreli ve gizli",
+        "Kontrol edebileceğiniz kaynaklar",
+        "İnsan tarafından gözden geçirilmiş"
+      ]
+    },
+    "finalCta": {
+      "title": "İleri gidişiniz bugün başlıyor.",
+      "body": "Ücretsiz, gizli ve dilinizde. Birkaç dakika içinde hak kazandığınız şeyi bulun.",
+      "primary": "Ücretsiz başla",
+      "secondary": "Nasıl çalıştığını gör"
+    },
+    "footer": {
+      "tagline": "Yasal tavsiye değil · Daima bir kişi tarafından onaylanır"
+    },
+    "translating": "Sayfa çevriliyor…"
+  },
+  "auth": {
+    "createAccount": "Hesabınızı oluşturun",
+    "email": "E-posta adresi",
+    "password": "Parola",
+    "signUp": "Hesap oluştur",
+    "signIn": "Giriş Yap",
+    "haveAccount": "Zaten hesabınız var mı?",
+    "noAccount": "Hesabınız yok mu?",
+    "emailPlaceholder": "sizin@email.com",
+    "passwordPlaceholder": "Parola seçin",
+    "signingUp": "Hesap oluşturuluyor...",
+    "signingIn": "Giriş yapılıyor..."
+  },
+  "onboarding": {
+    "progressLabel": "{current} adım / {total}",
+    "nav": {
+      "next": "İleri",
+      "back": "Geri",
+      "confirmContinue": "Onayla ve devam et",
+      "findBenefits": "Yardımlarımı bul",
+      "saving": "Kaydediliyor...",
+      "skipNotSure": "Geç — Emin değilim"
+    },
+    "yes": "Evet",
+    "no": "Hayır",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Mülteci",
+        "note": "Madde 207 kapsamında kabul edilmiş"
+      },
+      "asylee_208": {
+        "label": "İlticacı",
+        "note": "Madde 208 kapsamında iltica verilmiş"
+      },
+      "siv": {
+        "label": "Özel Göçmen Vizesi (SIV) sahibi",
+        "note": "Afgan veya Iraklı"
+      },
+      "afghan_parolee": {
+        "label": "Afgan insani huma parole"
+      },
+      "ukrainian_parolee": {
+        "label": "Ukraynalı insani huma parole"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Kübalı veya Haitili girişçi"
+      },
+      "trafficking_victim": {
+        "label": "Sertifikalı insan ticareti kurbanı",
+        "note": "T-vize veya ORR mektubu"
+      },
+      "amerasian": {
+        "label": "Amerasya göçmeni"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Mülteci, ilticacı veya insani statüden yeşil kart",
+        "note": "Bu SNAP ve Medicaid uygunluğunu geri yükler"
+      },
+      "lpr_other": {
+        "label": "Diğer yoldan yeşil kart"
+      },
+      "us_citizen": {
+        "label": "ABD Vatandaşı veya ABD Ulusal"
+      },
+      "other_none": {
+        "label": "Diğer, emin değil veya bunlardan hiçbiri"
+      }
+    },
+    "language": {
+      "question": "Hangi dili tercih ediyorsunuz?",
+      "hint": "Her şeyi bu dilde göstereceğiz."
+    },
+    "scan": {
+      "question": "Belgeleriniz var mı? Zaman kazanmak için bir fotoğraf çekin",
+      "intro": "I-94'ünüzün bir fotoğrafını çekin (ve iş izni, yeşil kart veya iltica mektubunuz varsa). Durumunuzu ve tarihleri okuyacağız, böylece siz yazmanız gerekmez.",
+      "secureLine": "Belgeleriniz güvenli bir şekilde işlenir ve hiçbir zaman sunucularımızda kaydedilmez veya göçmenlik uygulaması ile paylaşılmaz. Yalnızca yardım kontrol etmek için gereken birkaç alanı okuyoruz — asla Sosyal Güvenlik numaranız veya A-Numaranız değil.",
+      "uploadAriaLabel": "Göçmenlik belgelerinizin fotoğrafını veya PDF'sini yükleyin",
+      "chooseDifferent": "Farklı fotoğraflar seçin",
+      "chooseFile": "Fotoğraf çekin veya dosya seçin",
+      "fileTypes": "JPEG, PNG veya PDF · 4 belgeye kadar",
+      "reading": "Belgeleriniz okunuyor…",
+      "readDocuments": "Belgelerimi oku",
+      "skip": "Belgelerim yok — bunun yerine soruları cevaplayın",
+      "errorReadFailed": "Belgenizi okuyamadık. Lütfen tekrar deneyin veya soruları cevaplayın.",
+      "errorUnreachable": "Belge okuyucuya ulaşamadık. Lütfen tekrar deneyin veya soruları cevaplayın."
+    },
+    "confirm": {
+      "question": "Lütfen belgelerinizden okuduğumuzu kontrol edin",
+      "intro": "Yardım sonuçlarınız bu değerlere bağlıdır, bu nedenle onları doğrulamak için bir dakika ayırın. Düzeltmek için herhangi bir alanı tıklayın.",
+      "secureLine": "Güvenli bir şekilde okunmuş ve kaydedilmemiş.",
+      "detectedPrefix": "Biz tespit ettik:",
+      "lowConfidence": "Bazı değerleri okumak zor oldu (aşağıda işaretli). Lütfen bunları önce çift kontrol edin.",
+      "pleaseCheck": "Lütfen kontrol edin",
+      "fromDocument": "Belgelerinizden",
+      "fields": {
+        "immigrationStatus": "Göçmenlik durumu",
+        "selectStatus": "Durumunuzu seçin",
+        "fullName": "Tam ad",
+        "fullNameHint": "Sadece sizin kayıtlarınız için — uygunluk için kullanılmaz.",
+        "fullNamePlaceholder": "Tam adınız",
+        "dateOfBirth": "Doğum tarihi",
+        "dateOfBirthHint": "Yaşa dayalı programlar için yaşınızı belirler.",
+        "age": "Yaş",
+        "countryOfOrigin": "Menşei ülke",
+        "countryOfOriginHint": "Sadece sizin kayıtlarınız için.",
+        "countryPlaceholder": "Ülke",
+        "arrivalDate": "ABD'ye geldiğiniz tarih",
+        "eligibilityDate": "ORR uygunluk tarihi",
+        "eligibilityDateHint": "RCA/RMA son tarih saatini başlatır.",
+        "statusGrantDate": "Durumun verildiği tarih",
+        "statusGrantDateHint": "Mülteci/ilticacı veriliş tarihi (SSI 7 yıl saati). İsteğe bağlı."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "İş izni (EAD)",
+        "green_card": "Yeşil kart",
+        "asylum_letter": "İltica mektubu",
+        "ssn_card": "Sosyal Güvenlik kartı",
+        "other": "belge"
+      }
+    },
+    "status": {
+      "question": "Şu anda göçmenlik durumunuz nedir?",
+      "hint": "Sana en uygun olanı seç. Bu hemen hemen her yardım kuralını şekillendirir."
+    },
+    "documents": {
+      "question": "Birkaç hızlı belge sorusu",
+      "hint": "Evet veya Hayır'a tıklayın. Bazılarınız yok olabilir.",
+      "fromDocsPrefix": "Belgelerinizden not ettik",
+      "fromDocsI94": " I-94'ünüz",
+      "fromDocsAnd": " ve",
+      "fromDocsEad": " iş izniniz (EAD)",
+      "i94Label": "I-94 Giriş/Çıkış Belgesi",
+      "i94Hint": "Giriş kanıtı. §207 veya 'Vize 93' kodlu I-94 mülteci durumunu kanıtlar.",
+      "eadLabel": "İş İzni (EAD kartı)",
+      "eadHint": "İş Yetkilendirme Belgesi. EAD kodu A03 da mülteci durumunu kanıtlar.",
+      "ssnLabel": "Sosyal Güvenlik Numaranız (SSN) var mı?",
+      "ssnHint": "Sadece birinin olup olmadığını bilmemiz gerekir — asla numara kendisi değil."
+    },
+    "orrLetter": {
+      "question": "ORR sertifikasyon veya uygunluk mektubunuz var mı?",
+      "hint": "İnsan ticareti kurbanları, RCA ve RMA gibi ORR yardımlarına erişmek için bu mektubu (I-94'ü değil) gerekir."
+    },
+    "eligibilityDate": {
+      "question": "Mülteci yardımınız resmi olarak ne zaman başladı?",
+      "hint": "Bu ORR uygunluk tarihiniz — genellikle geliş tarihiniz veya durumunuzun verildiği tarih, hangisi daha sonraya düşüyorsa.",
+      "deadlineLabel": "Önemli son tarih:",
+      "deadlineBody": " Mülteci Nakit Yardımı (RCA) ve tıbbi yardım için saat bu tarihten başlar — hemen başvurun."
+    },
+    "arrivalDate": {
+      "question": "ABD'ye ne zaman geldiniz?",
+      "hint": "Çoğu istihdam ve entegrasyon hizmeti bu tarihten itibaren 5 yılına kadar çalışır."
+    },
+    "statusGrantDate": {
+      "question": "Mülteci veya ilticacı statüsü ne zaman verildi?",
+      "hint": "SSI uygunluğu bu tarihten 7 yıl sonra biter. Emin değilseniz boş bırakın."
+    },
+    "location": {
+      "question": "Hangi eyalette yaşıyorsunuz?",
+      "hint": "Yardımlar ve yerel yardım eyalete göre değişir. Şehir ve ZIP isteğe bağlıdır.",
+      "stateLabel": "Eyalet",
+      "selectState": "Eyaletinizi seçin",
+      "cityLabel": "Şehir (isteğe bağlı)",
+      "cityPlaceholder": "Şehir",
+      "zipLabel": "ZIP kodu (isteğe bağlı)",
+      "zipPlaceholder": "ZIP kodu"
+    },
+    "household": {
+      "question": "Hanelokantanız hakkında bize söyleyin",
+      "hint": "Bu cevaplar gelir limitinizi belirler. Bunlar özeldir.",
+      "ageLabel": "Yaşınız",
+      "agePlaceholder": "Yaşınız",
+      "ageFromDoc": "Yaşınız ({age}) belgelerinizden ayarlanmıştır. Bunu doğrulama ekranında değiştirebilirsiniz.",
+      "sizeLabel": "Sizin sayınız dahil olmak üzere, kaç kişi sizinle yaşıyor?",
+      "sizePlaceholder": "örn. 3",
+      "incomeLabel": "Hanenizin her ay aldığı para, vergi öncesi (ABD doları). Hiç yoksa 0 girin.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ ay"
+    },
+    "children": {
+      "question": "Sizinle kaç çocuk yaşıyor?",
+      "under19Label": "Sizinle 19 yaşından küçük kaç çocuk yaşıyor?",
+      "under19Hint": "Hiç yoksa 0 girin.",
+      "under18Label": "Bunlardan kaçı 18 yaşından küçük?",
+      "under5Label": "Bunlardan kaçı 5 yaşından küçük?",
+      "subsetHint": "Bu yukarıdaki sayının daha küçük bir bölümü."
+    },
+    "pregnantCash": {
+      "question": "Eviniz hakkında iki hızlı soru",
+      "pregnantLabel": "Evinizde şu anda hamile olan var mı?",
+      "pregnantHint": "WIC ve bazı Medicaid programları hamile kadınları önceliklendirir.",
+      "cashLabel": "Zaten nakit yardım alıyor musunuz (TANF, SSI veya genel yardım)?",
+      "cashHint": "Bu, Mülteci Nakit Yardımı ve SNAP uygunluğunu etkiler."
+    },
+    "special": {
+      "question": "Birkaç özel durum",
+      "hint": "Her biri için Evet veya Hayır'a tıklayın.",
+      "unaccompaniedLabel": "18 yaşından az mısınız ve ABD'de ebeveyn veya vasi olmadan mı?",
+      "unaccompaniedHint": "Yalnız Mülteci Reşit Olmayanlar (URM) programı için.",
+      "disabledLabel": "İşe engel olan bir engeli var mı?",
+      "disabledHint": "SSI ve SSDI için.",
+      "blindLabel": "Kör müsünüz veya çok sınırlı görmüş müsünüz?",
+      "blindHint": "Özel bir SSI/SSDI kategorisi.",
+      "workQuartersLabel": "Siz, eş veya ebeveyn ABD'de yaklaşık 10 yıl çalıştı mı?",
+      "workQuartersHint": "40 iş kredisi SSI ve SNAP için bazı 5 yıl barlarını atlatabilir."
+    },
+    "goals": {
+      "question": "Neyle ilgili yardım almak istersiniz?",
+      "hint": "Bu size doğru programları bulmamızda yardımcı olur.",
+      "employmentLabel": "Çalışıyor musunuz, iş arıyor musunuz veya iş eğitimi almak istiyor musunuz?",
+      "employmentHint": "İstihdam hizmetleri, çocuk bakım desteği, Eşleşen Hibe.",
+      "businessLabel": "Kendi işinizi başlatmak veya büyütmek istiyor musunuz?",
+      "businessHint": "Mikro işletme geliştirme ve Bireysel Geliştirme Hesapları (IDA).",
+      "englishLabel": "İngilizce (ESL) sınıfları istersiniz mi? (isteğe bağlı)",
+      "englishHint": "Mülteci Destek Hizmetleri aracılığıyla ücretsiz İngilizce dil eğitimi.",
+      "interpreterLabel": "Tercüman veya çeviri yardımına ihtiyacınız var mı? (isteğe bağlı)",
+      "interpreterHint": "Ücretsiz tercüme hizmetleri mülteci programları aracılığıyla mevcuttur."
+    },
+    "settingsForm": {
+      "i94Label": "I-94 Giriş/Çıkış Belgesi var mı?",
+      "eadLabel": "İş İzni (EAD kartı) var mı?",
+      "eligibilityDateLabel": "Mülteci yardımınız resmi olarak ne zaman başladı? (ORR uygunluk tarihi)",
+      "arrivalDateLabel": "ABD'ye ne zaman geldiniz?",
+      "statusGrantDateLabel": "Mülteci veya ilticacı statüsü ne zaman verildi? (isteğe bağlı)"
+    },
+    "errors": {
+      "saveFailed": "Cevaplarınızı kaydedip: {message}. Eksik bir sütunu belirtirse, veritabanı göçü (supabase/migration_v2.sql) henüz uygulanmamıştır.",
+      "profileNotFound": "Cevaplarınızı kaydetmek için profilinizi bulamadık. Lütfen çıkış yapın ve geri girin, sonra tekrar deneyin.",
+      "profileNotFoundShort": "Kaydetmek için profilinizi bulamadık. Lütfen çıkış yapın ve geri girin, sonra tekrar deneyin."
+    }
+  },
+  "processing": {
+    "title": "Yardımlarınız bulunuyor...",
+    "subtitle": "Cevaplarınızı resmi ABD yardım programlarına göre gözden geçiriyoruz. Bu genellikle yaklaşık 30 saniye alır.",
+    "step1": "Yardım kuralları yükleniyor",
+    "step2": "Uygunluğunuz kontrol ediliyor",
+    "step3": "Sonuçlar doğrulanıyor",
+    "step4": "Son tarih kapsamında sıralanıyor",
+    "ready": "Planınız hazır!",
+    "readySubtitle": "Hak kazandığınız yardımları bulduk.",
+    "goToDashboard": "Planımı gör"
+  },
+  "dashboard": {
+    "welcome": "Hoş geldiniz",
+    "tabs": {
+      "actionPlan": "Benim İşlem Planı",
+      "documents": "Belgelerim",
+      "formHelper": "Form Yardımcısı",
+      "explainer": "Mektubu Açıkla",
+      "findHelp": "Yardım Bul",
+      "progress": "Benim Ilerlemem"
+    },
+    "actionPlan": {
+      "title": "İşlem Planınız",
+      "subtitle": "En acil son tarih ilkine göre sıralanmış.",
+      "rulesChecked": "Yardım kuralları son olarak doğrulandı:",
+      "daysLeft": "{days} gün kaldı",
+      "urgent": "Acil — çabuk harekete geç",
+      "deadlinePassed": "Son tarih geçmiş olabilir",
+      "noDeadline": "Sabit son tarih yok",
+      "startButton": "Başla",
+      "continueButton": "Devam et",
+      "sourceLink": "Resmi kaynak",
+      "attorney": "Bu bir avukat veya akredite temsilci gerektirir.",
+      "noResults": "Uygun yardım bulunamadı. Daha fazla soru cevaplayın veya yerel bir kuruluşla iletişime geçin.",
+      "statusBadges": {
+        "likely_eligible": "Muhtemelen uygun",
+        "maybe_eligible": "Uygun olabilir",
+        "needs_human_review": "Gözden geçirilmesi gerekir",
+        "not_eligible": "Uygun değil"
+      },
+      "details": "Ayrıntılar",
+      "getFormHelp": "Form yardımı al",
+      "daysLeftToApply": "Başvurmak için {days} gün kaldı",
+      "oneDayLeftToApply": "Başvurmak için 1 gün kaldı",
+      "deadlinePassedClear": "Bu son tarih geçmiş",
+      "whatYouNeed": "Ne gerekli",
+      "whereHowToApply": "Nereye ve nasıl başvuracaksınız",
+      "requiredDocuments": "Gerekli belgeler",
+      "nextSteps": "Sonraki adımlar",
+      "applyOnline": "Çevrimiçi başvur",
+      "formNeeded": "Tamamlanacak form"
+    },
+    "documents": {
+      "title": "Belgelerim",
+      "subtitle": "Dosyalarınız şifreli ve özeldir. Hiçbir zaman göçmenlik uygulaması ile paylaşmayız.",
+      "upload": "Belge yükle",
+      "dragDrop": "Bir dosyayı sürükle ve bırak veya seçmek için tıkla",
+      "supportedTypes": "Desteklenir: PDF, JPG, PNG",
+      "extracting": "Belge okunuyor...",
+      "noDocuments": "Henüz belge yüklenmedi.",
+      "deleteConfirm": "Bu belgeyi silmek istediğinizden emin misiniz?",
+      "open": "Aç",
+      "preview": "Ön izleme",
+      "close": "Kapat",
+      "detectedType": "Algılanan tür",
+      "secureLine": "Belgeleriniz güvenli bir şekilde işlenir ve göçmenlik uygulaması ile hiçbir zaman paylaşılmaz.",
+      "types": {
+        "passport": "Pasaport",
+        "i-94": "I-94 Giriş Belgesi",
+        "ead": "İş İzni (EAD)",
+        "birth_certificate": "Doğum Sertifikası",
+        "status_letter": "Durum Mektubu",
+        "other": "Diğer"
+      }
+    },
+    "formHelper": {
+      "title": "Form Yardımcısı",
+      "subtitle": "Bir formu anlamak ve doldurmak için yardım alın. Asla SSN, A-numarası, banka detayları veya pasaport numaranızı doldurmayız — bunlar gizli kalır.",
+      "pasteInstructions": "Form adını veya URL'yi yapıştırın veya ne yardıma ihtiyacınız olduğunu açıklayın:",
+      "placeholder": "Örnek: I-765 İş Yetkilendirmesi veya \"bir Medicaid başvurusunu doldurmamda yardım et\"",
+      "ask": "Yardım al",
+      "sensitiveNote": "[SİZ DOLDURUN] işaretli alanlar hassas bilgiler içerir — bunları kendiniz tamamlayın.",
+      "legalNote": "Bu form göçmenlik statünüzü içerir. Lütfen lisanslı bir avukat veya DOJ akredite temsilciyle çalışın.",
+      "thinking": "Form okunuyor...",
+      "uploadFiles": "Dosya yükle",
+      "openInFiller": "Form doldurucu içinde aç",
+      "secureLine": "Belgeleriniz güvenli bir şekilde işlenir ve göçmenlik uygulaması ile hiçbir zaman paylaşılmaz.",
+      "send": "Gönder",
+      "contextNote": "Wayfinder, sizin durumunuz için cevaplamak için zaten verdiğiniz bilgileri kullanır.",
+      "suggestionsLabel": "Sık sorulan sorular"
+    },
+    "explainer": {
+      "title": "Mektubu veya Formu Açıkla",
+      "subtitle": "Kafa karıştırıcı bir mektubu veya belgeyi yapıştırın veya yükleyin. Sade dilde açıklayacağız.",
+      "pasteLabel": "Metni buraya yapıştırın:",
+      "placeholder": "Mektubu veya form metnini buraya yapıştırın...",
+      "orUpload": "Veya belgenin fotoğrafını veya taramasını yükleyin:",
+      "explain": "Bunu açıkla",
+      "thinking": "Belgeniz okunuyor..."
+    },
+    "findHelp": {
+      "title": "Yakının Yardım Bul",
+      "subtitle": "Yardım edebilecek kişilere bağlanın — ücretsiz yerleşim hizmetleri, yasal yardım ve eyalet mülteci ofisive bağlanın.",
+      "resettlement": "Yerleşim Ajansları",
+      "legalAid": "Göçmenlik Yasal Yardımı",
+      "stateOffice": "Eyalet Mülteci Ofisi",
+      "national": "Ulusal Kaynaklar",
+      "attorneyWarning": "Önemli: Göçmenlik durumunuzu içeren herhangi bir yasal konu için, yalnızca lisanslı bir avukat veya DOJ akredite temsilcisi yasal tavsiye verebilir ve sizi temsil edebilir.",
+      "call": "Ara",
+      "visit": "Web sitesini ziyaret et",
+      "noState": "Yerel kuruluşları görmek için devletinizi seçin."
+    },
+    "progress": {
+      "title": "Benim Ilerlemem",
+      "subtitle": "Her yardımla nerede olduğunuz izleyin.",
+      "statuses": {
+        "not_started": "Başlanmadı",
+        "in_progress": "Devam ediyor",
+        "documents_ready": "Belgeler hazır",
+        "submitted": "Gönderildi",
+        "needs_attorney": "Avukat gerekir",
+        "done": "Bitti"
+      },
+      "updateStatus": "Durumu güncelle"
+    },
+    "pdf": {
+      "download": "Planımı indir (PDF)",
+      "generating": "PDF oluşturuluyor..."
+    },
+    "dismiss": "Kapat",
+    "footer": {
+      "privacy": "Bilgileriniz şifreli ve özeldir. Asla göçmenlik uygulaması ile paylaşmayız.",
+      "disclaimer": "Wayfinder yasal tavsiye sağlamaz."
+    },
+    "settings": {
+      "title": "Ayarlar",
+      "subtitle": "Dilinizi değiştirin veya kayıt sırasında verdiğiniz cevapları güncelleyin.",
+      "language": "Dil",
+      "languageHint": "Tüm uygulama için dili seçin. Hemen güncellenir.",
+      "editInfo": "Bilgilerimi düzenle",
+      "editInfoHint": "Kayıt sırasında verdiğiniz cevapları değiştirin. Yardımlarınızı tekrar kontrol edeceğiz.",
+      "recheck": "Yardımlarımı yeniden kontrol et",
+      "backToDashboard": "Pano'ya geri dön",
+      "saved": "Kaydedildi",
+      "saving": "Kaydediliyor..."
+    },
+    "formFill": {
+      "title": "Formu doldurun",
+      "intro": "Zaten bildiğimiz şeyi doldurduk. İndirmeden önce her alanı gözden geçirin.",
+      "secureLine": "Formunuz tarayıcınızda doldurulur ve asla göçmenlik uygulaması ile paylaşılmaz.",
+      "autoFilled": "Bilgilerinizden doldurulmuş",
+      "missing": "Eksik — lütfen bunu yazın",
+      "sensitive": "Hassas — bunu bizimle paylaşmayın. Kendiniz girin.",
+      "download": "Doldurulmuş formu indir",
+      "downloading": "Formu hazırlanıyor...",
+      "reviewAll": "Her alanı gözden geçir",
+      "noFields": "Bu formun doldurulabilir kutuları yoktur. Vurgulanan yerler üzerine yazabilirsiniz.",
+      "openPrompt": "Doldurmak için bir form açın",
+      "loading": "Formunuz açılıyor...",
+      "loadError": "Bu formu açamadık. Lütfen başka bir dosya deneyin.",
+      "uploadHint": "Belgeler'de I-94, iş izni veya diğer belgeler yükleyerek bu formu otomatik olarak daha fazla doldurun."
+    }
+  },
+  "errors": {
+    "generic": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin.",
+    "signIn": "Yanlış e-posta veya parola.",
+    "signUp": "Hesap oluşturulamadı. Lütfen tekrar deneyin.",
+    "eligibility": "Yardımlarınız yüklenemedi. Lütfen tekrar deneyin.",
+    "upload": "Yükleme başarısız. Lütfen daha küçük bir dosya veya farklı biçim deneyin.",
+    "required": "Bu alan gereklidir."
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "yes": "Evet",
+    "no": "Hayır",
+    "save": "Kaydet",
+    "cancel": "İptal et",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "submit": "Gönder",
+    "or": "veya",
+    "edit": "Düzenle",
+    "download": "İndir",
+    "open": "Aç",
+    "settings": "Ayarlar",
+    "dismiss": "Kapat"
+  }
+}

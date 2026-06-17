@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "登录",
+    "signOut": "登出",
+    "dashboard": "我的仪表板",
+    "documents": "我的文件",
+    "findHelp": "寻求帮助",
+    "settings": "设置"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "工作原理",
+      "features": "功能",
+      "languages": "语言",
+      "signIn": "登录",
+      "getStarted": "开始使用"
+    },
+    "hero": {
+      "headline": "新家始于了解道路。",
+      "subheadline": "Wayfinder 为您寻找符合条件的福利和文件工作，用您的语言解释一切，并逐步指导您，赶在截止日期之前。",
+      "cardLabel": "用您的语言开始",
+      "searchPlaceholder": "搜索 100+ 种语言…",
+      "cta": "免费开始"
+    },
+    "how": {
+      "eyebrow": "工作原理",
+      "title": "从到达到清晰计划的三个步骤。",
+      "steps": [
+        {
+          "title": "告诉我们您的故事",
+          "body": "一次一个，用您自己的语言回答一些简单问题。大文字，简洁用词，不用着急。"
+        },
+        {
+          "title": "我们找到适合的",
+          "body": "Wayfinder 检查精选的美国福利规则数据库，准确显示您符合什么条件，并提供来源，从不猜测。"
+        },
+        {
+          "title": "及时行动",
+          "body": "获取按截止日期排序的计划，每份表格都有简洁说明，当重要时有真实的人类帮助。"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "您的伴侣",
+      "title": "您需要的一切，在一个平静的地方。",
+      "items": [
+        {
+          "title": "我的行动计划",
+          "body": "您的福利按最近的截止日期排序，每个都有简洁的资格说明和倒计时，让您不遗漏任何事。"
+        },
+        {
+          "title": "AI 表格助手",
+          "body": "Wayfinder 解释每个字段并用您的语言草拟答案。它从不涉及敏感数字，也从不代您提交任何内容。"
+        },
+        {
+          "title": "文件保险库",
+          "body": "在一个加密的、仅所有者的地方保存您的护照、I-94 和 EAD。隐私的，永不与执法部门共享。"
+        },
+        {
+          "title": "寻求帮助",
+          "body": "对于任何法律事项，Wayfinder 为您联系您附近的持证律师或受认可的代表。是一个真实的人，不是猜测。"
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "任何语言",
+      "title": "用您的语言，从一开始就这样做。",
+      "body": "在注册前选择您的语言，Wayfinder 会在每个地方、每一步都说这种语言。"
+    },
+    "trust": {
+      "badge": "您的安全最重要",
+      "title": "我们永不与移民执法部门分享您的信息。",
+      "body": "您的文件是加密的且仅所有者可见。Wayfinder 从不填敏感标识符，从不提交表格，每个法律决定都由真实的、持证的人做出，而非机器。",
+      "points": [
+        "加密和隐私",
+        "您可以检查的来源",
+        "由人类审查"
+      ]
+    },
+    "finalCta": {
+      "title": "您的前进之路从今天开始。",
+      "body": "免费、隐私且用您的语言。在几分钟内找到您符合什么条件。",
+      "primary": "免费开始",
+      "secondary": "看看它如何工作"
+    },
+    "footer": {
+      "tagline": "不是法律建议 · 始终由一个人确认"
+    },
+    "translating": "正在翻译页面…"
+  },
+  "auth": {
+    "createAccount": "创建您的账户",
+    "email": "电子邮件地址",
+    "password": "密码",
+    "signUp": "创建账户",
+    "signIn": "登录",
+    "haveAccount": "已有账户？",
+    "noAccount": "还没有账户？",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "选择密码",
+    "signingUp": "创建账户中...",
+    "signingIn": "登录中..."
+  },
+  "onboarding": {
+    "progressLabel": "第 {current} 步，共 {total} 步",
+    "nav": {
+      "next": "下一步",
+      "back": "返回",
+      "confirmContinue": "确认并继续",
+      "findBenefits": "查找我的福利",
+      "saving": "保存中...",
+      "skipNotSure": "跳过 — 我不确定"
+    },
+    "yes": "是",
+    "no": "否",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "难民",
+        "note": "根据第 207 条承认"
+      },
+      "asylee_208": {
+        "label": "寻求庇护者",
+        "note": "根据第 208 条获得庇护"
+      },
+      "siv": {
+        "label": "特殊移民签证 (SIV) 持有者",
+        "note": "阿富汗或伊拉克人"
+      },
+      "afghan_parolee": {
+        "label": "阿富汗人道主义假释"
+      },
+      "ukrainian_parolee": {
+        "label": "乌克兰人道主义假释"
+      },
+      "cuban_haitian_entrant": {
+        "label": "古巴人或海地人进入者"
+      },
+      "trafficking_victim": {
+        "label": "认证的贩运受害者",
+        "note": "T 签证或 ORR 信函"
+      },
+      "amerasian": {
+        "label": "美亚移民"
+      },
+      "lpr_from_humanitarian": {
+        "label": "来自难民、寻求庇护者或人道地位的绿卡",
+        "note": "这恢复 SNAP 和 Medicaid 资格"
+      },
+      "lpr_other": {
+        "label": "来自其他途径的绿卡"
+      },
+      "us_citizen": {
+        "label": "美国公民或美国国民"
+      },
+      "other_none": {
+        "label": "其他、不确定或都不是"
+      }
+    },
+    "language": {
+      "question": "您喜欢哪种语言？",
+      "hint": "我们将用这种语言显示所有内容。"
+    },
+    "scan": {
+      "question": "有您的文件？拍照节省时间",
+      "intro": "拍一张您的 I-94（以及您的工作许可证、绿卡或庇护信函，如果您有的话）的照片。我们会读取您的状态和日期，所以您不必输入。",
+      "secureLine": "您的文件在此刻安全处理，不会保存在我们的服务器上或与移民执法部门共享。我们只读取检查福利所需的几个字段 — 永不您的社会安全号码或 A-号码。",
+      "uploadAriaLabel": "上传移民文件的照片或 PDF",
+      "chooseDifferent": "选择不同的照片",
+      "chooseFile": "拍照或选择文件",
+      "fileTypes": "JPEG、PNG 或 PDF · 最多 4 份文件",
+      "reading": "正在读取您的文件…",
+      "readDocuments": "读取我的文件",
+      "skip": "我没有我的文件 — 改为回答问题",
+      "errorReadFailed": "我们无法读取您的文件。请重试，或跳过并回答问题。",
+      "errorUnreachable": "我们无法到达文件阅读器。请重试，或跳过并回答问题。"
+    },
+    "confirm": {
+      "question": "请检查我们从您的文件中读取的内容",
+      "intro": "您的福利结果取决于这些值，所以花点时间确认它们。点击任何字段来修复。",
+      "secureLine": "安全读取且不保存。",
+      "detectedPrefix": "我们检测到：",
+      "lowConfidence": "有些值难以阅读（标记为请检查下方）。请先仔细检查这些。",
+      "pleaseCheck": "请检查",
+      "fromDocument": "来自您的文件",
+      "fields": {
+        "immigrationStatus": "移民身份",
+        "selectStatus": "选择您的身份",
+        "fullName": "全名",
+        "fullNameHint": "仅供您的记录 — 不用于资格判断。",
+        "fullNamePlaceholder": "您的全名",
+        "dateOfBirth": "出生日期",
+        "dateOfBirthHint": "为基于年龄的计划设置您的年龄。",
+        "age": "年龄",
+        "countryOfOrigin": "原籍国",
+        "countryOfOriginHint": "仅供您的记录。",
+        "countryPlaceholder": "国家",
+        "arrivalDate": "您到达美国的日期",
+        "eligibilityDate": "ORR 资格日期",
+        "eligibilityDateHint": "开始 RCA/RMA 截止日期时钟。",
+        "statusGrantDate": "身份授予日期",
+        "statusGrantDateHint": "难民/寻求庇护者授予日期（SSI 7 年时钟）。可选。"
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "工作许可证 (EAD)",
+        "green_card": "绿卡",
+        "asylum_letter": "庇护信函",
+        "ssn_card": "社会安全卡",
+        "other": "文件"
+      }
+    },
+    "status": {
+      "question": "您现在的移民身份是什么？",
+      "hint": "选择最适合您的一个。这塑造了几乎每项福利规则。"
+    },
+    "documents": {
+      "question": "几个快速文件问题",
+      "hint": "点击是或否。如果您没有一些文件没关系。",
+      "fromDocsPrefix": "从我们记录的您的文件中",
+      "fromDocsI94": " 您的 I-94",
+      "fromDocsAnd": " 和",
+      "fromDocsEad": " 您的工作许可证 (EAD)",
+      "i94Label": "I-94 到达/离境记录",
+      "i94Hint": "入境证明。编码为 §207 或 'Visa 93' 的 I-94 证明难民身份。",
+      "eadLabel": "工作许可证 (EAD 卡)",
+      "eadHint": "就业授权文件。EAD 代码 A03 也证明难民身份。",
+      "ssnLabel": "您有社会安全号码 (SSN) 吗？",
+      "ssnHint": "我们只需要知道您是否有一个 — 从不是号码本身。"
+    },
+    "orrLetter": {
+      "question": "您有 ORR 认证或资格信函吗？",
+      "hint": "贩运受害者需要这个信函（不是 I-94）来获取 ORR 福利，如 RCA 和 RMA。"
+    },
+    "eligibilityDate": {
+      "question": "您的难民帮助正式开始的时间？",
+      "hint": "这是您的 ORR 资格日期 — 通常是您的到达日期或身份授予日期，以较晚者为准。",
+      "deadlineLabel": "重要截止日期：",
+      "deadlineBody": " 难民现金援助 (RCA) 和医疗援助的时钟从该日期开始 — 立即申请。"
+    },
+    "arrivalDate": {
+      "question": "您何时来到美国？",
+      "hint": "大多数就业和融合服务从此日期起运行到 5 年。"
+    },
+    "statusGrantDate": {
+      "question": "您何时被授予难民或寻求庇护者身份？",
+      "hint": "SSI 资格在该日期后 7 年结束。如果您不确定，请留空。"
+    },
+    "location": {
+      "question": "您住在哪个州？",
+      "hint": "福利和本地帮助因州而异。城市和邮编是可选的。",
+      "stateLabel": "州",
+      "selectState": "选择您的州",
+      "cityLabel": "城市（可选）",
+      "cityPlaceholder": "城市",
+      "zipLabel": "邮编（可选）",
+      "zipPlaceholder": "邮编"
+    },
+    "household": {
+      "question": "告诉我们您的家庭",
+      "hint": "这些答案设置您的收入限制。它们是隐私的。",
+      "ageLabel": "您的年龄",
+      "agePlaceholder": "您的年龄",
+      "ageFromDoc": "您的年龄 ({age}) 从您的文件中设置。您可以在确认屏幕上更改。",
+      "sizeLabel": "有多少人与您同住，包括您自己？",
+      "sizePlaceholder": "例如 3",
+      "incomeLabel": "您的家庭每月获得的金钱，税前（美元）。如果没有，输入 0。",
+      "incomePlaceholder": "0",
+      "perMonth": "/ 月"
+    },
+    "children": {
+      "question": "有多少儿童与您同住？",
+      "under19Label": "有多少不足 19 岁的儿童与您同住？",
+      "under19Hint": "如果没有，输入 0。",
+      "under18Label": "其中有多少不足 18 岁？",
+      "under5Label": "其中有多少不足 5 岁？",
+      "subsetHint": "这是上述数字的较小部分。"
+    },
+    "pregnantCash": {
+      "question": "关于您的家庭的两个快速问题",
+      "pregnantLabel": "您的家中现在有人怀孕吗？",
+      "pregnantHint": "WIC 和一些 Medicaid 计划优先考虑孕妇。",
+      "cashLabel": "您已经获得现金帮助吗（TANF、SSI 或一般援助）？",
+      "cashHint": "这影响难民现金援助和 SNAP 的资格。"
+    },
+    "special": {
+      "question": "一些特殊情况",
+      "hint": "对每一项点击是或否。",
+      "unaccompaniedLabel": "您未满 18 岁并且在美国没有父母或监护人？",
+      "unaccompaniedHint": "对于无人陪伴的难民未成年人 (URM) 计划。",
+      "disabledLabel": "您有限制工作的残疾吗？",
+      "disabledHint": "对于 SSI 和 SSDI。",
+      "blindLabel": "您是盲人或视力严重受限吗？",
+      "blindHint": "一个特殊的 SSI/SSDI 类别。",
+      "workQuartersLabel": "您或您的配偶或父母在美国工作了大约 10 年吗？",
+      "workQuartersHint": "40 个工作学分可以绕过 SSI 和 SNAP 的某些 5 年障碍。"
+    },
+    "goals": {
+      "question": "您想要什么帮助？",
+      "hint": "这帮助我们为您找到合适的计划。",
+      "employmentLabel": "您在工作或寻找工作或工作培训吗？",
+      "employmentHint": "就业服务、托儿支持、匹配赠款。",
+      "businessLabel": "您想要启动或发展自己的业务吗？",
+      "businessHint": "小企业发展和个人发展账户 (IDA)。",
+      "englishLabel": "您想要英语 (ESL) 课程吗？（可选）",
+      "englishHint": "通过难民支持服务的免费英语语言培训。",
+      "interpreterLabel": "您需要口译员或翻译帮助吗？（可选）",
+      "interpreterHint": "通过难民计划提供免费口译服务。"
+    },
+    "settingsForm": {
+      "i94Label": "您有 I-94 到达/离境记录吗？",
+      "eadLabel": "您有工作许可证 (EAD 卡) 吗？",
+      "eligibilityDateLabel": "您的难民帮助正式开始的时间？（ORR 资格日期）",
+      "arrivalDateLabel": "您何时来到美国？",
+      "statusGrantDateLabel": "您何时被授予难民或寻求庇护者身份？（可选）"
+    },
+    "errors": {
+      "saveFailed": "我们无法保存您的答案：{message}。如果这提到丢失的列，数据库迁移 (supabase/migration_v2.sql) 尚未应用。",
+      "profileNotFound": "我们找不到您的个人资料来保存您的答案。请登出后重新登录，然后重试。",
+      "profileNotFoundShort": "我们找不到您的个人资料来保存。请登出后重新登录，然后重试。"
+    }
+  },
+  "processing": {
+    "title": "正在寻找您的福利...",
+    "subtitle": "我们正在根据官方美国福利计划审查您的答案。这通常需要大约 30 秒。",
+    "step1": "加载福利规则",
+    "step2": "检查您的资格",
+    "step3": "验证结果",
+    "step4": "按截止日期排序",
+    "ready": "您的计划已准备好！",
+    "readySubtitle": "我们找到了您可能符合的福利。",
+    "goToDashboard": "查看我的计划"
+  },
+  "dashboard": {
+    "welcome": "欢迎",
+    "tabs": {
+      "actionPlan": "我的行动计划",
+      "documents": "我的文件",
+      "formHelper": "表格助手",
+      "explainer": "解释一封信",
+      "findHelp": "寻求帮助",
+      "progress": "我的进度"
+    },
+    "actionPlan": {
+      "title": "您的行动计划",
+      "subtitle": "按最紧急的截止日期首先排序。",
+      "rulesChecked": "福利规则最后验证于：",
+      "daysLeft": "还有 {days} 天",
+      "urgent": "紧急 — 立即行动",
+      "deadlinePassed": "截止日期可能已过",
+      "noDeadline": "没有固定截止日期",
+      "startButton": "开始",
+      "continueButton": "继续",
+      "sourceLink": "官方来源",
+      "attorney": "这需要律师或受认可的代表。",
+      "noResults": "未找到符合条件的福利。回答更多问题或联系本地组织寻求帮助。",
+      "statusBadges": {
+        "likely_eligible": "可能符合条件",
+        "maybe_eligible": "可能符合条件",
+        "needs_human_review": "需要审查",
+        "not_eligible": "不符合条件"
+      },
+      "details": "详情",
+      "getFormHelp": "获取表格帮助",
+      "daysLeftToApply": "还有 {days} 天申请",
+      "oneDayLeftToApply": "还有 1 天申请",
+      "deadlinePassedClear": "这个截止日期已经过了",
+      "whatYouNeed": "您需要什么",
+      "whereHowToApply": "在哪里以及如何申请",
+      "requiredDocuments": "所需文件",
+      "nextSteps": "下一步",
+      "applyOnline": "在线申请",
+      "formNeeded": "要完成的表格"
+    },
+    "documents": {
+      "title": "我的文件",
+      "subtitle": "您的文件是加密和隐私的。我们永不与移民执法部门分享。",
+      "upload": "上传文件",
+      "dragDrop": "拖拽文件，或点击选择",
+      "supportedTypes": "支持：PDF、JPG、PNG",
+      "extracting": "正在读取文件...",
+      "noDocuments": "尚未上传任何文件。",
+      "deleteConfirm": "您确定要删除这个文件吗？",
+      "open": "打开",
+      "preview": "预览",
+      "close": "关闭",
+      "detectedType": "检测到的类型",
+      "secureLine": "您的文件被安全处理，永不与移民执法部门分享。",
+      "types": {
+        "passport": "护照",
+        "i-94": "I-94 到达记录",
+        "ead": "工作许可证 (EAD)",
+        "birth_certificate": "出生证",
+        "status_letter": "身份信函",
+        "other": "其他"
+      }
+    },
+    "formHelper": {
+      "title": "表格助手",
+      "subtitle": "获得理解和填写表格的帮助。我们不会填您的 SSN、A-号码、银行详情或护照号码 — 这些保持隐私。",
+      "pasteInstructions": "粘贴表格名称或 URL，或描述您需要的帮助：",
+      "placeholder": "例如：I-765 就业授权，或 \"帮我填 Medicaid 申请\"",
+      "ask": "获取帮助",
+      "sensitiveNote": "标记为 [您来填写] 的字段包含敏感信息 — 自己完成这些。",
+      "legalNote": "这个表格涉及您的移民身份。请与持证律师或司法部认可的代表一起工作。",
+      "thinking": "正在读取表格...",
+      "uploadFiles": "上传文件",
+      "openInFiller": "在表格填充器中打开",
+      "secureLine": "您的文件被安全处理，永不与移民执法部门分享。",
+      "send": "发送",
+      "contextNote": "Wayfinder 使用您已经提供的信息来回答您的情况。",
+      "suggestionsLabel": "常见问题"
+    },
+    "explainer": {
+      "title": "解释一封信或表格",
+      "subtitle": "粘贴或上传一份令人困惑的信函或文件。我们会用简洁的语言解释它。",
+      "pasteLabel": "粘贴文本到这里：",
+      "placeholder": "粘贴信函或表格文本到这里...",
+      "orUpload": "或上传文件的照片或扫描件：",
+      "explain": "解释这个",
+      "thinking": "正在读取您的文件..."
+    },
+    "findHelp": {
+      "title": "在您附近寻求帮助",
+      "subtitle": "与能帮助的人联系 — 免费安置服务、法律援助和您的州难民办公室。",
+      "resettlement": "安置机构",
+      "legalAid": "移民法律援助",
+      "stateOffice": "州难民办公室",
+      "national": "国家资源",
+      "attorneyWarning": "重要：对于任何涉及您的移民身份的法律事项，只有持证律师或司法部认可的代表可以给您法律建议并代表您。",
+      "call": "致电",
+      "visit": "访问网站",
+      "noState": "选择您的州以查看本地组织。"
+    },
+    "progress": {
+      "title": "我的进度",
+      "subtitle": "跟踪您在每项福利上的进度。",
+      "statuses": {
+        "not_started": "未开始",
+        "in_progress": "进行中",
+        "documents_ready": "文件已准备",
+        "submitted": "已提交",
+        "needs_attorney": "需要律师",
+        "done": "完成"
+      },
+      "updateStatus": "更新状态"
+    },
+    "pdf": {
+      "download": "下载我的计划 (PDF)",
+      "generating": "正在生成 PDF..."
+    },
+    "dismiss": "关闭",
+    "footer": {
+      "privacy": "您的信息是加密和隐私的。我们永不与移民执法部门分享。",
+      "disclaimer": "Wayfinder 不提供法律建议。"
+    },
+    "settings": {
+      "title": "设置",
+      "subtitle": "更改您的语言或更新您在注册时提供的答案。",
+      "language": "语言",
+      "languageHint": "为整个应用选择语言。它立即更新。",
+      "editInfo": "编辑我的信息",
+      "editInfoHint": "更改您在注册时提供的答案。我们会再次检查您的福利。",
+      "recheck": "重新检查我的福利",
+      "backToDashboard": "返回仪表板",
+      "saved": "已保存",
+      "saving": "保存中..."
+    },
+    "formFill": {
+      "title": "填写您的表格",
+      "intro": "我们填入了我们已经知道的。在下载前请审查每个字段。",
+      "secureLine": "您的表格在您的浏览器中填写，永不与移民执法部门分享。",
+      "autoFilled": "从您的信息填入",
+      "missing": "缺少 — 请输入",
+      "sensitive": "敏感 — 不与我们分享。自己输入。",
+      "download": "下载已填表格",
+      "downloading": "正在准备您的表格...",
+      "reviewAll": "审查每个字段",
+      "noFields": "这个表格没有可填字段。您可以在突出显示的位置上输入。",
+      "openPrompt": "打开表格来填写",
+      "loading": "正在打开您的表格...",
+      "loadError": "我们无法打开这个表格。请尝试另一个文件。",
+      "uploadHint": "在文件中上传您的 I-94、工作许可证或其他文件，以自动填写更多这个表格。"
+    }
+  },
+  "errors": {
+    "generic": "出现问题。请重试。",
+    "signIn": "电子邮件或密码不正确。",
+    "signUp": "无法创建账户。请重试。",
+    "eligibility": "无法加载您的福利。请重试。",
+    "upload": "上传失败。请尝试较小的文件或不同的格式。",
+    "required": "此字段为必填项。"
+  },
+  "common": {
+    "loading": "加载中...",
+    "yes": "是",
+    "no": "否",
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "submit": "提交",
+    "or": "或",
+    "edit": "编辑",
+    "download": "下载",
+    "open": "打开",
+    "settings": "设置",
+    "dismiss": "关闭"
+  }
+}

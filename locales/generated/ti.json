@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "ተመዝገብ",
+    "signOut": "ውጣ",
+    "dashboard": "ዳሽቦርዲ ይህ",
+    "documents": "류据 ይህ",
+    "findHelp": "ሕንፃ ፈልግ",
+    "settings": "ምርጫ"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "ከመንገዱ መጀመር",
+      "features": "ባህሪ",
+      "languages": "ቋንቋ",
+      "signIn": "ተመዝገብ",
+      "getStarted": "ተጀምር"
+    },
+    "hero": {
+      "headline": "ሓድሽ ገዛ ምስ መንገዱ ምግናን ይጀምር።",
+      "subheadline": "Wayfinder ሕጋዊ ገንዘብ ምሊእ ክትሰርሕ ምልላይ ምሊእ ትፈልጦ። ሓበሬታ ብቋንቋ ክትብል፣ ደጋግም ርከብ ሰሌዳ ክትቐጥል። ብኢድ ብኢድ መምሪሕ ክትወስደካ። እቅበር ቤት ወሪድ ጤና ሰብ ወይ ሓንቲ ስሌት።",
+      "cardLabel": "በቋንቋ ክትጀመር",
+      "searchPlaceholder": "ከ100+ ቋንቋ ፈልግ…",
+      "cta": "ብነጻ ተጀምር"
+    },
+    "how": {
+      "eyebrow": "ከመንገዱ መጀመር",
+      "title": "ሦስተ ሰሌዳ ካብ ምምጻእ ክሳብ ግልጽ ሕትመት።",
+      "steps": [
+        {
+          "title": "ታሪካ ኢና ሓበር",
+          "body": "ትኩስ ሕቶ መልሲ ኣብ ሰዓትካ ቋንቋ። ዓበይ ፊደል፣ ቀለል ቃል፣ ስግበት ስለዚ።"
+        },
+        {
+          "title": "ምስ ይነሳሳ ሕጊ ፈልግ",
+          "body": "Wayfinder ዲሊ ዕድሉ ሓበሬታ ሓሳብ ኣሎ። ትኻል ዕድልካ አርኢ ምስ ምንጫ ህውህው። ክርተ አብዛእ።"
+        },
+        {
+          "title": "ሰበ ምስ ጤና ይምረጽ",
+          "body": "ሪከ ሚሊሮ ምሉእ ሪከ ሓበሬታ ክትመሰክር ምስ ሸክላ ደሉ ምስ ሸክላ ተባገት ኣውንድ ምስ ተመዝገብ ሓበሬታ ምስ ብዙሕ ሓይሊ።"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "መምሪሕ ብዛዕባ",
+      "title": "ሓንቲ ዳሓር ሰቆ ሓለ።",
+      "items": [
+        {
+          "title": "ሎ ነገር ሓይሊ",
+          "body": "ሕጋዊ ገንዘብ ምሚሕ ቆጸራ ወሪድ። ሓቢርካ ሸክላ ዕድልካ ክትገምጥ ተሓታትይ ምስ ቁጽሪ ጤና ሸክላ።"
+        },
+        {
+          "title": "ሰከክ ሙተጣሪ",
+          "body": "Wayfinder ሓንቲ ሰደለ ስሪት ምስ ሓበሬታ ቁጽሪ በቋንቋ ቁጺር። ስሪት ምስ ሠጕ ቁጽሪ ምዝ። ወድ ሸክላ።"
+        },
+        {
+          "title": "ሃንደበት ቤት",
+          "body": "ጣቢያ፣ I-94፣ እና EAD ተዓወተ በት ተዝ። ብሱርት ወሪድ ግድ ሰብ። ጠሎ።"
+        },
+        {
+          "title": "ሕንፃ ፈልግ",
+          "body": "ሕጋዊ ጉዳይ ሊሴንስ ወከልታ ወይ ተጠቀሞ ወከልታ ብቀረባ። ሓንቲ ሰብ፣ ሓምላ።"
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "ሓንቲ ቋንቋ",
+      "title": "በቋንቋ ክትሰርሕ ዮኖ ገጾ።",
+      "body": "ቋንቋ ምርጫ መጀመራ ሩትክ። Wayfinder ቋንቋ ክትሰርሕ።"
+    },
+    "trust": {
+      "badge": "ትብብር ዮና ቅድመ",
+      "title": "ሓበሬታ ሰደወ ወዛ አምሪካ ከራሪ።",
+      "body": "ሓበሬታ ተዓወተ ብራሳ። Wayfinder ዕድል ቁጽሪ ምዝ። ሸክላ ሕግ ሰብ ሊሴንስ ሰብ። ሙተጣሪ።",
+      "points": [
+        "ተዓወተ ብራሳ",
+        "ሓበሬታ ክትሓዝ",
+        "ሰብ ምስክር"
+      ]
+    },
+    "finalCta": {
+      "title": "ሎ ምስ ይጀመር።",
+      "body": "ብነጻ፣ ብራሳ፣ ብቋንቋ። ዕድልካ ኣርኢ ሰከስ።",
+      "primary": "ብነጻ ተጀምር",
+      "secondary": "ከመንገዱ አርኢ"
+    },
+    "footer": {
+      "tagline": "ሕግ ምክትታ ከም ናይ ሓበሬታ ሸክላ ሕግ ሓዝ"
+    },
+    "translating": "ገጾ ተገልግል…"
+  },
+  "auth": {
+    "createAccount": "ሓሳብ ሓደ",
+    "email": "ኢሜል ዓድራሽ",
+    "password": "ምስጢር",
+    "signUp": "ሓሳብ ሓደ",
+    "signIn": "ተመዝገብ",
+    "haveAccount": "ቀደስ ሓሳብ ኣሎካ?",
+    "noAccount": "ሓሳብ የለካ?",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "ምስጢር ምረጽ",
+    "signingUp": "ሓሳብ ግደፍ…",
+    "signingIn": "ተመዝገብ…"
+  },
+  "onboarding": {
+    "progressLabel": "ሰሌዳ {current} ካብ {total}",
+    "nav": {
+      "next": "ዝስነ",
+      "back": "ወጃ",
+      "confirmContinue": "ንግሪር ክትቀጥል",
+      "findBenefits": "ገንዘብ ደሕሪ ፈልግ",
+      "saving": "ቅምጣት…",
+      "skipNotSure": "ስሪት — አልገሊግሊ"
+    },
+    "yes": "ወተ",
+    "no": "ወይ",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "ሰብ መንገዶ",
+        "note": "ክፍል 207 ተታቅወ"
+      },
+      "asylee_208": {
+        "label": "ጥዋህ ተዋህ",
+        "note": "ጥዋህ ክፍል 208 ግደፍ"
+      },
+      "siv": {
+        "label": "ልዩ ሰብ ቪሳ (SIV) ሓይሊ",
+        "note": "አፋን ወይ ኢራቅ"
+      },
+      "afghan_parolee": {
+        "label": "አፋን ሰብ ሙጮ"
+      },
+      "ukrainian_parolee": {
+        "label": "ውክራይናዊ ሰብ ሙጮ"
+      },
+      "cuban_haitian_entrant": {
+        "label": "ኩባዊ ወይ ሃይቲ ተስዓይ"
+      },
+      "trafficking_victim": {
+        "label": "ክእለት ሰብ ደሙ ሰብ",
+        "note": "T-ቪሳ ወይ ORR ሓበር"
+      },
+      "amerasian": {
+        "label": "አሜሪካዊ-አሲያዊ ሰብ"
+      },
+      "lpr_from_humanitarian": {
+        "label": "ዓድራሽ ሞt ሰብ መንገዶ፣ ጥዋህ ተዋህ ወይ ሰብ ሕድ",
+        "note": "SNAP ከም Medicaid ዕድል ተዋሲክ"
+      },
+      "lpr_other": {
+        "label": "ዓድራሽ ከሌሎ መንገድ"
+      },
+      "us_citizen": {
+        "label": "አሜሪካዊ ወከላ ወይ ዓለማዊ ወከላ"
+      },
+      "other_none": {
+        "label": "ከሌሎ፣ ወይ ምንድ ሓንቲ"
+      }
+    },
+    "language": {
+      "question": "ቋንቋ ምሪጽ?",
+      "hint": "ሓበሬታ ቋንቋ ክትሰርሕ።"
+    },
+    "scan": {
+      "question": "ሰነድ ኣሎ? ፎቶ ተሸት ሰበታ",
+      "intro": "I-94 ፎቶ ተሸት (ወዛ ሰራሪ፣ ዓድራሽ ወይ ጥዋህ ሓበር ኣሎ)። ሓበሬታ ምግናን ለ ዕድልካ ሓሳብ።",
+      "secureLine": "ሰነድ ዛሬ ተዓወተ። ሞ ተወ ከ ሞርስ። ወዛ አምሪካ። ሰበታ ዕድልካ ሓበር ይግተዕ።",
+      "uploadAriaLabel": "ፎቶ ወይ PDF ሰነድ ተሸት",
+      "chooseDifferent": "ከሌሎ ፎቶ ምረጽ",
+      "chooseFile": "ፎቶ ተሸት ወይ ፋይል ምረጽ",
+      "fileTypes": "JPEG፣ PNG፣ ወይ PDF · እስከ 4 ሰነድ",
+      "reading": "ሰነድ ታሪኽ…",
+      "readDocuments": "ሰነድ ታሪኽ",
+      "skip": "ሰነድ የለኖ — ሕቶ መልሲ",
+      "errorReadFailed": "ሰነድ ታሪኽ ነቲ። ምሕዳስ ወይ ሰበታ።",
+      "errorUnreachable": "ሰነድ ታሪኽ ንምክት። ምሕዳስ ወይ ሰበታ።"
+    },
+    "confirm": {
+      "question": "ሰነድ ምስክር",
+      "intro": "ዕድልካ ሰነድ ቁጽሪ ምስክር። ሸክላ ሸክላ ምሪጽ።",
+      "secureLine": "ታሪኽ ተዓወተ።",
+      "detectedPrefix": "ምግናን:",
+      "lowConfidence": "ቁጽሪ ልምዓት ነቲ (ምስክር)። ወተ ምሕዳስ።",
+      "pleaseCheck": "ምስክር",
+      "fromDocument": "ሰነድ ኣብ",
+      "fields": {
+        "immigrationStatus": "ሰብ ሕድ",
+        "selectStatus": "ሕድ ምረጽ",
+        "fullName": "ሙሉእ ስም",
+        "fullNameHint": "ራስ ወደይ — ዕድላ።",
+        "fullNamePlaceholder": "ሙሉእ ስም",
+        "dateOfBirth": "ተወለደ ጤና",
+        "dateOfBirthHint": "ዕድልካ ዓመት ሓተት።",
+        "age": "ዓመት",
+        "countryOfOrigin": "ወጣኢት ሃገር",
+        "countryOfOriginHint": "ራስ ወደይ።",
+        "countryPlaceholder": "ሃገር",
+        "arrivalDate": "አሜሪካ ምምጻእ ጤና",
+        "eligibilityDate": "ORR ዕድል ጤና",
+        "eligibilityDateHint": "RCA/RMA ወሪድ ታሪኽ ተጀመረ።",
+        "statusGrantDate": "ሕድ ግደፍ ጤና",
+        "statusGrantDateHint": "ሰብ መንገዶ/ጥዋህ ተዋህ ግደፍ (SSI 7-ዓመት)። ምደባ።"
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "ሰራሪ (EAD)",
+        "green_card": "ዓድራሽ",
+        "asylum_letter": "ጥዋህ ሓበር",
+        "ssn_card": "ማህበራዊ ዓይነ ካርድ",
+        "other": "ሰነድ"
+      }
+    },
+    "status": {
+      "question": "ሕድ ይህ?",
+      "hint": "ሙሉእ ምረጽ። ሕግ ሓዝ።"
+    },
+    "documents": {
+      "question": "ሰነድ ሕቶ",
+      "hint": "ወተ ወይ ወይ ምረጽ። ትኩስ የሎስ።",
+      "fromDocsPrefix": "ሰነድ",
+      "fromDocsI94": " I-94",
+      "fromDocsAnd": " ከም",
+      "fromDocsEad": " ሰራሪ (EAD)",
+      "i94Label": "I-94 ምምጻእ/ውጫት ሪከ",
+      "i94Hint": "ምምጻእ ምስክር። I-94 §207 ወይ 'ቪሳ 93' ሰብ መንገዶ ምስክር።",
+      "eadLabel": "ሰራሪ (EAD ካርድ)",
+      "eadHint": "ሰራሪ ሕዋስ። EAD ስቅንቓ A03 ሰብ መንገዶ ምስክር።",
+      "ssnLabel": "ማህበራዊ ዓይነ ቁጽሪ (SSN) ኣሎ?",
+      "ssnHint": "ኣሎ ውእላ — ቁጽሪ።"
+    },
+    "orrLetter": {
+      "question": "ORR ምስክር ወይ ዕድል ሓበር ኣሎ?",
+      "hint": "ሰብ ደሙ ሓበር ሚዓር (I-94) ORR ገንዘብ RCA ከም RMA።"
+    },
+    "eligibilityDate": {
+      "question": "ሰብ ሕንፃ ግደፍ ጤና?",
+      "hint": "ORR ዕድል ጤና — ምምጻእ ጤና ወይ ሕድ ግደፍ ጤና ማሎ። ወሪድ።",
+      "deadlineLabel": "ግዋይ ወሪድ:",
+      "deadlineBody": " RCA ከም ሕንፃ ወሪድ — ሰበታ ውግድ።"
+    },
+    "arrivalDate": {
+      "question": "አሜሪካ ምምጻእ ጤና?",
+      "hint": "ሰራሪ ሕንፃ ሰበታ 5 ዓመት ወሪድ።"
+    },
+    "statusGrantDate": {
+      "question": "ሰብ መንገዶ ወይ ጥዋህ ተዋህ ግደፍ ጤና?",
+      "hint": "SSI ዕድል 7 ዓመት ወሪድ። ለ ሚ።"
+    },
+    "location": {
+      "question": "ግዝኣተ ወደይ?",
+      "hint": "ገንዘብ ከም ሕንፃ ግዝኣተ ወደይ። ከተማ ከም ZIP ምደባ።",
+      "stateLabel": "ግዝኣተ",
+      "selectState": "ግዝኣተ ምረጽ",
+      "cityLabel": "ከተማ (ምደባ)",
+      "cityPlaceholder": "ከተማ",
+      "zipLabel": "ZIP ቁጽሪ (ምደባ)",
+      "zipPlaceholder": "ZIP ቁጽሪ"
+    },
+    "household": {
+      "question": "ቤተሰብ ሓበር",
+      "hint": "ገንዘብ ወሪድ ግደፍ। ባዮ।",
+      "ageLabel": "ዓመት",
+      "agePlaceholder": "ዓመት",
+      "ageFromDoc": "ዓመት ({age}) ሰነድ መነ። ምስክር ገጾ ምሪጽ።",
+      "sizeLabel": "ምንጫ ሰብ ወደይ ትኮነስ?",
+      "sizePlaceholder": "ለ. 3",
+      "incomeLabel": "ገንዘብ ሰርሙ ወደይ ሓቦ (USA ዲሊ)። 0 ግድ።",
+      "incomePlaceholder": "0",
+      "perMonth": "/ ወደይ"
+    },
+    "children": {
+      "question": "ልጆ ምንጫ ወደይ ትኮነስ?",
+      "under19Label": "ልጆ ታሕታዊ 19 ወደይ ትኮነስ?",
+      "under19Hint": "0 ግድ።",
+      "under18Label": "ሓንቲ ታሕታዊ 18?",
+      "under5Label": "ሓንቲ ታሕታዊ 5?",
+      "subsetHint": "ሓንቲ ሙሉእ።"
+    },
+    "pregnantCash": {
+      "question": "ሕቶ ሓንቲ ቤት",
+      "pregnantLabel": "ሓንቲ ስሕወ ሰውንቢ?",
+      "pregnantHint": "WIC ከም Medicaid ወሩ ስሕወ ወሩ።",
+      "cashLabel": "ገንዘብ ምሕሕ (TANF፣ SSI፣ ወይ ምክያድ) ኣሎ?",
+      "cashHint": "RCA ከም SNAP ዕድላ።"
+    },
+    "special": {
+      "question": "ልዩ ሕዋላ",
+      "hint": "ወተ ወይ ወይ ምረጽ።",
+      "unaccompaniedLabel": "18 ታሕታዊ ሓንቲ ወላ ወይ ወከላ የለ?",
+      "unaccompaniedHint": "URM ሕግ።",
+      "disabledLabel": "ሸክላ ወይ ሰራሪ ግድ?",
+      "disabledHint": "SSI ከም SSDI።",
+      "blindLabel": "ሓንቲ ወይ ምሕር ዕዳ?",
+      "blindHint": "ልዩ SSI/SSDI ዓይነት።",
+      "workQuartersLabel": "ወይ ተግባሪ ወይ ወላ አሜሪካ ሰራሪ 10 ዓመት?",
+      "workQuartersHint": "40 ሰራሪ ምስክር SSI ከም SNAP 5-ዓመት ወሪድ ተዋሲክ።"
+    },
+    "goals": {
+      "question": "ምን ሕንፃ ፈልግ?",
+      "hint": "ዓይነት ሕግ ፈልግ।",
+      "employmentLabel": "ሰራሪ ወይ ሰራሪ ሕንፃ ወይ ሰራሪ ስልጠና?",
+      "employmentHint": "ሰራሪ ሕንፃ፣ ልጅ ሕንፃ፣ ሙያት ግደፍ።",
+      "businessLabel": "ንግድ ተጀመረ ወይ ተግብር?",
+      "businessHint": "ናኖ ንግድ ገጽታ ከም IDA።",
+      "englishLabel": "ኢንግሊዝ (ESL) ክፍል ፈልግ? (ምደባ)",
+      "englishHint": "ነጻ ኢንግሊዝ ስልጠና ሰብ ሕንፃ።",
+      "interpreterLabel": "ወከላ ወይ ተርጓሚ ሕንፃ ፈልግ? (ምደባ)",
+      "interpreterHint": "ነጻ ወከላ ሕንፃ ሰብ ሕግ።"
+    },
+    "settingsForm": {
+      "i94Label": "I-94 ምምጻእ/ውጫት ሪከ ኣሎ?",
+      "eadLabel": "ሰራሪ (EAD ካርድ) ኣሎ?",
+      "eligibilityDateLabel": "ሰብ ሕንፃ ግደፍ ጤና? (ORR ዕድል ጤና)",
+      "arrivalDateLabel": "አሜሪካ ምምጻእ ጤና?",
+      "statusGrantDateLabel": "ሰብ መንገዶ ወይ ጥዋህ ተዋህ ግደፍ ጤና? (ምደባ)"
+    },
+    "errors": {
+      "saveFailed": "ሓበሬታ ቅምጣት ንቢ: {message}። ምዕዳ ወደይ ምልስ (supabase/migration_v2.sql)።",
+      "profileNotFound": "ሓበሬታ ቅምጣት ንቢ። ውጫ ከም ተመዝገብ ምሕዳስ።",
+      "profileNotFoundShort": "ሓበሬታ ቅምጣት ንቢ። ውጫ ከም ተመዝገብ ምሕዳስ።"
+    }
+  },
+  "processing": {
+    "title": "ገንዘብ ምግናን…",
+    "subtitle": "ሓበሬታ ሕግ ሓበር ሓሳብ። 30 ሰከስ።",
+    "step1": "ሕግ ሓበር ምወዓ",
+    "step2": "ዕድላ ሓሳብ",
+    "step3": "ጤዋ ምስክር",
+    "step4": "ወሪድ ምስሪት",
+    "ready": "ሕትመት ዝኾነ!",
+    "readySubtitle": "ገንዘብ ምግናን።",
+    "goToDashboard": "ሕትመት አርኢ"
+  },
+  "dashboard": {
+    "welcome": "ብሰላም መጣ",
+    "tabs": {
+      "actionPlan": "ሎ ነገር ሓይሊ",
+      "documents": "ሰነድ ይህ",
+      "formHelper": "ሰደለ ሙተጣሪ",
+      "explainer": "ሓበር ግለጹ",
+      "findHelp": "ሕንፃ ፈልግ",
+      "progress": "ጤና ይህ"
+    },
+    "actionPlan": {
+      "title": "ሎ ነገር ሓይሊ",
+      "subtitle": "ወሪድ ወሪድ።",
+      "rulesChecked": "ሕግ ብሙሉእ ምስክር:",
+      "daysLeft": "{days} ቀን ወሪድ",
+      "urgent": "ፈገግ — ፈገግ ግደፍ",
+      "deadlinePassed": "ወሪድ ምልሕ",
+      "noDeadline": "ወሪድ የለ",
+      "startButton": "ተጀመር",
+      "continueButton": "ዝቀጥል",
+      "sourceLink": "ሕግ ምንጫ",
+      "attorney": "ሊሴንስ ወከልታ ወይ ተጠቀሞ ወከልታ ሚፈለግ።",
+      "noResults": "ዕድል ምግናን። ሕቶ ከሌሎ ወይ ሕንፃ ምክት።",
+      "statusBadges": {
+        "likely_eligible": "ስሩ ዕድል",
+        "maybe_eligible": "ሓደ ዕድል",
+        "needs_human_review": "ምስክር ሚፈለግ",
+        "not_eligible": "ዕድል"
+      },
+      "details": "ዝርዝር",
+      "getFormHelp": "ሰደለ ሕንፃ",
+      "daysLeftToApply": "{days} ቀን ውግድ ወሪድ",
+      "oneDayLeftToApply": "1 ቀን ውግድ ወሪድ",
+      "deadlinePassedClear": "ወሪድ ምልሕ",
+      "whatYouNeed": "ሚገምጥ",
+      "whereHowToApply": "ወደይ ከም መንገድ ውግድ",
+      "requiredDocuments": "ሚገምጥ ሰነድ",
+      "nextSteps": "ተጀመር ሕቅታ",
+      "applyOnline": "ኖራት ውግድ",
+      "formNeeded": "ሰደለ ሕትመት"
+    },
+    "documents": {
+      "title": "ሰነድ ይህ",
+      "subtitle": "ሰነድ ተዓወተ ባዮ። ወዛ አምሪካ।",
+      "upload": "ሰነድ ምምነየት",
+      "dragDrop": "ፋይል ዘርዪ ወይ ምረጽ",
+      "supportedTypes": "ደገፍ: PDF፣ JPG፣ PNG",
+      "extracting": "ሰነድ ታሪኽ…",
+      "noDocuments": "ሰነድ ምምነየት።",
+      "deleteConfirm": "ሰነድ ወድብ?",
+      "open": "ክፈት",
+      "preview": "ታሪኽ",
+      "close": "ጨርስ",
+      "detectedType": "ምግናን ዓይነት",
+      "secureLine": "ሰነድ ተዓወተ። ወዛ አምሪካ።",
+      "types": {
+        "passport": "ሐሳብ ኢ",
+        "i-94": "I-94 ምምጻእ ሪከ",
+        "ead": "ሰራሪ (EAD)",
+        "birth_certificate": "ተወለደ ምስክር",
+        "status_letter": "ሕድ ሓበር",
+        "other": "ከሌሎ"
+      }
+    },
+    "formHelper": {
+      "title": "ሰደለ ሙተጣሪ",
+      "subtitle": "ሰደለ ግለጹ ከም ሕትመት ሕንፃ። SSN፣ A-ቁጽሪ፣ ወደልላ ወይ ሐሳብ ቁጽሪ ብጽሓያ ወደይ ምዝ।",
+      "pasteInstructions": "ሰደለ ስም ወይ URL ወይ ምን ሕንፃ ፈልግ ጸሓፍ:",
+      "placeholder": "ለ. I-765 ሰራሪ ማስፈቻ ወይ 'Medicaid ውግድ ሕንፃ'",
+      "ask": "ሕንፃ ክገቡ",
+      "sensitiveNote": "[ራስ ሕትመት] ሰነገ ብራሳ — ራስ ተሳራይ።",
+      "legalNote": "ሰደለ ሕድ ሓዝ። ሊሴንስ ወከልታ ወይ DOJ-ተጠቀሞ ወከልታ።",
+      "thinking": "ሰደለ ታሪኽ…",
+      "uploadFiles": "ሰነድ ምምነየት",
+      "openInFiller": "ሰደለ ሓተታ ክፈት",
+      "secureLine": "ሰነድ ተዓወተ። ወዛ አምሪካ።",
+      "send": "ላኢ",
+      "contextNote": "Wayfinder ሓበሬታ ዕድላ መልሲ።",
+      "suggestionsLabel": "ተኃላ ሕቶ"
+    },
+    "explainer": {
+      "title": "ሓበር ወይ ሰደለ ግለጹ",
+      "subtitle": "ሰነድ ግለጹ አፈገገት ቃል።",
+      "pasteLabel": "ጸሓፍ ዛሬ:",
+      "placeholder": "ሓበር ወይ ሰደለ ጸሓፍ…",
+      "orUpload": "ወይ ሰነድ ፎቶ ወይ ስካን ምምነየት:",
+      "explain": "ግለጹ",
+      "thinking": "ሰነድ ታሪኽ…"
+    },
+    "findHelp": {
+      "title": "ወደይ ሕንፃ ፈልግ",
+      "subtitle": "ሰብ ይገባ — ሰብ ሕንፃ፣ ሕግ ሕንፃ ከም ግዝኣተ ሰብ ቢሮ።",
+      "resettlement": "ሰብ ሕንፃ",
+      "legalAid": "ሕግ ሕንፃ ሰብ",
+      "stateOffice": "ግዝኣተ ሰብ ቢሮ",
+      "national": "ዓለምዋዊ ሕጉ",
+      "attorneyWarning": "ግዋይ: ሕድ ሕግ ሕቖ ሊሴንስ ወከልታ ወይ DOJ-ተጠቀሞ ወከልታ ሕግ ምሳሌ ክገብር।",
+      "call": "ጉዩት",
+      "visit": "ወሴት ገጽታ",
+      "noState": "ግዝኣተ ምረጽ ህንፃ ምግናን።"
+    },
+    "progress": {
+      "title": "ጤና ይህ",
+      "subtitle": "ገንዘብ ጤና።",
+      "statuses": {
+        "not_started": "ተጀመረ",
+        "in_progress": "ግዳያ",
+        "documents_ready": "ሰነድ ዝኾነ",
+        "submitted": "ሰጥነ",
+        "needs_attorney": "ወከልታ ሚፈለግ",
+        "done": "ተጉቢጡ"
+      },
+      "updateStatus": "ሕድ ምሕዳስ"
+    },
+    "pdf": {
+      "download": "ሕትመት ሳይት (PDF)",
+      "generating": "ሕትመት ምግጣሚ…"
+    },
+    "dismiss": "ጨርስ",
+    "footer": {
+      "privacy": "ሓበሬታ ተዓወተ ባዮ። ወዛ አምሪካ።",
+      "disclaimer": "Wayfinder ሕግ ምክትታ።"
+    },
+    "settings": {
+      "title": "ምርጫ",
+      "subtitle": "ቋንቋ ወይ ሓበሬታ ምሕዳስ።",
+      "language": "ቋንቋ",
+      "languageHint": "ቋንቋ ምርጽ። ሳቁ።",
+      "editInfo": "ሓበሬታ ምሕዳስ",
+      "editInfoHint": "ሓበሬታ ምሕዳስ። ገንዘብ ምሕዳስ።",
+      "recheck": "ገንዘብ ምሕዳስ ሓሳብ",
+      "backToDashboard": "ዳሽቦርዲ ወቃ",
+      "saved": "ቅምጣት",
+      "saving": "ቅምጣት…"
+    },
+    "formFill": {
+      "title": "ሰደለ ሕትመት",
+      "intro": "ሓበሬታ ሕትመት። ሳይት ምስክር።",
+      "secureLine": "ሰደለ ተዓወተ। ወዛ አምሪካ።",
+      "autoFilled": "ሓበሬታ ሕትመት",
+      "missing": "ጠፊኦ — ራስ ጸሓፍ",
+      "sensitive": "ብራሳ — ሙ። ራስ ተሳራይ።",
+      "download": "ሕትመት ሳይት ሊወስደት",
+      "downloading": "ሕትመት ዝኾነ…",
+      "reviewAll": "ሓንቲ ምስክር",
+      "noFields": "ሰደለ ግጥ ምህርትማ። ጸሓፍ።",
+      "openPrompt": "ሰደለ ክፈት",
+      "loading": "ሰደለ ክፈት…",
+      "loadError": "ሰደለ ክፈት ንቢ። ከሌሎ ሰደለ።",
+      "uploadHint": "I-94፣ ሰራሪ ወይ ከሌሎ ሰነድ ሰነድ ሕትመት።"
+    }
+  },
+  "errors": {
+    "generic": "ሰሌዳ ወጅ። ምሕዳስ።",
+    "signIn": "ኢሜል ወይ ምስጢር።",
+    "signUp": "ሓሳብ ምግናን ንቢ། ምሕዳስ።",
+    "eligibility": "ገንዘብ ምወዓ ንቢ། ምሕዳስ።",
+    "upload": "ምምነየት ምልሕ। ጠጋር ፋይል ወይ ተከላኢ ሰደለ።",
+    "required": "ሰነገ ሚገምጥ።"
+  },
+  "common": {
+    "loading": "ምወዓ…",
+    "yes": "ወተ",
+    "no": "ወይ",
+    "save": "ቅምጣት",
+    "cancel": "ሰደወት",
+    "close": "ጨርስ",
+    "back": "ወጃ",
+    "next": "ዝስነ",
+    "submit": "ሰጥነ",
+    "or": "ወይ",
+    "edit": "ምሕዳስ",
+    "download": "ሊወስደት",
+    "open": "ክፈት",
+    "settings": "ምርጫ",
+    "dismiss": "ጨርስ"
+  }
+}

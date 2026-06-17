@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "signIn": "ግባ",
+    "signOut": "ውጣ",
+    "dashboard": "ዳሽቦርዴ",
+    "documents": "ሰነዶችዬ",
+    "findHelp": "እገዛ ፈልግ",
+    "settings": "ቅንብሮች"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "እንዴት ይሠራል",
+      "features": "ተሞክሮዎች",
+      "languages": "ቋንቋዎች",
+      "signIn": "ግባ",
+      "getStarted": "ጀምር"
+    },
+    "hero": {
+      "headline": "አዲስ ቤት መንገዱን ማወቅ ይጀምራል።",
+      "subheadline": "Wayfinder ብቁ የሆኑ ጥቅሞችን እና ወረቀቶችን ያገኛል፣ ሁሉንም ነገር በቋንቋዎ ያብራራል፣ እና ወስን ሳያልፍ ደረጃ በደረጃ ይመራዎታል።",
+      "cardLabel": "በቋንቋዎ ጀምር",
+      "searchPlaceholder": "100+ ቋንቋ ፈልግ...",
+      "cta": "ያለ ክፍያ ጀምር"
+    },
+    "how": {
+      "eyebrow": "እንዴት ይሠራል",
+      "title": "ከመምጣት እስከ ግልጽ ዕቅድ ሦስት ደረጃዎች።",
+      "steps": [
+        {
+          "title": "ታሪክዎን ነግረን",
+          "body": "ጥቂት ቀላል ጥያቄዎች ይመልሱ፣ አንድ በአንድ፣ በራስዎ ቋንቋ። ትልቅ ጽሑፍ፣ ቀላል ቃላት፣ ምንም ብስጭት የለም።"
+        },
+        {
+          "title": "ምን 적합 እንደሆነ 찾아ይ",
+          "body": "Wayfinder ብቁ የዩ.ኤስ. ጥቅሞች ህጎችን ይፈትሽ እና በትክክል ምን ብቁ እንደሆኑ ከምንጮች ያሳያል፣ ምንም ግምት የለም።"
+        },
+        {
+          "title": "በወቅቱ ተግባር",
+          "body": "ወስን ከተመደበ ዕቅድ ያግኙ፣ ሁሉ ሙያዎች ተብራርቷል እና ፈለጉ ጊዜ የተለየ ሰው እገዛ ቅርብ።"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "ደራሲዎ",
+      "title": "ሁሉም ያስፈልግዎ፣ በአንድ 차분한ቦታ።",
+      "items": [
+        {
+          "title": "ድርጅቴ ድርጅት",
+          "body": "ጥቅሞችዎ በቅርቡ የወስን ደረጃ ማድረግ፣ እያንዳንዳ ቅላጁ ለምን ብቁ እንደሆኑ የተጻፈ ምክንያት እና ምንም ተንሸራትቶ እንዳይሆን ተቆጣጣሪ።"
+        },
+        {
+          "title": "AI ሙያ ረዳት",
+          "body": "Wayfinder እያንዳንዱን ስሌት ያብራራል እና ሙያዎ በቋንቋዎ ስሌት ይሳል። ደካማ ቁጥሮችን ይንካ никогда፣ እና ምንም ሳይለኩ ውጤት ሲያስተላልፈው።"
+        },
+        {
+          "title": "ሰነድ ውስጣዊ ሳጥን",
+          "body": "ፓስፖርትዎ፣ I-94፣ እና EAD አንድ ተመሳሳይ፣ ወላጅ-ብቻ ቦታ ውስጥ ማቆየት። ግላዊ፣ እና ህግ ብክነት ጋር አንዳቸውም ጋር አሳክ."
+        },
+        {
+          "title": "እገዛ ፈልግ",
+          "body": "ለማንኛውም ሕግ ጉዳይ፣ Wayfinder ለእርስዎ ኬላ ሕግ ኬላ ወይም ተቀባይ ለማስተናገድ ጋር ቅርብ ግንኙነት። ሰው፣ ግምት ሳይሆን።"
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "ማንኛውም ቋንቋ",
+      "title": "በቃልህ፣ ከመጀመሪያ ስክሪን ጀምሮ።",
+      "body": "ቋንቋዎን መግቢያ ቅድሚያ ይምረጡ፣ እና Wayfinder ሁሉ በሁሉ ደረጃ ይናገራል።"
+    },
+    "trust": {
+      "badge": "ደህንነትዎ በመጀመሪያ ይመጣል",
+      "title": "ማስተላለፍ ህግ ፍጥጫ ጋር መረጃ አንዳቸውም ጋር አሳክ።",
+      "body": "ሰነዶችዎ ተመሳሳይ እና ወላጅ-ብቻ ናቸው። Wayfinder ደካማ ቁጥር አይሞላ፣ ሙያ ሳይመልክተው፣ እና ሁሉ ሕግ ውሳኔ ሰው-ሥራ፣ ሕግ ወደ ሰው ሳይሆን።",
+      "points": [
+        "ተመሳሳይ እና ግላዊ",
+        "ምንጮች ወደ ማወቂያ",
+        "ሰው ትክክልታት"
+      ]
+    },
+    "finalCta": {
+      "title": "ወደ ፊትዎ ዛሬ ጀምራል።",
+      "body": "ነጻ፣ ግላዊ፣ እና በቋንቋዎ። ምን ብቁ እንደሆኑ ደቂቃ ውስጥ ያግኙ።",
+      "primary": "ያለ ክፍያ ጀምር",
+      "secondary": "እንዴት ይሠራል ይመልከቱ"
+    },
+    "footer": {
+      "tagline": "ሕግ ምክር ሳይሆን · ሁሌም ሰው ተለይቶ"
+    },
+    "translating": "ገጽ ትርጉም..."
+  },
+  "auth": {
+    "createAccount": "ሂሳብ ይፍጠሩ",
+    "email": "ኢሜይል አድራሻ",
+    "password": "ሚስጢር ቃል",
+    "signUp": "ሂሳብ ይፍጠሩ",
+    "signIn": "ግባ",
+    "haveAccount": "ቀድሞ ሂሳብ አላቸው?",
+    "noAccount": "ሂሳብ የሉም?",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "ሚስጢር ቃል ይምረጡ",
+    "signingUp": "ሂሳብ ተገልግሎ...",
+    "signingIn": "ግባ..."
+  },
+  "onboarding": {
+    "progressLabel": "ደረጃ {current} ከ {total}",
+    "nav": {
+      "next": "ሚቀጥለው",
+      "back": "ወደ ኋላ",
+      "confirmContinue": "አረጋግጥ እና ቀጥል",
+      "findBenefits": "ጥቅሞችዬ ፈልግ",
+      "saving": "ተቀምጦ...",
+      "skipNotSure": "ዘልል — እርግጠኛ አይደለሁም"
+    },
+    "yes": "አዎ",
+    "no": "አይ",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "ጃንቫር",
+        "note": "ክፍል 207 ስር ተቀባይ"
+      },
+      "asylee_208": {
+        "label": "ጭንቀት ተቀባይ",
+        "note": "መጠጥ ክፍል 208 ስር"
+      },
+      "siv": {
+        "label": "ልዩ ስዕል ቪዛ (SIV) ያዥ",
+        "note": "አፍጋን ወይም ኢራቅ"
+      },
+      "afghan_parolee": {
+        "label": "አፍጋን የ humanitarian parolee"
+      },
+      "ukrainian_parolee": {
+        "label": "ዩክሬን የ humanitarian parolee"
+      },
+      "cuban_haitian_entrant": {
+        "label": "ኩባ ወይም ሃይቲ መግባት"
+      },
+      "trafficking_victim": {
+        "label": "የወሲብ ሸቀጥ ምስክር",
+        "note": "T-visa ወይም ORR ደብዳቤ"
+      },
+      "amerasian": {
+        "label": "Amerasian ስዕል"
+      },
+      "lpr_from_humanitarian": {
+        "label": "ሴት ካርታ ከጃንቫር፣ ጭንቀት ተቀባይ ወይም humanitarian ሁኔታ",
+        "note": "ይህ SNAP እና Medicaid ብቁነት ወደ ምደብ"
+      },
+      "lpr_other": {
+        "label": "ሴት ካርታ ከሌላ መንገድ"
+      },
+      "us_citizen": {
+        "label": "ዩ.ኤስ. ዜጋ ወይም ዩ.ኤስ. ብሔር"
+      },
+      "other_none": {
+        "label": "ሌላ፣ እርግጠኛ አይደለሁም፣ ወይም ከእነዚህ ውስጥ የለውም"
+      }
+    },
+    "language": {
+      "question": "ምን ቋንቋ ትመርጡ?",
+      "hint": "ሁሉ ነገር በዚህ ቋንቋ ታሳያለን።"
+    },
+    "scan": {
+      "question": "ወረቀቶቹ አላቸው? ጊዜ ለመቀነስ ፎቶ ይንሩ",
+      "intro": "I-94 (እና ሥራ ፈቃድ፣ ሴት ካርታ ወይም ጭንቀት ደብዳቤ ካለ) ፎቶ ስክ ይንሩ። ሁኔታ እና ቀን ያንብብ ስለዚህ ይተይበሉ።",
+      "secureLine": "ሰነዶችዎ ተጠቁ ውስጥ ይሰለሳለ እና ወደ አገር ውስጥ ተቀምጦ ይወሳደራለ ወይም ህግ ብክነት ጋር መግለጹ። ቁጥር-ብቻ ሙያ ምክንያቱ ፈሳሽ — Social ነገር አይደለም።",
+      "uploadAriaLabel": "ህግ ሰነዶች ፎቶ ወይም PDF ሰቅል",
+      "chooseDifferent": "ሌላ ፖቶ ይምረጡ",
+      "chooseFile": "ፎቶ ይንሩ ወይም ፋይል ይምረጡ",
+      "fileTypes": "JPEG፣ PNG ወይም PDF · ወደ 4 ሰነዶች",
+      "reading": "ሰነዶችዎ ያንብብ...",
+      "readDocuments": "ሰነዶችዬ ያንብብ",
+      "skip": "ሰነዶችዬ የለው — ይልቅ ጥያቄ ተብራር",
+      "errorReadFailed": "ሰነድዎ ማንበብ አልቻልን። እንደገና ሞክር ወይም ዘልል እና ጥያቄ ተብራር።",
+      "errorUnreachable": "ሰነድ ሰው ያግኙ አልቻልን። እንደገና ሞክር ወይም ዘልል እና ጥያቄ ተብራር።"
+    },
+    "confirm": {
+      "question": "ሰነዶችዎ ከተነበበ ምንድ ዝርዝር ያረጋግጡ",
+      "intro": "ጥቅምዎ ውጤት ይህ ግምት ላይ ተመስርቯል፣ ሶስት ትንሽ ወቅት እንደገና ያረጋግጡ። ማንኛውም ክፍል ህዋስ ለመሳተፍ ታጠብ።",
+      "secureLine": "ጠቅሊሉ ከንቅነት ይስተላል።",
+      "detectedPrefix": "ልብ ዕውቀታ:",
+      "lowConfidence": "አንዳንድ ግምት ለማንበብ ከባድ ነበር (ምልክት ዝርዝር ያረጋግጡ)። እባክዎ በመጀመሪያ ይህ ኣመቺ ያረጋግጡ።",
+      "pleaseCheck": "እባክዎ ያረጋግጡ",
+      "fromDocument": "ሰነድዎ ከ",
+      "fields": {
+        "immigrationStatus": "ህግ ሁኔታ",
+        "selectStatus": "ሁኔታ ይምረጡ",
+        "fullName": "ሙሉ ስም",
+        "fullNameHint": "ለ ርስዎ ሰነድ ብቻ — ብቁነት ይሞቱ።",
+        "fullNamePlaceholder": "ሙሉ ስም",
+        "dateOfBirth": "ልደት ቀን",
+        "dateOfBirthHint": "ለ ዕድሜ ተኮር ፕሮግራም ዕድሜ ተዋቅሯል።",
+        "age": "ዕድሜ",
+        "countryOfOrigin": "ከተነሳ ሃገር",
+        "countryOfOriginHint": "ለ ርስዎ ሰነድ ብቻ።",
+        "countryPlaceholder": "ሃገር",
+        "arrivalDate": "ወደ ዩ.ኤስ. ስገቡ ጊዜ",
+        "eligibilityDate": "ORR ብቁነት ቀን",
+        "eligibilityDateHint": "RCA/RMA ወስን ሰዓት ይቀጥልባቸው።",
+        "statusGrantDate": "ሁኔታ በተሰጠ ቀን",
+        "statusGrantDateHint": "ጃንቫር/ጭንቀት ተቀባይ ሰጪ ቀን (SSI 7 ዓመት ሰዓት)። አማራጭ።"
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "ሥራ ፈቃድ (EAD)",
+        "green_card": "ሴት ካርታ",
+        "asylum_letter": "ጭንቀት ደብዳቤ",
+        "ssn_card": "Social ሙያ ካርታ",
+        "other": "ሰነድ"
+      }
+    },
+    "status": {
+      "question": " አሁን ህግ ሁኔታ ምን?",
+      "hint": "ምርጫ ምርጥ ስለዚህ። ይህ ተገልግሎ ሁሉም ጥቅም ህግ ታሪሮጅ።"
+    },
+    "documents": {
+      "question": "ጥቂት ፍጥጫ ሰነድ ጥያቄዎች",
+      "hint": "አዎ ወይም አይ ወደ ፍላት። ሌላ ሆኖ ስሌት መቀነስ።",
+      "fromDocsPrefix": "ሰነዶች ከ ልብ",
+      "fromDocsI94": " ራስዎ I-94",
+      "fromDocsAnd": " እና",
+      "fromDocsEad": " ራስዎ ሥራ ፈቃድ (EAD)",
+      "i94Label": "I-94 ገቢ/ውጫ ሰነድ",
+      "i94Hint": "ገቢ ሕግ። I-94 ብዙ §207 ወይም 'Visa 93' ጃንቫር ሁኔታ ሕግ።",
+      "eadLabel": "ሥራ ፈቃድ (EAD ካርታ)",
+      "eadHint": "Employment Authorization ሰነድ። EAD ኮድ A03 በተጨማሪ ጃንቫር ሁኔታ ሕግ።",
+      "ssnLabel": "Social ሙያ ቁጥር (SSN) አለዎት?",
+      "ssnHint": "ብቻ ያውቁ ከሆነ ወይም — ከትግበራ ቁጥር።"
+    },
+    "orrLetter": {
+      "question": "ORR ምስክር ወይም ብቁነት ደብዳቤ አለዎት?",
+      "hint": "ወሲብ ሸቀጥ ምስክር RCA እና RMA ህግ ጥቅሞች ለመገባት ይህ ደብዳቤ ያስፈልግ (አይ I-94)።"
+    },
+    "eligibilityDate": {
+      "question": "ጃንቫር እገዛ በአቅሚ መቼ ጀመረ?",
+      "hint": "ይህ ORR ብቁነት ቀን — ብዙ ገቢ ቀን ወይም ህግ ሁኔታ ሰጪ ቀን, ትልቅ.",
+      "deadlineLabel": "አስፈላጊ ወስን:",
+      "deadlineBody": " ጃንቫር ገንዘብ እገዛ (RCA) እና የሕክምና እገዛ ሰዓት ይህ ቀን ወደ ጀምር — በአግባብ ውጣ።"
+    },
+    "arrivalDate": {
+      "question": "ወደ ዩ.ኤስ. መቼ ደረሱ?",
+      "hint": "ብዙ ሥራ ዋነ ወደ ቀን ወደ 5 ዓመት ይሽዝሙ።"
+    },
+    "statusGrantDate": {
+      "question": "ጃንቫር ወይም ጭንቀት ተቀባይ ሁኔታ መቼ ሰጥቷል?",
+      "hint": "SSI ብቁነት ይህ ቀን ወደ 7 ዓመት ሽግግር። ካወቁ ሳያልቅ ይተዋው።"
+    },
+    "location": {
+      "question": "ምን ክልል ውስጥ ይኖራሉ?",
+      "hint": "ጥቅም ሌላ ሊሉ ክልል ልዩ። ከተማ እና ZIP አማራጭ።",
+      "stateLabel": "ክልል",
+      "selectState": "ክልል ይምረጡ",
+      "cityLabel": "ከተማ (አማራጭ)",
+      "cityPlaceholder": "ከተማ",
+      "zipLabel": "ZIP ኮድ (አማራጭ)",
+      "zipPlaceholder": "ZIP ኮድ"
+    },
+    "household": {
+      "question": "ስለ ቤተሰብዎ ንገራን",
+      "hint": "ይህ ግምት ገቢ ገደብ ጠቅሊሉ। እነሱ ግላዊ ናቸው።",
+      "ageLabel": "ውላደት ዕድሜ",
+      "agePlaceholder": "ዕድሜ",
+      "ageFromDoc": "ራስዎ ዕድሜ ({age}) ሰነድ ከ ዓቅሞ ተዘጋጅቷል። ያረጋግጫ ስክሪን ግብ ሊለኩ ይችላሉ።",
+      "sizeLabel": "ምን ብዙ ሰው ቤትዎ ውስጥ ይኖራሉ, ራስዎ ቆጠር?",
+      "sizePlaceholder": "ለ.ተ.ነ. 3",
+      "incomeLabel": "ገንዘብ ቤተሰብ ያግኙ ወር፣ ታክስ (ዩ.ኤስ. ሮጋ) ማስገቢያ። 0 የለም ገቢ።",
+      "incomePlaceholder": "0",
+      "perMonth": "/ ወር"
+    },
+    "children": {
+      "question": "ምን ብዙ ህጻናት ቤትዎ ውስጥ ይኖራሉ?",
+      "under19Label": "ከ 19 ዓመት ታች ምን ብዙ ህጻናት ቤትዎ ውስጥ ይኖራሉ?",
+      "under19Hint": "0 ሕጻናት ከሌለ የተገቢ።",
+      "under18Label": "ከነዚህ ብዙ ከ 18 ዓመት ታች ምን ናቸው?",
+      "under5Label": "ከነዚህ ብዙ ከ 5 ዓመት ታች ምን ናቸው?",
+      "subsetHint": "ይህ ትንሹ ክፍል ከ ላይ ቁጥር ነው።"
+    },
+    "pregnantCash": {
+      "question": "ስለ ቤትዎ ሁለት ፍጥጫ ጥያቄ",
+      "pregnantLabel": "ሰው ቤትዎ ውስጥ ምርት ወር ይኖራል?",
+      "pregnantHint": "WIC እና ብዙ Medicaid ፕሮግራም ብሓለ ሴት።",
+      "cashLabel": "ክምተት ገንዘብ እገዛ ቀድሞ ያግኙ (TANF, SSI ወይም ተወሳሪ እገዛ)?",
+      "cashHint": "ይህ ጃንቫር ገንዘብ እገዛ እና SNAP ብቁነት ተጎናጅቶ።"
+    },
+    "special": {
+      "question": "አንዳንድ ልዩ ሁኔታ",
+      "hint": "አዎ ወይም አይ ወደ እያንዳንዳ ታጠብ።",
+      "unaccompaniedLabel": "ከ 18 ዓመት ታች እና ዩ.ኤስ. ውስጥ አባት ወይም አስተዳደሪ ጋር?",
+      "unaccompaniedHint": "ክልል ጭንቀት ተቀባይ ህጻናት (URM) ፕሮግራም።",
+      "disabledLabel": "የስራ ገደብ ሚና ያለ ሁኔታ አለዎት?",
+      "disabledHint": "SSI እና SSDI ለ.",
+      "blindLabel": "ወይም ጠፍጣፋ ተግባር ምስል ጠፍጣፋ ናቸው?",
+      "blindHint": "ልዩ SSI/SSDI ምድብ።",
+      "workQuartersLabel": "ራስ ወይም ተጋቢ ወይም አባት ዩ.ኤስ. ውስጥ በግምት 10 ዓመት ሰርቷል?",
+      "workQuartersHint": "40 ሰሪ ክሬዲት ፕሮግራም 5 ዓመት ለ SSI እና SNAP ምርት ሊስተማርረ።"
+    },
+    "goals": {
+      "question": "ምን ጋር እገዛ መኖር ሊኖር?",
+      "hint": "ይህ ለዎ ትክክል ፕሮግራም ፈልግ ረገድ ውጤት።",
+      "employmentLabel": "ሰርት ወይም ሥራ ወይም ሥራ ስልጠና ጋር ለግባ?",
+      "employmentHint": "ሥራ ልምዶች, ህጻን ጥንቆላ ድጋፍ, ተመሳሳይ ሚና።",
+      "businessLabel": "ይቀጥሉ ወይም ራስዎ ቢስነስ ጉጉተ?",
+      "businessHint": "ፍትሕ ልማት እና ግለሰብ ልማት ሂሳብ (IDA)።",
+      "englishLabel": "ኢንግሊዝ (ESL) ክፍል ሊኖር? (አማራጭ)",
+      "englishHint": "ነጻ ኢንግሊዝ ተግባር ሥልጠና ጃንቫር ድጋፍ ፍሬ.",
+      "interpreterLabel": "ተርጓሚ ወይም ትርጉም እገዛ ሊኖር? (አማራጭ)",
+      "interpreterHint": "ነጻ ተርጓሚ ፍሬ ጃንቫር ፕሮግራም ተዘጋጅቶ."
+    },
+    "settingsForm": {
+      "i94Label": "I-94 ገቢ/ውጫ ሰነድ አለዎት?",
+      "eadLabel": "ሥራ ፈቃድ (EAD ካርታ) አለዎት?",
+      "eligibilityDateLabel": "ጃንቫር እገዛ በአቅሚ መቼ ጀመረ? (ORR ብቁነት ቀን)",
+      "arrivalDateLabel": "ወደ ዩ.ኤስ. መቼ ደረሱ?",
+      "statusGrantDateLabel": "ጃንቫር ወይም ጭንቀት ተቀባይ ሁኔታ መቼ ሰጥቷል? (አማራጭ)"
+    },
+    "errors": {
+      "saveFailed": "ታሪክዎ ቪዋ አልቻልን: {message}. ይህ ምዝግብ አይነት ገደብ መታወቅ ከሆነ, ዳታቤስ ስሪት (supabase/migration_v2.sql) ተጠቅምሳ አልደርሱም።",
+      "profileNotFound": "ታሪክዎ ቪዋ ለገብታ ሊገበሩ ሆሊት አልቻልን። ዕንቁ ወደ ኋላ እና መልሴ ዓጃ፤ እንዲህ ሙከራ።",
+      "profileNotFoundShort": "ታሪክዎ ቪዋ ለገብታ ሲገበር ሊገበሩ ሆሊት አልቻልን। ዕንቁ ወደ ኋላ እና መልሴ ዓጃ፤ እንዲህ ሙከራ።"
+    }
+  },
+  "processing": {
+    "title": "ጥቅሞች ፈልግ...",
+    "subtitle": "ታሪክዎ በአቅሚ ዩ.ኤስ. ጥቅም ፕሮግራም ግምት። ይህ በተለምዶ ወደ 30 ሰከንድ ይወስዳል።",
+    "step1": "ጥቅም ህግ ተወስደ",
+    "step2": "ብቁነት ተፈትሸ",
+    "step3": "ውጤት ተረጋገጠ",
+    "step4": "ወስን በ ደረጃ",
+    "ready": "ዕቅድዎ ዝግጁ!",
+    "readySubtitle": "ጥቅም ብቁ ሊሆን ወደ ፈልጋን።",
+    "goToDashboard": "ዕቅድ አይ"
+  },
+  "dashboard": {
+    "welcome": "እንኳን ደህና መጡ",
+    "tabs": {
+      "actionPlan": "ድርጅቴ ድርጅት",
+      "documents": "ሰነዶችዬ",
+      "formHelper": "ሙያ ረዳት",
+      "explainer": "ደብዳቤ ግለጽ",
+      "findHelp": "እገዛ ፈልግ",
+      "progress": "ለዓለም ሂደት"
+    },
+    "actionPlan": {
+      "title": "ዕቅድዎ",
+      "subtitle": "በእጃ ወስን ስሪት መሰገው።",
+      "rulesChecked": "ጥቅም ህግ ኮሚ ተረጋገጠ:",
+      "daysLeft": "{days} ቀናት ተወ",
+      "urgent": "ወግ — ወግ ተግባር",
+      "deadlinePassed": "ወስን ሊተ ሊሆን",
+      "noDeadline": "ምንም ተወሰነ ወስን",
+      "startButton": "ጀምር",
+      "continueButton": "ቀጥል",
+      "sourceLink": "አቅሚ ምንጭ",
+      "attorney": "ይህ ሕግ ወይም ተቀባይ ረዳት ይወስዳል።",
+      "noResults": "ብቁ ጥቅም ወደ ፈልጋን። ብዙ ጥያቄ ወይም የተለያዩ ድርጅት ጋር ተወሳሪ።",
+      "statusBadges": {
+        "likely_eligible": "ምክንያት ብቁ",
+        "maybe_eligible": "ብቁ ሊሆን",
+        "needs_human_review": "አስተናጋጅ ግምት",
+        "not_eligible": "ብቁ ሳይሆን"
+      },
+      "details": "ዝርዝር",
+      "getFormHelp": "ሙያ ረዳት ያግኙ",
+      "daysLeftToApply": "{days} ቀናት ስለ ሳይሆን",
+      "oneDayLeftToApply": "1 ቀን ስለ ሳይሆን",
+      "deadlinePassedClear": "ይህ ወስን ሊተ ስሔ",
+      "whatYouNeed": "ምን ያስፈልግዎ",
+      "whereHowToApply": "መ, ይህ ሥግብረት ምርገ",
+      "requiredDocuments": "ሚና ሰነዶች",
+      "nextSteps": "ሚቀጥለው ደረጃ",
+      "applyOnline": "ድረ-ገጽ ሳይሆን",
+      "formNeeded": "ሙያ ምስክር"
+    },
+    "documents": {
+      "title": "ሰነዶችዬ",
+      "subtitle": "ፋይሎች ተመሳሳይ እና ግላዊ ናቸው። ህግ ብክነት ጋር መግለጹ።",
+      "upload": "ሰነድ ሰቅል",
+      "dragDrop": "ፋይል ማርይ, ወይም ከፍ ይምረጡ",
+      "supportedTypes": "ድጋፍ: PDF, JPG, PNG",
+      "extracting": "ሰነድ ያንብብ...",
+      "noDocuments": "ሰነድ ሰቅል ያልገባ።",
+      "deleteConfirm": "ይህ ሰነድ ሊመልስ ዋቅ?",
+      "open": "ክፍት",
+      "preview": "ቅድሚያ",
+      "close": "ዝጋ",
+      "detectedType": "ዓይነት ወደ",
+      "secureLine": "ሰነዶች ሆሊት ተጠቅሞ ህግ ብክነት ጋር ምንም መግለጹ।",
+      "types": {
+        "passport": "ፓስፖርት",
+        "i-94": "I-94 ገቢ ሰነድ",
+        "ead": "ሥራ ፈቃድ (EAD)",
+        "birth_certificate": "ልደት ስርጉግ",
+        "status_letter": "ሁኔታ ደብዳቤ",
+        "other": "ሌላ"
+      }
+    },
+    "formHelper": {
+      "title": "ሙያ ረዳት",
+      "subtitle": "ሙያ ዝርዝር እና ምልክ ረገድ እገዛ ያግኙ። SSN ብቃ፣ A-ቁጥር, ንግዶ ዝርዝር, ወይም ፓስፖርት ቁጥር — ይህ ግላዊ ይቀሩ።",
+      "pasteInstructions": "ሙያ ስም ወይም URL ደረሳ, ወይም ምን ጋር እገዛ ይፃፍ:",
+      "placeholder": "ለ.ተ.ነ.: I-765 Employment Authorization, ወይም \"ሙያ Medicaid ሙያ ረገድ እገዛ yanbu\"",
+      "ask": "እገዛ ያግኙ",
+      "sensitiveNote": "[ራስ ይሞላ] ምስክር ሚና ቅል — ራስሥ ይህ።",
+      "legalNote": "ይህ ሙያ ሁኔታ ዋቅ። ሕግ ወይም DOJ-ተቀባይ ረዳት ጋር ሥርአት.",
+      "thinking": "ሙያ ያንብብ...",
+      "uploadFiles": "ፋይል ሰቅል",
+      "openInFiller": "ሙያ ሙያ ለማክ",
+      "secureLine": "ሰነዶች ሆሊት ተጠቅሞ ህግ ብክነት ጋር ምንም መግለጹ።",
+      "send": "ላክ",
+      "contextNote": "Wayfinder ታሪክ ሰጠው ለጥያቄ ምቹ ጥያቄ ለርስዎ ሁኔታ।",
+      "suggestionsLabel": "ተለምዶ ጥያቄ"
+    },
+    "explainer": {
+      "title": "ደብዳቤ ወይም ሙያ ግለጽ",
+      "subtitle": "ግልጽ ደብዳቤ ወይም ሰነድ ደረሳ ወይም ሰቅል። ሙያ ብቅ ቋንቋ።",
+      "pasteLabel": "ጽሑፍ ራህ ደረሳ:",
+      "placeholder": "ደብዳቤ ወይም ሙያ ጽሑፍ ራህ ደረሳ...",
+      "orUpload": "ወይም ሙያ ወይም ሰናድ ፎቶ ሰቅል:",
+      "explain": "ይህ ግለጽ",
+      "thinking": "ሰነድ ያንብብ..."
+    },
+    "findHelp": {
+      "title": "ቅርብ ታሪክ ፈልግ",
+      "subtitle": "ሕዝብ ግንኙነት — ነጻ ማህበር ሕግ፣ ሕግ እገዛ, እና አገር ጃንቫር ሥራ ቢሮ።",
+      "resettlement": "ማህበር ወኪሎች",
+      "legalAid": "ህግ ሕግ እገዛ",
+      "stateOffice": "ክልል ጃንቫር ሥራ",
+      "national": "ብሔራዊ ምንጭ",
+      "attorneyWarning": "አስፈላጊ: ለማንኛውም ሕግ ጉዳይ ሁኔታ ዋቅ, ብቻ ሕግ ወይም DOJ-ተቀባይ ረዳት ሕግ ምክር ሊስጡ እና ኢኒሺአት ሊስተናገድ ይችላል።",
+      "call": "ደውል",
+      "visit": "ድረ-ገጽ ይብራሩ",
+      "noState": "ርስዎ ክልል ይምረጡ የተለያዩ ድርጅት ሪ።"
+    },
+    "progress": {
+      "title": "ለዓለም ሂደት",
+      "subtitle": "ለ ዕቅድ ጥቅም ስሪት ታሪክ ጊዜ።",
+      "statuses": {
+        "not_started": "ሳይዝጋ ጀምር",
+        "in_progress": "ሂደት",
+        "documents_ready": "ሰነዶች ዝግጁ",
+        "submitted": "ድሪድ",
+        "needs_attorney": "ሕግ ወስዱ",
+        "done": "ጨርሰ"
+      },
+      "updateStatus": "ሕግ አዲስ"
+    },
+    "pdf": {
+      "download": "ዕቅድ (PDF) ሰቅል",
+      "generating": "PDF ሰራ..."
+    },
+    "dismiss": "ተወሪድ",
+    "footer": {
+      "privacy": "መረጃ ተመሳሳይ እና ግላዊ ናቸው። ህግ ብክነት ጋር መግለጹ።",
+      "disclaimer": "Wayfinder ሕግ ምክር ይስጥ።"
+    },
+    "settings": {
+      "title": "ቅንብሮች",
+      "subtitle": "ቋንቋ ለወይም ጅምር ጊዜ ታሪክ ዕቀድ។",
+      "language": "ቋንቋ",
+      "languageHint": "አቲ ዎኃ ምረጫ። ወዲያውኑ ማሻሻል።",
+      "editInfo": "መረጃ ለረገድ ራስ",
+      "editInfoHint": "ጅምር ጊዜ ታሪክ ዕቀድ ለወይም ትክክለኛ። በታሪክ ጥቅም ዘክር।",
+      "recheck": "ብቁ ጥቅም ዘክር",
+      "backToDashboard": "ወደ ዳሽቦርዴ",
+      "saved": "ተቀምጦ",
+      "saving": "ተቀምጦ..."
+    },
+    "formFill": {
+      "title": "ሙያ ሙልᅩ",
+      "intro": "ብዙ ይህ ያውቅ ሕግ། እባክዎ እያንዳንዳ ሙያ ማሌ።",
+      "secureLine": "ሙያ ራህ ሆሊት ሙር ህግ ብክነት ጋር ምንም መግለጹ።",
+      "autoFilled": "ሕግ ተቀምጦ",
+      "missing": "ጠብ — እባክዎ ጽሑፍ",
+      "sensitive": "ሚና — ይህ ጋር ይሙላበ ጠብ። ራስ ገቢ።",
+      "download": "ሙያ ሰቅል",
+      "downloading": "ሙያ ስሪት...",
+      "reviewAll": "እያንዳንዳ ሙያ ቅድሚያ",
+      "noFields": "ይህ ሙያ ሙሊ ሳጥን ተወ। ለወደ የበሩ ክርስት ረገድ ሙያ ለተውሳ።",
+      "openPrompt": "ሙያ ሙሊ ለማክ",
+      "loading": "ሙያ ለመግ...",
+      "loadError": "ሙያ መግ አልቻልን። ሌላ ሙያ ሙከራ።",
+      "uploadHint": "I-94, ሥራ ፈቃድ ወይም ሌላ ሰነድ ሰነዶች ሙሊ በታሪክ ሙያ ስሪት።"
+    }
+  },
+  "errors": {
+    "generic": "ምንም ተፈጥሮ ውጤት። እንደገና ሙከራ።",
+    "signIn": "ኢሜይል ወይም ሚስጢር ቃል ጠርጣሪ።",
+    "signUp": "ሂሳብ ተገልግሎ አልቻልን። እንደገና ሙከራ።",
+    "eligibility": "ጥቅም ሙሊ አልቻልን። እንደገና ሙከራ።",
+    "upload": "ሰቅል ሳይሞክር። ትንሹ ፋይል ወይም ሌላ ዓይነት ሙከራ።",
+    "required": "ይህ ሙያ አስፈላጊ ነው።"
+  },
+  "common": {
+    "loading": "ሙሊ...",
+    "yes": "አዎ",
+    "no": "አይ",
+    "save": "ቪዋ",
+    "cancel": "ይዘል",
+    "close": "ዝጋ",
+    "back": "ወደ ኋላ",
+    "next": "ሚቀጥለው",
+    "submit": "ድሪድ",
+    "or": "ወይም",
+    "edit": "ለረገድ",
+    "download": "ሰቅል",
+    "open": "ክፍት",
+    "settings": "ቅንብሮች",
+    "dismiss": "ተወሪድ"
+  }
+}

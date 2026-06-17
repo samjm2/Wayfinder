@@ -1,0 +1,508 @@
+{
+  "nav": {
+    "signIn": "Têkeve",
+    "signOut": "Derketin",
+    "dashboard": "Panela Min",
+    "documents": "Belgeya Min",
+    "findHelp": "Alîkariyê Bibîne",
+    "settings": "Sazkarî"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Çawa dixebite",
+      "features": "Taybetmendî",
+      "languages": "Ziman",
+      "signIn": "Têkeve",
+      "getStarted": "Dest Pê Bike"
+    },
+    "hero": {
+      "headline": "Malhek nû bi zanina rêya xwe dest pê dike.",
+      "subheadline": "Wayfinder fêrî we dide karike û kaxezên ku hûn derbasdar in, hemû tişt bi zimanê xwe şirove dike, û hûn gav bi gav fûmandin, berî ku demdemê biqede.",
+      "cardLabel": "Di zimanê xwe de dest pê bike",
+      "searchPlaceholder": "100+ ziman lê bigerin…",
+      "cta": "Bê çente dest pê bike"
+    },
+    "how": {
+      "eyebrow": "Çawa dixebite",
+      "title": "Sê gavan ji hatetina we heya plana zelal.",
+      "steps": [
+        {
+          "title": "Dayika xwe ji me re bibêjin",
+          "body": "Pirsên hêsan ên ji hev cure bersiv bidin, yek yek, bi zimanê xwe. Nivîsên gir, peyvên hêsan, nabe leqeze."
+        },
+        {
+          "title": "Em çi li we dégel dike bibînin",
+          "body": "Wayfinder bankayek maqûl a rêzên karîkên A.B.D. kontrol dike û tam xwedîtiyên we nîşan dide, bi çavkaniyan, ne tahmînî."
+        },
+        {
+          "title": "Di serbilindî de tevbigerin",
+          "body": "Plana ji hêla demdemê ve rakirî bigirin, her forma şirove kî û alîkariya kesî ya rastîn li cihê we."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Hevgirê xwe",
+      "title": "Hemû tiştên ku hûn pêwîst in, di cihekî aram de.",
+      "items": [
+        {
+          "title": "Plana Kirraya Min",
+          "body": "Karîkên we bi demdemê ya herî zû rakirî, her yek bi sedem a ziman a hêsan ku hûn derbasdar in û demdemê bilûr nabe tiştek."
+        },
+        {
+          "title": "Alîkarê Forma AI",
+          "body": "Wayfinder her qade şirove dike û bersivên di zimanê xwe de teklif dike. Ew yana hejmarên hestiyar nedigire, û yana tiştekî ji bo we şûnde nabe."
+        },
+        {
+          "title": "Çolika Belgeyê",
+          "body": "Pasaportê, I-94, û EAD-a xwe di cihekî şîfrekirî, yê xwe tenê de hûn biparêzin. Taye û yana bi biftin re nabe parve bibe."
+        },
+        {
+          "title": "Alîkariyê Bibîne",
+          "body": "Ji bo her tişta qanûnî, Wayfinder we ji avuhêlera mafê ya sertîfî an nûnerê maqûl li nêzîkê xwe re girê dide. Kesek, ne tahmînî."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Her ziman",
+      "title": "Bi peyvên xwe, ji ekrana yekem de.",
+      "body": "Zimanê xwe hilbijêrin berî ku hûn tomarkî bikin, û Wayfinder li her derve, di her gava de jê re bibêje."
+    },
+    "trust": {
+      "badge": "Ewlehiya xwe li pêşeng",
+      "title": "Em yana agahiyên xwe ji fêhmeya şûnde re ne parve dikine.",
+      "body": "Belgeya xwe şîfrekirî û yê xwe tenê ne. Wayfinder yana nasnameya hestiyar napû, yana form ne şûnde dike, û her biryara qanûnî ji ber kesek ya sertîfî ne, ne ji ber makîne.",
+      "points": [
+        "Şîfrekî û taye",
+        "Çavkanî hûn kontrolî dikarin",
+        "Ji ber mirov kontrol kî"
+      ]
+    },
+    "finalCta": {
+      "title": "Rêya xwe ya pêşde roja îro dest pê dike.",
+      "body": "Bê çente, taye, û bi zimanê xwe. Karike ku hûn derbasdar in di xuletîyan de bibînin.",
+      "primary": "Bê çente dest pê bike",
+      "secondary": "Çawa dixebite bibînin"
+    },
+    "footer": {
+      "tagline": "Ne şêwaza qanûnî · Her car ji ber kesek testa"
+    },
+    "translating": "Rûpel tergûmand dike…"
+  },
+  "auth": {
+    "createAccount": "Hesaba xwe çêkin",
+    "email": "Adressa e-mailê",
+    "password": "Şîfre",
+    "signUp": "Hesab çêkin",
+    "signIn": "Têkeve",
+    "haveAccount": "Hê hesabek heye?",
+    "noAccount": "Hesabek nîn?",
+    "emailPlaceholder": "yê@email.com",
+    "passwordPlaceholder": "Şîfrek hilbijêrin",
+    "signingUp": "Hesab tê çêkirin...",
+    "signingIn": "Tê têkevin..."
+  },
+  "onboarding": {
+    "progressLabel": "Gav {current} ji {total}",
+    "nav": {
+      "next": "Pêş",
+      "back": "Paşde",
+      "confirmContinue": "Piştrast û bi rê",
+      "findBenefits": "Karikê min bibîne",
+      "saving": "Tê tomarkirin...",
+      "skipNotSure": "Derketin — ez nizam"
+    },
+    "yes": "Erê",
+    "no": "Ne",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Neclêko",
+        "note": "Tê qebûlkirin di beşa 207 de"
+      },
+      "asylee_208": {
+        "label": "Neclêko",
+        "note": "Panaya tê qebûlkirin di beşa 208 de"
+      },
+      "siv": {
+        "label": "Girtgeha Taybet a Nûvemekî (SIV)",
+        "note": "Afgan an Iraqî"
+      },
+      "afghan_parolee": {
+        "label": "Neclêka Afganî ya mirovahî"
+      },
+      "ukrainian_parolee": {
+        "label": "Neclêka Ukraynî ya mirovahî"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Hatin Kuban an Heyti"
+      },
+      "trafficking_victim": {
+        "label": "Alîyê qurbana kunandina mirovî",
+        "note": "T-visa an nîvîşa ORR"
+      },
+      "amerasian": {
+        "label": "Nûvemekî Amerasî"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Kartela kesk ji neclêk, panaya, an statua mirovahî",
+        "note": "Ev destpêka SNAP û Medicaid derbasdariyê dide"
+      },
+      "lpr_other": {
+        "label": "Kartela kesk ji rêya din"
+      },
+      "us_citizen": {
+        "label": "Şarjêrî an ملی ya A.B.D"
+      },
+      "other_none": {
+        "label": "Din, nizam, an yek ji van ne"
+      }
+    },
+    "language": {
+      "question": "Kîjan ziman hûn tercih dikin?",
+      "hint": "Em hemû tişt di vî zimanî de nîşan didine."
+    },
+    "scan": {
+      "question": "Belgeyên xwe hene? Wêneyek fotoğraf bikin da dem tomarkirin",
+      "intro": "I-94 ya xwe fotoğraf bikin (û ajokarê xwe, kartela kesk, an mektûba panayê ger hebin). Em statua û demê xwe dikişînin wusa hûn ne tipe bikin.",
+      "secureLine": "Belgeya xwe bi aram di demê de tê pêkî kirin û yana serverên me de tomarkirin ne, yana bi fêhmeya şûnde re ne parve bibe. Em tenê çend zeqan ku pêwîst in ji bo kontrola karikê xwe dixwînin — yana jimara Civata Navneteweyî ya xwe yan A-Number.",
+      "uploadAriaLabel": "Wêneyek an PDF a belgeya şûndera xwe barkirî bikin",
+      "chooseDifferent": "Wêneyên din hilbijêrin",
+      "chooseFile": "Wêneyek fotoğraf bikin an pelî hilbijêrin",
+      "fileTypes": "JPEG, PNG, an PDF · ji 4 belgeyan zêdetir ne",
+      "reading": "Belgeya xwe tê xwendin…",
+      "readDocuments": "Belgeya min xwînin",
+      "skip": "Belgeya min nîn — pirsên bersiv bidin",
+      "errorReadFailed": "Em belgeya xwe nekarî xwîn bikin. Tekûr kişandin, an derketin û pirsên bersiv bidin.",
+      "errorUnreachable": "Em xwendevana belgeyê nekarî têkevin. Tekûr kişandin, an derketin û pirsên bersiv bidin."
+    },
+    "confirm": {
+      "question": "Ji kerema xwe belgeya ku em ji belgeyên xwe xwendine kontrol bikin",
+      "intro": "Encama karike xwe her yek ji van hejmiyan ne girîng, wusa dem bikin û piştrast bikin. Bi tap ve qad bikarim ku we fixe bikin.",
+      "secureLine": "Bi aram xwe û ne tomarkirin.",
+      "detectedPrefix": "Em dît:",
+      "lowConfidence": "Hêncam hejmar dijwar bûn ji bo xwendin (bi taybetî nîşe'r). Ji kerema xwe ew qada yekem kontrol bikin.",
+      "pleaseCheck": "Ji kerema xwe kontrol bikin",
+      "fromDocument": "Ji belgeyên xwe",
+      "fields": {
+        "immigrationStatus": "Statua şûndera",
+        "selectStatus": "Statua xwe hilbijêrin",
+        "fullName": "Navê girê",
+        "fullNameHint": "Tenê ji bo tomarên xwe — ji bo derbasdariyê ne tê bikaranîn.",
+        "fullNamePlaceholder": "Navê girê xwe",
+        "dateOfBirth": "Roja dayîna",
+        "dateOfBirthHint": "Sala xwe ji bo programên bi sala de saz dike.",
+        "age": "Sala",
+        "countryOfOrigin": "Welata derketinê",
+        "countryOfOriginHint": "Tenê ji bo tomarên xwe.",
+        "countryPlaceholder": "Welat",
+        "arrivalDate": "Roja hatina xwe li A.B.D.",
+        "eligibilityDate": "Roja derbasdariya ORR",
+        "eligibilityDateHint": "Demdemê RCA/RMA desk tiştekî dest pê dike.",
+        "statusGrantDate": "Roja ku statua tê dayîn",
+        "statusGrantDateHint": "Roja dayina neclêk/panaya (SSI 7-salî desk). Fakultatî."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Ajokarê (EAD)",
+        "green_card": "Kartela kesk",
+        "asylum_letter": "Mektûba panayê",
+        "ssn_card": "Kartela Hejmarê Civata Navneteweyî",
+        "other": "belgey"
+      }
+    },
+    "status": {
+      "question": "Statua xwe ya şûndera niha çi ye?",
+      "hint": "Yek hilbijêrin ku tê xwe. Ev tê karîb her rêza karike."
+    },
+    "documents": {
+      "question": "Pirsên belgeya leqeze",
+      "hint": "Tap Erê an Ne. Ew baş e ger hûn hivî kin.",
+      "fromDocsPrefix": "Ji belgeyên xwe em nîşe'r",
+      "fromDocsI94": " I-94 ya xwe",
+      "fromDocsAnd": " û",
+      "fromDocsEad": " ajokarê xwe (EAD)",
+      "i94Label": "I-94 Rêza Hatetinê/Derketinê",
+      "i94Hint": "Delîla derketinê. I-94ya ku tê kodkirin §207 an 'Visa 93' statua neclêka tixûbandine dike.",
+      "eadLabel": "Ajokarê (Kartela EAD)",
+      "eadHint": "Belgeyên Destûrkirina Kar. Koda EAD A03 di heman demê de statua neclêka tixûbandine dike.",
+      "ssnLabel": "Hejmarê Civata Navneteweyî (SSN) heye?",
+      "ssnHint": "Em tenê pêwîst in ku hûn yek hebin — na hejmar."
+    },
+    "orrLetter": {
+      "question": "Mektûba sertîfika ORR an derbasdariya xwe heye?",
+      "hint": "Qurbanan kunandina mirovî vî mektûbê pêwîst in (ne I-94) ji bo derbasdariya karika ORR wek RCA û RMA."
+    },
+    "eligibilityDate": {
+      "question": "Dema derbasdariyê ya ORR kengî bi resmî dest pê kir?",
+      "hint": "Ew roja derbasdariyê ya ORR — bi gelemperî roja hatinê xwe an roja ku statua tê dayîn, kîjan li paş ye."
+    },
+    "arrivalDate": {
+      "question": "Hûn kengî hatine Dewletên Yekbûyî?",
+      "hint": "Piranî servîsên kar û tefhîma zîndiyê ji vê rojê pênc salî digeran."
+    },
+    "statusGrantDate": {
+      "question": "Statua neclêk an panaya xwe kengî tê dayîn?",
+      "hint": "SSI derbasdariyê 7 salî ji vî demî borî zû dibe. Eger nizam ne zirî hûn nîşe'r cihê vala hê bikî."
+    },
+    "location": {
+      "question": "Hûn di kîjan dewlet de zindî dikin?",
+      "hint": "Karî û alîkariya herêmî bi dewlet ferq dikin. Bajar û ZIP fakultatî ne.",
+      "stateLabel": "Dewlet",
+      "selectState": "Dewleta xwe hilbijêrin",
+      "cityLabel": "Bajar (fakultatî)",
+      "cityPlaceholder": "Bajar",
+      "zipLabel": "Koda ZIP (fakultatî)",
+      "zipPlaceholder": "Koda ZIP"
+    },
+    "household": {
+      "question": "Pirtûka xwe ji me re bêjin",
+      "hint": "Vî bersivê sînorkên dahatê xwe saz dike. Ew taye ne.",
+      "ageLabel": "Sala xwe",
+      "agePlaceholder": "Sala xwe",
+      "ageFromDoc": "Sala xwe ({age}) ji belgeyên xwe saz kî. Hûn dikarin vî qadê li ser ekrana piştkêşkirinê biguherînin.",
+      "sizeLabel": "Çend kesan li xwe zindî dikin, bilav xwe?",
+      "sizePlaceholder": "mînakî 3",
+      "incomeLabel": "Pera ku pirtûka xwe tê stadê, ber ji berdestî (Dolarên A.B.D.). 0 têkeve ger yek ne.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ meh"
+    },
+    "children": {
+      "question": "Çend zarokên li xwe zindî dikin?",
+      "under19Label": "Çend zarokên di bin 19 salî de li xwe zindî dikin?",
+      "under19Hint": "0 têkeve ger yek ne.",
+      "under18Label": "Ji wan, çend di bin 18 salî de ne?",
+      "under5Label": "Ji wan, çend di bin 5 salî de ne?",
+      "subsetHint": "Ev jêhera hejmara li jor."
+    },
+    "pregnantCash": {
+      "question": "Du pirsên derbarê malê xwe",
+      "pregnantLabel": "Dema niha di mala xwe de kesek heremand e?",
+      "pregnantHint": "WIC û hêncam programên Medicaid jinan heremand rêz didin.",
+      "cashLabel": "Hûn jixwe alîkariya pera (TANF, SSI, an alîkariya giştî) digirin?",
+      "cashHint": "Ev derbasdariya Alîkariya Peya Neclêkê û SNAP bandor dike."
+    },
+    "special": {
+      "question": "Çend rewşa taybet",
+      "hint": "Ji bo her yek Erê an Ne tap bikin.",
+      "unaccompaniedLabel": "Hûn di bin 18 salî û di A.B.D. de bê dê, bavê, an wateyê ne?",
+      "unaccompaniedHint": "Ji bo programa Zarokên Neclêkên Bê Hamî (URM).",
+      "disabledLabel": "Hûn xwezayeke heye ku kar nabe bikin neçûk dike?",
+      "disabledHint": "Ji bo SSI û SSDI.",
+      "blindLabel": "Hûn kur in an dîtin gelek kêm?",
+      "blindHint": "Rêzeya taybet a SSI/SSDI.",
+      "workQuartersLabel": "Hûn an zarok an dayik bi vî çaryek kirina kar di A.B.D. de derbarî 10 salan?",
+      "workQuartersHint": "40 krediyên kar dikarin hêncam barên 5-salî ji bo SSI û SNAP ne."
+    },
+    "goals": {
+      "question": "Hûn di çê de alîkariyê dixwazin?",
+      "hint": "Ev ji me re bê alîkariyê karika rast a hûn an dît.",
+      "employmentLabel": "Hûn kar dikin an kar lê digerin an toxtandina kar dixwazin?",
+      "employmentHint": "Servîsên kar, piştgiriya malbatî, Hevberdanî.",
+      "businessLabel": "Hûn dixwazin bizine xwe dest pê bikin an gewecin?",
+      "businessHint": "Pêşxistin û Hesabên Xwe ya Kesî (IDA) ya Microenterprise.",
+      "englishLabel": "Hûn dixwazin klasên Inglîzî (ESL)? (fakultatî)",
+      "englishHint": "Toxtandina zimanê Inglîzî ya bê berdestî di nav servîsên Piştgiriya Neclêkê de.",
+      "interpreterLabel": "Hûn pewîstî tercûmevan an alîkariya wergerandinê ne? (fakultatî)",
+      "interpreterHint": "Servîsên tercûmevankirina bê berdestî di nav programên neclêkî de heye."
+    },
+    "settingsForm": {
+      "i94Label": "I-94 Rêza Hatetinê/Derketinê heye?",
+      "eadLabel": "Ajokarê (Kartela EAD) heye?",
+      "eligibilityDateLabel": "Derbasdariyê ya ORR kengî bi resmî dest pê kir?",
+      "arrivalDateLabel": "Hûn kengî hatine Dewletên Yekbûyî?",
+      "statusGrantDateLabel": "Statua neclêk an panaya xwe kengî tê dayîn? (fakultatî)"
+    },
+    "errors": {
+      "saveFailed": "Em bersivên xwe nekarî tomarkin bikin: {message}. Eger ew ber bi stûna ketî de bêje, pêvajoya bankadarê (supabase/migration_v2.sql) hê nehatiye bikaranîn.",
+      "profileNotFound": "Em profila xwe nekarî bibînin da bersivên xwe tomarkin bikin. Bi ker derketin û dî têkevin, û tekûr kişandin.",
+      "profileNotFoundShort": "Em profila xwe nekarî bibînin da tomarkin bikin. Bi ker derketin û dî têkevin, û tekûr kişandin."
+    }
+  },
+  "processing": {
+    "title": "Karikê xwe dibîne...",
+    "subtitle": "Em bersivên xwe ji dijber programên karika resmî ya A.B.D. kontrol dikin. Ev bi gelemperî derbarî 30 çirkeyan.",
+    "step1": "Rêzên karike bar dikin",
+    "step2": "Derbasdariya xwe kontrol dikin",
+    "step3": "Encamên verifikasyonî",
+    "step4": "Bi demdemê rêz dike",
+    "ready": "Plana xwe amade ye!",
+    "readySubtitle": "Em karike bi alîkariya xwe bibînin.",
+    "goToDashboard": "Plana min bibîne"
+  },
+  "dashboard": {
+    "welcome": "Bi xêr hatî",
+    "tabs": {
+      "actionPlan": "Plana Kirraya Min",
+      "documents": "Belgeya Min",
+      "formHelper": "Alîkarê Forma",
+      "explainer": "Mektûbek Şirove Bikin",
+      "findHelp": "Alîkariyê Bibîne",
+      "progress": "Pêşveçûnê Min"
+    },
+    "actionPlan": {
+      "title": "Plana Kirraya Xwe",
+      "subtitle": "Bi demdemê ya herî zû rê taye.",
+      "rulesChecked": "Rêzên karike dawîyî jê verifikasyonî:",
+      "daysLeft": "{days} roj majî",
+      "urgent": "Zûtir — aş de",
+      "deadlinePassed": "Demdem dikare borî be",
+      "noDeadline": "Demdemê tetpêk ne",
+      "startButton": "Dest pê",
+      "continueButton": "Bi rê",
+      "sourceLink": "Çavkaniya resmî",
+      "attorney": "Vî pêwîstî avuhêlera mafê an nûnerê maqûl ne.",
+      "noResults": "Karike derbasdar ne bibîn. Pirsên zêde bersiv bidin an ji bo alîkariya rêxistina herêmî.",
+      "statusBadges": {
+        "likely_eligible": "Derbasdar bi pêş",
+        "maybe_eligible": "Dikare derbasdar be",
+        "needs_human_review": "Pêwîstî nûnertiya kesî",
+        "not_eligible": "Ne derbasdar"
+      },
+      "details": "Xulasîn",
+      "getFormHelp": "Alîkarî a forma bigirin",
+      "daysLeftToApply": "{days} roj ji bo bikaranîna majî",
+      "oneDayLeftToApply": "1 roj ji bo bikaranîna majî",
+      "deadlinePassedClear": "Vî demdemî borî",
+      "whatYouNeed": "Tiştên ku pêwîst in",
+      "whereHowToApply": "Cû û çawa bikaranîn",
+      "requiredDocuments": "Belgeya pêwîst",
+      "nextSteps": "Gavên pêş",
+      "applyOnline": "Onlinerî bikaranî",
+      "formNeeded": "Forma ji bo pêkkirinê"
+    },
+    "documents": {
+      "title": "Belgeya Min",
+      "subtitle": "Pelên xwe şîfrekirî û taye ne. Em yana ji fêhmeya şûndera re ne parve dikine.",
+      "upload": "Belgeyekê barkirî bikin",
+      "dragDrop": "Pêla derketin û berin, an vir tap bikin ji bo hilbijêrin",
+      "supportedTypes": "Piştgirî: PDF, JPG, PNG",
+      "extracting": "Belgey tê xwendin...",
+      "noDocuments": "Hê belgeyekî barkirî ne.",
+      "deleteConfirm": "Hûn ji bo sizkirin vî belgeyê di dijberê de ne?",
+      "open": "Vekirin",
+      "preview": "Pêşdîtin",
+      "close": "Vekinin",
+      "detectedType": "Cûreyên dît",
+      "secureLine": "Belgeya xwe bi aram tê pêkî kirin û yana bi fêhmeya şûndera re ne parve bibe.",
+      "types": {
+        "passport": "Pasaport",
+        "i-94": "I-94 Rêza Hatetinê",
+        "ead": "Ajokarê (EAD)",
+        "birth_certificate": "Belgeyê Dayîna",
+        "status_letter": "Mektûba Statusê",
+        "other": "Din"
+      }
+    },
+    "formHelper": {
+      "title": "Alîkarê Forma",
+      "subtitle": "Alîkariyê pê de fêhm û dagirtin forma. Em yana SSN, A-number, xuleta bankê, an jimara pasaportê xwe ne dagirt — ew taye ne.",
+      "pasteInstructions": "Navê forma an URL bixin, an tiştek ku pêwîst in şirove bikin:",
+      "placeholder": "Mînakî: I-765 Destûrkirina Kar, an \"ji bo gazî Medicaid forma min alîkariyê\"",
+      "ask": "Alîkariyê bigirin",
+      "sensitiveNote": "Qadên ku [HÛNDA DAGIRIN] in, agahiyên hestiyar dihwênin — vî qadê û xwe çêkin.",
+      "legalNote": "Vî formayê ji bo statua xwe ya şûndera. Ji kerema xwe bi avuhêlera mafê ya sertîfî an nûnerê maqûl DOJ re bixebite.",
+      "thinking": "Forma tê xwendin...",
+      "uploadFiles": "Pelî barkirî bikin",
+      "openInFiller": "Di dagirtina forma de vekirin",
+      "secureLine": "Belgeya xwe bi aram tê pêkî kirin û yana bi fêhmeya şûndera re ne parve bibe.",
+      "send": "Birin",
+      "contextNote": "Wayfinder agahiyên ku hûn jixwe dayî bêrî vê bikaranî bikin ku ji bo rewşa xwe bersiv bidin.",
+      "suggestionsLabel": "Pirsên gelemperî"
+    },
+    "explainer": {
+      "title": "Mektûbek an Forma Şirove Bikin",
+      "subtitle": "Mektûba neşêkerî an belgeyê bin. Em di zimanê hêsan de wê şirove dikin.",
+      "pasteLabel": "Vêjê nî şû bixin:",
+      "placeholder": "Mektûba an tekstê forma vêjê nî şû bixin...",
+      "orUpload": "An wêneyek an skenê belgeyê barkirî bikin:",
+      "explain": "Vê şirove bikin",
+      "thinking": "Belgeyên xwe tê xwendin..."
+    },
+    "findHelp": {
+      "title": "Alîkariyê Nêzîkê Xwe Bibîne",
+      "subtitle": "Bê kesê ku dikarin alîkarî bidin — servîsên derbederî bê berdestî, yardema qanûnî, û ofîsa neclêka dewleta xwe.",
+      "resettlement": "Ajansên Derepûçeyê",
+      "legalAid": "Yardema Qanûnî Immigrasyonê",
+      "stateOffice": "Ofîsa Neclêka Dewletê",
+      "national": "Sersdemên Neteweyî",
+      "attorneyWarning": "Girîng: Ji bo her tişta qanûnî ya statua xwe ya şûndera, tenê avuhêlera mafê ya sertîfî an nûnerê maqûl DOJ dikare we û pêşkêşî we bikin.",
+      "call": "Bangkirin",
+      "visit": "Serdana websayê",
+      "noState": "Dewleta xwe hilbijêrin da rêxistinan herêmî bibînin."
+    },
+    "progress": {
+      "title": "Pêşveçûnê Min",
+      "subtitle": "Rê di ku hûn bi her karikê de ne şopalin bikin.",
+      "statuses": {
+        "not_started": "Dest ne pê kir",
+        "in_progress": "Pêvajoyek de",
+        "documents_ready": "Belgeyan amade",
+        "submitted": "Şûnde",
+        "needs_attorney": "Avuhêlera pêwîst",
+        "done": "Çûbû"
+      },
+      "updateStatus": "Statua nû bikin"
+    },
+    "pdf": {
+      "download": "Plana min (PDF) dakêşin",
+      "generating": "PDF tê çêkirin..."
+    },
+    "dismiss": "Vekinin",
+    "footer": {
+      "privacy": "Agahiyên xwe şîfrekirî û taye ne. Em yana bi fêhmeya şûndera re ne parve dikine.",
+      "disclaimer": "Wayfinder ne şêwaza qanûnî pêşkêş dike."
+    },
+    "settings": {
+      "title": "Sazkarî",
+      "subtitle": "Zimanê xwe biguherînin an bersivên ku hûn di tomarkî kirin de nû bikin.",
+      "language": "Ziman",
+      "languageHint": "Zimanê veguhastina hemû nûçeyî hilbijêrin. Ew tenasûkî nû dibe.",
+      "editInfo": "Agahiyê min sererast bikin",
+      "editInfoHint": "Bersivên ku hûn di tomarkî kirin de biguherînin. Em karikê xwe dî kontrol dikin.",
+      "recheck": "Karikê min dî kontrol bikin",
+      "backToDashboard": "Vegerê panelê",
+      "saved": "Tomarkir",
+      "saving": "Tê tomarkirin..."
+    },
+    "formFill": {
+      "title": "Forma xwe dagir bikin",
+      "intro": "Em çi nizanin dagirt kir. Ji kerema xwe her qad kontrol bikin ber ji dakêşinê.",
+      "secureLine": "Forma xwe di gerokê xwe de tê dagirtin û yana bi fêhmeya şûndera re ne parve bibe.",
+      "autoFilled": "Ji agahiyê xwe dagirt",
+      "missing": "Ketî — ji kerema xwe tîp bikin",
+      "sensitive": "Hestiyar — vî agahî bi me re ne parve bikin. Xwe têkeve.",
+      "download": "Forma dagirkirî dakêşin",
+      "downloading": "Forma xwe tê amadekirin...",
+      "reviewAll": "Her qad kontrol bikin",
+      "noFields": "Vî formayê qadê dagirkirî nîn. Hûn dikarin li jor cihên nîşkî tîp bikin.",
+      "openPrompt": "Forma ji bo dagir vekirin",
+      "loading": "Forma xwe tê vekirin...",
+      "loadError": "Em vî formayê nekarî vekirin. Tekûr pêla din bikevin.",
+      "uploadHint": "I-94, ajokarê, an belgeyê din a di Belgeyî de barkirî bikin da zêdetir vî formayê bi xwe birvije."
+    }
+  },
+  "errors": {
+    "generic": "Tiştekî çûn. Tekûr kişandin.",
+    "signIn": "E-maila an şîfra nebirêkî.",
+    "signUp": "Hesab ne karî çêbikir. Tekûr kişandin.",
+    "eligibility": "Karikê xwe ne karî bar bikin. Tekûr kişandin.",
+    "upload": "Barkirî biserketî ne. Pelê piçûktir an cûreyê din kêfif bikin.",
+    "required": "Vî qadê pêwîst e."
+  },
+  "common": {
+    "loading": "Bar dikin...",
+    "yes": "Erê",
+    "no": "Ne",
+    "save": "Tomarkin",
+    "cancel": "Nîqandin",
+    "close": "Vekinin",
+    "back": "Paşde",
+    "next": "Pêş",
+    "submit": "Şûnde",
+    "or": "an",
+    "edit": "Sererast bikin",
+    "download": "Dakêşin",
+    "open": "Vekirin",
+    "settings": "Sazkarî",
+    "dismiss": "Vekinin"
+  }
+}

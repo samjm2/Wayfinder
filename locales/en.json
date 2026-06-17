@@ -1,0 +1,477 @@
+{
+  "nav": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "dashboard": "My Dashboard",
+    "documents": "My Documents",
+    "findHelp": "Find Help",
+    "settings": "Settings"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "How it works",
+      "features": "Features",
+      "languages": "Languages",
+      "signIn": "Sign in",
+      "getStarted": "Get started"
+    },
+    "hero": {
+      "headline": "A new home begins with knowing your way.",
+      "subheadline": "Wayfinder finds the benefits and paperwork you qualify for, explains everything in your language, and guides you step by step, before deadlines pass.",
+      "cardLabel": "Start in your language",
+      "searchPlaceholder": "Search 100+ languages…",
+      "cta": "Get started for free"
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Three steps from arrival to a clear plan.",
+      "steps": [
+        {
+          "title": "Tell us your story",
+          "body": "Answer a few simple questions, one at a time, in your own language. Large text, plain words, no rush."
+        },
+        {
+          "title": "We find what fits",
+          "body": "Wayfinder checks a curated database of U.S. benefit rules and shows exactly what you qualify for, with sources, never guesses."
+        },
+        {
+          "title": "Act in time",
+          "body": "Get a plan ranked by deadline, with every form explained and real human help nearby when it matters."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Your companion",
+      "title": "Everything you need, in one calm place.",
+      "items": [
+        {
+          "title": "My Action Plan",
+          "body": "Your benefits ranked by soonest deadline, each with a plain-language reason you qualify and a countdown so nothing slips by."
+        },
+        {
+          "title": "AI Form Assistant",
+          "body": "Wayfinder explains each field and drafts answers in your language. It never touches sensitive numbers, and never submits anything for you."
+        },
+        {
+          "title": "Document Vault",
+          "body": "Keep your passport, I-94, and EAD in one encrypted, owner-only place. Private, and never shared with enforcement."
+        },
+        {
+          "title": "Find Help",
+          "body": "For anything legal, Wayfinder connects you to a licensed attorney or accredited representative near you. A person, not a guess."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Any language",
+      "title": "In your words, from the very first screen.",
+      "body": "Pick your language before you sign up, and Wayfinder speaks it everywhere, every step of the way."
+    },
+    "trust": {
+      "badge": "Your safety comes first",
+      "title": "We never share your information with immigration enforcement.",
+      "body": "Your documents are encrypted and owner-only. Wayfinder never fills sensitive identifiers, never submits forms, and every legal decision is made by a real, licensed person, not by a machine.",
+      "points": ["Encrypted & private", "Sources you can check", "Reviewed by humans"]
+    },
+    "finalCta": {
+      "title": "Your way forward starts today.",
+      "body": "Free, private, and in your language. Find what you qualify for in minutes.",
+      "primary": "Get started for free",
+      "secondary": "See how it works"
+    },
+    "footer": {
+      "tagline": "Not legal advice · Always confirmed by a person"
+    },
+    "translating": "Translating the page…"
+  },
+  "auth": {
+    "createAccount": "Create your account",
+    "email": "Email address",
+    "password": "Password",
+    "signUp": "Create account",
+    "signIn": "Sign in",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "Choose a password",
+    "signingUp": "Creating account...",
+    "signingIn": "Signing in..."
+  },
+  "onboarding": {
+    "progressLabel": "Step {current} of {total}",
+    "nav": {
+      "next": "Next",
+      "back": "Back",
+      "confirmContinue": "Confirm and continue",
+      "findBenefits": "Find my benefits",
+      "saving": "Saving...",
+      "skipNotSure": "Skip — I am not sure"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "immigrationOptions": {
+      "refugee_207": { "label": "Refugee", "note": "Admitted under section 207" },
+      "asylee_208": { "label": "Asylee", "note": "Asylum granted under section 208" },
+      "siv": { "label": "Special Immigrant Visa (SIV) holder", "note": "Afghan or Iraqi" },
+      "afghan_parolee": { "label": "Afghan humanitarian parolee" },
+      "ukrainian_parolee": { "label": "Ukrainian humanitarian parolee" },
+      "cuban_haitian_entrant": { "label": "Cuban or Haitian entrant" },
+      "trafficking_victim": { "label": "Certified victim of trafficking", "note": "T-visa or ORR letter" },
+      "amerasian": { "label": "Amerasian immigrant" },
+      "lpr_from_humanitarian": { "label": "Green card from refugee, asylee, or humanitarian status", "note": "This restores SNAP and Medicaid eligibility" },
+      "lpr_other": { "label": "Green card from another path" },
+      "us_citizen": { "label": "U.S. Citizen or U.S. National" },
+      "other_none": { "label": "Other, not sure, or none of these" }
+    },
+    "language": {
+      "question": "What language do you prefer?",
+      "hint": "We will show everything in this language."
+    },
+    "scan": {
+      "question": "Have your papers? Take a photo to save time",
+      "intro": "Snap a photo of your I-94 (and your work permit, green card, or asylum letter if you have them). We'll read your status and dates so you don't have to type them.",
+      "secureLine": "Your documents are processed securely in the moment and are never saved on our servers or shared with immigration enforcement. We read only the few fields needed to check your benefits — never your Social Security number or A-Number.",
+      "uploadAriaLabel": "Upload a photo or PDF of your immigration documents",
+      "chooseDifferent": "Choose different photos",
+      "chooseFile": "Take a photo or choose a file",
+      "fileTypes": "JPEG, PNG, or PDF · up to 4 documents",
+      "reading": "Reading your documents…",
+      "readDocuments": "Read my documents",
+      "skip": "I don't have my documents — answer questions instead",
+      "errorReadFailed": "We couldn't read your document. Please try again, or skip and answer the questions.",
+      "errorUnreachable": "We couldn't reach the document reader. Please try again, or skip and answer the questions."
+    },
+    "confirm": {
+      "question": "Please check what we read from your documents",
+      "intro": "Your benefit results depend on these values, so take a moment to confirm them. Tap any field to fix it.",
+      "secureLine": "Read securely and not saved.",
+      "detectedPrefix": "We detected:",
+      "lowConfidence": "Some values were hard to read (marked Please check below). Please double-check those first.",
+      "pleaseCheck": "Please check",
+      "fromDocument": "From your document",
+      "fields": {
+        "immigrationStatus": "Immigration status",
+        "selectStatus": "Select your status",
+        "fullName": "Full name",
+        "fullNameHint": "For your records only — not used for eligibility.",
+        "fullNamePlaceholder": "Your full name",
+        "dateOfBirth": "Date of birth",
+        "dateOfBirthHint": "Sets your age for age-based programs.",
+        "age": "Age",
+        "countryOfOrigin": "Country of origin",
+        "countryOfOriginHint": "For your records only.",
+        "countryPlaceholder": "Country",
+        "arrivalDate": "Date you arrived in the U.S.",
+        "eligibilityDate": "ORR eligibility date",
+        "eligibilityDateHint": "Starts the RCA/RMA deadline clock.",
+        "statusGrantDate": "Date status was granted",
+        "statusGrantDateHint": "Refugee/asylee grant date (SSI 7-year clock). Optional."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Work permit (EAD)",
+        "green_card": "Green card",
+        "asylum_letter": "Asylum letter",
+        "ssn_card": "Social Security card",
+        "other": "document"
+      }
+    },
+    "status": {
+      "question": "What is your immigration status now?",
+      "hint": "Choose the one that best fits you. This shapes almost every benefit rule."
+    },
+    "documents": {
+      "question": "A couple of quick document questions",
+      "hint": "Tap Yes or No. It is okay if you do not have some.",
+      "fromDocsPrefix": "From your documents we noted",
+      "fromDocsI94": " your I-94",
+      "fromDocsAnd": " and",
+      "fromDocsEad": " your work permit (EAD)",
+      "i94Label": "I-94 Arrival/Departure Record",
+      "i94Hint": "Proof of entry. An I-94 coded §207 or 'Visa 93' proves refugee status.",
+      "eadLabel": "Work Permit (EAD card)",
+      "eadHint": "Employment Authorization Document. EAD code A03 also proves refugee status.",
+      "ssnLabel": "Do you have a Social Security Number (SSN)?",
+      "ssnHint": "We only need to know if you have one — never the number itself."
+    },
+    "orrLetter": {
+      "question": "Do you have an ORR certification or eligibility letter?",
+      "hint": "Trafficking victims need this letter (not an I-94) to access ORR benefits like RCA and RMA."
+    },
+    "eligibilityDate": {
+      "question": "When did your refugee help officially start?",
+      "hint": "This is your ORR eligibility date — usually your arrival date or the date your status was granted, whichever is later.",
+      "deadlineLabel": "Important deadline:",
+      "deadlineBody": " The clock for Refugee Cash Assistance (RCA) and medical assistance starts from this date — apply right away."
+    },
+    "arrivalDate": {
+      "question": "When did you come to the United States?",
+      "hint": "Most employment and integration services run up to 5 years from this date."
+    },
+    "statusGrantDate": {
+      "question": "When were you granted refugee or asylee status?",
+      "hint": "SSI eligibility ends 7 years from this date. Leave blank if you are not sure."
+    },
+    "location": {
+      "question": "Which state do you live in?",
+      "hint": "Benefits and local help vary by state. City and ZIP are optional.",
+      "stateLabel": "State",
+      "selectState": "Select your state",
+      "cityLabel": "City (optional)",
+      "cityPlaceholder": "City",
+      "zipLabel": "ZIP code (optional)",
+      "zipPlaceholder": "ZIP code"
+    },
+    "household": {
+      "question": "Tell us about your household",
+      "hint": "These answers set your income limits. They are private.",
+      "ageLabel": "Your age",
+      "agePlaceholder": "Your age",
+      "ageFromDoc": "Your age ({age}) is set from your document. You can change it on the confirmation screen.",
+      "sizeLabel": "How many people live with you, counting you?",
+      "sizePlaceholder": "e.g. 3",
+      "incomeLabel": "Money your household gets each month, before taxes (US dollars). Enter 0 if none.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ month"
+    },
+    "children": {
+      "question": "How many children live with you?",
+      "under19Label": "How many children under 19 live with you?",
+      "under19Hint": "Enter 0 if none.",
+      "under18Label": "Of those, how many are under 18?",
+      "under5Label": "Of those, how many are under 5?",
+      "subsetHint": "This is a smaller part of the number above."
+    },
+    "pregnantCash": {
+      "question": "Two quick questions about your home",
+      "pregnantLabel": "Is anyone in your home pregnant now?",
+      "pregnantHint": "WIC and some Medicaid programs prioritize pregnant women.",
+      "cashLabel": "Do you already get cash help (TANF, SSI, or general assistance)?",
+      "cashHint": "This affects eligibility for Refugee Cash Assistance and SNAP."
+    },
+    "special": {
+      "question": "A few special situations",
+      "hint": "Tap Yes or No for each.",
+      "unaccompaniedLabel": "Are you under 18 and in the U.S. with no parent or guardian?",
+      "unaccompaniedHint": "For the Unaccompanied Refugee Minors (URM) program.",
+      "disabledLabel": "Do you have a disability that limits your work?",
+      "disabledHint": "For SSI and SSDI.",
+      "blindLabel": "Are you blind or have very limited vision?",
+      "blindHint": "A special SSI/SSDI category.",
+      "workQuartersLabel": "Have you or a spouse or parent worked in the U.S. about 10 years?",
+      "workQuartersHint": "40 work credits can bypass some 5-year bars for SSI and SNAP."
+    },
+    "goals": {
+      "question": "What would you like help with?",
+      "hint": "This helps us find the right programs for you.",
+      "employmentLabel": "Are you working or looking for work or job training?",
+      "employmentHint": "Employment services, childcare support, Matching Grant.",
+      "businessLabel": "Do you want to start or grow your own business?",
+      "businessHint": "Microenterprise development and Individual Development Accounts (IDA).",
+      "englishLabel": "Would you like English (ESL) classes? (optional)",
+      "englishHint": "Free English language training through Refugee Support Services.",
+      "interpreterLabel": "Do you need an interpreter or translation help? (optional)",
+      "interpreterHint": "Free interpretation services are available through refugee programs."
+    },
+    "settingsForm": {
+      "i94Label": "Do you have an I-94 Arrival/Departure Record?",
+      "eadLabel": "Do you have a Work Permit (EAD card)?",
+      "eligibilityDateLabel": "When did your refugee help officially start? (ORR eligibility date)",
+      "arrivalDateLabel": "When did you come to the United States?",
+      "statusGrantDateLabel": "When were you granted refugee or asylee status? (optional)"
+    },
+    "errors": {
+      "saveFailed": "We couldn't save your answers: {message}. If this mentions a missing column, the database migration (supabase/migration_v2.sql) hasn't been applied yet.",
+      "profileNotFound": "We couldn't find your profile to save your answers. Please sign out and sign back in, then try again.",
+      "profileNotFoundShort": "We could not find your profile to save. Please sign out and sign back in, then try again."
+    }
+  },
+  "processing": {
+    "title": "Finding your benefits...",
+    "subtitle": "We are reviewing your answers against official U.S. benefit programs. This usually takes about 30 seconds.",
+    "step1": "Loading benefit rules",
+    "step2": "Checking your eligibility",
+    "step3": "Verifying results",
+    "step4": "Ranking by deadline",
+    "ready": "Your plan is ready!",
+    "readySubtitle": "We found benefits you may qualify for.",
+    "goToDashboard": "See my plan"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "tabs": {
+      "actionPlan": "My Action Plan",
+      "documents": "My Documents",
+      "formHelper": "Form Assistant",
+      "explainer": "Explain a Letter",
+      "findHelp": "Find Help",
+      "progress": "My Progress"
+    },
+    "actionPlan": {
+      "title": "Your Action Plan",
+      "subtitle": "Sorted by most urgent deadline first.",
+      "rulesChecked": "Benefit rules last verified:",
+      "daysLeft": "{days} days left",
+      "urgent": "Urgent — act soon",
+      "deadlinePassed": "Deadline may have passed",
+      "noDeadline": "No fixed deadline",
+      "startButton": "Start",
+      "continueButton": "Continue",
+      "sourceLink": "Official source",
+      "attorney": "This requires an attorney or accredited representative.",
+      "noResults": "No eligible benefits found. Answer more questions or contact a local organization for help.",
+      "statusBadges": {
+        "likely_eligible": "Likely eligible",
+        "maybe_eligible": "May be eligible",
+        "needs_human_review": "Needs review",
+        "not_eligible": "Not eligible"
+      },
+      "details": "Details",
+      "getFormHelp": "Get form help",
+      "daysLeftToApply": "{days} days left to apply",
+      "oneDayLeftToApply": "1 day left to apply",
+      "deadlinePassedClear": "This deadline has passed",
+      "whatYouNeed": "What you need",
+      "whereHowToApply": "Where and how to apply",
+      "requiredDocuments": "Required documents",
+      "nextSteps": "Next steps",
+      "applyOnline": "Apply online",
+      "formNeeded": "Form to complete"
+    },
+    "documents": {
+      "title": "My Documents",
+      "subtitle": "Your files are encrypted and private. We never share them with immigration enforcement.",
+      "upload": "Upload a document",
+      "dragDrop": "Drag and drop a file, or click to choose",
+      "supportedTypes": "Supported: PDF, JPG, PNG",
+      "extracting": "Reading document...",
+      "noDocuments": "No documents uploaded yet.",
+      "deleteConfirm": "Are you sure you want to delete this document?",
+      "open": "Open",
+      "preview": "Preview",
+      "close": "Close",
+      "detectedType": "Detected type",
+      "secureLine": "Your documents are processed securely and never shared with immigration enforcement.",
+      "types": {
+        "passport": "Passport",
+        "i-94": "I-94 Arrival Record",
+        "ead": "Work Permit (EAD)",
+        "birth_certificate": "Birth Certificate",
+        "status_letter": "Status Letter",
+        "other": "Other"
+      }
+    },
+    "formHelper": {
+      "title": "Form Assistant",
+      "subtitle": "Get help understanding and filling out a form. We never fill in your SSN, A-number, bank details, or passport number — those stay private.",
+      "pasteInstructions": "Paste the form name or URL, or describe what you need help with:",
+      "placeholder": "Example: I-765 Employment Authorization, or \"help me fill out a Medicaid application\"",
+      "ask": "Get help",
+      "sensitiveNote": "Fields marked [YOU FILL IN] contain sensitive information — complete these yourself.",
+      "legalNote": "This form involves your immigration status. Please work with a licensed attorney or DOJ-accredited representative.",
+      "thinking": "Reading the form...",
+      "uploadFiles": "Upload files",
+      "openInFiller": "Open in form filler",
+      "secureLine": "Your documents are processed securely and never shared with immigration enforcement.",
+      "send": "Send",
+      "contextNote": "Wayfinder uses the information you have already given to answer for your situation.",
+      "suggestionsLabel": "Common questions"
+    },
+    "explainer": {
+      "title": "Explain a Letter or Form",
+      "subtitle": "Paste or upload a confusing letter or document. We will explain it in plain language.",
+      "pasteLabel": "Paste the text here:",
+      "placeholder": "Paste the letter or form text here...",
+      "orUpload": "Or upload a photo or scan of the document:",
+      "explain": "Explain this",
+      "thinking": "Reading your document..."
+    },
+    "findHelp": {
+      "title": "Find Help Near You",
+      "subtitle": "Connect with people who can help — free resettlement services, legal aid, and your state refugee office.",
+      "resettlement": "Resettlement Agencies",
+      "legalAid": "Immigration Legal Aid",
+      "stateOffice": "State Refugee Office",
+      "national": "National Resources",
+      "attorneyWarning": "Important: For any legal matter involving your immigration status, only a licensed attorney or DOJ-accredited representative can give you legal advice and represent you.",
+      "call": "Call",
+      "visit": "Visit website",
+      "noState": "Select your state to see local organizations."
+    },
+    "progress": {
+      "title": "My Progress",
+      "subtitle": "Track where you are with each benefit.",
+      "statuses": {
+        "not_started": "Not started",
+        "in_progress": "In progress",
+        "documents_ready": "Documents ready",
+        "submitted": "Submitted",
+        "needs_attorney": "Needs attorney",
+        "done": "Done"
+      },
+      "updateStatus": "Update status"
+    },
+    "pdf": {
+      "download": "Download my plan (PDF)",
+      "generating": "Generating PDF..."
+    },
+    "dismiss": "Dismiss",
+    "footer": {
+      "privacy": "Your information is encrypted and private. We never share it with immigration enforcement.",
+      "disclaimer": "Wayfinder does not provide legal advice."
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Change your language or update the answers you gave during sign-up.",
+      "language": "Language",
+      "languageHint": "Choose the language for the whole app. It updates right away.",
+      "editInfo": "Edit my information",
+      "editInfoHint": "Change the answers you gave during sign-up. We will check your benefits again.",
+      "recheck": "Re-check my benefits",
+      "backToDashboard": "Back to dashboard",
+      "saved": "Saved",
+      "saving": "Saving..."
+    },
+    "formFill": {
+      "title": "Fill out your form",
+      "intro": "We filled in what we already know. Please review every field before you download.",
+      "secureLine": "Your form is filled in your browser and never shared with immigration enforcement.",
+      "autoFilled": "Filled from your information",
+      "missing": "Missing — please type this",
+      "sensitive": "Sensitive — do not share this with us. Enter it yourself.",
+      "download": "Download filled form",
+      "downloading": "Preparing your form...",
+      "reviewAll": "Review every field",
+      "noFields": "This form has no fillable boxes. You can type over the highlighted spots.",
+      "openPrompt": "Open a form to fill",
+      "loading": "Opening your form...",
+      "loadError": "We couldn't open this form. Please try another file.",
+      "uploadHint": "Upload your I-94, work permit, or other document in Documents to fill more of this form automatically."
+    }
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "signIn": "Incorrect email or password.",
+    "signUp": "Could not create account. Please try again.",
+    "eligibility": "Could not load your benefits. Please try again.",
+    "upload": "Upload failed. Please try a smaller file or different format.",
+    "required": "This field is required."
+  },
+  "common": {
+    "loading": "Loading...",
+    "yes": "Yes",
+    "no": "No",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "or": "or",
+    "edit": "Edit",
+    "download": "Download",
+    "open": "Open",
+    "settings": "Settings",
+    "dismiss": "Dismiss"
+  }
+}

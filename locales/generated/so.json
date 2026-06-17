@@ -1,0 +1,506 @@
+{
+  "nav": {
+    "signIn": "Soo gal",
+    "signOut": "Ka bax",
+    "dashboard": "Dashboardka ku",
+    "documents": "Dukumintiyada ku",
+    "findHelp": "Caawi raadi",
+    "settings": "Xulka"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Sida ay u shaqaysaa",
+      "features": "Tilaabooyin",
+      "languages": "Luqadaha",
+      "signIn": "Soo gal",
+      "getStarted": "Bilow hadda"
+    },
+    "hero": {
+      "headline": "Guriga cusub waxa lagu bilaabaa inaad tideesid jidka.",
+      "subheadline": "Wayfinder waxa ay helisa faa'iidooyinka iyo shaqooyinka qaydiga aad qabato, waxay ku sharxi kartaa laanta ku jirta luqaddaada, wayna kaa gargaari kartaa tallaabada tallaabo, ka hor inta deadline ku meeraan.",
+      "cardLabel": "Bilow luqaddaada",
+      "searchPlaceholder": "Raadig 100+ luqado…",
+      "cta": "Bilow hadda lacag la'aan"
+    },
+    "how": {
+      "eyebrow": "Sida ay u shaqaysaa",
+      "title": "Saddex tallaabo oo lagu bilaabaa iminka oo dhamaystir qorshaha.",
+      "steps": [
+        {
+          "title": "Na sheeg sheekadaada",
+          "body": "Jawaab su'aalaha yar yar, mid mid, luqaddaadaada. Qorida weyn, ereyada fudud, waqti ma'a degdeg."
+        },
+        {
+          "title": "Waxaan raadinaa waxa ku habeysa",
+          "body": "Wayfinder waxa ay eegaysaa database-ka loo curatay ee sharciga faa'iidooyinka USA-ka, waana muujisaa waxa aad qabato hadda, iyadoo la tusayo isha, mar walba."
+        },
+        {
+          "title": "Qaado malaawe",
+          "body": "Hel qorsho loo jarjariya deadline-ka, foomida kasta oo lagu sharxay oo fudud, iyo gacanta qof dhabaa oo ku jirta marka ay muhiim tahay."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Saaxiibakaaga",
+      "title": "Wax alla waxu u baahan tahay, goob mid oo caalmaaday.",
+      "items": [
+        {
+          "title": "Qorshahaaga",
+          "body": "Faa'iidooyinkaaga loo jarjariya deadline kii ugu dhaw, mid kasta oo leh sababta fudud oo ay yihiin qabato, iyo jaamaca-down si wax la'a u wareego."
+        },
+        {
+          "title": "AI Foomka Saaxiib",
+          "body": "Wayfinder waxay fasiraysaa bedka kasta waxa uu leeyahay, waxay doofsataa jawaabaha luqaddaadaada. Waxay faafin kama gaadaan tirooyinka naga caasimaa, waana waxba cid cid kama diraan."
+        },
+        {
+          "title": "Khizaanada Dukumintiyada",
+          "body": "Hayso passport-kaaga, I-94, iyo EAD goob mid oo xidhibaal, oo midkood kuu leeyahay. Socdaal, waxba lama wadaagaan sharciga."
+        },
+        {
+          "title": "Raadi Caawi",
+          "body": "Waxbarbardhig walaac sharciga lagu xidhiidh, Wayfinder waxa ay kugta xidhaada abogaad lix ah ama wakiil ixtibaari ah ku dhow. Qof, ayaan u mahadsanid."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "Luqad kasta",
+      "title": "Ereyaadaada, shaashee koowaad.",
+      "body": "Dooro luqaddaada ka hor iyadoo aad akoonkaaga sameyso, Wayfinder waxa ay hadleysa jidka kasta, tallaabo kasta."
+    },
+    "trust": {
+      "badge": "Ammakagu waa inuu hore u dhaco",
+      "title": "Waxba uma dirna sharciga jidka gaalkacida.",
+      "body": "Dukumintiyaadkaadu waxa ay xidhibaal yihiin iyo midkood kuu leeyahay. Wayfinder waxay faafin kama gaadaan astaan caasimaa, waxba cid cid kama diraan foomidaha, iyo go'aanta sharciga kasta waxa ay yihiin qof dhabaa oo lix ah, ayaan u mahadsanid ay gaarka ah ama makina.",
+      "points": [
+        "Xidhibaal iyo socdaal",
+        "Isha aad eegaysid",
+        "Daaqajiyal qof dhabaa"
+      ]
+    },
+    "finalCta": {
+      "title": "Jidkaaga u gudba waxa ay bilaabaysaa maanta.",
+      "body": "Lacag la'aan, socdaal, iyo luqaddaada. Raadig waxa aad qabato labadda daqiiqad.",
+      "primary": "Bilow hadda lacag la'aan",
+      "secondary": "Eeg sida ay u shaqaysaa"
+    },
+    "footer": {
+      "tagline": "Ayaan u mahadsanid sharciga · Hadii loo tibaxtay qof dhabaa"
+    },
+    "translating": "Luqaddaynta bogga…"
+  },
+  "auth": {
+    "createAccount": "Samee akoonkaaga",
+    "email": "Chisht erayadda",
+    "password": "Erayga sirta",
+    "signUp": "Samee akoonka",
+    "signIn": "Soo gal",
+    "haveAccount": "Ma jirtaa akoonka hadba?",
+    "noAccount": "Akoonka ma jirto?",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "Dooro erayga sirta",
+    "signingUp": "Akoonka sameynaynta…",
+    "signingIn": "Soo galnta…"
+  },
+  "onboarding": {
+    "progressLabel": "Tallaabo {current} oo {total}",
+    "nav": {
+      "next": "Xiga",
+      "back": "Dib",
+      "confirmContinue": "Hubo oo sii wad",
+      "findBenefits": "Raadig faa'iidooyinkaaga",
+      "saving": "Kaydnta…",
+      "skipNotSure": "Jiid — ma jeclan karo"
+    },
+    "yes": "Hah",
+    "no": "Maya",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Qolof",
+        "note": "La qabay qaybta 207"
+      },
+      "asylee_208": {
+        "label": "Qolof-nolo",
+        "note": "Nolo la qabay qaybta 208"
+      },
+      "siv": {
+        "label": "Visa Gaarka ah (SIV) qabata",
+        "note": "Afgaan ama Iraaqi"
+      },
+      "afghan_parolee": {
+        "label": "Afgaan gaashaanbaro"
+      },
+      "ukrainian_parolee": {
+        "label": "Okrey gaashaanbaro"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Kuuba ama Heyiti u gala"
+      },
+      "trafficking_victim": {
+        "label": "Argagixiso waxbarasho lagu ogaado",
+        "note": "T-visa ama ORR warqad"
+      },
+      "amerasian": {
+        "label": "Ameraasia imigire"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Kaardi chadh qolof, qolof-nolo, ama gaashaanbaro",
+        "note": "Tani waxa ay dib u soo celinta SNAP iyo Medicaid"
+      },
+      "lpr_other": {
+        "label": "Kaardi chadh jidka kale"
+      },
+      "us_citizen": {
+        "label": "USA Muwaadin ama USA Guud"
+      },
+      "other_none": {
+        "label": "Kale, ma jeclan karo, ama midkood kama jira"
+      }
+    },
+    "language": {
+      "question": "Luqad kami aad doortaa?",
+      "hint": "Waxaan muujinaa wax alla waxu luqaddaan."
+    },
+    "scan": {
+      "question": "Dukumintiyaadkaagu jirtaa? Sawir qaado si aad waqti badbaadiiso",
+      "intro": "Sawir qaado I-94-kaaga (iyo luqada aad bilaadhayneyso, kaardi chadh, ama warqad nolo haddii aad leedahay). Waxaan akhrinaa halka aad yihiin iyo calamadaha oo aad ku qorrid la'aantahay.",
+      "secureLine": "Dukumintiyaadkaagu waxa ay lagu heshiiyan hadda oo nidaam sare iyo waxba cid cid kuma kaydsan. Waxaan akhrinaa ereyada yar ee loo baahan heshiin faa'iidooyinka — waxba Social Security number ama A-Number ayaan kaydsan.",
+      "uploadAriaLabel": "Sawir ama PDF ka qaado dukumintiyaadkaaga gaalkacida",
+      "chooseDifferent": "Dooro sawiro kale",
+      "chooseFile": "Sawir qaado ama dooro faylka",
+      "fileTypes": "JPEG, PNG, ama PDF · ilaa 4 dukumintiyad",
+      "reading": "Dukumintiyaadkaagu akhrinaa…",
+      "readDocuments": "Akhrij dukumintiyaadkaaga",
+      "skip": "Dukumintiyaadkaagu ma jirto — jawaab su'aalaha",
+      "errorReadFailed": "Dukumintiyaadkaaga ma akhrin karin. Markale isku day, ama jiid waana jawaab su'aalaha.",
+      "errorUnreachable": "Dukumintiyaadkaaga ma hellin karin. Markale isku day, ama jiid waana jawaab su'aalaha."
+    },
+    "confirm": {
+      "question": "Fadlan eeg waxa waxaan akhrinay dukumintiyaadkaaga",
+      "intro": "Natiijooyin faa'iidooyinka aad qabato waxa ay ku tiirsan yihiin qiimaha, sidaa awgeed raadsan daqiiqad dhawr. Dhawqal bedka walaac lagu tixgeli kara.",
+      "secureLine": "Akhrinay nidaam sare ayaan kaydsan.",
+      "detectedPrefix": "Waaxaan ogaadnay:",
+      "lowConfidence": "Qiyamaha qaar ay ahaayeen way adkaatay loo akhri (lagu ogaadyay fadlan eeg). Fadlan dib ulaadiye dhex markale.",
+      "pleaseCheck": "Fadlan eeg",
+      "fromDocument": "Dukumintiyaadkaaga",
+      "fields": {
+        "immigrationStatus": "Halka gaalkacida",
+        "selectStatus": "Dooro halkaaga",
+        "fullName": "Magaca buuxa",
+        "fullNameHint": "Kaydkaagu kale — ayaan lagu isticmaalin heshiin.",
+        "fullNamePlaceholder": "Magaca buuxa",
+        "dateOfBirth": "Maalinta dhashada",
+        "dateOfBirthHint": "Sameeya jirkaaga barnamijyada aad la xisaabay.",
+        "age": "Jirkaa",
+        "countryOfOrigin": "Dalka aad kayimi",
+        "countryOfOriginHint": "Kaydkaagu kale.",
+        "countryPlaceholder": "Dal",
+        "arrivalDate": "Maalinta aad USA-ka gaartay",
+        "eligibilityDate": "ORR heshiin maalinta",
+        "eligibilityDateHint": "Bilaabiya RCA/RMA deadline hadii.",
+        "statusGrantDate": "Maalinta halka loo qabay",
+        "statusGrantDateHint": "Qolof/qolof-nolo qabac maalinta (SSI 7-sano hadii). Fadlan."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Luqada bilaadhaynta (EAD)",
+        "green_card": "Kaardi chadh",
+        "asylum_letter": "Nolo warqad",
+        "ssn_card": "Social Security kaardi",
+        "other": "dukumintiyad"
+      }
+    },
+    "status": {
+      "question": "Halka aad yihiin hadda?",
+      "hint": "Dooro midka ku habeysa. Tani waxa ay shaqli doonaysa ee faa'iidooyin kasta."
+    },
+    "documents": {
+      "question": "Walaac yar oo dukumintiyad",
+      "hint": "Dhawqal Hah ama Maya. Walaac haddii aad midko lahayn.",
+      "fromDocsPrefix": "Dukumintiyaadkaaga waxaan ogaadnay",
+      "fromDocsI94": " I-94-kaaga",
+      "fromDocsAnd": " iyo",
+      "fromDocsEad": " luqada bilaadhaynta (EAD)",
+      "i94Label": "I-94 Soo galanaya/Ka baxnaya",
+      "i94Hint": "Cadayn soo galanaya. I-94 coded §207 ama 'Visa 93' waxa ay cadaynaysaa halka qolof.",
+      "eadLabel": "Luqada bilaadhaynta (EAD kaardi)",
+      "eadHint": "Employment Authorization Document. EAD code A03 sidoo kale cadaynaysaa halka qolof.",
+      "ssnLabel": "Social Security Number (SSN) ma leedahay?",
+      "ssnHint": "Waxaan oo keliya u baahan oo jeclaada jirto — waxba tirada ayaan baahan."
+    },
+    "orrLetter": {
+      "question": "ORR heshiin ama heshiin warqad ma leedahay?",
+      "hint": "Argagixiso waxbarasho warqaddan loo baahan (ayaan I-94 kii). ORR faa'iidooyin lagu helaan RCA iyo RMA."
+    },
+    "eligibilityDate": {
+      "question": "Goormaad rajada bilaabay hadba?",
+      "hint": "Tani waa ORR heshiin maalinta — sida caadi ay waa soo galanay maalinta ama maalinta halka loo qabay, midka dib.",
+      "deadlineLabel": "Muhiim deadline:",
+      "deadlineBody": " Hadii RCA (Refugee Cash Assistance) iyo taageerta caafimaad ay bilaabaysaa maalintaan — hadda hadii adag."
+    },
+    "arrivalDate": {
+      "question": "Goormaad USA-ka gaartay?",
+      "hint": "Sida badan bilaadhaynta iyo isweydaarsiga ay u qaybto ilaa 5 sano maalintaan."
+    },
+    "statusGrantDate": {
+      "question": "Goormaad qolof ama qolof-nolo loo qabay?",
+      "hint": "SSI heshiin waxa ay dhamaatay 7 sano maalintaan. Ka joog haddii aad jeclan karo."
+    },
+    "location": {
+      "question": "Gobogooni aad ku nool tahay?",
+      "hint": "Faa'iidooyin iyo caawi socdaal ka duwanaan gobogoni. Magaalada iyo ZIP-ka fadlan.",
+      "stateLabel": "Gobogooni",
+      "selectState": "Dooro gobogooni",
+      "cityLabel": "Magaalada (fadlan)",
+      "cityPlaceholder": "Magaalada",
+      "zipLabel": "ZIP code (fadlan)",
+      "zipPlaceholder": "ZIP code"
+    },
+    "household": {
+      "question": "Na sheeg ereyadaada",
+      "hint": "Jawaabahan qiyamaha dhamaadka ay dejiyaan. Iyaga waa socdaal.",
+      "ageLabel": "Jirkaa",
+      "agePlaceholder": "Jirkaa",
+      "ageFromDoc": "Jirkaa ({age}) waxa ay dejiyay dukumintiyaadkaaga. Waad badali kartaa shaashee iska heshiinta.",
+      "sizeLabel": "Qadaadka ay ku nool yihiin ereyadaada, iska tiri?",
+      "sizePlaceholder": "tusaale 3",
+      "incomeLabel": "Lacaga ay helaan ereyadaada bilcil, ka hor taxaan (USA dollars). Geli 0 haddii waxba aysan lahayn.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ bilcil"
+    },
+    "children": {
+      "question": "Yaryar yaqabaday nool tahay?",
+      "under19Label": "Yaryar ka yar 19 nool tahay?",
+      "under19Hint": "Geli 0 haddii waxba aysan lahayn.",
+      "under18Label": "Midkaa kaas oo ka yar 18 yaqabaday?",
+      "under5Label": "Midkaa kaas oo ka yar 5 yaqabaday?",
+      "subsetHint": "Tani waxa ay yihiin qaybta yar oo tirada sare."
+    },
+    "pregnantCash": {
+      "question": "Laba walaac yar oo gurigaaga",
+      "pregnantLabel": "Qofna gurigaaga ku jira oon jira hadda?",
+      "pregnantHint": "WIC iyo barnamijyada Medicaid qaar ay muhiim u yihiin naago oon jira.",
+      "cashLabel": "Lagana helnaa lacaga caawi (TANF, SSI, ama caawi caadi)?",
+      "cashHint": "Tani waxa ay saameystaa heshiin RCA iyo SNAP."
+    },
+    "special": {
+      "question": "Halaha gaar ah qaar",
+      "hint": "Dhawqal Hah ama Maya mid mid.",
+      "unaccompaniedLabel": "Jir yar 18 tahay lana sahay magaalada ayba guud walaaleed?",
+      "unaccompaniedHint": "Barnamija Unaccompanied Refugee Minors (URM).",
+      "disabledLabel": "Halqabad lagu siman qorata bilaadhaynta?",
+      "disabledHint": "SSI iyo SSDI.",
+      "blindLabel": "Indhaha halqabad ayaan arki ama halqabad yar?",
+      "blindHint": "Qaybta gaar ah oo SSI/SSDI.",
+      "workQuartersLabel": "Haad ama asalkaa ama wakiilaa USA-ka ay shaqaleen 10 sano?",
+      "workQuartersHint": "40 bilaadhaynta ay sii waad SSI iyo SNAP tirada gaar ah."
+    },
+    "goals": {
+      "question": "Waxa aad caawi ku doonaysid?",
+      "hint": "Tani waxa ay kaga gargaari kartaa raadig barnamijyada ku habeysa.",
+      "employmentLabel": "Bilaadhaynta ama bilaadhaynta raadi ama digaa bilaadhaynta?",
+      "employmentHint": "Bilaadhaynta bilaadhaynta, taageerta caruurta, Matching Grant.",
+      "businessLabel": "Bilaadhayn socodka ama korsi bilaadhaynta?",
+      "businessHint": "Horumarinta microenterprise iyo Individual Development Accounts (IDA).",
+      "englishLabel": "Fasalaynta Ingiliziga (ESL) ku doonaysaa? (fadlan)",
+      "englishHint": "Fasalaynta luqada Ingiliziga lacag la'aan Refugee Support Services.",
+      "interpreterLabel": "Fasirtoorka ama taageerta tarjumida u baahan tahay? (fadlan)",
+      "interpreterHint": "Adeegga fasirtoorka lacag la'aan barnamijyada qolof joog ay helaan."
+    },
+    "settingsForm": {
+      "i94Label": "I-94 Soo galanaya/Ka baxnaya ma leedahay?",
+      "eadLabel": "Luqada bilaadhaynta (EAD kaardi) ma leedahay?",
+      "eligibilityDateLabel": "Goormaad rajada bilaabay hadba? (ORR heshiin maalinta)",
+      "arrivalDateLabel": "Goormaad USA-ka gaartay?",
+      "statusGrantDateLabel": "Goormaad qolof ama qolof-nolo loo qabay? (fadlan)"
+    },
+    "errors": {
+      "saveFailed": "Jawaabaha kaydsan ma karin: {message}. Haddii tani ay sheegaysaa qaydiga la'a, database migration (supabase/migration_v2.sql) aysan weli lagu dabaaqin.",
+      "profileNotFound": "Xisaabiga kaydsan ma hellin jawaabaha. Fadlan ka bax hadii iyo hadii dib soo gal, markale isku day.",
+      "profileNotFoundShort": "Xisaabiga kaydsan ma hellin. Fadlan ka bax hadii iyo hadii dib soo gal, markale isku day."
+    }
+  },
+  "processing": {
+    "title": "Faa'iidooyinka raadi…",
+    "subtitle": "Waxaan dahinaya jawaabaha lagu dhiibnay barnamijyada faa'iidooyinka USA-ka. Sida caadi ay waa 30 ilbiriqsi.",
+    "step1": "Sharciga faa'iidooyin kaydnta",
+    "step2": "Heshiin raadi",
+    "step3": "Natiijooyin tibaaxe",
+    "step4": "Deadline jarjariya",
+    "ready": "Qorshahaaga hadii!",
+    "readySubtitle": "Faa'iidooyin waaxaan helinnay aad qabato hadda.",
+    "goToDashboard": "Eeg qorshahaaga"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "tabs": {
+      "actionPlan": "Qorshahaaga",
+      "documents": "Dukumintiyaadkaaga",
+      "formHelper": "Foomka Saaxiib",
+      "explainer": "Warqad fasir",
+      "findHelp": "Caawi raadi",
+      "progress": "Horgalnimada ku"
+    },
+    "actionPlan": {
+      "title": "Qorshahaaga",
+      "subtitle": "Deadline muhiim ee ku bilaabay markale.",
+      "rulesChecked": "Sharciga faa'iidooyin akhiro tibaaxnay:",
+      "daysLeft": "{days} maalmaha",
+      "urgent": "Muhiim — hadii adag",
+      "deadlinePassed": "Deadline hadda laqaaday",
+      "noDeadline": "Deadline aysan jirin",
+      "startButton": "Bilow",
+      "continueButton": "Sii wad",
+      "sourceLink": "Isha rasmiga",
+      "attorney": "Tani waxa ay u baahan tahay abogaad ama wakiil ixtibaari ah.",
+      "noResults": "Faa'iidooyin heshiin aysan helinnay. Jawaab walaac ama caawi socdaal xiriir.",
+      "statusBadges": {
+        "likely_eligible": "Heshiin hadda",
+        "maybe_eligible": "Heshiin hadda hadii",
+        "needs_human_review": "Tibaaxnta",
+        "not_eligible": "Heshiin aysan"
+      },
+      "details": "Faalelo",
+      "getFormHelp": "Foomka caawi hel",
+      "daysLeftToApply": "{days} maalmaha hadii",
+      "oneDayLeftToApply": "1 maalinta hadii",
+      "deadlinePassedClear": "Deadline hadda laqaaday",
+      "whatYouNeed": "Waxa aad u baahan tahay",
+      "whereHowToApply": "Halkee iyo sida ay hadii",
+      "requiredDocuments": "Dukumintiyaad loobaahan",
+      "nextSteps": "Tallaabada xiga",
+      "applyOnline": "Hadii online",
+      "formNeeded": "Foomka dhamaystir"
+    },
+    "documents": {
+      "title": "Dukumintiyaadkaaga",
+      "subtitle": "Fayllahaagu waxa ay xidhibaal yihiin iyo socdaal. Waxba uma dirna sharciga jidka gaalkacida.",
+      "upload": "Dukumintiyad qaado",
+      "dragDrop": "Faylka jiid iyo dhaca, ama dhawqal dooro",
+      "supportedTypes": "Lagu taageeri karaa: PDF, JPG, PNG",
+      "extracting": "Dukumintiyad akhrinaa…",
+      "noDocuments": "Dukumintiyad aysan qaadin.",
+      "deleteConfirm": "Hadii aad shakisan tahay dukumintiyad tir?",
+      "open": "Fur",
+      "preview": "Aragga",
+      "close": "Xidh",
+      "detectedType": "Nooca lagu ogaado",
+      "secureLine": "Dukumintiyaadkaagu waxa ay lagu heshiiyan hadda oo waxba cid cid kuma kaydsan sharciga jidka gaalkacida.",
+      "types": {
+        "passport": "Passport",
+        "i-94": "I-94 Soo galanaya Record",
+        "ead": "Luqada bilaadhaynta (EAD)",
+        "birth_certificate": "Dhashada Shahaada",
+        "status_letter": "Halka Warqad",
+        "other": "Kale"
+      }
+    },
+    "formHelper": {
+      "title": "Foomka Saaxiib",
+      "subtitle": "Foomka fasir iyo dhamaystir caawi. Waxba ayaan SSN, A-number, bank faalelo, ama passport tirada — iyaga way socdaal.",
+      "pasteInstructions": "Foomka magaca ama URL jooji, ama sida aad u baahan caawi:",
+      "placeholder": "Tusaale: I-765 Employment Authorization, ama \"caawi Medicaid dhamaystir\"",
+      "ask": "Caawi hel",
+      "sensitiveNote": "Badka la tusayo [ADIGA DHAMAYSTIR] waxa ay waxa xun — dhamaystir ninka.",
+      "legalNote": "Foomkaan waxa ay lagu xidhiidh halka gaalkacida. Hadii abogaad ama DOJ-accredited wakiil shaqo.",
+      "thinking": "Foomka akhrinaa…",
+      "uploadFiles": "Dukumintiyad qaado",
+      "openInFiller": "Foomka midka dhamaystir fur",
+      "secureLine": "Dukumintiyaadkaagu waxa ay lagu heshiiyan hadda oo waxba cid cid kuma kaydsan sharciga jidka gaalkacida.",
+      "send": "Dir",
+      "contextNote": "Wayfinder waxa ay isticmaalaa ereyadaada waxa ay sheegeen jawaab halka aad tahay.",
+      "suggestionsLabel": "Su'aalaha caadi"
+    },
+    "explainer": {
+      "title": "Warqad ama Foomka Fasir",
+      "subtitle": "Warqada fusan ama dukumintiyad qaado. Waxaan fasiraa luqadda fudud.",
+      "pasteLabel": "Warqada halkan jooji:",
+      "placeholder": "Warqada ama foomka dhamaystir halkan jooji…",
+      "orUpload": "Ama sawir ama scan dukumintiyad qaado:",
+      "explain": "Fasir",
+      "thinking": "Dukumintiyad akhrinaa…"
+    },
+    "findHelp": {
+      "title": "Caawi dhow ku raadi",
+      "subtitle": "Qofka kaas oo kaga gargaara — lacag la'aan resettlement adeegga, sharciga caawi, iyo gobogooni qolof xafiiska.",
+      "resettlement": "Resettlement Agencies",
+      "legalAid": "Immigration Legal Aid",
+      "stateOffice": "State Refugee Office",
+      "national": "National Resources",
+      "attorneyWarning": "Muhiim: Walaac sharciga halka gaalkacida ku xidhiidh, oo keliya abogaad lix ah ama DOJ-accredited wakiil ay siine sharciga caawi iyo waad ku iftiinkaar.",
+      "call": "Wac",
+      "visit": "Website booq",
+      "noState": "Dooro gobogooni kaaga caawi socdaal."
+    },
+    "progress": {
+      "title": "Horgalnimada ku",
+      "subtitle": "Raadi faa'iidooyin mid mid.",
+      "statuses": {
+        "not_started": "Aysan bilaabaya",
+        "in_progress": "Socdaal",
+        "documents_ready": "Dukumintiyad hadii",
+        "submitted": "Dirray",
+        "needs_attorney": "Abogaad u baahan",
+        "done": "Dhamaystir"
+      },
+      "updateStatus": "Halka update"
+    },
+    "pdf": {
+      "download": "Qorshahaaga downloadka (PDF)",
+      "generating": "PDF kordhayn…"
+    },
+    "dismiss": "Dibti",
+    "footer": {
+      "privacy": "Xulka waxa ay xidhibaal yihiin iyo socdaal. Waxba uma dirna sharciga jidka gaalkacida.",
+      "disclaimer": "Wayfinder waxay siineysaa sharciga caawi aysan."
+    },
+    "settings": {
+      "title": "Xulka",
+      "subtitle": "Luqaddaa badali ama jawaabaha aad siisey ilaha.",
+      "language": "Luqada",
+      "languageHint": "Dooro luqadda app-ka buuxa. Hadda update.",
+      "editInfo": "Xulka edit",
+      "editInfoHint": "Jawaabaha aad siisey ilaha badali. Waxaan nibaarka faa'iidooyinka.",
+      "recheck": "Faa'iidooyinka nibaarka",
+      "backToDashboard": "Dashboard dib",
+      "saved": "Kaydsan",
+      "saving": "Kaydnta…"
+    },
+    "formFill": {
+      "title": "Foomka dhamaystir",
+      "intro": "Waxa waxaan ogaanay waxa waxaan dhamaystir. Bedka kasta eeg ka hor oo aad download hadii.",
+      "secureLine": "Foomkaagu waxa ay dhamaystir waada iyo waxba cid cid kuma kaydsan sharciga jidka gaalkacida.",
+      "autoFilled": "Xulka waxa ay dhamaystir",
+      "missing": "La'a — fadlan geli",
+      "sensitive": "Waxa xun — dadka kale cid kama sheeg. Ninka geli.",
+      "download": "Foomka download",
+      "downloading": "Foomka diyaar…",
+      "reviewAll": "Bedka kasta eeg",
+      "noFields": "Foomkaan waxa ay aysan midho. Waad ku qori kartaa daboolka."
+    }
+  },
+  "errors": {
+    "generic": "Waxa midka galay. Fadlan hadii isku day.",
+    "signIn": "Chisht ama erayga sirta aysan saxsan.",
+    "signUp": "Akoonka sameynayn kama ahayn. Fadlan hadii isku day.",
+    "eligibility": "Faa'iidooyinka kaydsan kama ahayn. Fadlan hadii isku day.",
+    "upload": "Qaada faqaaday. Fadlan faylka yar ama nooca badala isku day.",
+    "required": "Bedka loobahaan."
+  },
+  "common": {
+    "loading": "Kaydnta…",
+    "yes": "Hah",
+    "no": "Maya",
+    "save": "Kaydso",
+    "cancel": "Dhaaf",
+    "close": "Xidh",
+    "back": "Dib",
+    "next": "Xiga",
+    "submit": "Dirre",
+    "or": "ama",
+    "edit": "Badali",
+    "download": "Download",
+    "open": "Fur",
+    "settings": "Xulka",
+    "dismiss": "Dibti"
+  }
+}

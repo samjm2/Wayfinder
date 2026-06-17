@@ -1,0 +1,509 @@
+{
+  "nav": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "dashboard": "Mon tableau de bord",
+    "documents": "Mes documents",
+    "findHelp": "Chercher de l'aide",
+    "settings": "Paramètres"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "Comment ça marche",
+      "features": "Fonctionnalités",
+      "languages": "Langues",
+      "signIn": "Se connecter",
+      "getStarted": "Commencer"
+    },
+    "hero": {
+      "headline": "Un nouveau foyer commence par bien s'orienter.",
+      "subheadline": "Wayfinder trouve les aides et les papiers pour lesquels vous êtes admissible, explique tout dans votre langue, et vous guide étape par étape, avant les délais.",
+      "cardLabel": "Commencer dans votre langue",
+      "searchPlaceholder": "Chercher parmi plus de 100 langues…",
+      "cta": "Commencer gratuitement"
+    },
+    "how": {
+      "eyebrow": "Comment ça marche",
+      "title": "Trois étapes de votre arrivée à un plan clair.",
+      "steps": [
+        {
+          "title": "Racontez-nous votre histoire",
+          "body": "Répondez à quelques questions simples, une à la fois, dans votre langue. Gros texte, mots simples, pas de pression."
+        },
+        {
+          "title": "Nous trouvons ce qui convient",
+          "body": "Wayfinder consulte une base de données complète des règles d'aide américaines et vous montre exactement ce pour quoi vous êtes admissible, avec sources, jamais de suppositions."
+        },
+        {
+          "title": "Agir à temps",
+          "body": "Obtenez un plan classé par délai, avec chaque formulaire expliqué et une vraie personne pour vous aider quand ça compte."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Votre compagnon",
+      "title": "Tout ce dont vous avez besoin, dans un endroit calme.",
+      "items": [
+        {
+          "title": "Mon Plan d'action",
+          "body": "Vos aides classées par délai urgent, chacune avec une explication simple de pourquoi vous êtes admissible et un compte à rebours pour rien oublier."
+        },
+        {
+          "title": "Assistant de formulaire IA",
+          "body": "Wayfinder explique chaque champ et rédige les réponses dans votre langue. Il ne touche jamais aux chiffres sensibles et ne soumet rien pour vous."
+        },
+        {
+          "title": "Coffre-fort de documents",
+          "body": "Gardez votre passeport, I-94 et permis de travail dans un seul endroit chiffré, réservé au propriétaire. Privé et jamais partagé."
+        },
+        {
+          "title": "Chercher de l'aide",
+          "body": "Pour toute question légale, Wayfinder vous connecte à un avocat agréé ou représentant accrédité près de chez vous. Une vraie personne, pas une machine."
+        }
+      ]
+    },
+    "languagesSection": {
+      "eyebrow": "N'importe quelle langue",
+      "title": "Dans vos mots, dès le premier écran.",
+      "body": "Choisissez votre langue avant de vous inscrire, et Wayfinder la parle partout, à chaque étape."
+    },
+    "trust": {
+      "badge": "Votre sécurité d'abord",
+      "title": "Nous ne partageons jamais vos informations avec l'immigration.",
+      "body": "Vos documents sont chiffrés et réservés à vous. Wayfinder ne remplit jamais les identifiants sensibles, ne soumet jamais de formulaires, et chaque décision légale est prise par une vraie personne agréée, pas par une machine.",
+      "points": [
+        "Chiffré et privé",
+        "Sources vérifiables",
+        "Examiné par des humains"
+      ]
+    },
+    "finalCta": {
+      "title": "Votre chemin commence aujourd'hui.",
+      "body": "Gratuit, privé et dans votre langue. Découvrez ce pour quoi vous êtes admissible en quelques minutes.",
+      "primary": "Commencer gratuitement",
+      "secondary": "Voir comment ça marche"
+    },
+    "footer": {
+      "tagline": "Pas un conseil légal · Toujours confirmé par une personne"
+    },
+    "translating": "Traduction de la page en cours…"
+  },
+  "auth": {
+    "createAccount": "Créer votre compte",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "signUp": "Créer un compte",
+    "signIn": "Se connecter",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "emailPlaceholder": "votre@email.com",
+    "passwordPlaceholder": "Choisir un mot de passe",
+    "signingUp": "Création de compte en cours…",
+    "signingIn": "Connexion en cours…"
+  },
+  "onboarding": {
+    "progressLabel": "Étape {current} sur {total}",
+    "nav": {
+      "next": "Suivant",
+      "back": "Retour",
+      "confirmContinue": "Confirmer et continuer",
+      "findBenefits": "Trouver mes aides",
+      "saving": "Sauvegarde en cours…",
+      "skipNotSure": "Passer — Je ne suis pas sûr"
+    },
+    "yes": "Oui",
+    "no": "Non",
+    "immigrationOptions": {
+      "refugee_207": {
+        "label": "Réfugié",
+        "note": "Admis en vertu de l'article 207"
+      },
+      "asylee_208": {
+        "label": "Demandeur d'asile",
+        "note": "Asile accordé en vertu de l'article 208"
+      },
+      "siv": {
+        "label": "Titulaire d'un visa d'immigrant spécial (SIV)",
+        "note": "Afghan ou irakien"
+      },
+      "afghan_parolee": {
+        "label": "Parolé humanitaire afghan"
+      },
+      "ukrainian_parolee": {
+        "label": "Parolé humanitaire ukrainien"
+      },
+      "cuban_haitian_entrant": {
+        "label": "Entrant cubain ou haïtien"
+      },
+      "trafficking_victim": {
+        "label": "Victime certifiée de trafic humain",
+        "note": "Visa T ou lettre ORR"
+      },
+      "amerasian": {
+        "label": "Immigrant Amerasien"
+      },
+      "lpr_from_humanitarian": {
+        "label": "Carte verte obtenue en tant que réfugié, demandeur d'asile ou statut humanitaire",
+        "note": "Cela rétablit l'admissibilité à SNAP et Medicaid"
+      },
+      "lpr_other": {
+        "label": "Carte verte obtenue par une autre voie"
+      },
+      "us_citizen": {
+        "label": "Citoyen américain ou national américain"
+      },
+      "other_none": {
+        "label": "Autre, pas sûr, ou aucune de ces options"
+      }
+    },
+    "language": {
+      "question": "Quelle langue préférez-vous ?",
+      "hint": "Nous afficherons tout dans cette langue."
+    },
+    "scan": {
+      "question": "Vous avez vos papiers ? Prendre une photo pour gagner du temps",
+      "intro": "Prenez une photo de votre I-94 (et de votre permis de travail, carte verte ou lettre d'asile si vous les avez). Nous lirons votre statut et vos dates pour que vous n'ayez pas à les taper.",
+      "secureLine": "Vos documents sont traités de manière sécurisée sur le moment et ne sont jamais sauvegardés sur nos serveurs ni partagés avec l'immigration. Nous lisons seulement les quelques champs nécessaires pour vérifier vos aides — jamais votre numéro de sécurité sociale ou numéro A.",
+      "uploadAriaLabel": "Télécharger une photo ou un PDF de vos documents d'immigration",
+      "chooseDifferent": "Choisir d'autres photos",
+      "chooseFile": "Prendre une photo ou choisir un fichier",
+      "fileTypes": "JPEG, PNG ou PDF · jusqu'à 4 documents",
+      "reading": "Lecture de vos documents…",
+      "readDocuments": "Lire mes documents",
+      "skip": "Je n'ai pas mes documents — répondre à des questions à la place",
+      "errorReadFailed": "Nous n'avons pas pu lire votre document. Veuillez réessayer ou passer et répondre aux questions.",
+      "errorUnreachable": "Nous n'avons pas pu accéder au lecteur de documents. Veuillez réessayer ou passer et répondre aux questions."
+    },
+    "confirm": {
+      "question": "Veuillez vérifier ce que nous avons lu dans vos documents",
+      "intro": "Vos résultats d'admissibilité dépendent de ces valeurs, prenez un moment pour les confirmer. Appuyez sur n'importe quel champ pour le corriger.",
+      "secureLine": "Lecture sécurisée et non sauvegardée.",
+      "detectedPrefix": "Nous avons détecté :",
+      "lowConfidence": "Certaines valeurs étaient difficiles à lire (marquées À vérifier ci-dessous). Veuillez d'abord vérifier celles-ci.",
+      "pleaseCheck": "À vérifier",
+      "fromDocument": "De votre document",
+      "fields": {
+        "immigrationStatus": "Statut d'immigration",
+        "selectStatus": "Sélectionner votre statut",
+        "fullName": "Nom complet",
+        "fullNameHint": "Pour vos dossiers seulement — non utilisé pour l'admissibilité.",
+        "fullNamePlaceholder": "Votre nom complet",
+        "dateOfBirth": "Date de naissance",
+        "dateOfBirthHint": "Détermine votre âge pour les programmes basés sur l'âge.",
+        "age": "Âge",
+        "countryOfOrigin": "Pays d'origine",
+        "countryOfOriginHint": "Pour vos dossiers seulement.",
+        "countryPlaceholder": "Pays",
+        "arrivalDate": "Date de votre arrivée aux États-Unis",
+        "eligibilityDate": "Date d'admissibilité ORR",
+        "eligibilityDateHint": "Lance l'horloge du délai RCA/RMA.",
+        "statusGrantDate": "Date d'octroi du statut",
+        "statusGrantDateHint": "Date d'octroi du statut de réfugié/demandeur d'asile (horloge SSI 7 ans). Optionnel."
+      },
+      "docNames": {
+        "i94": "I-94",
+        "ead": "Permis de travail (EAD)",
+        "green_card": "Carte verte",
+        "asylum_letter": "Lettre d'asile",
+        "ssn_card": "Carte de sécurité sociale",
+        "other": "document"
+      }
+    },
+    "status": {
+      "question": "Quel est votre statut d'immigration actuel ?",
+      "hint": "Choisissez celui qui vous convient le mieux. Cela façonne presque toutes les règles d'aide."
+    },
+    "documents": {
+      "question": "Quelques rapides questions sur les documents",
+      "hint": "Appuyez sur Oui ou Non. C'est normal si vous n'en avez pas certains.",
+      "fromDocsPrefix": "De vos documents nous avons noté",
+      "fromDocsI94": " votre I-94",
+      "fromDocsAnd": " et",
+      "fromDocsEad": " votre permis de travail (EAD)",
+      "i94Label": "Dossier d'arrivée/départ I-94",
+      "i94Hint": "Preuve d'entrée. Un I-94 codé §207 ou 'Visa 93' prouve le statut de réfugié.",
+      "eadLabel": "Permis de travail (carte EAD)",
+      "eadHint": "Document d'autorisation de travail. Le code EAD A03 prouve aussi le statut de réfugié.",
+      "ssnLabel": "Avez-vous un numéro de sécurité sociale (SSN) ?",
+      "ssnHint": "Nous avons seulement besoin de savoir si vous en avez un — jamais le numéro lui-même."
+    },
+    "orrLetter": {
+      "question": "Avez-vous une lettre de certification ou d'admissibilité ORR ?",
+      "hint": "Les victimes de trafic ont besoin de cette lettre (pas d'I-94) pour accéder aux aides ORR comme RCA et RMA."
+    },
+    "eligibilityDate": {
+      "question": "Quand votre aide de réfugié a-t-elle officiellement commencé ?",
+      "hint": "C'est votre date d'admissibilité ORR — généralement votre date d'arrivée ou la date d'octroi de votre statut, selon la plus tardive.",
+      "deadlineLabel": "Délai important :",
+      "deadlineBody": " L'horloge de l'aide en espèces pour réfugié (RCA) et l'aide médicale commencent à cette date — demandez immédiatement."
+    },
+    "arrivalDate": {
+      "question": "Quand êtes-vous venu aux États-Unis ?",
+      "hint": "La plupart des services d'emploi et d'intégration durent jusqu'à 5 ans à partir de cette date."
+    },
+    "statusGrantDate": {
+      "question": "Quand avez-vous obtenu le statut de réfugié ou demandeur d'asile ?",
+      "hint": "L'admissibilité à SSI se termine 7 ans après cette date. Laissez vide si vous n'êtes pas sûr."
+    },
+    "location": {
+      "question": "Dans quel état vivez-vous ?",
+      "hint": "Les aides et l'aide locale varient selon l'état. La ville et le code postal sont optionnels.",
+      "stateLabel": "État",
+      "selectState": "Sélectionner votre état",
+      "cityLabel": "Ville (optionnel)",
+      "cityPlaceholder": "Ville",
+      "zipLabel": "Code postal (optionnel)",
+      "zipPlaceholder": "Code postal"
+    },
+    "household": {
+      "question": "Parlez-nous de votre ménage",
+      "hint": "Ces réponses définissent vos limites de revenu. Elles sont privées.",
+      "ageLabel": "Votre âge",
+      "agePlaceholder": "Votre âge",
+      "ageFromDoc": "Votre âge ({age}) est défini à partir de votre document. Vous pouvez le changer sur l'écran de confirmation.",
+      "sizeLabel": "Combien de personnes vivent avec vous, en vous comptant ?",
+      "sizePlaceholder": "ex. 3",
+      "incomeLabel": "Argent que votre ménage reçoit chaque mois, avant impôts (dollars américains). Entrez 0 si aucun.",
+      "incomePlaceholder": "0",
+      "perMonth": "/ mois"
+    },
+    "children": {
+      "question": "Combien d'enfants vivent avec vous ?",
+      "under19Label": "Combien d'enfants de moins de 19 ans vivent avec vous ?",
+      "under19Hint": "Entrez 0 si aucun.",
+      "under18Label": "Parmi ceux-ci, combien ont moins de 18 ans ?",
+      "under5Label": "Parmi ceux-ci, combien ont moins de 5 ans ?",
+      "subsetHint": "C'est une partie plus petite du nombre ci-dessus."
+    },
+    "pregnantCash": {
+      "question": "Deux rapides questions sur votre maison",
+      "pregnantLabel": "Y a-t-il quelqu'un enceinte dans votre maison maintenant ?",
+      "pregnantHint": "WIC et certains programmes Medicaid priorité aux femmes enceintes.",
+      "cashLabel": "Recevez-vous déjà une aide en espèces (TANF, SSI ou aide générale) ?",
+      "cashHint": "Cela affecte l'admissibilité à l'aide en espèces pour réfugié et SNAP."
+    },
+    "special": {
+      "question": "Quelques situations spéciales",
+      "hint": "Appuyez sur Oui ou Non pour chacune.",
+      "unaccompaniedLabel": "Avez-vous moins de 18 ans et êtes-vous aux États-Unis sans parent ni tuteur ?",
+      "unaccompaniedHint": "Pour le programme Unaccompanied Refugee Minors (URM).",
+      "disabledLabel": "Avez-vous un handicap qui limite votre travail ?",
+      "disabledHint": "Pour SSI et SSDI.",
+      "blindLabel": "Êtes-vous aveugle ou avez-vous une vision très limitée ?",
+      "blindHint": "Une catégorie SSI/SSDI spéciale.",
+      "workQuartersLabel": "Vous ou votre conjoint ou parent avez-vous travaillé aux États-Unis environ 10 ans ?",
+      "workQuartersHint": "40 crédits de travail peuvent contourner certaines restrictions 5 ans pour SSI et SNAP."
+    },
+    "goals": {
+      "question": "Avec quoi aimeriez-vous de l'aide ?",
+      "hint": "Cela nous aide à trouver les bons programmes pour vous.",
+      "employmentLabel": "Travaillez-vous, cherchez-vous du travail ou de la formation professionnelle ?",
+      "employmentHint": "Services d'emploi, aide à la garde d'enfants, Matching Grant.",
+      "businessLabel": "Voulez-vous démarrer ou développer votre propre entreprise ?",
+      "businessHint": "Développement de microentreprises et comptes de développement individuel (IDA).",
+      "englishLabel": "Aimeriez-vous des cours d'anglais (ESL) ? (optionnel)",
+      "englishHint": "Formation en anglais gratuite via les services d'aide aux réfugiés.",
+      "interpreterLabel": "Avez-vous besoin d'un interprète ou d'aide en traduction ? (optionnel)",
+      "interpreterHint": "Les services d'interprétation gratuits sont disponibles par les programmes de réfugiés."
+    },
+    "settingsForm": {
+      "i94Label": "Avez-vous un dossier d'arrivée/départ I-94 ?",
+      "eadLabel": "Avez-vous un permis de travail (carte EAD) ?",
+      "eligibilityDateLabel": "Quand votre aide de réfugié a-t-elle officiellement commencé ? (date d'admissibilité ORR)",
+      "arrivalDateLabel": "Quand êtes-vous venu aux États-Unis ?",
+      "statusGrantDateLabel": "Quand avez-vous obtenu le statut de réfugié ou demandeur d'asile ? (optionnel)"
+    },
+    "errors": {
+      "saveFailed": "Nous n'avons pas pu sauvegarder vos réponses : {message}. Si cela mentionne une colonne manquante, la migration de base de données (supabase/migration_v2.sql) n'a pas encore été appliquée.",
+      "profileNotFound": "Nous n'avons pas pu trouver votre profil pour sauvegarder vos réponses. Veuillez vous déconnecter et vous reconnecter, puis réessayer.",
+      "profileNotFoundShort": "Nous n'avons pas pu trouver votre profil pour sauvegarder. Veuillez vous déconnecter et vous reconnecter, puis réessayer."
+    }
+  },
+  "processing": {
+    "title": "Recherche de vos aides…",
+    "subtitle": "Nous examinons vos réponses par rapport aux programmes d'aide américains officiels. Cela prend généralement environ 30 secondes.",
+    "step1": "Chargement des règles d'aide",
+    "step2": "Vérification de votre admissibilité",
+    "step3": "Vérification des résultats",
+    "step4": "Classement par délai",
+    "ready": "Votre plan est prêt !",
+    "readySubtitle": "Nous avons trouvé des aides pour lesquelles vous pourriez être admissible.",
+    "goToDashboard": "Voir mon plan"
+  },
+  "dashboard": {
+    "welcome": "Bienvenue",
+    "tabs": {
+      "actionPlan": "Mon Plan d'action",
+      "documents": "Mes documents",
+      "formHelper": "Assistant de formulaire",
+      "explainer": "Expliquer une lettre",
+      "findHelp": "Chercher de l'aide",
+      "progress": "Ma progression"
+    },
+    "actionPlan": {
+      "title": "Votre plan d'action",
+      "subtitle": "Triés par délai le plus urgent d'abord.",
+      "rulesChecked": "Règles d'aide dernièrement vérifiées :",
+      "daysLeft": "{days} jours restants",
+      "urgent": "Urgent — agir bientôt",
+      "deadlinePassed": "Le délai aurait pu passer",
+      "noDeadline": "Pas de délai fixe",
+      "startButton": "Commencer",
+      "continueButton": "Continuer",
+      "sourceLink": "Source officielle",
+      "attorney": "Cela nécessite un avocat ou un représentant accrédité.",
+      "noResults": "Aucune aide admissible trouvée. Répondez à plus de questions ou contactez une organisation locale pour obtenir de l'aide.",
+      "statusBadges": {
+        "likely_eligible": "Probablement admissible",
+        "maybe_eligible": "Peut être admissible",
+        "needs_human_review": "Nécessite un examen",
+        "not_eligible": "Non admissible"
+      },
+      "details": "Détails",
+      "getFormHelp": "Obtenir de l'aide pour les formulaires",
+      "daysLeftToApply": "{days} jours restants pour demander",
+      "oneDayLeftToApply": "1 jour restant pour demander",
+      "deadlinePassedClear": "Ce délai a expiré",
+      "whatYouNeed": "Ce dont vous avez besoin",
+      "whereHowToApply": "Où et comment demander",
+      "requiredDocuments": "Documents requis",
+      "nextSteps": "Prochaines étapes",
+      "applyOnline": "Demander en ligne",
+      "formNeeded": "Formulaire à remplir"
+    },
+    "documents": {
+      "title": "Mes documents",
+      "subtitle": "Vos fichiers sont chiffrés et privés. Nous ne les partageons jamais avec l'immigration.",
+      "upload": "Télécharger un document",
+      "dragDrop": "Glisser-déposer un fichier, ou cliquer pour choisir",
+      "supportedTypes": "Supporté : PDF, JPG, PNG",
+      "extracting": "Lecture du document…",
+      "noDocuments": "Aucun document téléchargé pour le moment.",
+      "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce document ?",
+      "open": "Ouvrir",
+      "preview": "Aperçu",
+      "close": "Fermer",
+      "detectedType": "Type détecté",
+      "secureLine": "Vos documents sont traités de manière sécurisée et jamais partagés avec l'immigration.",
+      "types": {
+        "passport": "Passeport",
+        "i-94": "Dossier d'arrivée I-94",
+        "ead": "Permis de travail (EAD)",
+        "birth_certificate": "Certificat de naissance",
+        "status_letter": "Lettre de statut",
+        "other": "Autre"
+      }
+    },
+    "formHelper": {
+      "title": "Assistant de formulaire",
+      "subtitle": "Obtenez de l'aide pour comprendre et remplir un formulaire. Nous ne remplissons jamais votre SSN, numéro A, détails bancaires ou numéro de passeport — ceux-ci restent privés.",
+      "pasteInstructions": "Collez le nom ou l'URL du formulaire, ou décrivez ce avec quoi vous avez besoin d'aide :",
+      "placeholder": "Exemple : I-765 Employment Authorization, ou \"aide-moi à remplir une demande Medicaid\"",
+      "ask": "Obtenir de l'aide",
+      "sensitiveNote": "Les champs marqués [VOUS REMPLISSEZ] contiennent des informations sensibles — complétez ceux-ci vous-même.",
+      "legalNote": "Ce formulaire concerne votre statut d'immigration. Veuillez travailler avec un avocat agréé ou un représentant accrédité par le DOJ.",
+      "thinking": "Lecture du formulaire…",
+      "uploadFiles": "Télécharger des fichiers",
+      "openInFiller": "Ouvrir dans le remplisseur de formulaires",
+      "secureLine": "Vos documents sont traités de manière sécurisée et jamais partagés avec l'immigration.",
+      "send": "Envoyer",
+      "contextNote": "Wayfinder utilise les informations que vous avez déjà fournies pour répondre à votre situation.",
+      "suggestionsLabel": "Questions courantes"
+    },
+    "explainer": {
+      "title": "Expliquer une lettre ou un formulaire",
+      "subtitle": "Collez ou téléchargez une lettre ou un document déroutant. Nous l'expliquerons en langage simple.",
+      "pasteLabel": "Collez le texte ici :",
+      "placeholder": "Collez le texte de la lettre ou du formulaire ici…",
+      "orUpload": "Ou téléchargez une photo ou une numérisation du document :",
+      "explain": "Expliquer ceci",
+      "thinking": "Lecture de votre document…"
+    },
+    "findHelp": {
+      "title": "Trouver de l'aide près de vous",
+      "subtitle": "Connectez-vous avec des personnes qui peuvent aider — services de réinstallation gratuits, aide juridique et bureau des réfugiés de votre état.",
+      "resettlement": "Agences de réinstallation",
+      "legalAid": "Aide juridique en immigration",
+      "stateOffice": "Bureau des réfugiés de l'état",
+      "national": "Ressources nationales",
+      "attorneyWarning": "Important : Pour toute question légale concernant votre statut d'immigration, seul un avocat agréé ou un représentant accrédité par le DOJ peut vous donner des conseils légaux et vous représenter.",
+      "call": "Appeler",
+      "visit": "Visiter le site web"
+    },
+    "progress": {
+      "title": "Ma progression",
+      "subtitle": "Suivez où vous en êtes avec chaque aide.",
+      "statuses": {
+        "not_started": "Non commencé",
+        "in_progress": "En cours",
+        "documents_ready": "Documents prêts",
+        "submitted": "Soumis",
+        "needs_attorney": "Besoin d'un avocat",
+        "done": "Terminé"
+      },
+      "updateStatus": "Mettre à jour le statut"
+    },
+    "pdf": {
+      "download": "Télécharger mon plan (PDF)",
+      "generating": "Génération du PDF…"
+    },
+    "dismiss": "Fermer",
+    "footer": {
+      "privacy": "Vos informations sont chiffrées et privées. Nous ne les partageons jamais avec l'immigration.",
+      "disclaimer": "Wayfinder ne fournit pas de conseils juridiques."
+    },
+    "settings": {
+      "title": "Paramètres",
+      "subtitle": "Changez votre langue ou mettez à jour les réponses que vous avez données lors de l'inscription.",
+      "language": "Langue",
+      "languageHint": "Choisir la langue pour toute l'application. Elle se met à jour immédiatement.",
+      "editInfo": "Modifier mes informations",
+      "editInfoHint": "Modifier les réponses que vous avez données lors de l'inscription. Nous vérifierons à nouveau vos aides.",
+      "recheck": "Revérifier mes aides",
+      "backToDashboard": "Retour au tableau de bord",
+      "saved": "Sauvegardé",
+      "saving": "Sauvegarde en cours…"
+    },
+    "formFill": {
+      "title": "Remplissez votre formulaire",
+      "intro": "Nous avons rempli ce que nous connaissons déjà. Veuillez vérifier chaque champ avant de télécharger.",
+      "secureLine": "Votre formulaire est rempli dans votre navigateur et jamais partagé avec l'immigration.",
+      "autoFilled": "Rempli à partir de vos informations",
+      "missing": "Manquant — veuillez taper ceci",
+      "sensitive": "Sensible — ne nous partagez pas ceci. Entrez-le vous-même.",
+      "download": "Télécharger le formulaire rempli",
+      "downloading": "Préparation de votre formulaire…",
+      "reviewAll": "Vérifier chaque champ",
+      "noFields": "Ce formulaire n'a pas de cases remplissables. Vous pouvez taper sur les endroits en surbrillance.",
+      "openPrompt": "Ouvrir un formulaire à remplir",
+      "loading": "Ouverture de votre formulaire…",
+      "loadError": "Nous n'avons pas pu ouvrir ce formulaire. Veuillez essayer un autre fichier.",
+      "uploadHint": "Téléchargez votre I-94, permis de travail ou autre document dans Documents pour remplir automatiquement plus de ce formulaire."
+    }
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "signIn": "Email ou mot de passe incorrect.",
+    "signUp": "Impossible de créer un compte. Veuillez réessayer.",
+    "eligibility": "Impossible de charger vos aides. Veuillez réessayer.",
+    "upload": "Téléchargement échoué. Veuillez essayer un fichier plus petit ou un format différent.",
+    "required": "Ce champ est obligatoire."
+  },
+  "common": {
+    "loading": "Chargement…",
+    "yes": "Oui",
+    "no": "Non",
+    "save": "Sauvegarder",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "submit": "Soumettre",
+    "or": "ou",
+    "edit": "Modifier",
+    "download": "Télécharger",
+    "open": "Ouvrir",
+    "settings": "Paramètres",
+    "dismiss": "Fermer"
+  }
+}

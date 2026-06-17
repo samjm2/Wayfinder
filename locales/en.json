@@ -202,7 +202,18 @@
       "question": "When did your refugee help officially start?",
       "hint": "This is your ORR eligibility date — usually your arrival date or the date your status was granted, whichever is later.",
       "deadlineLabel": "Important deadline:",
-      "deadlineBody": " The clock for Refugee Cash Assistance (RCA) and medical assistance starts from this date — apply right away."
+      "deadlineBody": " The clock for Refugee Cash Assistance (RCA) and medical assistance starts from this date — apply right away.",
+      "docHintLabel": "Where to find this date:",
+      "docHintByStatus": {
+        "refugee_207": "Look on your I-94 (class RE-1 through RE-5, §207, or Visa 93). The date of admission is your ORR eligibility date.",
+        "asylee_208": "Look on your asylum approval notice or the immigration judge's order (class AS, §208, or Visa 92). The date asylum was granted is your ORR eligibility date.",
+        "siv": "Look on your I-94 or SIV visa stamp in your passport. Your date of entry is your ORR eligibility date.",
+        "afghan_parolee": "Look on your I-94 (class OAR, PAR, or DT). Your date of entry is your ORR eligibility date.",
+        "ukrainian_parolee": "Look on your I-94 (class UHP). Your date of entry is your ORR eligibility date.",
+        "cuban_haitian_entrant": "Look on your I-94 or parole document. Your date of entry or parole is your ORR eligibility date.",
+        "trafficking_victim": "Look on your ORR certification or eligibility letter. The certification date is your ORR eligibility date.",
+        "amerasian": "Look on your I-94 or immigrant visa. Your date of entry is your ORR eligibility date."
+      }
     },
     "arrivalDate": {
       "question": "When did you come to the United States?",
@@ -252,7 +263,7 @@
     "special": {
       "question": "A few special situations",
       "hint": "Tap Yes or No for each.",
-      "unaccompaniedLabel": "Are you under 18 and in the U.S. with no parent or guardian?",
+      "unaccompaniedLabel": "Are you in the U.S. without a parent or legal guardian?",
       "unaccompaniedHint": "For the Unaccompanied Refugee Minors (URM) program.",
       "disabledLabel": "Do you have a disability that limits your work?",
       "disabledHint": "For SSI and SSDI.",
@@ -302,8 +313,7 @@
     "tabs": {
       "actionPlan": "My Action Plan",
       "documents": "My Documents",
-      "formHelper": "Form Assistant",
-      "explainer": "Explain a Letter",
+      "formHelper": "Apply for Benefits",
       "findHelp": "Find Help",
       "progress": "My Progress"
     },
@@ -321,9 +331,7 @@
       "attorney": "This requires an attorney or accredited representative.",
       "noResults": "No eligible benefits found. Answer more questions or contact a local organization for help.",
       "statusBadges": {
-        "likely_eligible": "Likely eligible",
-        "maybe_eligible": "May be eligible",
-        "needs_human_review": "Needs review",
+        "likely_eligible": "Eligible",
         "not_eligible": "Not eligible"
       },
       "details": "Details",
@@ -377,15 +385,6 @@
       "contextNote": "Wayfinder uses the information you have already given to answer for your situation.",
       "suggestionsLabel": "Common questions"
     },
-    "explainer": {
-      "title": "Explain a Letter or Form",
-      "subtitle": "Paste or upload a confusing letter or document. We will explain it in plain language.",
-      "pasteLabel": "Paste the text here:",
-      "placeholder": "Paste the letter or form text here...",
-      "orUpload": "Or upload a photo or scan of the document:",
-      "explain": "Explain this",
-      "thinking": "Reading your document..."
-    },
     "findHelp": {
       "title": "Find Help Near You",
       "subtitle": "Connect with people who can help — free resettlement services, legal aid, and your state refugee office.",
@@ -426,7 +425,7 @@
       "language": "Language",
       "languageHint": "Choose the language for the whole app. It updates right away.",
       "editInfo": "Edit my information",
-      "editInfoHint": "Change the answers you gave during sign-up. We will check your benefits again.",
+      "editInfoHint": "Change the answers you gave during sign-up. Your updated information will be used for filling out forms.",
       "recheck": "Re-check my benefits",
       "backToDashboard": "Back to dashboard",
       "saved": "Saved",
@@ -472,6 +471,7 @@
     "download": "Download",
     "open": "Open",
     "settings": "Settings",
-    "dismiss": "Dismiss"
+    "dismiss": "Dismiss",
+    "delete": "Delete"
   }
 }

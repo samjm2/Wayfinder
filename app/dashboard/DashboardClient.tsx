@@ -8,7 +8,6 @@ import type { Profile, EligibilityBenefit, BenefitProgress, Document } from "@/l
 import ActionPlan from "./tabs/ActionPlan";
 import DocumentsVault from "./tabs/DocumentsVault";
 import FormAssistant from "./tabs/FormAssistant";
-import Explainer from "./tabs/Explainer";
 import FindHelp from "./tabs/FindHelp";
 import ProgressTracker from "./tabs/ProgressTracker";
 
@@ -34,7 +33,6 @@ const TABS = [
   { id: "plan", labelKey: "actionPlan" },
   { id: "documents", labelKey: "documents" },
   { id: "form", labelKey: "formHelper" },
-  { id: "explain", labelKey: "explainer" },
   { id: "help", labelKey: "findHelp" },
   { id: "progress", labelKey: "progress" },
 ] as const;
@@ -91,7 +89,7 @@ export default function DashboardClient({
 
   const benefits: EligibilityBenefit[] = eligibilityResult?.benefits ?? [];
   const eligibleBenefits = benefits.filter(
-    (b) => b.status === "likely_eligible" || b.status === "maybe_eligible" || b.status === "needs_human_review"
+    (b) => b.status === "likely_eligible"
   );
 
   const selectTab = (id: TabId) => {
@@ -126,7 +124,7 @@ export default function DashboardClient({
     <div className="flex min-h-screen flex-col bg-background">
       {/* Navbar */}
       <header className="sticky top-0 z-20 border-b border-border bg-surface shadow-sm">
-        <div className="mx-auto max-w-5xl px-4 md:px-8">
+        <div className="mx-auto max-w-5xl px-4 md:px-10">
           <div className="flex items-center justify-between gap-3 py-3">
             {/* Brand */}
             <Link href="/" className="flex shrink-0 items-center gap-2.5 focus-visible:outline-none">
@@ -143,7 +141,7 @@ export default function DashboardClient({
             </nav>
 
             {/* Right actions (desktop) */}
-            <div className="hidden shrink-0 items-center gap-2 md:flex">
+            <div className="ml-auto hidden shrink-0 items-center gap-2 md:flex">
               <Link
                 href="/settings"
                 className="inline-flex min-h-[44px] items-center justify-center rounded-[--radius-md] px-3.5 py-2.5 text-sm font-semibold text-text-muted transition hover:bg-sand-100 hover:text-text focus-visible:outline-none"
@@ -166,6 +164,7 @@ export default function DashboardClient({
               aria-expanded={menuOpen}
               aria-controls="wf-mobile-menu"
               aria-label={t.nav.dashboard}
+              title={t.nav.dashboard}
               className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-[--radius-md] text-text-muted transition hover:bg-sand-100 hover:text-text focus-visible:outline-none md:hidden"
             >
               {menuOpen ? (
@@ -221,6 +220,7 @@ export default function DashboardClient({
               type="button"
               onClick={dismissWelcome}
               aria-label={t.dashboard.dismiss}
+              title={t.dashboard.dismiss}
               className="inline-flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-[--radius-md] text-harbor-900 transition hover:bg-harbor-100 focus-visible:outline-none"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -251,10 +251,9 @@ export default function DashboardClient({
               language={profile.language_code}
               profile={profile}
               documents={documents}
+              benefits={eligibleBenefits}
+              formInfoById={formInfoById}
             />
-          )}
-          {activeTab === "explain" && (
-            <Explainer language={profile.language_code} />
           )}
           {activeTab === "help" && (
             <FindHelp state={profile.state ?? ""} zip={profile.zip_code ?? ""} />

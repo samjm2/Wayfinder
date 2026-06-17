@@ -415,7 +415,7 @@ export default function OnboardingForm() {
       num_children_under_5: parseInt(form.num_children_under_5, 10) || 0,
       is_pregnant: form.is_pregnant ?? false,
       receives_other_cash_benefit: form.receives_other_cash_benefit ?? false,
-      is_unaccompanied_minor: form.is_unaccompanied_minor ?? false,
+      is_unaccompanied_minor: showUnaccompanied ? (form.is_unaccompanied_minor ?? false) : false,
       is_disabled: form.is_disabled ?? false,
       is_blind: form.is_blind ?? false,
       has_40_work_quarters: form.has_40_work_quarters ?? false,
@@ -458,6 +458,10 @@ export default function OnboardingForm() {
 
   const showNestedChildren = (parseInt(form.num_children_under_19 || "0", 10) || 0) > 0;
   const askAge = !form.age; // hidden once a DOB-derived age is present
+  // Show the unaccompanied-minor question only when age is unknown or < 18.
+  // If we already know the user is 18+, auto-set false and skip the question.
+  const knownAge = form.age ? Number(form.age) : NaN;
+  const showUnaccompanied = !form.age || isNaN(knownAge) || knownAge < 18;
   const hideNav = currentStep === "scan"; // the scan step renders its own actions
   const isConfirm = currentStep === "confirm";
 
@@ -840,6 +844,18 @@ export default function OnboardingForm() {
                 </svg>
                 <span><strong>{ob.eligibilityDate.deadlineLabel}</strong>{ob.eligibilityDate.deadlineBody}</span>
               </div>
+              {form.immigration_status && (ob.eligibilityDate.docHintByStatus as Record<string, string>)[form.immigration_status] && (
+                <div className="mb-4 flex items-start gap-2 rounded-[--radius-md] bg-harbor-50 px-4 py-3 text-sm text-harbor-800 ring-1 ring-harbor-100">
+                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" />
+                  </svg>
+                  <span>
+                    <strong>{ob.eligibilityDate.docHintLabel} </strong>
+                    {(ob.eligibilityDate.docHintByStatus as Record<string, string>)[form.immigration_status]}
+                  </span>
+                </div>
+              )}
               <input
                 type="date"
                 value={form.eligibility_date}
@@ -1059,14 +1075,16 @@ export default function OnboardingForm() {
             <Step icon="special" question={ob.special.question}>
               <p className="mt-1 mb-6 text-lg text-text-muted">{ob.special.hint}</p>
               <div className="flex flex-col gap-4">
-                <DocYesNo
-                  label={ob.special.unaccompaniedLabel}
-                  hint={ob.special.unaccompaniedHint}
-                  value={form.is_unaccompanied_minor}
-                  onChange={(v) => set("is_unaccompanied_minor", v)}
-                  yes={ob.yes}
-                  no={ob.no}
-                />
+                {showUnaccompanied ? (
+                  <DocYesNo
+                    label={ob.special.unaccompaniedLabel}
+                    hint={ob.special.unaccompaniedHint}
+                    value={form.is_unaccompanied_minor}
+                    onChange={(v) => set("is_unaccompanied_minor", v)}
+                    yes={ob.yes}
+                    no={ob.no}
+                  />
+                ) : null}
                 <DocYesNo
                   label={ob.special.disabledLabel}
                   hint={ob.special.disabledHint}

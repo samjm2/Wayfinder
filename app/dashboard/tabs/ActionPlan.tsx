@@ -16,7 +16,7 @@ interface Props {
   benefits: EligibilityBenefit[];
   attorneyNeeded: boolean;
   rulesLastChecked: string;
-  onSwitchTab: (tab: "plan" | "documents" | "form" | "explain" | "help" | "progress") => void;
+  onSwitchTab: (tab: "plan" | "documents" | "form" | "help" | "progress") => void;
   formInfoById?: Record<string, FormInfo>;
 }
 
@@ -34,8 +34,6 @@ function Dot({ className }: { className: string }) {
 
 const STATUS_TONE: Record<string, string> = {
   likely_eligible: `${BADGE_BASE} bg-success-50 text-success-700 ring-1 ring-success-100`,
-  maybe_eligible: `${BADGE_BASE} bg-caution-50 text-caution-700 ring-1 ring-caution-100`,
-  needs_human_review: `${BADGE_BASE} bg-review-50 text-review-700 ring-1 ring-review-100`,
   not_eligible: `${BADGE_BASE} bg-sand-100 text-sand-600 ring-1 ring-sand-200`,
 };
 

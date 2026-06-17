@@ -238,9 +238,7 @@ export async function POST() {
   // ── Rank: soonest deadline first (nulls last), then status ──
   const statusRank: Record<string, number> = {
     likely_eligible: 0,
-    maybe_eligible: 1,
-    needs_human_review: 2,
-    not_eligible: 3,
+    not_eligible: 1,
   };
   narratedBenefits.sort((a, b) => {
     if (a.deadline.daysLeft !== null && b.deadline.daysLeft !== null)
@@ -250,9 +248,7 @@ export async function POST() {
     return (statusRank[a.status] ?? 9) - (statusRank[b.status] ?? 9);
   });
 
-  const flaggedForHuman = narratedBenefits
-    .filter((b) => b.status === "needs_human_review")
-    .map((b) => ({ id: b.id, reason: b.verificationNote || "Requires review by a caseworker" }));
+  const flaggedForHuman: { id: string; reason: string }[] = [];
 
   // ── Last verified date from benefits database ──
   const allDates = benefits

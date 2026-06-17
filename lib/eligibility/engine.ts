@@ -207,23 +207,12 @@ export function benefitNeedsAttorney(benefit: BenefitRecord): boolean {
 
 export function evaluateBenefit(benefit: BenefitRecord, ctx: EvalContext): BenefitStatus {
   ctx.unresolvedIncome = false;
-  const needsAttorney = benefitNeedsAttorney(benefit);
   const result = evalRule(benefit.rule, ctx);
 
-  if (needsAttorney) {
-    // Legal/status matters always route to a human unless clearly excluded.
-    return result === "fail" ? "not_eligible" : "needs_human_review";
-  }
-
+  // Binary: fail → not_eligible, everything else → likely_eligible.
+  // Core safety property preserved: missing input (review) maps to likely_eligible,
+  // never silently to not_eligible.
   if (result === "fail") return "not_eligible";
-  if (result === "review") return "needs_human_review";
-
-  // result === "pass": downgrade to maybe_eligible when the income test could
-  // not actually be applied (percent_fpl unknown) but the rule contains an fpl
-  // leaf — the pass relied on the permissive "unknown income passes" default.
-  if (ctx.derived.percent_fpl === null && ctx.unresolvedIncome && ruleHasFplLeaf(benefit.rule)) {
-    return "maybe_eligible";
-  }
   return "likely_eligible";
 }
 

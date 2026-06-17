@@ -34,6 +34,7 @@ import {
   useRef,
   useState,
 } from "react";
+import type { FormMeta } from "./page";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
@@ -75,7 +76,13 @@ interface FieldBox {
 
 const RENDER_SCALE = 1.5;
 
-export default function FormFillClient({ profile }: { profile: Profile }) {
+export default function FormFillClient({
+  profile,
+  formMeta = { needsAttorney: false, applyLink: "" },
+}: {
+  profile: Profile;
+  formMeta?: FormMeta;
+}) {
   const { t } = useTranslation();
   const ff = t.dashboard.formFill;
   const searchParams = useSearchParams();
@@ -83,6 +90,7 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
   const srcId = searchParams.get("src");
   const benefitId = searchParams.get("benefit");
   const formName = searchParams.get("form");
+  const mode = searchParams.get("mode"); // "fill" = came from "Fill Out with AI"
 
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const [pages, setPages] = useState<RenderedPage[]>([]);
@@ -91,6 +99,10 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
   const [downloading, setDownloading] = useState(false);
   const [sourceLabel, setSourceLabel] = useState<string>("");
   const [hintDismissed, setHintDismissed] = useState(false);
+  // Mandatory review checkbox (present when mode=fill).
+  const [reviewChecked, setReviewChecked] = useState(false);
+  // Track manually edited field IDs so we never overwrite them on re-render.
+  const editedIds = useRef(new Set<string>());
 
   // Hold the raw PDF bytes in memory so we can fill + save without re-fetching.
   const pdfBytesRef = useRef<Uint8Array | null>(null);
@@ -286,6 +298,7 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
   }, [load]);
 
   function updateField(id: string, value: string) {
+    editedIds.current.add(id);
     setFields((prev) => prev.map((f) => (f.id === id ? { ...f, value } : f)));
   }
 
@@ -367,10 +380,17 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
   // Count non-sensitive fields still missing a value. When several remain, we
   // nudge the user to upload a document so auto-fill can cover more (sensitive
   // fields are excluded — uploading never fills those).
-  const missingCount = useMemo(
-    () =>
-      fields.filter((f) => f.kind !== "checkbox" && f.flag === "missing").length,
+  const textFields = useMemo(
+    () => fields.filter((f) => f.kind !== "checkbox"),
     [fields],
+  );
+  const missingCount = useMemo(
+    () => textFields.filter((f) => f.flag === "missing").length,
+    [textFields],
+  );
+  const filledCount = useMemo(
+    () => textFields.filter((f) => f.flag === "auto" && f.value).length,
+    [textFields],
   );
   const showUploadHint = status === "ready" && missingCount >= 2 && !hintDismissed;
 
@@ -393,10 +413,28 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
           </Link>
         </div>
 
-        <h1 className="font-display text-2xl font-bold text-text md:text-3xl">{ff.title}</h1>
+        <h1 className="font-display text-2xl font-bold text-text md:text-3xl">
+          {formMeta.benefitName ? `Fill Out: ${formMeta.benefitName}` : ff.title}
+        </h1>
         <p className="mt-1 text-lg text-text-muted">{ff.intro}</p>
         {sourceLabel && status === "ready" && (
           <p className="mt-1 text-sm text-text-faint">{sourceLabel}</p>
+        )}
+
+        {/* Attorney banner */}
+        {formMeta.needsAttorney && (
+          <div className="mt-4 flex items-start gap-3 rounded-[--radius-md] border border-review-100 bg-review-50 px-5 py-4">
+            <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="mt-0.5 h-5 w-5 flex-shrink-0 text-review-600">
+              <path fillRule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clipRule="evenodd" />
+            </svg>
+            <div>
+              <p className="font-bold text-review-700">Attorney review recommended</p>
+              <p className="mt-0.5 text-sm text-review-700">
+                This is an immigration or legal form. A licensed attorney or DOJ-accredited
+                representative should review it before you submit anything.
+              </p>
+            </div>
+          </div>
         )}
 
         {/* Secure line — always near the form per the upload/privacy contract. */}
@@ -486,47 +524,68 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
 
             {/* ── Review panel: every field listed, editable, flagged ──── */}
             <aside className="order-1 lg:order-2">
-              <div className="sticky top-6 rounded-[--radius-lg] border border-border bg-surface p-5 shadow-sm">
-                <h2 className="font-display text-lg font-bold text-text">{ff.reviewAll}</h2>
+              <div className="sticky top-6 rounded-[--radius-lg] border border-border bg-surface shadow-sm">
+                <div className="p-5">
+                  <h2 className="font-display text-lg font-bold text-text">{ff.reviewAll}</h2>
 
-                {showUploadHint && (
-                  <div className="mt-4 flex items-start gap-2 rounded-[--radius-md] bg-harbor-50 px-3 py-2.5 text-sm text-harbor-700 ring-1 ring-harbor-100">
-                    <svg
-                      aria-hidden="true"
-                      viewBox="0 0 20 20"
-                      className="mt-0.5 h-4 w-4 flex-shrink-0"
-                      fill="currentColor"
-                    >
-                      <path d="M10 2a1 1 0 0 1 .7.3l4 4a1 1 0 0 1-1.4 1.4L11 5.42V12a1 1 0 1 1-2 0V5.42L6.7 7.7a1 1 0 0 1-1.4-1.4l4-4A1 1 0 0 1 10 2Z" />
-                      <path d="M4 14a1 1 0 0 1 1 1v1h10v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z" />
-                    </svg>
-                    <span className="flex-1">
-                      <Link
-                        href="/dashboard"
-                        className="font-semibold text-link underline-offset-2 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
+                  {/* Progress bar */}
+                  {textFields.length > 0 && (
+                    <div className="mt-3">
+                      <div className="mb-1 flex items-center justify-between text-xs text-text-muted">
+                        <span>{filledCount} of {textFields.length} fields auto-filled</span>
+                        <span>{missingCount > 0 ? `${missingCount} to fill in` : "All filled!"}</span>
+                      </div>
+                      <div className="h-2 w-full overflow-hidden rounded-full bg-sand-200">
+                        <div
+                          className="h-full rounded-full bg-success-500 transition-all"
+                          style={{ width: textFields.length > 0 ? `${Math.round((filledCount / textFields.length) * 100)}%` : "0%" }}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {showUploadHint && (
+                    <div className="mt-4 flex items-start gap-2 rounded-[--radius-md] bg-harbor-50 px-3 py-2.5 text-sm text-harbor-700 ring-1 ring-harbor-100">
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 20 20"
+                        className="mt-0.5 h-4 w-4 flex-shrink-0"
+                        fill="currentColor"
                       >
-                        {ff.uploadHint}
-                      </Link>
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setHintDismissed(true)}
-                      aria-label={t.common.close ?? "Dismiss"}
-                      className="-mr-1 -mt-0.5 flex-shrink-0 rounded p-0.5 text-harbor-700/70 transition hover:text-harbor-700 focus-visible:outline-none focus-visible:shadow-focus"
-                    >
-                      <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
-                        <path d="M6.3 5.3a1 1 0 0 1 1.4 0L10 7.58l2.3-2.3a1 1 0 1 1 1.4 1.42L11.42 9l2.3 2.3a1 1 0 0 1-1.42 1.4L10 10.42l-2.3 2.3a1 1 0 0 1-1.4-1.42L8.58 9l-2.3-2.3a1 1 0 0 1 0-1.4Z" />
+                        <path d="M10 2a1 1 0 0 1 .7.3l4 4a1 1 0 0 1-1.4 1.4L11 5.42V12a1 1 0 1 1-2 0V5.42L6.7 7.7a1 1 0 0 1-1.4-1.4l4-4A1 1 0 0 1 10 2Z" />
+                        <path d="M4 14a1 1 0 0 1 1 1v1h10v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z" />
                       </svg>
-                    </button>
-                  </div>
-                )}
+                      <span className="flex-1">
+                        <Link
+                          href="/dashboard"
+                          className="font-semibold text-link underline-offset-2 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
+                        >
+                          {ff.uploadHint}
+                        </Link>
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setHintDismissed(true)}
+                        aria-label={t.common.close}
+                        className="-mr-1 -mt-0.5 flex-shrink-0 rounded p-0.5 text-harbor-700/70 transition hover:text-harbor-700 focus-visible:outline-none focus-visible:shadow-focus"
+                      >
+                        <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor">
+                          <path d="M6.3 5.3a1 1 0 0 1 1.4 0L10 7.58l2.3-2.3a1 1 0 1 1 1.4 1.42L11.42 9l2.3 2.3a1 1 0 0 1-1.42 1.4L10 10.42l-2.3 2.3a1 1 0 0 1-1.4-1.42L8.58 9l-2.3-2.3a1 1 0 0 1 0-1.4Z" />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
 
-                <ul className="mt-4 flex flex-col gap-4">
-                  {fields
-                    .filter((f) => f.kind !== "checkbox")
-                    .map((f) => (
-                      <li key={f.id}>
-                        <div className="mb-1 flex items-center justify-between gap-2">
+                  <ul className="mt-4 flex flex-col gap-4">
+                    {textFields.map((f) => (
+                      <li key={f.id} className={`rounded-[--radius-md] border p-3 ${
+                        f.flag === "sensitive"
+                          ? "border-danger-200 bg-danger-50/50"
+                          : f.flag === "auto"
+                          ? "border-success-200 bg-success-50/30"
+                          : "border-caution-200 bg-caution-50/30"
+                      }`}>
+                        <div className="mb-1.5 flex items-center justify-between gap-2">
                           <label
                             htmlFor={`field-${f.id}`}
                             className="text-sm font-semibold text-text"
@@ -537,37 +596,101 @@ export default function FormFillClient({ profile }: { profile: Profile }) {
                             className={`rounded-full px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide ${flagBadgeTone[f.flag]}`}
                           >
                             {f.flag === "auto"
-                              ? ff.autoFilled
+                              ? "Auto-filled"
                               : f.flag === "sensitive"
-                              ? ff.sensitive.split("—")[0].trim()
-                              : ff.missing.split("—")[0].trim()}
+                              ? "Sensitive"
+                              : "Fill in"}
                           </span>
                         </div>
-                        <input
-                          id={`field-${f.id}`}
-                          type="text"
-                          value={f.value}
-                          onChange={(e) => updateField(f.id, e.target.value)}
-                          placeholder={f.flag === "missing" ? ff.missing : ""}
-                          className="w-full rounded-[--radius-md] border-2 border-border bg-surface px-3 py-2 text-base text-text placeholder-text-faint transition focus:border-harbor-400 focus:outline-none focus-visible:shadow-focus"
-                        />
-                        {f.flag === "sensitive" && (
-                          <p className="mt-1 text-xs font-medium text-danger-700">
-                            {ff.sensitive}
-                          </p>
+                        {f.flag === "sensitive" ? (
+                          <div>
+                            <p className="mb-2 text-xs font-medium text-danger-700">
+                              Enter this directly on the official site — we never see it.
+                            </p>
+                            {formMeta.applyLink && (
+                              <a
+                                href={formMeta.applyLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 rounded-[--radius-md] border-2 border-danger-200 bg-danger-50 px-3 py-1.5 text-xs font-bold text-danger-700 transition hover:border-danger-400 hover:bg-danger-100 focus-visible:outline-none"
+                              >
+                                Enter on official site →
+                              </a>
+                            )}
+                          </div>
+                        ) : (
+                          <input
+                            id={`field-${f.id}`}
+                            type="text"
+                            value={f.value}
+                            onChange={(e) => updateField(f.id, e.target.value)}
+                            placeholder={f.flag === "missing" ? "Type your answer here" : ""}
+                            className="w-full rounded-[--radius-md] border-2 border-border bg-surface px-3 py-2 text-base text-text placeholder-text-faint transition focus:border-harbor-400 focus:outline-none focus-visible:shadow-focus"
+                          />
                         )}
                       </li>
                     ))}
-                </ul>
+                  </ul>
+                </div>
 
-                <button
-                  type="button"
-                  onClick={handleDownload}
-                  disabled={downloading}
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-6 py-4 text-lg font-semibold text-on-primary shadow-sm transition hover:bg-primary-hover hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:shadow-focus disabled:pointer-events-none disabled:opacity-40"
-                >
-                  {downloading ? ff.downloading : ff.download}
-                </button>
+                {/* Mandatory review + terminal action footer */}
+                <div className="border-t border-border bg-sand-50 p-5">
+                  {mode === "fill" && (
+                    <label className="mb-4 flex cursor-pointer items-start gap-3">
+                      <input
+                        type="checkbox"
+                        checked={reviewChecked}
+                        onChange={(e) => setReviewChecked(e.target.checked)}
+                        className="mt-0.5 h-5 w-5 flex-shrink-0 cursor-pointer accent-primary"
+                      />
+                      <span className="text-sm font-semibold text-text">
+                        I have reviewed every field above and confirm the information is correct.
+                      </span>
+                    </label>
+                  )}
+
+                  {formMeta.needsAttorney ? (
+                    <a
+                      href="/dashboard"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] bg-review-600 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-review-700 active:scale-[0.98] focus-visible:outline-none"
+                    >
+                      Find an attorney
+                    </a>
+                  ) : mode === "fill" && formMeta.applyLink ? (
+                    <a
+                      href={formMeta.applyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-disabled={!reviewChecked}
+                      tabIndex={reviewChecked ? 0 : -1}
+                      onClick={(e) => { if (!reviewChecked) e.preventDefault(); }}
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] px-6 py-4 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] focus-visible:outline-none ${
+                        reviewChecked
+                          ? "bg-success-600 hover:bg-success-700 hover:shadow-md"
+                          : "cursor-not-allowed bg-sand-300 text-sand-500"
+                      }`}
+                    >
+                      <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                        <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
+                      </svg>
+                      Continue to official submission
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={handleDownload}
+                      disabled={downloading || (mode === "fill" && !reviewChecked)}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-6 py-4 text-lg font-semibold text-on-primary shadow-sm transition hover:bg-primary-hover hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:shadow-focus disabled:pointer-events-none disabled:opacity-40"
+                    >
+                      {downloading ? ff.downloading : ff.download}
+                    </button>
+                  )}
+
+                  {formMeta.howToApply && mode === "fill" && (
+                    <p className="mt-3 text-xs text-text-faint">{formMeta.howToApply}</p>
+                  )}
+                </div>
               </div>
             </aside>
           </div>

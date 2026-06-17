@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { createClient } from "@/lib/supabase/server";
 import { getTranslations, type UIStrings } from "@/lib/translations";
 import { TranslationProvider } from "@/components/i18n/TranslationProvider";
@@ -7,23 +9,34 @@ import enStrings from "@/locales/en.json";
 import type { Profile } from "@/lib/types";
 import FormFillClient from "./FormFillClient";
 
-// Custom PDF form-fill page.
-//
-// Reached two ways (both already wired in the dashboard):
-//   /form?src=<id>            — a PDF the user uploaded in the Form Assistant,
-//                               held IN MEMORY via the client-side formFileStore
-//                               (object URL); never uploaded to a server.
-//   /form?benefit=&form=      — an action item asked for help with a benefit's
-//                               form; we fall back to a bundled sample PDF so the
-//                               demo always has a real fillable form to show.
-//
-// Mirrors the settings server wrapper: protect the route, load the signed-in
-// user's profile, seed the live-translation provider with their language, then
-// hand the (privacy-scrubbed) profile to the client. The actual PDF rendering,
-// field reading, auto-fill and download all happen IN THE BROWSER — the profile
-// is the only data crossing into the client, and sensitive numbers are never
-// auto-filled (see FormFillClient).
-export default async function FormPage() {
+interface BenefitMeta {
+  id: string;
+  name: string;
+  category: string;
+  apply_link?: string;
+  how_to_apply?: string;
+}
+
+export interface FormMeta {
+  benefitName?: string;
+  needsAttorney: boolean;
+  applyLink: string;
+  howToApply?: string;
+}
+
+function loadBenefits(): BenefitMeta[] {
+  try {
+    return JSON.parse(readFileSync(join(process.cwd(), "database", "benefits.json"), "utf8"));
+  } catch {
+    return [];
+  }
+}
+
+export default async function FormPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string>>;
+}) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -48,12 +61,29 @@ export default async function FormPage() {
     initialTranslations = enStrings as UIStrings;
   }
 
+  // Load benefit metadata if a benefit ID is provided (server-side only).
+  const params = await searchParams;
+  const benefitId = params.benefit;
+  let formMeta: FormMeta = { needsAttorney: false, applyLink: "" };
+  if (benefitId) {
+    const benefits = loadBenefits();
+    const benefit = benefits.find((b) => b.id === benefitId);
+    if (benefit) {
+      formMeta = {
+        benefitName: benefit.name,
+        needsAttorney: benefit.category === "Legal / status",
+        applyLink: benefit.apply_link ?? "",
+        howToApply: benefit.how_to_apply,
+      };
+    }
+  }
+
   return (
     <TranslationProvider initialLang={language} initialTranslations={initialTranslations}>
       {/* useSearchParams (in the client) requires a Suspense boundary in this
           Next version so the rest of the tree can still be prerendered. */}
       <Suspense fallback={null}>
-        <FormFillClient profile={profile as Profile} />
+        <FormFillClient profile={profile as Profile} formMeta={formMeta} />
       </Suspense>
     </TranslationProvider>
   );

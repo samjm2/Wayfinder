@@ -305,6 +305,7 @@ export default function DocumentsVault({ documents: initial, userId }: Props) {
                     onClick={() => handleOpen(doc)}
                     disabled={opening === doc.id}
                     aria-label={`${t.dashboard.documents.open} ${doc.file_name}`}
+                    title={t.dashboard.documents.open}
                     className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[--radius-md] border-2 border-border bg-surface px-4 py-2 text-sm font-semibold text-text transition hover:bg-surface-2 active:scale-[0.98] focus-visible:outline-none focus-visible:shadow-focus disabled:opacity-60"
                   >
                     <svg
@@ -327,7 +328,8 @@ export default function DocumentsVault({ documents: initial, userId }: Props) {
                   <button
                     onClick={() => handleDelete(doc)}
                     className="inline-flex min-h-[44px] items-center justify-center rounded-[--radius-md] border-2 border-danger-100 bg-danger-50 px-4 py-2 text-sm font-semibold text-danger-700 transition hover:bg-danger-100 active:scale-[0.98] focus-visible:outline-none focus-visible:shadow-focus"
-                    aria-label={t.common.cancel}
+                    aria-label={t.common.delete}
+                    title={t.common.delete}
                   >
                     <svg
                       aria-hidden="true"

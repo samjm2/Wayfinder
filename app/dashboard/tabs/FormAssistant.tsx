@@ -1,88 +1,87 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import type { Profile, Document } from "@/lib/types";
+import type { Profile, Document, EligibilityBenefit } from "@/lib/types";
 import { useTranslation } from "@/components/i18n/TranslationProvider";
 import { putFormFile, type StoredFormFile } from "@/lib/formFileStore";
 
+type FormInfo = {
+  how_to_apply?: string;
+  apply_link?: string;
+  form?: { name?: string; url?: string; type?: string };
+};
+
 interface Props {
   language: string;
-  // Threaded by the navbar/shell so the chatbot can answer for THIS user.
   profile?: Profile;
   documents?: Document[];
-}
-
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-  isError?: boolean;
+  benefits?: EligibilityBenefit[];
+  formInfoById?: Record<string, FormInfo>;
 }
 
 interface UploadedFile {
-  // Local-only handle. Files are held in memory; never persisted server-side.
   name: string;
   type: string;
   isPdf: boolean;
   stored: StoredFormFile;
+  isLegal: boolean;
 }
 
-// Static fallback prompt suggestions. These are intentionally English source
-// strings; the live UI chrome around them is translated.
-const SUGGESTIONS = [
-  "Help me fill out Form I-765 for a work permit",
-  "What documents do I need for a Medicaid application?",
-  "Explain Form I-485 — what is it for?",
-  "Help me understand a SNAP application",
-];
+const LEGAL_FILE_RE =
+  /i-?[0-9]{3,}|i-?485|i-?589|i-?130|i-?751|eoir|asylum|removal|deportation|uscis|ead|advance.?parole/i;
 
-function statusFallback(status: number): string {
-  if (status === 429) return "Too many requests, please wait a moment and try again.";
-  if (status >= 500) return "The assistant is temporarily unavailable. Please try again.";
-  if (status === 400) return "We could not understand that request. Please try rephrasing.";
-  return "Something went wrong. Please try again.";
+function detectLegal(name: string): boolean {
+  return LEGAL_FILE_RE.test(name);
 }
 
-// Build a compact, privacy-scrubbed profile summary. Sensitive NUMBERS (SSN,
-// A-Number, passport, bank) are never included — only boolean "has X on file"
-// flags and non-sensitive demographics. The server scrubs again as a backstop.
-function buildProfileContext(profile?: Profile) {
-  if (!profile) return undefined;
-  return {
-    immigrationStatus: profile.immigration_status,
-    state: profile.state,
-    city: profile.city,
-    householdSize: profile.household_size,
-    age: profile.age,
-    numChildrenUnder18: profile.num_children_under_18,
-    isPregnant: profile.is_pregnant,
-    isEmployedOrSeeking: profile.is_employed_or_seeking,
-    hasEad: profile.has_ead,
-    hasSsn: profile.has_ssn,
-    hasI94: profile.has_i94,
-    eligibilityDate: profile.eligibility_date,
-    arrivalDate: profile.arrival_date,
-    statusGrantDate: profile.status_grant_date,
-  };
+// Reused from ActionPlan
+const BADGE_BASE =
+  "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide";
+
+function Dot({ className }: { className: string }) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 8 8" className={`h-2 w-2 ${className}`}>
+      <circle cx="4" cy="4" r="4" fill="currentColor" />
+    </svg>
+  );
 }
 
-// Document FIELD NAMES only — never the values (which may be sensitive).
-function buildDocumentFields(documents?: Document[]): string[] {
-  if (!documents || documents.length === 0) return [];
-  const names = new Set<string>();
-  for (const doc of documents) {
-    if (doc.extracted_fields) {
-      for (const key of Object.keys(doc.extracted_fields)) names.add(key);
+function deadlineBadge(
+  deadline: EligibilityBenefit["deadline"],
+): { text: string; tone: string } | null {
+  if (!deadline.deadlineDate && !deadline.label) return null;
+  if (deadline.deadlineDate) {
+    const target = new Date(deadline.deadlineDate);
+    if (!Number.isNaN(target.getTime())) {
+      const days = Math.ceil((target.getTime() - Date.now()) / 86_400_000);
+      if (days <= 0) {
+        return { text: "Window may have passed", tone: "bg-sand-100 text-sand-600" };
+      }
+      const tone =
+        days < 7
+          ? "bg-danger-50 text-danger-700 animate-[pulse_2s_ease-in-out_infinite]"
+          : days < 30
+          ? "bg-review-50 text-review-700"
+          : "bg-harbor-50 text-harbor-700";
+      return {
+        text: days === 1 ? "1 day left to apply" : `${days} days left to apply`,
+        tone,
+      };
     }
   }
-  return Array.from(names);
+  return { text: deadline.label, tone: "bg-harbor-50 text-harbor-700" };
 }
 
-export default function FormAssistant({ language, profile, documents }: Props) {
+export default function FormAssistant({
+  profile: _profile,
+  documents: _documents,
+  benefits = [],
+  formInfoById,
+}: Props) {
   const { t } = useTranslation();
-  const [query, setQuery] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -92,12 +91,10 @@ export default function FormAssistant({ language, profile, documents }: Props) {
     const next: UploadedFile[] = [];
     for (const file of Array.from(selected)) {
       const isPdf = file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
-      // Held in memory only via an object URL — never uploaded to a server.
       const stored = putFormFile(file);
-      next.push({ name: file.name, type: file.type, isPdf, stored });
+      next.push({ name: file.name, type: file.type, isPdf, stored, isLegal: detectLegal(file.name) });
     }
     setFiles((prev) => [...prev, ...next]);
-    // Allow re-selecting the same file later.
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
@@ -105,100 +102,164 @@ export default function FormAssistant({ language, profile, documents }: Props) {
     setFiles((prev) => prev.filter((f) => f.stored.id !== id));
   }
 
-  async function submitQuery(text: string) {
-    const userMessage = text.trim();
-    if (!userMessage || loading) return;
-
-    setQuery("");
-    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/form-assist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          query: userMessage,
-          language,
-          profile: buildProfileContext(profile),
-          documentFields: buildDocumentFields(documents),
-        }),
-      });
-
-      // Parse defensively — the body may be non-JSON (e.g. an HTML error page).
-      let data: { response?: string; error?: string } | null = null;
-      try {
-        data = await res.json();
-      } catch {
-        data = null;
-      }
-
-      if (!res.ok || !data?.response) {
-        const message = data?.error ?? statusFallback(res.status);
-        setMessages((prev) => [...prev, { role: "assistant", content: message, isError: true }]);
-      } else {
-        setMessages((prev) => [...prev, { role: "assistant", content: data!.response! }]);
-      }
-    } catch {
-      // Network-level failure — distinct from a server-returned error.
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "We could not reach the assistant. Please check your connection and try again.",
-          isError: true,
-        },
-      ]);
-    } finally {
-      setLoading(false);
-    }
+  function handleFillBenefit(benefitId: string, formName?: string) {
+    const params = new URLSearchParams({ benefit: benefitId, mode: "fill" });
+    if (formName) params.set("form", formName);
+    router.push(`/form?${params.toString()}`);
   }
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    void submitQuery(query);
-  }
-
-  const pdfFiles = files.filter((f) => f.isPdf);
+  const eligibleBenefits = benefits.filter((b) => b.status === "likely_eligible");
 
   return (
-    <div>
-      <h2 className="font-display text-2xl font-bold text-text md:text-3xl">
-        {t.dashboard.formHelper.title}
-      </h2>
-      <p className="mt-1 text-lg text-text-muted">{t.dashboard.formHelper.subtitle}</p>
-
-      <div className="mt-4 inline-flex items-start gap-2 rounded-[--radius-md] bg-success-50 px-4 py-2 text-sm font-medium text-success-700 ring-1 ring-success-100">
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 20 20"
-          className="mt-0.5 h-4 w-4 flex-shrink-0"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M10 1a4.5 4.5 0 0 0-4.5 4.5V8H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 7V5.5a3 3 0 1 0-6 0V8h6Z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <span>{t.dashboard.formHelper.sensitiveNote}</span>
+    <div className="space-y-8">
+      {/* Page header */}
+      <div>
+        <h2 className="font-display text-2xl font-bold text-text md:text-3xl">
+          Apply for Benefits
+        </h2>
+        <p className="mt-1 text-lg text-text-muted">
+          Select a benefit below and we'll pre-fill your application using the information you
+          already gave us. You review everything before submitting.
+        </p>
+        <div className="mt-3 inline-flex items-start gap-2 rounded-[--radius-md] bg-success-50 px-4 py-2 text-sm font-medium text-success-700 ring-1 ring-success-100">
+          <svg aria-hidden="true" viewBox="0 0 20 20" className="mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor">
+            <path fillRule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V8H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 7V5.5a3 3 0 1 0-6 0V8h6Z" clipRule="evenodd" />
+          </svg>
+          <span>
+            Sensitive fields (SSN, A-number, bank details) are <strong>never</strong> pre-filled.
+            You enter those directly on the official site.
+          </span>
+        </div>
       </div>
 
-      <p className="mt-3 text-sm text-text-faint">{t.dashboard.formHelper.contextNote}</p>
+      {/* ── Section 1: Eligible benefits ── */}
+      <section>
+        <h3 className="mb-4 font-display text-lg font-bold text-text">Your eligible programs</h3>
 
-      {/* ── OPTIONS / SUGGESTIONS (on top) ─────────────────────────────── */}
-      <div className="mt-6">
-        <div className="flex flex-wrap items-center gap-3">
-          {/* Upload files — held in memory only */}
+        {eligibleBenefits.length === 0 ? (
+          <div className="rounded-[--radius-lg] border border-border bg-surface p-8 text-center">
+            <p className="text-text-muted">
+              No eligible programs found yet.{" "}
+              <Link href="/processing" className="font-semibold text-primary underline-offset-2 hover:underline">
+                Run eligibility check
+              </Link>{" "}
+              or{" "}
+              <button
+                type="button"
+                className="font-semibold text-primary underline-offset-2 hover:underline focus-visible:outline-none"
+                onClick={() => fileInputRef.current?.click()}
+              >
+                upload your own form below
+              </button>
+              .
+            </p>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-4">
+            {eligibleBenefits.map((benefit) => {
+              const info = formInfoById?.[benefit.id];
+              const formName = info?.form?.name;
+              const formUrl = info?.form?.url ?? benefit.applicationLink;
+              const dl = deadlineBadge(benefit.deadline);
+              const isAttorney = benefit.needsAttorney;
+
+              return (
+                <div
+                  key={benefit.id}
+                  className={`overflow-hidden rounded-[--radius-lg] border bg-surface shadow-sm transition-shadow hover:shadow-md ${
+                    isAttorney ? "border-review-100 bg-review-50/30" : "border-border"
+                  }`}
+                >
+                  <div className="p-5 md:p-6">
+                    {/* Status + deadline row */}
+                    <div className="mb-3 flex flex-wrap items-center gap-2">
+                      <span className={`${BADGE_BASE} bg-success-50 text-success-700 ring-1 ring-success-100`}>
+                        <Dot className="text-current" />
+                        Eligible
+                      </span>
+                      {isAttorney && (
+                        <span className={`${BADGE_BASE} bg-review-50 text-review-700 ring-1 ring-review-100`}>
+                          Attorney recommended
+                        </span>
+                      )}
+                      {dl && (
+                        <span className={`${BADGE_BASE} ${dl.tone}`}>{dl.text}</span>
+                      )}
+                    </div>
+
+                    <h4 className="mb-1 font-display text-xl font-bold text-text">{benefit.name}</h4>
+                    <p className="mb-4 text-sm text-text-muted">{benefit.whyPlainLanguage}</p>
+
+                    {/* Attorney banner */}
+                    {isAttorney && (
+                      <div className="mb-4 rounded-[--radius-md] border border-review-100 bg-review-50 px-4 py-3 text-sm font-semibold text-review-700">
+                        This is a legal matter. Work with a licensed attorney or DOJ-accredited
+                        representative before filing any application.
+                      </div>
+                    )}
+
+                    {/* Action buttons */}
+                    <div className="flex flex-wrap gap-3">
+                      {isAttorney ? (
+                        <span className="inline-flex min-h-[48px] cursor-not-allowed items-center justify-center gap-2 rounded-[--radius-md] bg-sand-100 px-6 py-3 text-base font-semibold text-sand-500 opacity-70">
+                          <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                            <path fillRule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V8H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 7V5.5a3 3 0 1 0-6 0V8h6Z" clipRule="evenodd" />
+                          </svg>
+                          See an attorney before filing
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => handleFillBenefit(benefit.id, formName)}
+                          className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-6 py-3 text-base font-bold text-on-primary shadow-sm transition hover:bg-primary-hover hover:shadow-md active:scale-[0.98] focus-visible:outline-none"
+                        >
+                          <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                            <path d="M13.586 3.586a2 2 0 1 1 2.828 2.828l-.793.793-2.828-2.828.793-.793ZM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828Z" />
+                          </svg>
+                          Fill Out with AI
+                        </button>
+                      )}
+                      {formUrl && (
+                        <a
+                          href={formUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[--radius-md] border-2 border-harbor-300 bg-surface px-5 py-3 text-base font-semibold text-harbor-700 transition hover:border-harbor-500 hover:bg-harbor-50 active:scale-[0.98] focus-visible:outline-none"
+                        >
+                          <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                            <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
+                            <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
+                          </svg>
+                          View official form
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
+
+      {/* ── Section 2: Upload your own form ── */}
+      <section>
+        <div className="mb-4 border-t border-border pt-6">
+          <h3 className="mb-1 font-display text-lg font-bold text-text">Upload your own form</h3>
+          <p className="mb-4 text-sm text-text-muted">
+            Have a government form you want help filling out? Upload it here and we'll pre-fill
+            the fields we can from your profile.
+          </p>
+
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="inline-flex items-center gap-2 rounded-[--radius-md] border-2 border-border bg-surface px-4 py-3 text-base font-semibold text-text transition hover:border-harbor-300 focus-visible:outline-none focus-visible:shadow-focus"
+            className="inline-flex items-center gap-2 rounded-[--radius-md] border-2 border-dashed border-border bg-surface-2 px-5 py-4 text-base font-semibold text-text-muted transition hover:border-harbor-400 hover:bg-harbor-50 hover:text-text focus-visible:outline-none"
           >
             <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5" fill="currentColor">
               <path d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2h-5v5a1 1 0 1 1-2 0v-5H4a1 1 0 1 1 0-2h5V4a1 1 0 0 1 1-1Z" />
             </svg>
-            {t.dashboard.formHelper.uploadFiles}
+            Choose file (PDF or image)
           </button>
           <input
             ref={fileInputRef}
@@ -207,135 +268,71 @@ export default function FormAssistant({ language, profile, documents }: Props) {
             multiple
             onChange={handleFilesSelected}
             className="sr-only"
-            aria-label={t.dashboard.formHelper.uploadFiles}
+            aria-label="Upload a form"
           />
         </div>
 
         {files.length > 0 && (
-          <div className="mt-3 flex flex-col gap-2">
-            <p className="text-sm text-text-faint">{t.dashboard.formHelper.secureLine}</p>
-            <ul className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
+            <p className="text-xs text-text-faint">
+              Your files are processed in your browser and never shared with immigration enforcement.
+            </p>
+            <ul className="flex flex-col gap-3">
               {files.map((file) => (
                 <li
                   key={file.stored.id}
-                  className="flex items-center justify-between gap-3 rounded-[--radius-md] border border-border bg-surface-2 px-4 py-3"
+                  className="overflow-hidden rounded-[--radius-lg] border border-border bg-surface shadow-sm"
                 >
-                  <div className="flex min-w-0 items-center gap-2">
-                    <svg
-                      aria-hidden="true"
-                      viewBox="0 0 20 20"
-                      className="h-5 w-5 flex-shrink-0 text-text-muted"
-                      fill="currentColor"
-                    >
-                      <path d="M5 3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.414A2 2 0 0 0 16.414 6L13 2.586A2 2 0 0 0 11.586 2H5Z" />
-                    </svg>
-                    <span className="truncate text-base text-text">{file.name}</span>
-                  </div>
-                  <div className="flex flex-shrink-0 items-center gap-3">
-                    {file.isPdf && (
-                      <Link
-                        href={`/form?src=${encodeURIComponent(file.stored.id)}`}
-                        className="text-sm font-semibold text-primary underline-offset-2 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
+                  <div className="flex items-start justify-between gap-3 p-4">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[--radius-md] bg-harbor-50 text-harbor-600">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5" fill="currentColor">
+                          <path d="M5 3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.414A2 2 0 0 0 16.414 6L13 2.586A2 2 0 0 0 11.586 2H5Z" />
+                        </svg>
+                      </div>
+                      <div className="min-w-0">
+                        <p className="truncate font-semibold text-text">{file.name}</p>
+                        <p className="text-xs text-text-faint">{file.isPdf ? "PDF" : "Image"}</p>
+                      </div>
+                    </div>
+                    <div className="flex shrink-0 items-center gap-3">
+                      {file.isPdf && (
+                        <Link
+                          href={`/form?src=${encodeURIComponent(file.stored.id)}&mode=fill`}
+                          className="inline-flex min-h-[40px] items-center justify-center gap-1.5 rounded-[--radius-md] bg-primary px-4 py-2 text-sm font-bold text-on-primary shadow-sm transition hover:bg-primary-hover active:scale-[0.98] focus-visible:outline-none"
+                        >
+                          <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                            <path d="M13.586 3.586a2 2 0 1 1 2.828 2.828l-.793.793-2.828-2.828.793-.793ZM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828Z" />
+                          </svg>
+                          Fill with AI
+                        </Link>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => removeFile(file.stored.id)}
+                        aria-label={`Remove ${file.name}`}
+                        title="Remove"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-[--radius-md] text-text-faint transition hover:bg-sand-100 hover:text-text focus-visible:outline-none"
                       >
-                        {t.dashboard.formHelper.openInFiller}
-                      </Link>
-                    )}
-                    <button
-                      type="button"
-                      onClick={() => removeFile(file.stored.id)}
-                      className="text-sm font-medium text-text-muted hover:text-text focus-visible:outline-none"
-                    >
-                      {t.common.dismiss}
-                    </button>
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
+                  {/* Legal heuristic warning */}
+                  {file.isLegal && (
+                    <div className="border-t border-review-100 bg-review-50 px-4 py-3 text-sm font-semibold text-review-700">
+                      This looks like an immigration form. A licensed attorney or DOJ-accredited
+                      representative should review it before you submit.
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
-            {pdfFiles.length > 0 && (
-              <p className="text-sm text-text-faint">{t.dashboard.formHelper.openInFiller}</p>
-            )}
           </div>
         )}
-
-        {messages.length === 0 && (
-          <div className="mt-4">
-            <p className="mb-2 text-sm font-semibold text-text-muted">
-              {t.dashboard.formHelper.suggestionsLabel}
-            </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {SUGGESTIONS.map((suggestion) => (
-                <button
-                  key={suggestion}
-                  type="button"
-                  onClick={() => setQuery(suggestion)}
-                  className="flex items-start gap-3 rounded-[--radius-md] border-2 border-border bg-surface px-4 py-4 text-left text-base font-semibold text-text transition hover:border-harbor-300 focus-visible:outline-none focus-visible:shadow-focus"
-                >
-                  {suggestion}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* ── CHAT CONVERSATION (directly under the options) ─────────────── */}
-      <div
-        className="mt-6 mb-4 flex min-h-[200px] flex-col gap-4"
-        aria-live="polite"
-        aria-busy={loading}
-      >
-        {messages.map((msg, i) =>
-          msg.role === "user" ? (
-            <div
-              key={i}
-              className="ml-auto max-w-[80%] rounded-[--radius-md] bg-clay-100 px-5 py-4 text-base text-clay-900"
-            >
-              {msg.content}
-            </div>
-          ) : msg.isError ? (
-            <div
-              key={i}
-              role="alert"
-              className="mr-auto max-w-[90%] rounded-[--radius-md] bg-danger-50 px-5 py-4 text-base font-medium text-danger-700 ring-1 ring-danger-100"
-            >
-              {msg.content}
-            </div>
-          ) : (
-            <div
-              key={i}
-              className="mr-auto max-w-[90%] whitespace-pre-wrap rounded-[--radius-md] border border-border bg-surface px-5 py-4 text-base text-text"
-            >
-              {msg.content}
-            </div>
-          ),
-        )}
-        {loading && (
-          <div className="mr-auto rounded-[--radius-md] border border-border bg-surface px-5 py-4 text-base text-text-muted">
-            {t.dashboard.formHelper.thinking}
-          </div>
-        )}
-      </div>
-
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
-        <label htmlFor="form-assist-input" className="sr-only">
-          {t.dashboard.formHelper.ask}
-        </label>
-        <input
-          id="form-assist-input"
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder={t.dashboard.formHelper.placeholder}
-          className="w-full flex-1 rounded-[--radius-md] border-2 border-border bg-surface px-4 py-4 text-lg text-text placeholder-text-faint transition focus:border-harbor-400 focus:outline-none focus-visible:shadow-focus"
-        />
-        <button
-          type="submit"
-          disabled={loading || !query.trim()}
-          className="inline-flex items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-6 py-4 text-lg font-semibold text-on-primary shadow-sm transition hover:bg-primary-hover hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:shadow-focus disabled:pointer-events-none disabled:opacity-40"
-        >
-          {loading ? t.dashboard.formHelper.thinking : t.dashboard.formHelper.send}
-        </button>
-      </form>
+      </section>
     </div>
   );
 }

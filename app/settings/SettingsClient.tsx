@@ -127,24 +127,13 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
   }
 
   // ── Language area ──
-  const [langSyncing, setLangSyncing] = useState(false);
 
   async function onChangeLanguage(code: string) {
     if (code === lang) return;
-    // Swap the whole UI live (provider fetches /api/translate for non-English,
-    // flips html lang/dir, persists to profile + localStorage).
+    // Switch the UI live (fetches /api/translate for non-English, updates html
+    // lang/dir, persists to profile + localStorage). No API eligibility call.
     await setLanguage(code);
-    // Re-run the deterministic engine so the AI-generated summary + steps come
-    // back in the new language, then refresh server components.
-    setLangSyncing(true);
-    try {
-      await fetch("/api/eligibility", { method: "POST" });
-      router.refresh();
-    } catch {
-      /* the live UI already switched; a failed re-run just keeps old summary */
-    } finally {
-      setLangSyncing(false);
-    }
+    router.refresh();
   }
 
   // ── Edit-info area ──
@@ -152,6 +141,7 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
   const [form, setForm] = useState<FormData>(() => profileToForm(profile));
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState("");
+  const [savedSuccess, setSavedSuccess] = useState(false);
 
   function set<K extends keyof FormData>(key: K, value: FormData[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -242,9 +232,9 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
       return;
     }
 
-    // Re-run the deterministic engine via /processing (which POSTs
-    // /api/eligibility, then lands on the dashboard). Same path as onboarding.
-    router.push("/processing");
+    setSaving(false);
+    setSavedSuccess(true);
+    setEditing(false);
   }
 
   const fieldClass =
@@ -282,7 +272,7 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
           <h2 className="text-xl font-semibold text-text">{t.dashboard.settings.language}</h2>
           <p className="mt-1 mb-4 text-base text-text-muted">{t.dashboard.settings.languageHint}</p>
           <LanguagePicker value={lang} onChange={onChangeLanguage} label="" />
-          {(translating || langSyncing) && (
+          {translating && (
             <p className="mt-3 flex items-center gap-2 text-sm text-text-muted" aria-live="polite">
               <span aria-hidden="true">
                 <svg className="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -299,10 +289,16 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
           <h2 className="text-xl font-semibold text-text">{t.dashboard.settings.editInfo}</h2>
           <p className="mt-1 text-base text-text-muted">{t.dashboard.settings.editInfoHint}</p>
 
+          {savedSuccess && !editing && (
+            <div className="mt-4 rounded-[--radius-md] bg-success-50 px-4 py-3 text-sm font-medium text-success-700 ring-1 ring-success-100">
+              {t.dashboard.settings.saved}
+            </div>
+          )}
+
           {!editing ? (
             <button
               type="button"
-              onClick={() => { setForm(profileToForm(profile)); setEditing(true); }}
+              onClick={() => { setForm(profileToForm(profile)); setEditing(true); setSavedSuccess(false); }}
               className="mt-4 inline-flex items-center justify-center gap-2 rounded-[--radius-md] border-2 border-harbor-300 bg-surface px-5 py-3 text-base font-semibold text-harbor-700 transition active:scale-[0.98] hover:border-harbor-500 hover:bg-harbor-50 focus-visible:outline-none focus-visible:shadow-focus"
             >
               {t.common.edit}
@@ -454,7 +450,7 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
                   disabled={saving}
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-5 py-3.5 text-base font-semibold text-on-primary shadow-sm transition active:scale-[0.98] hover:bg-primary-hover hover:shadow-md disabled:pointer-events-none disabled:opacity-40 focus-visible:outline-none"
                 >
-                  {saving ? t.dashboard.settings.saving : t.dashboard.settings.recheck}
+                  {saving ? t.dashboard.settings.saving : t.common.save}
                 </button>
                 <button
                   type="button"

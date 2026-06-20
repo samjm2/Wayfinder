@@ -27,6 +27,18 @@ function isPdfDoc(doc: Document): boolean {
   return /\.pdf$/i.test(doc.file_name);
 }
 
+// Documents that make applications go smoothly. We mark one "added" if any
+// uploaded doc matches by type or file name. Sensitive cards (SSN) are never
+// asked for here.
+const RECOMMENDED: { label: string; why: string; match: (d: Document) => boolean }[] = [
+  { label: "I-94 Arrival/Departure Record", why: "Confirms your status and date of entry", match: (d) => d.document_type === "i-94" || /i[\s_-]?94/i.test(d.file_name) },
+  { label: "Work permit (EAD)", why: "Your employment authorization card", match: (d) => d.document_type === "ead" || /ead|work[\s_-]?permit/i.test(d.file_name) },
+  { label: "Photo ID or passport", why: "Proves your identity and name", match: (d) => d.document_type === "passport" || /passport|driver|licen[cs]e|\bid\b|green[\s_-]?card/i.test(d.file_name) },
+  { label: "Status or approval letter", why: "Refugee/asylee/ORR approval (I-797)", match: (d) => d.document_type === "status_letter" || /status|asylum|\borr\b|approval|i-?797/i.test(d.file_name) },
+  { label: "Proof of address", why: "Lease or utility bill — fills your address", match: (d) => /lease|utility|bill|statement|address|residence/i.test(d.file_name) },
+  { label: "Proof of income", why: "Pay stub or benefit letter — many forms ask for it", match: (d) => /pay[\s_-]?stub|income|wage|w-?2|1099|benefit[\s_-]?letter/i.test(d.file_name) },
+];
+
 // Best-effort guess of which document this is, from the file name. Falls back to
 // "other"; always editable by the user.
 function detectDocType(fileName: string): DocTypeValue {
@@ -194,6 +206,33 @@ export default function DocumentsVault({ documents: initial, userId }: Props) {
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
         {t.dashboard.documents.secureLine}
+      </div>
+
+      {/* Recommended documents — what to add for a smooth application. */}
+      <div className="mb-8 rounded-[--radius-lg] border border-border bg-surface p-5 md:p-6">
+        <h3 className="font-display text-lg font-bold text-text">Recommended documents</h3>
+        <p className="mb-4 mt-1 text-sm text-text-muted">
+          Add these so Wayfinder can read them once and fill them into your applications. The more you add, the less you retype.
+        </p>
+        <ul className="flex flex-col gap-2.5">
+          {RECOMMENDED.map((rec) => {
+            const have = docs.some(rec.match);
+            return (
+              <li key={rec.label} className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${have ? "bg-success-600 text-white" : "border-2 border-border-strong text-transparent"}`}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                </span>
+                <span className="flex-1">
+                  <span className={`text-sm font-semibold ${have ? "text-text" : "text-text-muted"}`}>{rec.label}</span>
+                  <span className="ml-2 text-sm text-text-faint">{have ? "· added" : `· ${rec.why}`}</span>
+                </span>
+              </li>
+            );
+          })}
+        </ul>
       </div>
 
       {/* Upload zone */}

@@ -46,12 +46,20 @@ import {
   mergeDocumentFields,
   profileToValues,
   resolveField,
+  valueForField,
   type FieldFlag,
+  type ProfileValues,
 } from "@/lib/formFill";
-
-// The bundled sample so /form?benefit=... always has a real fillable form to
-// demonstrate. See the report for what it is and how to use it.
-const SAMPLE_FORM_URL = "/sample-intake-form.pdf";
+import {
+  bytesToB64,
+  b64ToBytes,
+  deleteForm,
+  getProgress,
+  progressKey,
+  readAllProgress,
+  saveForm,
+  type SavedForm,
+} from "@/lib/autofill/formProgress";
 
 interface RenderedPage {
   pageIndex: number;
@@ -72,9 +80,151 @@ interface FieldBox {
   flag: FieldFlag;
   value: string;
   kind: "text" | "checkbox" | "flat";
+  help?: string; // plain-language "what to put here" (from Haiku)
 }
 
 const RENDER_SCALE = 1.5;
+
+// A word from the rendered text layer, positioned in CANVAS pixels (top-left
+// origin). x = left edge, y = baseline, w = width, h = approx glyph height.
+interface TextItem { str: string; x: number; y: number; w: number; h: number }
+
+// Visible labels we recognize on a form, mapped to a canonical key that
+// valueForField()/the sensitive check understand. Order matters (specific first).
+const LABEL_PATTERNS: { re: RegExp; key: string }[] = [
+  { re: /\b(a-?number|alien (registration )?number|uscis( online)? account|receipt number)\b/i, key: "__sensitive" },
+  { re: /\b(social security( number)?|ssn)\b/i, key: "__sensitive" },
+  { re: /\bsignature\b/i, key: "__sensitive" },
+  { re: /\b(family name|last name|surname)\b/i, key: "last name" },
+  { re: /\b(given name|first name|forename)\b/i, key: "first name" },
+  { re: /\b(full|legal|applicant|your) name\b/i, key: "full name" },
+  { re: /\b(date of birth|birth date|dob)\b/i, key: "date of birth" },
+  { re: /\b(country of birth|country of citizenship|nationality)\b/i, key: "country" },
+  { re: /\b(mailing|street|home)? ?address\b/i, key: "address" },
+  { re: /\b(city or town|city|town)\b/i, key: "city" },
+  { re: /\b(state|province)\b/i, key: "state" },
+  { re: /\b(zip( ?code)?|postal code)\b/i, key: "zip" },
+  { re: /\b(telephone|phone|mobile|cell)( number)?\b/i, key: "phone" },
+  { re: /\b(date of arrival|arrival date|date of (last )?entry)\b/i, key: "arrival" },
+];
+
+// Build editable overlay fields from the rendered text layer: find each known
+// label and place an input in the blank space to its right, auto-filled from the
+// profile. This is what lets us fill ANY PDF — including XFA (USCIS) and flat
+// scans — because it never reads the PDF's hidden form fields.
+function detectLabelFields(
+  pageTexts: TextItem[][],
+  pages: RenderedPage[],
+  values: ProfileValues,
+): FieldBox[] {
+  const out: FieldBox[] = [];
+  let idc = 0;
+  for (let pi = 0; pi < pageTexts.length; pi++) {
+    const pageW = pages[pi]?.width ?? 1000;
+    const items = (pageTexts[pi] || []).slice().sort((a, b) => a.y - b.y || a.x - b.x);
+    // Group items into lines (similar baseline y).
+    const lines: { y: number; items: TextItem[] }[] = [];
+    for (const it of items) {
+      const last = lines[lines.length - 1];
+      if (last && Math.abs(last.y - it.y) <= Math.max(4, it.h * 0.6)) last.items.push(it);
+      else lines.push({ y: it.y, items: [it] });
+    }
+    for (const line of lines) {
+      const li = line.items.slice().sort((a, b) => a.x - b.x);
+      for (let k = 0; k < li.length; k++) {
+        // Try windows of up to 4 words for a label match.
+        let matched: { re: RegExp; key: string } | null = null;
+        let endIdx = k;
+        for (let w = 0; w < 4 && k + w < li.length; w++) {
+          const text = li.slice(k, k + w + 1).map((x) => x.str).join(" ").replace(/\s+/g, " ").trim();
+          const m = LABEL_PATTERNS.find((p) => p.re.test(text));
+          if (m) { matched = m; endIdx = k + w; break; }
+        }
+        if (!matched) continue;
+        const labelItem = li[endIdx];
+        const labelEndX = labelItem.x + labelItem.w;
+        const next = li.find((x) => x.x > labelEndX + 8);
+        const rightBound = next ? next.x - 6 : pageW * 0.95;
+        const left = labelEndX + 10;
+        const width = rightBound - left;
+        if (width < 45) { k = endIdx; continue; } // no room to the right → skip
+        const h = Math.max(12, Math.min(labelItem.h, 22));
+        let flag: FieldFlag;
+        let value = "";
+        if (matched.key === "__sensitive") {
+          flag = "sensitive";
+        } else {
+          value = valueForField(matched.key, values) ?? "";
+          flag = value ? "auto" : "missing";
+        }
+        out.push({
+          id: `lbl-${pi}-${idc++}`,
+          name: li.slice(k, endIdx + 1).map((x) => x.str).join(" ").trim().slice(0, 60),
+          pageIndex: pi,
+          left,
+          top: labelItem.y - h,
+          width: Math.min(width, pageW * 0.55),
+          height: Math.round(h * 1.5),
+          flag,
+          value,
+          kind: "flat",
+        });
+        k = endIdx;
+        if (out.length >= 60) return out;
+      }
+    }
+  }
+  return out;
+}
+
+// The visible label/context near a field box (canvas px) — what we hand to Haiku
+// so it knows what each field is, even when the PDF's own field name is a
+// meaningless code (e.g. the W-9's "f1_01"). Looks left on the same row first,
+// then above the field.
+function contextFor(box: FieldBox, items: TextItem[] | undefined): string {
+  if (box.id.startsWith("lbl-") && box.name && box.name !== "note") return box.name;
+  if (!items || items.length === 0) return box.name && box.name !== "note" ? box.name : "";
+  const rowTop = box.top - box.height * 0.6;
+  const rowBot = box.top + box.height * 1.6;
+  const left = items
+    .filter((t) => t.y >= rowTop && t.y <= rowBot && t.x + t.w <= box.left + 6)
+    .sort((a, b) => a.x - b.x);
+  let label = left.slice(-7).map((t) => t.str).join(" ").trim();
+  if (!label) {
+    const above = items
+      .filter((t) => t.y < box.top && t.y > box.top - box.height * 3 && Math.abs(t.x - box.left) < Math.max(box.width, 60))
+      .sort((a, b) => b.y - a.y);
+    label = above.slice(0, 7).map((t) => t.str).join(" ").trim();
+  }
+  if (!label && box.name && box.name !== "note") label = box.name;
+  return label.replace(/\s+/g, " ").slice(0, 160);
+}
+
+// Clean, short display name for a field BEFORE Haiku replies — turns the form's
+// raw legalese into something readable. Haiku later replaces it with an even
+// simpler, plain-language label.
+const KEY_DISPLAY: Record<string, string> = {
+  "__sensitive": "Sensitive number",
+  "last name": "Last name",
+  "first name": "First name",
+  "full name": "Full name",
+  "date of birth": "Date of birth",
+  country: "Country",
+  address: "Address",
+  city: "City",
+  state: "State",
+  zip: "ZIP code",
+  phone: "Phone number",
+  arrival: "Date of arrival",
+};
+function cleanLabel(raw: string): string {
+  if (!raw) return "Form field";
+  const m = LABEL_PATTERNS.find((p) => p.re.test(raw));
+  if (m && KEY_DISPLAY[m.key]) return KEY_DISPLAY[m.key];
+  const cleaned = raw.replace(/^[\d.\s)(–-]+/, "").trim();
+  const short = cleaned.split(/\s+/).slice(0, 4).join(" ");
+  return short || "Form field";
+}
 
 export default function FormFillClient({
   profile,
@@ -92,7 +242,12 @@ export default function FormFillClient({
   const formName = searchParams.get("form");
   const mode = searchParams.get("mode"); // "fill" = came from "Fill Out with AI"
 
-  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [status, setStatus] = useState<
+    "loading" | "fetching-official" | "ready" | "portal" | "error" | "need-upload"
+  >("loading");
+  // When the real benefit is applied for through a portal/site (no fillable
+  // PDF), we surface a clean panel instead of the sample form.
+  const [portalLink, setPortalLink] = useState<string>("");
   const [pages, setPages] = useState<RenderedPage[]>([]);
   const [fields, setFields] = useState<FieldBox[]>([]);
   const [isFlat, setIsFlat] = useState(false);
@@ -106,6 +261,18 @@ export default function FormFillClient({
 
   // Hold the raw PDF bytes in memory so we can fill + save without re-fetching.
   const pdfBytesRef = useRef<Uint8Array | null>(null);
+  // A PDF the user uploaded in the "Fill a Form" tab (in memory only). Takes
+  // precedence over any benefit/sample source.
+  const uploadedRef = useRef<{ bytes: Uint8Array; name: string } | null>(null);
+  const formInputRef = useRef<HTMLInputElement | null>(null);
+  // AI mapping pass (Haiku): runs once per form, after the deterministic fill.
+  const aiDoneRef = useRef(false);
+  const pageTextsRef = useRef<TextItem[][]>([]);
+  const [docsLoaded, setDocsLoaded] = useState(false);
+  const [formSummary, setFormSummary] = useState("");
+  // Save / resume progress (browser-local).
+  const [savedAt, setSavedAt] = useState<number | null>(null);
+  const [savedForms, setSavedForms] = useState<SavedForm[]>([]);
 
   // Build the non-sensitive value bag from the profile (merged with any
   // non-sensitive document fields fetched below).
@@ -138,6 +305,10 @@ export default function FormFillClient({
         if (!cancelled) setValues(merged);
       } catch {
         /* keep profile-only values on failure */
+      } finally {
+        // Signal (success OR failure) that document fields are settled, so the
+        // AI mapping pass runs with the richest data available.
+        if (!cancelled) setDocsLoaded(true);
       }
     })();
     return () => {
@@ -151,11 +322,19 @@ export default function FormFillClient({
     // a synchronous setState here. All state updates below happen only after a
     // real async boundary (fetch / pdf parse).
     try {
-      // 1) Get the bytes. Uploaded file (in memory) takes precedence; otherwise
-      //    the bundled sample (so action-item help always demonstrates).
+      // 1) Get the bytes. Source order:
+      //    (1) uploaded file (in memory) takes precedence;
+      //    (2) the REAL official form via the server proxy (dodges CORS) — the
+      //        proxy may instead say this benefit is portal-only;
+      //    (3) only if the proxy errors entirely, the bundled sample.
       let bytes: Uint8Array | null = null;
       let label = "";
-      if (srcId) {
+      // A PDF the user uploaded in this tab wins over everything else.
+      if (uploadedRef.current) {
+        bytes = uploadedRef.current.bytes;
+        label = uploadedRef.current.name;
+      }
+      if (!bytes && srcId) {
         const stored = getFormFile(srcId);
         if (stored) {
           const res = await fetch(stored.objectUrl);
@@ -163,22 +342,49 @@ export default function FormFillClient({
           label = stored.name;
         }
       }
+
+      if (!bytes && benefitId) {
+        // Surface the "loading the official form" state during the proxy fetch.
+        setStatus("fetching-official");
+        try {
+          const res = await fetch(
+            `/api/form-pdf?benefit=${encodeURIComponent(benefitId)}`,
+          );
+          const ct = res.headers.get("content-type") || "";
+          if (res.ok && ct.includes("application/pdf")) {
+            // Real official, fillable form.
+            bytes = new Uint8Array(await res.arrayBuffer());
+            label = formName || formMeta.benefitName || benefitId;
+          } else if (res.ok && ct.includes("application/json")) {
+            const data = (await res.json()) as {
+              portal?: boolean;
+              applyLink?: string;
+            };
+            if (data.portal) {
+              // Portal-only program: clean UI state, NOT the sample, NOT error.
+              setPortalLink(data.applyLink || formMeta.applyLink || "");
+              setStatus("portal");
+              return;
+            }
+            // Unexpected JSON shape — fall through to the sample below.
+          }
+          // Non-OK proxy (e.g. 502) -> fall through to the bundled sample.
+        } catch {
+          // Proxy unreachable -> fall through to the bundled sample.
+        }
+      }
+
+      // No source resolved (e.g. the "Fill a Form" tab, or a benefit with no
+      // fetchable official PDF) → ask the user to upload the form. No sample.
       if (!bytes) {
-        const res = await fetch(SAMPLE_FORM_URL);
-        if (!res.ok) throw new Error("sample fetch failed");
-        bytes = new Uint8Array(await res.arrayBuffer());
-        label = formName || benefitId || "Sample Benefits Intake Form";
+        setStatus("need-upload");
+        return;
       }
       pdfBytesRef.current = bytes;
       setSourceLabel(label);
 
-      // 2) Read fields with pdf-lib first (needed for both AcroForm + flat).
-      const pdfDoc = await PDFDocument.load(bytes, { ignoreEncryption: true });
-      const form = pdfDoc.getForm();
-      const libFields = form.getFields();
-      const docPages = pdfDoc.getPages();
-
-      // 3) Render every page with pdfjs-dist to image data URLs (in memory).
+      // 2) RENDER FIRST with pdfjs-dist (robust). This is what the user actually
+      //    sees, so it must not depend on pdf-lib's AcroForm parsing succeeding.
       //    Dynamic import keeps pdfjs out of the server bundle.
       const pdfjs = await import("pdfjs-dist/build/pdf.mjs");
       pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -192,6 +398,7 @@ export default function FormFillClient({
 
       const rendered: RenderedPage[] = [];
       const pageScales: { scale: number; viewHeight: number }[] = [];
+      const pageTexts: TextItem[][] = [];
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const viewport = page.getViewport({ scale: RENDER_SCALE });
@@ -208,72 +415,130 @@ export default function FormFillClient({
           dataUrl: canvas.toDataURL("image/png"),
         });
         pageScales[i - 1] = { scale: RENDER_SCALE, viewHeight: canvas.height };
+        // Capture the text layer (word + position) for label-anchored filling.
+        try {
+          const tc = await page.getTextContent();
+          const tItems: TextItem[] = [];
+          for (const it of tc.items as Array<{ str?: string; transform?: number[]; width?: number }>) {
+            if (!it.str || !it.str.trim() || !it.transform) continue;
+            const tr = pdfjs.Util.transform(viewport.transform, it.transform);
+            tItems.push({ str: it.str, x: tr[4], y: tr[5], w: (it.width ?? 0) * RENDER_SCALE, h: Math.hypot(tr[2], tr[3]) || 10 });
+          }
+          pageTexts[i - 1] = tItems;
+        } catch {
+          pageTexts[i - 1] = [];
+        }
         page.cleanup();
       }
 
-      // 4) Build overlay field boxes.
-      const boxes: FieldBox[] = [];
-      if (libFields.length > 0) {
-        setIsFlat(false);
-        for (const field of libFields) {
-          const name = field.getName();
-          const ctor = field.constructor.name;
-          const kind: FieldBox["kind"] =
-            ctor === "PDFCheckBox" ? "checkbox" : "text";
-          const widgets = field.acroField.getWidgets();
-          const resolved = resolveField(name, values);
-          widgets.forEach((widget, wi) => {
-            const rect = widget.getRectangle(); // PDF points, bottom-left origin
-            // Which page is this widget on?
-            const pRef = widget.P();
-            let pageIndex = docPages.findIndex(
-              (p) => p.ref === pRef,
-            );
-            if (pageIndex < 0) pageIndex = 0;
-            const ps = pageScales[pageIndex];
-            if (!ps) return;
-            const pdfPage = docPages[pageIndex];
-            const pageHeight = pdfPage.getHeight();
-            const scale = ps.scale;
-            boxes.push({
-              id: widgets.length > 1 ? `${name}#${wi}` : name,
-              name,
-              pageIndex,
-              left: rect.x * scale,
-              // flip Y: PDF origin bottom-left -> canvas top-left
-              top: (pageHeight - rect.y - rect.height) * scale,
-              width: rect.width * scale,
-              height: rect.height * scale,
-              flag: resolved.flag,
-              value: resolved.value,
-              kind,
+      // 3) Read AcroForm fields with pdf-lib — BEST EFFORT, fully guarded. Some
+      //    real-world PDFs make pdf-lib throw (e.g. an undefined page-tree node:
+      //    "Expected instance of PDFDict, but got instance of undefined"). When
+      //    that happens we still show the rendered pages and fall back to a flat
+      //    overlay rather than failing the whole screen.
+      const acroBoxes: FieldBox[] = [];
+      try {
+        const pdfDoc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+        const libFields = pdfDoc.getForm().getFields();
+        const docPages = pdfDoc.getPages();
+        if (libFields.length > 0) {
+          for (const field of libFields) {
+            const name = field.getName();
+            const ctor = field.constructor.name;
+            const kind: FieldBox["kind"] =
+              ctor === "PDFCheckBox" ? "checkbox" : "text";
+            const widgets = field.acroField.getWidgets();
+            widgets.forEach((widget, wi) => {
+              const rect = widget.getRectangle(); // PDF points, bottom-left origin
+              const pRef = widget.P();
+              let pageIndex = docPages.findIndex((p) => p.ref === pRef);
+              if (pageIndex < 0) pageIndex = 0;
+              const ps = pageScales[pageIndex];
+              if (!ps) return;
+              const pageHeight = docPages[pageIndex].getHeight();
+              const scale = ps.scale;
+              const box: FieldBox = {
+                id: widgets.length > 1 ? `${name}#${wi}` : name,
+                name,
+                pageIndex,
+                left: rect.x * scale,
+                // flip Y: PDF origin bottom-left -> canvas top-left
+                top: (pageHeight - rect.y - rect.height) * scale,
+                width: rect.width * scale,
+                height: rect.height * scale,
+                flag: "missing",
+                value: "",
+                kind,
+              };
+              // INSTANT fill from the field's VISIBLE label. The PDF's own field
+              // name is often a meaningless code (the W-9's "f1_01"), so we read
+              // the label printed next to the box. This fills the obvious fields
+              // immediately; the Haiku pass refines the rest a moment later.
+              if (kind !== "checkbox") {
+                const label = contextFor(box, pageTexts[pageIndex]);
+                box.name = cleanLabel(label); // readable name (Haiku refines it)
+                const resolved = resolveField(label || name, values);
+                box.flag = resolved.flag;
+                box.value = resolved.value;
+              }
+              acroBoxes.push(box);
             });
-          });
+          }
         }
-      } else {
-        // FLAT PDF fallback: no AcroForm. Provide a single positioned overlay
-        // input near the top of page 1 the user can type into; we draw it onto
-        // the page with pdf-lib at download time.
-        setIsFlat(true);
-        const p0 = rendered[0];
-        if (p0) {
-          boxes.push({
-            id: "flat-note",
-            name: "note",
-            pageIndex: 0,
-            left: p0.width * 0.1,
-            top: p0.height * 0.12,
-            width: p0.width * 0.8,
-            height: 28,
-            flag: "missing",
-            value: "",
-            kind: "flat",
-          });
-        }
+      } catch (e) {
+        console.warn("[form-fill] AcroForm parse failed; using label detection:", e);
+        acroBoxes.length = 0;
       }
 
+      // Choose field positions: prefer EXACT AcroForm rectangles whenever the PDF
+      // has them (Haiku maps the values, so coded names like the W-9's no longer
+      // matter). Only fall back to geometric label-anchored spots when there are
+      // no form fields at all (XFA-with-text / flat scans). "Please wait" XFA
+      // shells have neither → a single positioned input.
+      let finalBoxes: FieldBox[];
+      let finalFlat: boolean;
+      const labelBoxes = acroBoxes.length === 0 ? detectLabelFields(pageTexts, rendered, values) : [];
+      if (acroBoxes.length > 0) {
+        finalBoxes = acroBoxes;
+        finalFlat = false;
+      } else if (labelBoxes.length > 0) {
+        finalBoxes = labelBoxes;
+        finalFlat = true;
+      } else {
+        const p0 = rendered[0];
+        finalBoxes = p0
+          ? [{
+              id: "flat-note", name: "note", pageIndex: 0,
+              left: p0.width * 0.1, top: p0.height * 0.12,
+              width: p0.width * 0.8, height: 28,
+              flag: "missing", value: "", kind: "flat",
+            }]
+          : [];
+        finalFlat = true;
+      }
+
+      // Restore saved progress for THIS exact form (values the user typed last
+      // time win over auto-fill, and are marked edited so Haiku won't change them).
+      const saved = getProgress(progressKey(label, bytes.length));
+      if (saved) {
+        for (const b of finalBoxes) {
+          const v = saved.values[b.id];
+          if (v) {
+            b.value = v;
+            if (b.flag !== "sensitive") b.flag = "auto";
+            editedIds.current.add(b.id);
+          }
+        }
+        setSavedAt(saved.savedAt);
+      } else {
+        setSavedAt(null);
+      }
+
+      pageTextsRef.current = pageTexts;
+      aiDoneRef.current = false;
+      setIsFlat(finalFlat);
       setPages(rendered);
-      setFields(boxes);
+      setFields(finalBoxes);
       setStatus("ready");
     } catch (err) {
       console.error("[form-fill] load failed:", err);
@@ -302,6 +567,143 @@ export default function FormFillClient({
     setFields((prev) => prev.map((f) => (f.id === id ? { ...f, value } : f)));
   }
 
+  // ── AI mapping pass (Haiku) ──────────────────────────────────────────────
+  // Hand every detected field's nearby label + the user's data to Haiku, which
+  // decides what value belongs in each. Runs ONCE per form, after the fast
+  // deterministic pass, and only overrides fields the user hasn't edited.
+  async function enhanceWithAI(boxes: FieldBox[], texts: TextItem[][], data: ProfileValues) {
+    const fillable = boxes.filter((b) => b.kind !== "checkbox" && b.id !== "flat-note");
+    if (fillable.length === 0) return;
+    setFormSummary("");
+    const reqFields = fillable.map((b) => ({ id: b.id, label: contextFor(b, texts[b.pageIndex]) }));
+    // First-page visible text helps Haiku identify the form + read each field in
+    // context (improves accuracy and powers the "About this form" summary).
+    const formText = (texts[0] ?? []).map((t) => t.str).join(" ").replace(/\s+/g, " ").slice(0, 2500);
+    try {
+      const res = await fetch("/api/form-assist/map", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fields: reqFields, data, formText }),
+      });
+      if (!res.ok) return; // keep the deterministic fill
+      const json = (await res.json()) as {
+        mappings?: { id: string; value: string | null; sensitive: boolean; label?: string; help?: string }[];
+        summary?: string;
+      };
+      if (json.summary) setFormSummary(json.summary);
+      const map = new Map((json.mappings ?? []).map((m) => [m.id, m]));
+      setFields((prev) =>
+        prev.map((b) => {
+          const m = map.get(b.id);
+          if (!m) return b;
+          // Always adopt Haiku's plain-language name + help, even for fields the
+          // user has edited (labels are display-only, never their typed value).
+          const labelled = {
+            ...b,
+            name: m.label || b.name,
+            help: m.help || b.help,
+          };
+          if (editedIds.current.has(b.id)) return labelled; // keep their value
+          if (m.sensitive) return { ...labelled, value: "", flag: "sensitive" as FieldFlag };
+          if (m.value) return { ...labelled, value: m.value, flag: "auto" as FieldFlag };
+          return labelled; // model found no value → keep what we had, nicer label
+        }),
+      );
+    } catch {
+      /* network error → keep the deterministic fill */
+    }
+  }
+
+  // Trigger the AI pass once the form is rendered AND document fields are merged.
+  useEffect(() => {
+    if (status !== "ready" || !docsLoaded || aiDoneRef.current) return;
+    aiDoneRef.current = true;
+    void enhanceWithAI(fields, pageTextsRef.current, values);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, docsLoaded]);
+
+  // User picked a PDF of the form they want filled. Kept in memory only.
+  async function onPickForm(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.type === "application/pdf" || /\.pdf$/i.test(file.name)) {
+        const buf = new Uint8Array(await file.arrayBuffer());
+        uploadedRef.current = { bytes: buf, name: file.name };
+        editedIds.current = new Set();
+        setFields([]);
+        setPages([]);
+        setPortalLink("");
+        setStatus("loading");
+        void load();
+      } else {
+        setStatus("error");
+      }
+    }
+    if (formInputRef.current) formInputRef.current.value = "";
+  }
+
+  // Load a bundled real government form so users can try the filler on an actual
+  // form with no upload and no login.
+  async function loadSample(path: string, name: string) {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error("sample fetch failed");
+      const buf = new Uint8Array(await res.arrayBuffer());
+      uploadedRef.current = { bytes: buf, name };
+      editedIds.current = new Set();
+      setFields([]);
+      setPages([]);
+      setPortalLink("");
+      setStatus("loading");
+      void load();
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  // ── Save / resume progress (browser-local) ──────────────────────────────
+  // Surface saved forms on the upload screen (localStorage read on transition).
+  useEffect(() => {
+    if (status === "need-upload" || status === "ready") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSavedForms(readAllProgress());
+    }
+  }, [status]);
+
+  function handleSaveProgress() {
+    if (!pdfBytesRef.current) return;
+    const vals: Record<string, string> = {};
+    for (const f of fields) if (f.value) vals[f.id] = f.value;
+    const ok = saveForm({
+      key: progressKey(sourceLabel || "form", pdfBytesRef.current.length),
+      label: sourceLabel || "Your form",
+      values: vals,
+      bytesB64: bytesToB64(pdfBytesRef.current),
+      savedAt: Date.now(),
+    });
+    if (ok) {
+      setSavedAt(Date.now());
+      setSavedForms(readAllProgress());
+    }
+  }
+
+  function resumeSaved(saved: SavedForm) {
+    if (!saved.bytesB64) return;
+    uploadedRef.current = { bytes: b64ToBytes(saved.bytesB64), name: saved.label };
+    editedIds.current = new Set();
+    setFormSummary("");
+    setFields([]);
+    setPages([]);
+    setPortalLink("");
+    setStatus("loading");
+    void load();
+  }
+
+  function discardSaved(key: string) {
+    deleteForm(key);
+    setSavedForms(readAllProgress());
+  }
+
   // ── Download the filled PDF ──────────────────────────────────────────────
   async function handleDownload() {
     if (!pdfBytesRef.current) return;
@@ -314,8 +716,8 @@ export default function FormFillClient({
       if (!isFlat) {
         const form = pdfDoc.getForm();
         for (const box of fields) {
-          // Multi-widget fields share a name; the value is the same per name.
-          const baseName = box.id.includes("#") ? box.name : box.id;
+          // Multi-widget fields share a name; the id is `${name}#${widget}`.
+          const baseName = box.id.includes("#") ? box.id.split("#")[0] : box.id;
           if (box.kind === "checkbox") continue; // checkboxes left to the user
           try {
             const tf = form.getTextField(baseName);
@@ -362,9 +764,9 @@ export default function FormFillClient({
 
   // Flag styling tokens.
   const flagTone: Record<FieldFlag, string> = {
-    auto: "border-success-400 bg-success-50/70",
-    missing: "border-caution-400 bg-caution-50/70",
-    sensitive: "border-danger-400 bg-danger-50/70",
+    auto: "border-success-500 bg-success-100 text-success-900 font-semibold",
+    missing: "border-caution-400 bg-caution-50 text-caution-800",
+    sensitive: "border-danger-400 bg-danger-50 text-danger-800",
   };
   const flagLabel: Record<FieldFlag, string> = {
     auto: ff.autoFilled,
@@ -384,13 +786,23 @@ export default function FormFillClient({
     () => fields.filter((f) => f.kind !== "checkbox"),
     [fields],
   );
-  const missingCount = useMemo(
-    () => textFields.filter((f) => f.flag === "missing").length,
+  // Fields the user can fill in-app = everything except sensitive (those are
+  // entered on the official site, never here).
+  const fillableFields = useMemo(
+    () => textFields.filter((f) => f.flag !== "sensitive"),
     [textFields],
   );
+  // "Filled" = ANY fillable field that now has a value — whether auto-filled OR
+  // typed in by hand. (The old code only counted auto-filled, so the counter
+  // never moved when you typed.)
   const filledCount = useMemo(
-    () => textFields.filter((f) => f.flag === "auto" && f.value).length,
-    [textFields],
+    () => fillableFields.filter((f) => f.value.trim() !== "").length,
+    [fillableFields],
+  );
+  const fillableTotal = fillableFields.length;
+  const missingCount = useMemo(
+    () => fillableFields.filter((f) => f.value.trim() === "").length,
+    [fillableFields],
   );
   const showUploadHint = status === "ready" && missingCount >= 2 && !hintDismissed;
 
@@ -421,6 +833,26 @@ export default function FormFillClient({
           <p className="mt-1 text-sm text-text-faint">{sourceLabel}</p>
         )}
 
+        {/* Upload input (used by the upload state and "different form" link). */}
+        <input
+          ref={formInputRef}
+          type="file"
+          accept="application/pdf,.pdf"
+          className="sr-only"
+          aria-hidden="true"
+          tabIndex={-1}
+          onChange={onPickForm}
+        />
+        {status === "ready" && (
+          <button
+            type="button"
+            onClick={() => formInputRef.current?.click()}
+            className="mt-2 text-sm font-semibold text-link underline-offset-2 hover:underline focus-visible:outline-none"
+          >
+            Upload a different form
+          </button>
+        )}
+
         {/* Attorney banner */}
         {formMeta.needsAttorney && (
           <div className="mt-4 flex items-start gap-3 rounded-[--radius-md] border border-review-100 bg-review-50 px-5 py-4">
@@ -449,12 +881,90 @@ export default function FormFillClient({
           <span>{ff.secureLine}</span>
         </div>
 
-        {status === "loading" && (
+        {(status === "loading" || status === "fetching-official") && (
           <div
             className="mt-8 rounded-[--radius-lg] border border-border bg-surface p-10 text-center text-lg text-text-muted"
             aria-live="polite"
           >
-            {ff.loading}
+            {status === "fetching-official" ? ff.officialFormLoading : ff.loading}
+          </div>
+        )}
+
+        {status === "portal" && (
+          <div className="mt-8 rounded-[--radius-lg] border border-harbor-100 bg-harbor-50 p-8 text-center">
+            <p className="text-lg font-medium text-harbor-700">
+              {ff.statePortalOnly}
+            </p>
+            {(portalLink || formMeta.applyLink) && (
+              <a
+                href={portalLink || formMeta.applyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-6 py-4 text-base font-semibold text-on-primary shadow-sm transition hover:bg-primary-hover hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:shadow-focus"
+              >
+                {ff.openOfficialSite}
+              </a>
+            )}
+          </div>
+        )}
+
+        {status === "need-upload" && (
+          <button
+            type="button"
+            onClick={() => formInputRef.current?.click()}
+            className="mt-8 flex w-full flex-col items-center justify-center gap-2 rounded-[--radius-lg] border-2 border-dashed border-harbor-300 bg-surface-2 px-6 py-12 text-center transition hover:border-harbor-500 hover:bg-harbor-50 focus-visible:outline-none focus-visible:shadow-focus"
+          >
+            <span aria-hidden="true" className="mb-1 flex h-14 w-14 items-center justify-center rounded-full bg-harbor-50 text-harbor-600">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m17 8-5-5-5 5" /><path d="M12 3v12" />
+              </svg>
+            </span>
+            <span className="text-lg font-semibold text-text">Upload the PDF of the form you want to fill out</span>
+            <span className="max-w-md text-sm text-text-muted">
+              We&apos;ll fill in what we can from your saved information and flag anything sensitive for you to enter yourself. Your file stays in your browser — we never upload or store it.
+            </span>
+            <span className="mt-3 inline-flex items-center gap-2 rounded-[--radius-md] bg-primary px-5 py-3 text-base font-semibold text-on-primary">Choose a PDF</span>
+          </button>
+        )}
+        {status === "need-upload" && (
+          <div className="mt-3 text-center text-sm text-text-muted">
+            <p>Or try a real government form, no upload needed:</p>
+            <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+              <button type="button" onClick={() => loadSample("/forms/irs-w9-taxpayer-info.pdf", "IRS Form W-9")} className="font-semibold text-link underline-offset-2 hover:underline focus-visible:outline-none">
+                IRS W-9
+              </button>
+              <button type="button" onClick={() => loadSample("/forms/uscis-i-765-work-permit.pdf", "USCIS Form I-765 (Work Permit)")} className="font-semibold text-link underline-offset-2 hover:underline focus-visible:outline-none">
+                USCIS I-765 (Work Permit)
+              </button>
+            </div>
+          </div>
+        )}
+        {status === "need-upload" && savedForms.length > 0 && (
+          <div className="mx-auto mt-5 max-w-md rounded-[--radius-md] border border-success-200 bg-success-50 p-4">
+            <p className="text-center text-sm font-medium text-text">Forms in progress</p>
+            <ul className="mt-3 flex flex-col gap-2">
+              {savedForms.map((sf) => (
+                <li key={sf.key} className="flex items-center justify-between gap-3 rounded-[--radius-md] border border-success-200 bg-surface px-3 py-2">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-text">{sf.label}</p>
+                    <p className="text-xs text-text-muted">
+                      {Object.keys(sf.values).length} field{Object.keys(sf.values).length === 1 ? "" : "s"} filled
+                      {sf.bytesB64 ? "" : " · re-upload to resume"}
+                    </p>
+                  </div>
+                  <div className="flex flex-shrink-0 items-center gap-2">
+                    {sf.bytesB64 && (
+                      <button type="button" onClick={() => resumeSaved(sf)} className="rounded-[--radius-md] bg-primary px-3 py-1.5 text-xs font-semibold text-on-primary transition hover:bg-primary-hover focus-visible:outline-none focus-visible:shadow-focus">
+                        Resume
+                      </button>
+                    )}
+                    <button type="button" onClick={() => discardSaved(sf.key)} aria-label={`Discard ${sf.label}`} className="text-xs text-text-muted underline-offset-2 hover:underline focus-visible:outline-none">
+                      Discard
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 
@@ -472,6 +982,17 @@ export default function FormFillClient({
 
         {status === "ready" && (
           <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_360px]">
+            {/* ── "About this form" summary (Haiku-identified) ──────────── */}
+            <div className="lg:col-span-2 rounded-[--radius-lg] border border-harbor-200 bg-harbor-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-harbor-700">About this form</p>
+              <p className="mt-1 text-sm text-text">
+                {formSummary || `${sourceLabel || "Your form"} — reading the form and filling what we can from your saved information…`}
+              </p>
+              <p className="mt-2 text-xs text-text-muted">
+                Green = filled for you. Yellow = needs your input. Red = sensitive (enter it yourself on the official site). Check every field before you use the form.
+              </p>
+            </div>
+
             {/* ── Rendered pages with positioned overlay inputs ─────────── */}
             <div className="order-2 lg:order-1">
               {isFlat && (
@@ -507,7 +1028,7 @@ export default function FormFillClient({
                           aria-label={`${f.name} — ${flagLabel[f.flag]}`}
                           title={`${f.name} — ${flagLabel[f.flag]}`}
                           placeholder={f.flag === "sensitive" ? "" : flagLabel[f.flag]}
-                          className={`absolute rounded-sm border-2 px-1 text-[12px] text-text outline-none focus:shadow-focus ${flagTone[f.flag]}`}
+                          className={`absolute rounded-sm px-1 text-[12px] leading-tight outline-none focus:z-10 focus:shadow-focus ${flagTone[f.flag]}`}
                           style={{
                             left: `${(f.left / pg.width) * 100}%`,
                             top: `${(f.top / pg.height) * 100}%`,
@@ -528,17 +1049,19 @@ export default function FormFillClient({
                 <div className="p-5">
                   <h2 className="font-display text-lg font-bold text-text">{ff.reviewAll}</h2>
 
-                  {/* Progress bar */}
-                  {textFields.length > 0 && (
+                  {/* Progress bar — counts every filled field (auto + typed),
+                      out of the fields you can fill here (sensitive ones are
+                      entered on the official site and excluded). */}
+                  {fillableTotal > 0 && (
                     <div className="mt-3">
                       <div className="mb-1 flex items-center justify-between text-xs text-text-muted">
-                        <span>{filledCount} of {textFields.length} fields auto-filled</span>
+                        <span>{filledCount} of {fillableTotal} fields filled</span>
                         <span>{missingCount > 0 ? `${missingCount} to fill in` : "All filled!"}</span>
                       </div>
                       <div className="h-2 w-full overflow-hidden rounded-full bg-sand-200">
                         <div
                           className="h-full rounded-full bg-success-500 transition-all"
-                          style={{ width: textFields.length > 0 ? `${Math.round((filledCount / textFields.length) * 100)}%` : "0%" }}
+                          style={{ width: `${Math.round((filledCount / fillableTotal) * 100)}%` }}
                         />
                       </div>
                     </div>
@@ -602,6 +1125,9 @@ export default function FormFillClient({
                               : "Fill in"}
                           </span>
                         </div>
+                        {f.help && (
+                          <p className="mb-2 text-xs text-text-muted">{f.help}</p>
+                        )}
                         {f.flag === "sensitive" ? (
                           <div>
                             <p className="mb-2 text-xs font-medium text-danger-700">
@@ -649,33 +1175,33 @@ export default function FormFillClient({
                     </label>
                   )}
 
-                  {formMeta.needsAttorney ? (
-                    <a
-                      href="/dashboard"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] bg-review-600 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-review-700 active:scale-[0.98] focus-visible:outline-none"
-                    >
-                      Find an attorney
-                    </a>
-                  ) : mode === "fill" && formMeta.applyLink ? (
-                    <a
-                      href={formMeta.applyLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-disabled={!reviewChecked}
-                      tabIndex={reviewChecked ? 0 : -1}
-                      onClick={(e) => { if (!reviewChecked) e.preventDefault(); }}
-                      className={`inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] px-6 py-4 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] focus-visible:outline-none ${
-                        reviewChecked
-                          ? "bg-success-600 hover:bg-success-700 hover:shadow-md"
-                          : "cursor-not-allowed bg-sand-300 text-sand-500"
-                      }`}
-                    >
-                      <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
-                        <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
-                        <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
-                      </svg>
-                      Continue to official submission
-                    </a>
+                  {mode === "fill" && formMeta.applyLink ? (
+                    <>
+                      <button
+                        type="button"
+                        disabled={!reviewChecked || downloading}
+                        onClick={async () => {
+                          // Preserve the user's answers: download the filled form
+                          // first, then hand off to the official application page.
+                          await handleDownload();
+                          window.open(formMeta.applyLink, "_blank", "noopener,noreferrer");
+                        }}
+                        className={`inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] px-6 py-4 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] focus-visible:outline-none ${
+                          reviewChecked && !downloading
+                            ? "bg-success-600 hover:bg-success-700 hover:shadow-md"
+                            : "cursor-not-allowed bg-sand-300 text-sand-500"
+                        }`}
+                      >
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                          <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h5a.75.75 0 0 1 0 1.5h-5Z" clipRule="evenodd" />
+                          <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 0 0 1.06.053L16.5 4.44v2.81a.75.75 0 0 0 1.5 0v-4.5a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0 0 1.5h2.553l-9.056 8.194a.75.75 0 0 0-.053 1.06Z" clipRule="evenodd" />
+                        </svg>
+                        {downloading ? ff.downloading : "Save my answers & open the official site"}
+                      </button>
+                      <p className="mt-2 text-xs text-text-faint">
+                        We download your filled form first so you keep your answers, then open the official application page in a new tab.
+                      </p>
+                    </>
                   ) : (
                     <button
                       type="button"
@@ -685,6 +1211,19 @@ export default function FormFillClient({
                     >
                       {downloading ? ff.downloading : ff.download}
                     </button>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={handleSaveProgress}
+                    className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-[--radius-md] border-2 border-border bg-surface px-6 py-3 text-sm font-semibold text-text transition hover:bg-canvas focus-visible:outline-none focus-visible:shadow-focus"
+                  >
+                    {savedAt ? "Progress saved ✓ — save again" : "Save my progress"}
+                  </button>
+                  {savedAt && (
+                    <p className="mt-1.5 text-center text-xs text-text-muted">
+                      Saved on this device — you can close the tab and resume later.
+                    </p>
                   )}
 
                   {formMeta.howToApply && mode === "fill" && (

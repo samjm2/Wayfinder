@@ -1,11 +1,13 @@
 {
   "name": "wayfinder-extension",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Wayfinder Chrome Extension — pre-fills government benefit forms from your profile",
   "scripts": {
-    "build": "esbuild src/background.ts src/content.ts src/popup.ts --bundle --outdir=dist --format=esm --platform=browser --target=chrome120",
-    "watch": "esbuild src/background.ts src/content.ts src/popup.ts --bundle --outdir=dist --format=esm --platform=browser --target=chrome120 --watch"
+    "build": "npm run build:module && npm run build:content",
+    "build:module": "esbuild src/background.ts src/popup.ts --bundle --outdir=dist --format=esm --platform=browser --target=chrome120",
+    "build:content": "esbuild src/appBridge.ts src/portalAgent.ts --bundle --outdir=dist --format=iife --platform=browser --target=chrome120",
+    "watch": "esbuild src/background.ts src/popup.ts --bundle --outdir=dist --format=esm --platform=browser --target=chrome120 --watch"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.270",

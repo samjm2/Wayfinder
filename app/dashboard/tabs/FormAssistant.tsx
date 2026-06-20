@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import type { EligibilityBenefit } from "@/lib/types";
+import type { EligibilityBenefit, Profile, Document } from "@/lib/types";
 import { useTranslation } from "@/components/i18n/TranslationProvider";
+import { createClient } from "@/lib/supabase/client";
 import { putFormFile, type StoredFormFile } from "@/lib/formFileStore";
 
 type FormInfo = {
@@ -15,10 +16,99 @@ type FormInfo = {
 
 interface Props {
   language?: string;
-  profile?: unknown;
-  documents?: unknown[];
+  profile?: Profile;
+  documents?: Document[];
   benefits?: EligibilityBenefit[];
   formInfoById?: Record<string, FormInfo>;
+}
+
+// Fields we NEVER put in the context sent to the assistant. Mirrors the
+// extraction route's FORBIDDEN_FIELDS — even if a document somehow has one of
+// these in extracted_fields, it must not leave the browser.
+const SENSITIVE_FIELD_RE =
+  /ssn|social.?security|a.?number|alien.?reg|uscis|passport|bank|account|routing|card/i;
+
+// Income brackets keep the user's exact dollar figure out of the prompt.
+function incomeBand(monthly: number | null | undefined): string | null {
+  if (monthly == null || Number.isNaN(monthly)) return null;
+  if (monthly <= 0) return "no reported income";
+  if (monthly < 1500) return "under $1,500/mo";
+  if (monthly < 3000) return "$1,500–$3,000/mo";
+  if (monthly < 5000) return "$3,000–$5,000/mo";
+  return "over $5,000/mo";
+}
+
+function yn(v: boolean | null | undefined): string {
+  return v == null ? "unknown" : v ? "yes" : "no";
+}
+
+// Build a privacy-scrubbed context string: profile summary + non-sensitive
+// extracted fields from every uploaded document. Never includes SSN / A-Number /
+// passport / bank numbers.
+function buildContext(
+  profile: Profile | undefined,
+  documents: Document[],
+): string {
+  const lines: string[] = [];
+
+  if (profile) {
+    const goals: string[] = [];
+    if (profile.is_employed_or_seeking) goals.push("employment");
+    if (profile.wants_to_start_business) goals.push("starting a business");
+    if (profile.wants_english_classes) goals.push("English classes");
+    if (profile.needs_interpreter) goals.push("needs an interpreter");
+
+    const profileLines: Array<[string, string | null | undefined]> = [
+      ["immigration status", profile.immigration_status],
+      ["ORR eligibility date", profile.eligibility_date],
+      ["arrival date", profile.arrival_date],
+      ["status grant date", profile.status_grant_date],
+      ["age", profile.age != null ? String(profile.age) : null],
+      [
+        "household size",
+        profile.household_size != null ? String(profile.household_size) : null,
+      ],
+      ["income band", incomeBand(profile.household_gross_monthly_income)],
+      ["state", profile.state],
+      ["city", profile.city],
+      ["has SSN", yn(profile.has_ssn)],
+      ["has work permit (EAD)", yn(profile.has_ead)],
+      ["has I-94", yn(profile.has_i94)],
+      ["pregnant", yn(profile.is_pregnant)],
+      ["disabled", yn(profile.is_disabled)],
+      ["goals", goals.length ? goals.join(", ") : null],
+    ];
+
+    lines.push("Profile:");
+    for (const [label, value] of profileLines) {
+      if (value != null && value !== "" && value !== "unknown") {
+        lines.push(`- ${label}: ${value}`);
+      }
+    }
+  }
+
+  const docFacts: string[] = [];
+  for (const doc of documents) {
+    const fields = doc.extracted_fields;
+    if (!fields) continue;
+    for (const [key, value] of Object.entries(fields)) {
+      if (!value) continue;
+      if (SENSITIVE_FIELD_RE.test(key)) continue; // never include sensitive fields
+      docFacts.push(`- ${key}: ${value}`);
+    }
+  }
+  if (docFacts.length) {
+    lines.push("");
+    lines.push("From the user's uploaded documents:");
+    lines.push(...docFacts);
+  }
+
+  return lines.join("\n").trim();
+}
+
+interface ChatMessage {
+  role: "user" | "assistant";
+  text: string;
 }
 
 interface UploadedFile {
@@ -75,13 +165,81 @@ function deadlineBadge(
 }
 
 export default function FormAssistant({
+  language,
+  profile,
+  documents = [],
   benefits = [],
   formInfoById,
 }: Props) {
-  useTranslation(); // keeps provider context available for future i18n
+  const { t, lang } = useTranslation();
+  const fh = t.dashboard.formHelper;
   const router = useRouter();
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // ── Chat assistant state ──────────────────────────────────────────────────
+  const [docs, setDocs] = useState<Document[]>(documents);
+  const [question, setQuestion] = useState("");
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [asking, setAsking] = useState(false);
+  const [chatError, setChatError] = useState<string | null>(null);
+
+  // If documents weren't passed as a prop, fetch the user's extracted_fields
+  // directly via the browser supabase client so the assistant can use them.
+  useEffect(() => {
+    if (documents.length > 0) return;
+    let cancelled = false;
+    (async () => {
+      const supabase = createClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase
+        .from("documents")
+        .select("id, user_id, file_name, file_path, file_size, mime_type, document_type, extracted_fields, uploaded_at")
+        .eq("user_id", user.id);
+      if (!cancelled && data) setDocs(data as Document[]);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [documents.length]);
+
+  async function handleAsk(e: React.FormEvent) {
+    e.preventDefault();
+    const q = question.trim();
+    if (!q || asking) return;
+
+    setChatError(null);
+    setAsking(true);
+    setMessages((prev) => [...prev, { role: "user", text: q }]);
+    setQuestion("");
+
+    const context = buildContext(profile, docs);
+
+    try {
+      const res = await fetch("/api/form-assist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: q,
+          language: language ?? lang ?? "en",
+          context,
+        }),
+      });
+      const data = (await res.json()) as { answer?: string; error?: string };
+      if (!res.ok || !data.answer) {
+        setChatError(data.error ?? fh.thinking);
+        return;
+      }
+      setMessages((prev) => [...prev, { role: "assistant", text: data.answer! }]);
+    } catch {
+      setChatError(fh.thinking);
+    } finally {
+      setAsking(false);
+    }
+  }
 
   function handleFilesSelected(e: React.ChangeEvent<HTMLInputElement>) {
     const selected = e.target.files;
@@ -129,6 +287,72 @@ export default function FormAssistant({
           </span>
         </div>
       </div>
+
+      {/* ── Section 0: Ask the Form Assistant ── */}
+      <section>
+        <h3 className="mb-1 font-display text-lg font-bold text-text">{fh.title}</h3>
+        <p className="mb-3 text-sm text-text-muted">{fh.subtitle}</p>
+
+        {/* Tell the user their saved info is being used to answer for them. */}
+        <div className="mb-4 inline-flex items-start gap-2 rounded-[--radius-md] bg-harbor-50 px-4 py-2 text-sm font-medium text-harbor-700 ring-1 ring-harbor-100">
+          <svg aria-hidden="true" viewBox="0 0 20 20" className="mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor">
+            <path fillRule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a1 1 0 0 0 0 2v3a1 1 0 0 0 1 1h1a1 1 0 1 0 0-2v-3a1 1 0 0 0-1-1H9Z" clipRule="evenodd" />
+          </svg>
+          <span>{fh.contextNote}</span>
+        </div>
+
+        {messages.length > 0 && (
+          <ul className="mb-4 flex flex-col gap-3">
+            {messages.map((m, i) => (
+              <li
+                key={i}
+                className={
+                  m.role === "user"
+                    ? "ml-auto max-w-[85%] rounded-[--radius-lg] bg-primary px-4 py-3 text-sm text-on-primary"
+                    : "mr-auto max-w-[90%] whitespace-pre-wrap rounded-[--radius-lg] border border-border bg-surface px-4 py-3 text-sm text-text"
+                }
+              >
+                {m.text}
+              </li>
+            ))}
+            {asking && (
+              <li className="mr-auto rounded-[--radius-lg] border border-border bg-surface px-4 py-3 text-sm text-text-muted">
+                {fh.thinking}
+              </li>
+            )}
+          </ul>
+        )}
+
+        <form onSubmit={handleAsk} className="flex flex-col gap-2">
+          <label htmlFor="form-assist-input" className="text-sm font-medium text-text">
+            {fh.pasteInstructions}
+          </label>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <input
+              id="form-assist-input"
+              type="text"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              placeholder={fh.placeholder}
+              disabled={asking}
+              className="min-h-[48px] flex-1 rounded-[--radius-md] border border-border bg-surface px-4 py-3 text-base text-text placeholder:text-text-faint focus-visible:border-harbor-400 focus-visible:outline-none disabled:opacity-60"
+            />
+            <button
+              type="submit"
+              disabled={asking || !question.trim()}
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[--radius-md] bg-primary px-6 py-3 text-base font-bold text-on-primary shadow-sm transition hover:bg-primary-hover active:scale-[0.98] focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {asking ? fh.thinking : fh.send}
+            </button>
+          </div>
+        </form>
+
+        {chatError && (
+          <p className="mt-2 text-sm font-medium text-danger-700">{chatError}</p>
+        )}
+
+        <p className="mt-3 text-xs text-text-faint">{fh.sensitiveNote}</p>
+      </section>
 
       {/* ── Section 1: Eligible benefits ── */}
       <section>

@@ -7,14 +7,22 @@ function html(s: string) {
 }
 
 async function init() {
-  const res = await chrome.runtime.sendMessage({ type: "get-pairing-status" }) as {
-    paired: boolean; pairedAt?: number;
-  };
+  // Never hang on "Loading…": if the background worker is slow to wake or
+  // doesn't answer, fall back to the connect screen after a short timeout.
+  let res: { paired: boolean; pairedAt?: number } | null = null;
+  try {
+    res = (await Promise.race([
+      chrome.runtime.sendMessage({ type: "get-pairing-status" }),
+      new Promise((resolve) => setTimeout(() => resolve(null), 1500)),
+    ])) as { paired: boolean; pairedAt?: number } | null;
+  } catch {
+    res = null;
+  }
 
-  if (!res.paired) {
-    renderUnpaired();
-  } else {
+  if (res?.paired) {
     renderPaired(res.pairedAt);
+  } else {
+    renderUnpaired();
   }
 }
 
@@ -38,38 +46,51 @@ function renderPaired(pairedAt?: number) {
   document.getElementById("btn-disconnect")!.addEventListener("click", disconnect);
 }
 
-async function startPairing() {
-  const btn = document.getElementById("btn-pair") as HTMLButtonElement;
-  btn.disabled = true;
-  btn.textContent = "Opening Wayfinder...";
-
-  // Ask the background to fetch a code (proxy to the app).
-  // The user must be logged in on the Wayfinder tab.
+// Guess which Wayfinder server to pair against by looking at open tabs, falling
+// back to a previously-saved origin, then production.
+async function detectOrigin(): Promise<string> {
   try {
-    // Direct user to Wayfinder settings to get a code — show code entry here.
-    html(`
-      <p class="status">Go to <strong>Wayfinder &gt; Settings</strong> and click "Connect browser extension". Enter the code shown there:</p>
-      <div style="margin: 12px 0;">
-        <input id="code-input" type="text" maxlength="8" placeholder="e.g. AB1C2D3E" style="width:100%;padding:10px;border:2px solid #e5e7eb;border-radius:8px;font-family:monospace;font-size:18px;letter-spacing:3px;text-align:center;text-transform:uppercase" />
-      </div>
-      <button class="btn btn-primary" id="btn-exchange">Confirm Code</button>
-      <button class="btn btn-secondary" id="btn-cancel-pair">Cancel</button>
-    `);
-    document.getElementById("btn-exchange")!.addEventListener("click", () => {
-      const code = (document.getElementById("code-input") as HTMLInputElement).value.trim().toUpperCase();
-      void exchangeCode(code);
-    });
-    document.getElementById("btn-cancel-pair")!.addEventListener("click", renderUnpaired);
-    document.getElementById("code-input")!.addEventListener("keydown", (e) => {
-      if ((e as KeyboardEvent).key === "Enter") {
-        const code = (document.getElementById("code-input") as HTMLInputElement).value.trim().toUpperCase();
-        void exchangeCode(code);
-      }
-    });
-  } catch (err) {
-    html(`<div class="error">Error: ${String(err)}</div>`);
-    renderUnpaired();
-  }
+    const tabs = await chrome.tabs.query({});
+    for (const t of tabs) {
+      if (!t.url) continue;
+      try {
+        const u = new URL(t.url);
+        const h = u.hostname.toLowerCase().replace(/\.$/, "");
+        if (h === "localhost" || h === "127.0.0.1") return u.origin;
+        // Anchored suffix match so "evilwayfinder.app" can't impersonate us.
+        if (h === "wayfinder.app" || h.endsWith(".wayfinder.app")) return u.origin;
+      } catch { /* ignore */ }
+    }
+  } catch { /* tabs permission missing */ }
+  const { wf_origin } = await chrome.storage.local.get("wf_origin");
+  return (typeof wf_origin === "string" && wf_origin) || "https://wayfinder.app";
+}
+
+async function startPairing() {
+  const origin = await detectOrigin();
+
+  html(`
+    <p class="status">In Wayfinder, open <strong>Settings → Auto-fill</strong> and click <strong>"Set up auto-fill"</strong> to get a code, then enter it here:</p>
+    <div style="margin: 10px 0;">
+      <input id="code-input" type="text" maxlength="8" placeholder="e.g. AB1C2D" style="width:100%;padding:10px;border:2px solid #e5e7eb;border-radius:8px;font-family:monospace;font-size:18px;letter-spacing:3px;text-align:center;text-transform:uppercase" />
+    </div>
+    <label style="display:block;font-size:11px;color:#6b7280;margin:8px 0 4px">Wayfinder server</label>
+    <input id="origin-input" type="text" value="${origin}" style="width:100%;padding:8px;border:2px solid #e5e7eb;border-radius:8px;font-size:12px;font-family:monospace" />
+    <button class="btn btn-primary" id="btn-exchange" style="margin-top:12px">Confirm Code</button>
+    <button class="btn btn-secondary" id="btn-cancel-pair">Cancel</button>
+  `);
+
+  const submit = async () => {
+    const code = (document.getElementById("code-input") as HTMLInputElement).value.trim().toUpperCase();
+    const originVal = (document.getElementById("origin-input") as HTMLInputElement).value.trim().replace(/\/$/, "");
+    if (originVal) await chrome.storage.local.set({ wf_origin: originVal });
+    void exchangeCode(code);
+  };
+  document.getElementById("btn-exchange")!.addEventListener("click", () => void submit());
+  document.getElementById("btn-cancel-pair")!.addEventListener("click", renderUnpaired);
+  document.getElementById("code-input")!.addEventListener("keydown", (e) => {
+    if ((e as KeyboardEvent).key === "Enter") void submit();
+  });
 }
 
 async function exchangeCode(code: string) {
@@ -77,13 +98,16 @@ async function exchangeCode(code: string) {
   const btn = document.getElementById("btn-exchange") as HTMLButtonElement | null;
   if (btn) { btn.disabled = true; btn.textContent = "Connecting..."; }
 
-  const res = await chrome.runtime.sendMessage({ type: "exchange-code", code }) as {
-    ok: boolean; error?: string;
-  };
+  const res = (await Promise.race([
+    chrome.runtime.sendMessage({ type: "exchange-code", code }),
+    new Promise((resolve) =>
+      setTimeout(() => resolve({ ok: false, error: "Timed out. Is the Wayfinder server running, and is this the code currently shown in the app?" }), 8000),
+    ),
+  ])) as { ok: boolean; error?: string } | null;
 
-  if (!res.ok) {
-    html(`<div class="error">Could not connect: ${res.error ?? "Unknown error"}</div>`);
-    setTimeout(renderUnpaired, 2000);
+  if (!res?.ok) {
+    html(`<div class="error">Could not connect: ${res?.error ?? "Unknown error"}</div>`);
+    setTimeout(renderUnpaired, 2500);
   } else {
     renderPaired(Date.now());
   }

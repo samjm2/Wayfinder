@@ -18,9 +18,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/Logo";
 import LanguagePicker from "@/components/LanguagePicker";
+import AutofillSetup from "@/components/AutofillSetup";
 import { createClient } from "@/lib/supabase/client";
 import { useTranslation } from "@/components/i18n/TranslationProvider";
-import type { ImmigrationStatus, Profile } from "@/lib/types";
+import type { ImmigrationStatus, Profile, Document } from "@/lib/types";
+import { profileToValues, mergeDocumentFields, type ProfileValues } from "@/lib/formFill";
 
 const US_STATES = [
   "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA",
@@ -114,10 +116,50 @@ function profileToForm(p: Profile): FormData {
   };
 }
 
-export default function SettingsClient({ profile }: { profile: Profile }) {
+// What Wayfinder has learned about the user, merged the same way the autofill
+// agent merges it: saved profile first, then each uploaded document (newest
+// first). Sensitive numbers are never part of this.
+const MEMORY_LABELS: { key: keyof ProfileValues; label: string }[] = [
+  { key: "fullName", label: "Full name" },
+  { key: "firstName", label: "First name" },
+  { key: "lastName", label: "Last name" },
+  { key: "dateOfBirth", label: "Date of birth" },
+  { key: "age", label: "Age" },
+  { key: "countryOfBirth", label: "Country of birth" },
+  { key: "address", label: "Street address" },
+  { key: "city", label: "City" },
+  { key: "state", label: "State" },
+  { key: "zip", label: "ZIP code" },
+  { key: "phone", label: "Phone" },
+  { key: "arrivalDate", label: "Date of entry" },
+  { key: "householdSize", label: "Household size" },
+];
+
+export default function SettingsClient({
+  profile,
+  documents,
+  embedded = false,
+}: {
+  profile: Profile;
+  documents?: Document[];
+  embedded?: boolean;
+}) {
   const router = useRouter();
   const { t, lang, translating, setLanguage } = useTranslation();
   const ob = t.onboarding;
+
+  // Merge profile + all documents (newest first) into the "memory" the autofill
+  // agent uses, so the user can see and verify it.
+  const memory = (() => {
+    let v = profileToValues(profile);
+    for (const d of documents ?? []) {
+      v = mergeDocumentFields(v, d.extracted_fields as Record<string, string> | null | undefined);
+    }
+    return v;
+  })();
+  const memoryEntries = MEMORY_LABELS
+    .map(({ key, label }) => ({ label, value: memory[key] }))
+    .filter((e): e is { label: string; value: string } => !!e.value);
 
   function statusOptionText(value: ImmigrationStatus): string {
     const opt = ob.immigrationOptions[value as keyof typeof ob.immigrationOptions];
@@ -142,32 +184,6 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState("");
   const [savedSuccess, setSavedSuccess] = useState(false);
-
-  // ── Extension pairing area ──
-  const [pairingCode, setPairingCode] = useState<string | null>(null);
-  const [pairingExpiry, setPairingExpiry] = useState<string | null>(null);
-  const [pairingLoading, setPairingLoading] = useState(false);
-  const [pairingError, setPairingError] = useState("");
-
-  async function handlePairExtension() {
-    setPairingLoading(true);
-    setPairingError("");
-    setPairingCode(null);
-    try {
-      const res = await fetch("/api/extension/pair", { method: "POST" });
-      const data = await res.json() as { code?: string; expiresAt?: string; error?: string };
-      if (!res.ok || !data.code) {
-        setPairingError(data.error ?? "Could not generate a pairing code. Try again.");
-      } else {
-        setPairingCode(data.code);
-        setPairingExpiry(data.expiresAt ?? null);
-      }
-    } catch {
-      setPairingError("Network error. Check your connection and try again.");
-    } finally {
-      setPairingLoading(false);
-    }
-  }
 
   function set<K extends keyof FormData>(key: K, value: FormData[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -266,32 +282,32 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
   const fieldClass =
     "w-full rounded-[--radius-md] border-2 border-border bg-surface px-4 py-3 text-base text-text placeholder-text-faint transition focus:border-harbor-400 focus:outline-none focus-visible:shadow-focus";
 
-  return (
-    <main className="flex min-h-screen flex-col bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-surface px-4 py-4 md:px-8">
-        <div className="mx-auto flex max-w-2xl items-center justify-between">
-          <span className="flex items-center gap-2 font-display font-semibold text-text">
-            <Logo size={26} />
-            Wayfinder
-          </span>
-          <a
-            href="/dashboard"
-            className="inline-flex items-center gap-2 rounded-[--radius-md] px-3 py-2 text-sm font-semibold text-harbor-700 transition hover:bg-harbor-50 focus-visible:outline-none focus-visible:shadow-focus"
-          >
-            <span aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </span>
-            {t.dashboard.settings.backToDashboard}
-          </a>
-        </div>
-      </header>
-
+  const body = (
       <div className="mx-auto w-full max-w-2xl flex-1 px-4 py-8 md:px-8">
         <h1 className="font-display text-3xl font-semibold text-text">{t.dashboard.settings.title}</h1>
         <p className="mt-2 text-lg text-text-muted">{t.dashboard.settings.subtitle}</p>
+
+        {/* ── WHAT WAYFINDER KNOWS (the agent's memory) ── */}
+        <section className="mt-8 rounded-[--radius-md] border border-border bg-surface p-5 shadow-sm md:p-6">
+          <h2 className="text-xl font-semibold text-text">What Wayfinder knows about you</h2>
+          <p className="mt-1 text-base text-text-muted">
+            This is the information the AI uses to fill forms — combined from your answers and the documents you uploaded. Sensitive numbers (SSN, A-Number, passport, bank) are never stored here.
+          </p>
+          {memoryEntries.length > 0 ? (
+            <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+              {memoryEntries.map((e) => (
+                <div key={e.label} className="rounded-[--radius-md] bg-surface-2 px-4 py-2.5">
+                  <dt className="text-xs font-medium text-text-faint">{e.label}</dt>
+                  <dd className="text-base font-semibold text-text">{e.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : (
+            <p className="mt-4 rounded-[--radius-md] bg-surface-2 px-4 py-3 text-sm text-text-muted">
+              Nothing yet. Add your documents in <strong>My Documents</strong> (or finish onboarding) and they&apos;ll appear here.
+            </p>
+          )}
+        </section>
 
         {/* ── LANGUAGE ── */}
         <section className="mt-8 rounded-[--radius-md] border border-border bg-surface p-5 shadow-sm md:p-6">
@@ -491,54 +507,42 @@ export default function SettingsClient({ profile }: { profile: Profile }) {
           )}
         </section>
 
-        {/* ── BROWSER EXTENSION ── */}
+        {/* ── AUTO-FILL ── */}
         <section className="mt-6 rounded-[--radius-md] border border-border bg-surface p-5 shadow-sm md:p-6">
-          <h2 className="text-xl font-semibold text-text">Browser Extension</h2>
-          <p className="mt-1 text-base text-text-muted">
-            Connect the Wayfinder Chrome extension to pre-fill fields on real government websites.
-            Your sensitive information (SSN, A-number) is never sent — you fill those in yourself.
-          </p>
-
-          {pairingError && (
-            <div className="mt-4 rounded-[--radius-md] bg-danger-50 px-4 py-3 text-sm font-medium text-danger-700 ring-1 ring-danger-100">
-              {pairingError}
-            </div>
-          )}
-
-          {pairingCode ? (
-            <div className="mt-4">
-              <p className="mb-2 text-sm font-semibold text-text-muted">
-                Enter this code in the Wayfinder extension popup:
-              </p>
-              <div className="rounded-[--radius-md] border-2 border-harbor-300 bg-harbor-50 px-6 py-4 text-center">
-                <p className="font-mono text-3xl font-bold tracking-[6px] text-harbor-800">
-                  {pairingCode}
-                </p>
-                <p className="mt-2 text-xs text-text-faint">
-                  Expires in 5 minutes.{" "}
-                  {pairingExpiry && `(${new Date(pairingExpiry).toLocaleTimeString()})`}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => { setPairingCode(null); setPairingExpiry(null); }}
-                className="mt-3 text-sm font-semibold text-text-muted underline-offset-2 hover:underline focus-visible:outline-none"
-              >
-                Generate a new code
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={handlePairExtension}
-              disabled={pairingLoading}
-              className="mt-4 inline-flex items-center gap-2 rounded-[--radius-md] border-2 border-harbor-300 bg-surface px-5 py-3 text-base font-semibold text-harbor-700 transition active:scale-[0.98] hover:border-harbor-500 hover:bg-harbor-50 disabled:opacity-40 focus-visible:outline-none focus-visible:shadow-focus"
-            >
-              {pairingLoading ? "Generating code..." : "Connect browser extension"}
-            </button>
-          )}
+          <h2 className="text-xl font-semibold text-text">{t.dashboard.autofill.title}</h2>
+          <AutofillSetup />
         </section>
       </div>
+  );
+
+  // Embedded inside the dashboard shell (the Settings tab) — render only the
+  // body so the dashboard's own navbar/footer stay in place and Settings no
+  // longer feels like a disconnected page. Standalone keeps its own header.
+  if (embedded) return body;
+
+  return (
+    <main className="flex min-h-screen flex-col bg-background">
+      {/* Header */}
+      <header className="border-b border-border bg-surface px-4 py-4 md:px-8">
+        <div className="mx-auto flex max-w-2xl items-center justify-between">
+          <span className="flex items-center gap-2 font-display font-semibold text-text">
+            <Logo size={26} />
+            Wayfinder
+          </span>
+          <a
+            href="/dashboard"
+            className="inline-flex items-center gap-2 rounded-[--radius-md] px-3 py-2 text-sm font-semibold text-harbor-700 transition hover:bg-harbor-50 focus-visible:outline-none focus-visible:shadow-focus"
+          >
+            <span aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </span>
+            {t.dashboard.settings.backToDashboard}
+          </a>
+        </div>
+      </header>
+      {body}
     </main>
   );
 }

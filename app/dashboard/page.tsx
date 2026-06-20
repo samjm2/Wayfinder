@@ -4,7 +4,9 @@ import { getTranslations, type UIStrings } from "@/lib/translations";
 import { TranslationProvider } from "@/components/i18n/TranslationProvider";
 import enStrings from "@/locales/en.json";
 import benefitsData from "@/database/benefits.json";
-import DashboardClient from "./DashboardClient";
+import DashboardClient, { type ViewId } from "./DashboardClient";
+
+const VALID_VIEWS: ViewId[] = ["plan", "documents", "form", "help", "progress", "settings"];
 
 // Presentation-only map so the Action Plan can show "where & how to apply" and
 // which form is needed. Pulled from the benefits database; the eligibility
@@ -18,7 +20,17 @@ function buildFormInfoById(): Record<string, FormInfo> {
   return out;
 }
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const sp = await searchParams;
+  const rawTab = Array.isArray(sp.tab) ? sp.tab[0] : sp.tab;
+  const initialTab: ViewId = VALID_VIEWS.includes(rawTab as ViewId)
+    ? (rawTab as ViewId)
+    : "plan";
+
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -68,6 +80,7 @@ export default async function DashboardPage() {
         progressRows={progressRows ?? []}
         documents={documents ?? []}
         formInfoById={buildFormInfoById()}
+        initialTab={initialTab}
       />
     </TranslationProvider>
   );

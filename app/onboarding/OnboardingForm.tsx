@@ -6,6 +6,7 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import { createClient } from "@/lib/supabase/client";
 import LanguagePicker from "@/components/LanguagePicker";
+import AutofillSetup from "@/components/AutofillSetup";
 import { useTranslation } from "@/components/i18n/TranslationProvider";
 import type { ImmigrationStatus } from "@/lib/types";
 
@@ -108,7 +109,8 @@ type StepId =
   | "children"
   | "pregnant_cash"
   | "special"
-  | "goals";
+  | "goals"
+  | "autofill";
 
 // scanUsed: true -> document path (confirm + reduced questions);
 // false/null -> manual path (full question flow). The "scan" step is where the
@@ -119,7 +121,7 @@ function getSteps(form: FormData, scanUsed: boolean | null): StepId[] {
   if (scanUsed === true) {
     const steps: StepId[] = ["language", "scan", "confirm", "documents"];
     if (status === "trafficking_victim") steps.push("orr_letter");
-    steps.push("location", "household", "children", "pregnant_cash", "special", "goals");
+    steps.push("location", "household", "children", "pregnant_cash", "special", "goals", "autofill");
     return steps;
   }
 
@@ -129,7 +131,7 @@ function getSteps(form: FormData, scanUsed: boolean | null): StepId[] {
   if (status && ORR_STATUSES.includes(status)) steps.push("eligibility_date");
   if (status && status !== "us_citizen") steps.push("arrival_date");
   if (status && STATUS_GRANT_STATUSES.includes(status)) steps.push("status_grant_date");
-  steps.push("location", "household", "children", "pregnant_cash", "special", "goals");
+  steps.push("location", "household", "children", "pregnant_cash", "special", "goals", "autofill");
   return steps;
 }
 
@@ -150,6 +152,7 @@ export default function OnboardingForm() {
   const initialLang = params.get("lang") ?? "en";
   const { t, setLanguage } = useTranslation();
   const ob = t.onboarding;
+  const ob_af = t.dashboard.autofill;
 
   const [stepIndex, setStepIndex] = useState(0);
   const [saving, setSaving] = useState(false);
@@ -256,19 +259,46 @@ export default function OnboardingForm() {
   }) {
     const f = data.fields ?? {};
     const b = data.booleans ?? {};
-    const str = (k: string) => (typeof f[k]?.value === "string" ? (f[k]!.value as string) : "");
-    const num = (k: string) => (typeof f[k]?.value === "number" ? String(f[k]!.value as number) : "");
+    const confOf = (k: string): Confidence | undefined => f[k]?.confidence;
+
+    // Only PRE-FILL a value the reader was reasonably sure about. A "low"
+    // confidence read is dropped to an empty value so the user must enter it
+    // themselves on the confirm screen — we keep the confidence flag so the field
+    // still shows the "Please check" badge. This is what stops a blurry or
+    // mis-labelled value (e.g. a date-of-entry mistaken for a birth date) from
+    // being silently committed to the wrong field.
+    const trust = (k: string): unknown =>
+      f[k] && confOf(k) !== "low" ? f[k]!.value : undefined;
+    const str = (k: string) => (typeof trust(k) === "string" ? (trust(k) as string) : "");
+    const num = (k: string) => (typeof trust(k) === "number" ? String(trust(k) as number) : "");
 
     let status = str("immigration_status");
     if (!status && b.has_adjusted_to_lpr) status = "lpr_from_humanitarian";
 
+    const arrival = str("arrival_date");
+    const eligibility = str("eligibility_date");
+    const grant = str("status_grant_date");
+
+    // Cross-field guard: a date of birth must NEVER equal an arrival / entry,
+    // eligibility, or status-grant date. If the reader produced such a
+    // collision the birth date is almost certainly the wrong field, so we drop
+    // it and force a manual entry instead of trusting it.
+    let dob = str("date_of_birth");
+    let dobConf = confOf("date_of_birth");
+    if (dob && (dob === arrival || dob === eligibility || dob === grant)) {
+      dob = "";
+      dobConf = "low";
+    }
+    // Age is only as trustworthy as the birth date it came from.
+    const age = dob ? ageFromDob(dob) : "";
+
     setForm((prev) => ({
       ...prev,
       immigration_status: (status || prev.immigration_status) as ImmigrationStatus | "",
-      arrival_date: str("arrival_date") || prev.arrival_date,
-      eligibility_date: str("eligibility_date") || prev.eligibility_date,
-      status_grant_date: str("status_grant_date") || prev.status_grant_date,
-      age: num("age") || prev.age,
+      arrival_date: arrival || prev.arrival_date,
+      eligibility_date: eligibility || prev.eligibility_date,
+      status_grant_date: grant || prev.status_grant_date,
+      age: age || num("age") || prev.age,
       has_i94: b.has_i94 ? true : prev.has_i94,
       has_ead: b.has_ead ? true : prev.has_ead,
     }));
@@ -276,17 +306,17 @@ export default function OnboardingForm() {
     setDocMeta({
       full_name: str("full_name"),
       country_of_origin: str("country_of_origin"),
-      date_of_birth: str("date_of_birth"),
+      date_of_birth: dob,
     });
 
     setConf({
-      immigration_status: f.immigration_status?.confidence ?? (status ? "medium" : undefined),
-      arrival_date: f.arrival_date?.confidence,
-      eligibility_date: f.eligibility_date?.confidence,
-      status_grant_date: f.status_grant_date?.confidence,
-      date_of_birth: f.date_of_birth?.confidence,
-      full_name: f.full_name?.confidence,
-      country_of_origin: f.country_of_origin?.confidence,
+      immigration_status: confOf("immigration_status") ?? (status ? "medium" : undefined),
+      arrival_date: confOf("arrival_date"),
+      eligibility_date: confOf("eligibility_date"),
+      status_grant_date: confOf("status_grant_date"),
+      date_of_birth: dobConf,
+      full_name: confOf("full_name"),
+      country_of_origin: confOf("country_of_origin"),
     });
 
     setExtractNotes(data.notes ?? []);
@@ -374,7 +404,9 @@ export default function OnboardingForm() {
       case "children": return true;
       case "pregnant_cash": return form.is_pregnant !== null && form.receives_other_cash_benefit !== null;
       case "special": return (
-        form.is_unaccompanied_minor !== null &&
+        // The unaccompanied-minor question is only shown to minors; don't gate
+        // on it when it isn't rendered (it's saved as false in that case).
+        (!showUnaccompanied || form.is_unaccompanied_minor !== null) &&
         form.is_disabled !== null &&
         form.is_blind !== null &&
         form.has_40_work_quarters !== null
@@ -383,6 +415,7 @@ export default function OnboardingForm() {
         form.is_employed_or_seeking !== null &&
         form.wants_to_start_business !== null
       );
+      case "autofill": return true; // optional — skippable
       default: return true;
     }
   }
@@ -1154,6 +1187,24 @@ export default function OnboardingForm() {
             </Step>
           )}
 
+          {/* ── AUTO-FILL (optional, near the end) ── */}
+          {currentStep === "autofill" && (
+            <Step icon="autofill" question={ob_af.onboardingQuestion}>
+              <p className="mt-1 text-lg text-text-muted">{ob_af.onboardingHint}</p>
+              <div className="mt-4">
+                <AutofillSetup />
+              </div>
+              <button
+                type="button"
+                onClick={handleFinish}
+                disabled={saving}
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-[--radius-md] px-4 py-2.5 text-base font-semibold text-text-muted transition hover:bg-sand-100 hover:text-text focus-visible:outline-none disabled:opacity-40"
+              >
+                {ob_af.maybeLater}
+              </button>
+            </Step>
+          )}
+
           {saveError && (
             <div className="mt-8 rounded-[--radius-md] bg-danger-50 px-4 py-3 text-sm font-medium text-danger-700 ring-1 ring-danger-100">
               {saveError}
@@ -1218,7 +1269,8 @@ type StepIconKey =
   | "children"
   | "pregnant_cash"
   | "special"
-  | "goals";
+  | "goals"
+  | "autofill";
 
 const STEP_ICONS: Record<StepIconKey, React.ReactNode> = {
   language: (
@@ -1312,6 +1364,11 @@ const STEP_ICONS: Record<StepIconKey, React.ReactNode> = {
       <circle cx="12" cy="12" r="10" />
       <circle cx="12" cy="12" r="6" />
       <circle cx="12" cy="12" r="2" />
+    </>
+  ),
+  autofill: (
+    <>
+      <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
     </>
   ),
 };

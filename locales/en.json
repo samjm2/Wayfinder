@@ -130,7 +130,7 @@
     "scan": {
       "question": "Have your papers? Take a photo to save time",
       "intro": "Snap a photo of your I-94 (and your work permit, green card, or asylum letter if you have them). We'll read your status and dates so you don't have to type them.",
-      "secureLine": "Your documents are processed securely in the moment and are never saved on our servers or shared with immigration enforcement. We read only the few fields needed to check your benefits — never your Social Security number or A-Number.",
+      "secureLine": "Your documents are saved only to your private, owner-only vault — encrypted and never shared with immigration enforcement. We read just the few fields needed to check your benefits, never your Social Security number or A-Number.",
       "uploadAriaLabel": "Upload a photo or PDF of your immigration documents",
       "chooseDifferent": "Choose different photos",
       "chooseFile": "Take a photo or choose a file",
@@ -313,7 +313,7 @@
     "tabs": {
       "actionPlan": "My Action Plan",
       "documents": "My Documents",
-      "formHelper": "Apply for Benefits",
+      "formHelper": "Fill a Form",
       "findHelp": "Find Help",
       "progress": "My Progress"
     },
@@ -344,7 +344,11 @@
       "requiredDocuments": "Required documents",
       "nextSteps": "Next steps",
       "applyOnline": "Apply online",
-      "formNeeded": "Form to complete"
+      "formNeeded": "Form to complete",
+      "attorneyWarnTitle": "This form may need a lawyer",
+      "attorneyWarnBody": "This is an immigration or legal form, and a mistake can affect your case. You can still fill it out here to prepare, but a licensed attorney or DOJ-accredited representative should review it before you submit anything.",
+      "attorneyWarnConfirm": "I understand — continue",
+      "attorneyWarnCancel": "Cancel"
     },
     "documents": {
       "title": "My Documents",
@@ -431,6 +435,24 @@
       "saved": "Saved",
       "saving": "Saving..."
     },
+    "autofill": {
+      "title": "Auto-fill",
+      "intro": "Auto-fill helps put your saved information into official government websites for you, so you don't have to retype it on every form.",
+      "privacy": "Your sensitive numbers — your Social Security Number and A-Number — are never sent. You always enter those yourself.",
+      "setUp": "Set up auto-fill",
+      "generating": "Getting your code ready...",
+      "newCode": "Get a new code",
+      "codeInstructions": "Enter this code to connect auto-fill:",
+      "expiresIn": "This code expires in 5 minutes.",
+      "expiresAt": "(expires at {time})",
+      "onboardingQuestion": "Want help filling out forms?",
+      "onboardingHint": "This is optional. You can always set it up later in Settings.",
+      "maybeLater": "Maybe later",
+      "skip": "Skip for now",
+      "unavailable": "Auto-fill isn't available yet. Please check back soon — you can still fill out forms by hand in the meantime.",
+      "genericError": "We couldn't get your code ready. Please try again.",
+      "networkError": "We couldn't connect. Please check your internet and try again."
+    },
     "formFill": {
       "title": "Fill out your form",
       "intro": "We filled in what we already know. Please review every field before you download.",
@@ -445,7 +467,10 @@
       "openPrompt": "Open a form to fill",
       "loading": "Opening your form...",
       "loadError": "We couldn't open this form. Please try another file.",
-      "uploadHint": "Upload your I-94, work permit, or other document in Documents to fill more of this form automatically."
+      "uploadHint": "Upload your I-94, work permit, or other document in Documents to fill more of this form automatically.",
+      "officialFormLoading": "Loading the official form…",
+      "statePortalOnly": "This program is applied for through your state's portal — there is no single form to fill. Use the official link to start your application.",
+      "openOfficialSite": "Open the official application site"
     }
   },
   "errors": {

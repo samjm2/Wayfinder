@@ -15,6 +15,7 @@ interface BenefitMeta {
   category: string;
   apply_link?: string;
   how_to_apply?: string;
+  form?: { name?: string; url?: string; type?: string };
 }
 
 export interface FormMeta {
@@ -22,6 +23,9 @@ export interface FormMeta {
   needsAttorney: boolean;
   applyLink: string;
   howToApply?: string;
+  // Trusted form info from benefits.json, threaded to the client so it knows
+  // the official source and portal fallback link.
+  form?: { name?: string; url?: string; type?: string };
 }
 
 function loadBenefits(): BenefitMeta[] {
@@ -74,6 +78,7 @@ export default async function FormPage({
         needsAttorney: benefit.category === "Legal / status",
         applyLink: benefit.apply_link ?? "",
         howToApply: benefit.how_to_apply,
+        form: benefit.form,
       };
     }
   }

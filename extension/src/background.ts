@@ -1,7 +1,14 @@
 // Background service worker. Holds the JWT and handles profile-value fetching.
 // Responds to messages from popup and content scripts.
 
-const WAYFINDER_ORIGIN = "https://wayfinder.app"; // Override in production
+// The Wayfinder app origin the extension talks to. Defaults to production but
+// can be overridden for local testing by setting chrome.storage.local.wf_origin
+// (e.g. "http://localhost:3000"). Must also appear in manifest host_permissions.
+const DEFAULT_ORIGIN = "https://wayfinder.app";
+async function getOrigin(): Promise<string> {
+  const { wf_origin } = await chrome.storage.local.get("wf_origin");
+  return (typeof wf_origin === "string" && wf_origin) || DEFAULT_ORIGIN;
+}
 
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg.type === "exchange-code") {
@@ -26,11 +33,95 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     );
     return true;
   }
+
+  // ── AI autofill agent — bridge from the app to the external portal tab ──
+  if (typeof msg.type === "string" && msg.type.startsWith("agent-")) {
+    void handleAgent(msg.type, msg.payload).then(sendResponse);
+    return true;
+  }
+});
+
+// The portal tab the agent is driving. Kept in session storage so it survives a
+// service-worker restart within the browsing session.
+async function getPortalTab(): Promise<number | undefined> {
+  const { wf_portal_tab } = await chrome.storage.session.get("wf_portal_tab");
+  return typeof wf_portal_tab === "number" ? wf_portal_tab : undefined;
+}
+async function setPortalTab(id: number | undefined): Promise<void> {
+  if (id === undefined) await chrome.storage.session.remove("wf_portal_tab");
+  else await chrome.storage.session.set({ wf_portal_tab: id });
+}
+
+// Send a message to the portal tab's content script, retrying briefly so a
+// freshly-opened/navigated page has time to inject portalAgent.js.
+async function sendToPortal(tabId: number, message: unknown, attempts = 12): Promise<unknown> {
+  for (let i = 0; i < attempts; i++) {
+    try {
+      const resp = await chrome.tabs.sendMessage(tabId, message);
+      if (resp) return resp;
+    } catch {
+      /* content script not ready yet */
+    }
+    await new Promise((r) => setTimeout(r, 350));
+  }
+  throw new Error("The portal page isn't responding. Make sure it finished loading.");
+}
+
+async function handleAgent(type: string, payload: unknown): Promise<unknown> {
+  try {
+    if (type === "agent-ping") return { ok: true };
+
+    if (type === "agent-open") {
+      const url = (payload as { url?: string })?.url;
+      if (!url || !/^https?:\/\//.test(url)) return { ok: false, error: "Invalid portal URL." };
+      const tab = await chrome.tabs.create({ url, active: true });
+      await setPortalTab(tab.id);
+      // Wait for the content script to be reachable before returning.
+      if (tab.id !== undefined) {
+        try { await sendToPortal(tab.id, { type: "wf-ping" }); } catch { /* return anyway; snapshot will retry */ }
+      }
+      return { ok: true, result: { tabId: tab.id } };
+    }
+
+    const tabId = await getPortalTab();
+    if (tabId === undefined) return { ok: false, error: "No portal is open yet." };
+
+    if (type === "agent-snapshot") {
+      const resp = (await sendToPortal(tabId, { type: "wf-snapshot" })) as { snapshot?: unknown };
+      return { ok: true, result: resp.snapshot };
+    }
+    if (type === "agent-execute") {
+      const actions = (payload as { actions?: unknown[] })?.actions ?? [];
+      const resp = (await sendToPortal(tabId, { type: "wf-execute", actions })) as { results?: unknown };
+      return { ok: true, result: resp.results };
+    }
+    if (type === "agent-focus") {
+      await chrome.tabs.update(tabId, { active: true });
+      return { ok: true };
+    }
+    if (type === "agent-highlight") {
+      const ref = (payload as { ref?: string })?.ref;
+      await sendToPortal(tabId, { type: "wf-highlight", ref });
+      return { ok: true };
+    }
+    if (type === "agent-close") {
+      await setPortalTab(undefined);
+      return { ok: true };
+    }
+    return { ok: false, error: `Unknown agent action: ${type}` };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : String(e) };
+  }
+}
+
+// Forget the portal tab if it closes.
+chrome.tabs.onRemoved.addListener((tabId) => {
+  void getPortalTab().then((p) => { if (p === tabId) void setPortalTab(undefined); });
 });
 
 async function exchangeCode(code: string): Promise<{ ok: boolean; error?: string }> {
   try {
-    const res = await fetch(`${WAYFINDER_ORIGIN}/api/extension/exchange`, {
+    const res = await fetch(`${await getOrigin()}/api/extension/exchange`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -56,7 +147,7 @@ async function getProfileValues(): Promise<{ ok: boolean; values?: Record<string
   const token = stored.wf_token as string | undefined;
   if (!token) return { ok: false, error: "Not paired. Please connect in the extension popup." };
   try {
-    const res = await fetch(`${WAYFINDER_ORIGIN}/api/extension/profile-values`, {
+    const res = await fetch(`${await getOrigin()}/api/extension/profile-values`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     });

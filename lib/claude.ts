@@ -14,8 +14,8 @@ export function getClaudeClient(): Anthropic {
   return client;
 }
 
-// Single model for the whole app. Haiku 4.5 is the cheapest Claude model
-// ($1/$5 per 1M input/output tokens) and is sufficient here: eligibility
-// decisions are computed deterministically in lib/eligibility/engine.ts, so
-// Claude is only ever asked for plain-language narrative / extraction text.
-export const HAIKU = "claude-haiku-4-5" as const;
+// Single model for the whole app. Eligibility decisions are computed
+// deterministically in lib/eligibility/engine.ts, so Claude is only ever asked
+// for plain-language narrative / extraction / planning text. We use Sonnet 4.6
+// for stronger reasoning on form planning and document extraction.
+export const SONNET = "claude-sonnet-4-6" as const;

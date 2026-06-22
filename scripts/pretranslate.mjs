@@ -42,6 +42,25 @@ function parseLanguages(src) {
   return out;
 }
 
+// Deep-merge the model's translation OVER English so the written file ALWAYS has
+// every key — if the model happens to drop one key in a 558-key object, that key
+// falls back to English instead of leaving a gap (which the runtime would then
+// have to fill, and which a strict completeness check would otherwise reject).
+function deepMergeOverEnglish(base, override) {
+  if (Array.isArray(base)) {
+    return Array.isArray(override) && override.length === base.length
+      ? override.map((x, i) => deepMergeOverEnglish(base[i], x))
+      : base;
+  }
+  if (base && typeof base === "object") {
+    const ov = override && typeof override === "object" && !Array.isArray(override) ? override : {};
+    const out = {};
+    for (const k of Object.keys(base)) out[k] = deepMergeOverEnglish(base[k], ov[k]);
+    return out;
+  }
+  return typeof override === "string" && override.length > 0 ? override : base;
+}
+
 async function translate(client, enJson, lang) {
   const stream = client.messages.stream({
     model: MODEL,
@@ -89,6 +108,7 @@ async function main() {
   const onlyCodes = args.filter((a) => !a.startsWith("--"));
 
   const enJson = await readFile(join(ROOT, "locales", "en.json"), "utf8");
+  const enObj = JSON.parse(enJson);
   const langsSrc = await readFile(join(ROOT, "lib", "languages.ts"), "utf8");
   let langs = parseLanguages(langsSrc).filter((l) => l.code !== "en");
   if (onlyCodes.length) langs = langs.filter((l) => onlyCodes.includes(l.code));
@@ -111,7 +131,8 @@ async function main() {
       const started = Date.now();
       try {
         const parsed = await translate(client, enJson, lang);
-        await writeFile(join(OUT_DIR, `${lang.code}.json`), JSON.stringify(parsed, null, 2) + "\n", "utf8");
+        const complete = deepMergeOverEnglish(enObj, parsed);
+        await writeFile(join(OUT_DIR, `${lang.code}.json`), JSON.stringify(complete, null, 2) + "\n", "utf8");
         done++;
         console.log(`  ✓ ${lang.code} (${lang.name}) ${(Date.now() - started) / 1000}s  [${done}/${todo.length}]`);
       } catch (e) {

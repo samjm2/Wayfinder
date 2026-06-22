@@ -1,6 +1,6 @@
 // src/popup.ts
 var TRUSTED_VERCEL_HOSTS = /* @__PURE__ */ new Set([
-  // "wayfinder.vercel.app",
+  "wayfinder-sigma-gold.vercel.app"
 ]);
 var content = document.getElementById("content");
 function html(s) {

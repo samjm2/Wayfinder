@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 import { profileToValues, mergeDocumentFields, type ProfileValues } from "@/lib/formFill";
 import {
   PLANNER_SYSTEM,
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
   let rawText = "";
   try {
     const response = await claude.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: 1500,
       system: PLANNER_SYSTEM,
       messages: [{ role: "user", content: buildPlannerUserMessage(snapshot, values, askedKeys, answers) }],

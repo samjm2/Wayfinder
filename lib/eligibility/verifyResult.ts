@@ -22,7 +22,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type Anthropic from "@anthropic-ai/sdk";
-import { HAIKU } from "@/lib/claude";
+import { SONNET } from "@/lib/claude";
 import type {
   BenefitRecord,
   BenefitVerification,
@@ -170,7 +170,7 @@ export async function verifyNarratives(
   try {
     const maxTokens = Math.min(16000, 2048 + 280 * narrated.length);
     const response = await client.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: maxTokens,
       system: VERIFY_SYSTEM,
       messages: [{ role: "user", content: JSON.stringify(payload) }],

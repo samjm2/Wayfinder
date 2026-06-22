@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 import { EXTRACT_PROMPT, parseExtraction, type DocType } from "@/lib/onboarding/i94Extract";
 import { normalizeImageForOcr } from "@/lib/onboarding/ocrImage";
 
@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
   let rawText: string;
   try {
     const response = await claude.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: 1000,
       messages: [{ role: "user", content }],
     });

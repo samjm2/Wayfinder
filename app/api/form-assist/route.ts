@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Form Assistant chat — answers form/benefit questions for THIS specific user.
@@ -117,7 +117,7 @@ export async function POST(req: NextRequest) {
   let rawText = "";
   try {
     const response = await claude.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: 1200,
       system: SYSTEM,
       messages: [{ role: "user", content: userMessage }],

@@ -1,5 +1,5 @@
 import enStrings from "@/locales/en.json";
-import { getClaudeClient, HAIKU } from "./claude";
+import { getClaudeClient, SONNET } from "./claude";
 import { SUPPORTED_LANGUAGES } from "./languages";
 
 export type UIStrings = typeof enStrings;
@@ -95,12 +95,14 @@ export async function getTranslations(languageCode: string): Promise<UIStrings> 
       "utf8"
     );
     const parsed = JSON.parse(raw);
-    // Gate on completeness too: a static file generated against an older,
-    // smaller en.json passes isValidStrings (which only checks 3 keys) but is
-    // missing newer keys (e.g. dashboard.autofill). Falling through here lets
-    // the cache / live regeneration produce a complete translation instead of
-    // serving the stale file (whose gaps deepMerge would fill with English).
-    if (isValidStrings(parsed) && hasAllKeys(enStrings, parsed)) return mergeStrings(parsed);
+    // Serve any structurally-valid static file, deep-merged over English. A
+    // single missing key (one the translator happened to drop, or a key added
+    // after this file was generated) just falls back to English — far better
+    // than rejecting the whole file and forcing a slow live re-translation that
+    // stalls the language switch. Pre-generated files (scripts/pretranslate.mjs,
+    // run against the CURRENT en.json) are complete; this keeps a near-complete
+    // file instant instead of leaving the page stuck on "Translating…".
+    if (isValidStrings(parsed)) return mergeStrings(parsed);
   } catch {
     /* no static file yet — fall through to cache / live translation */
   }
@@ -173,7 +175,7 @@ async function translateStringsWithClaude(languageCode: string): Promise<UIStrin
   // larger) without risking an SDK HTTP timeout. Truncation at a low
   // max_tokens was the cause of silent English fallbacks.
   const stream = client.messages.stream({
-    model: HAIKU,
+    model: SONNET,
     max_tokens: 32000,
     messages: [
       {

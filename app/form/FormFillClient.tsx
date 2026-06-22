@@ -83,7 +83,7 @@ interface FieldBox {
   flag: FieldFlag;
   value: string;
   kind: "text" | "checkbox" | "flat";
-  help?: string; // plain-language "what to put here" (from Haiku)
+  help?: string; // plain-language "what to put here" (from Sonnet)
 }
 
 const RENDER_SCALE = 1.5;
@@ -180,7 +180,7 @@ function detectLabelFields(
   return out;
 }
 
-// The visible label/context near a field box (canvas px) — what we hand to Haiku
+// The visible label/context near a field box (canvas px) — what we hand to Sonnet
 // so it knows what each field is, even when the PDF's own field name is a
 // meaningless code (e.g. the W-9's "f1_01"). Looks left on the same row first,
 // then above the field.
@@ -265,8 +265,8 @@ function sensitivityContext(box: FieldBox, items: TextItem[] | undefined): strin
     .slice(0, 240);
 }
 
-// Clean, short display name for a field BEFORE Haiku replies — turns the form's
-// raw legalese into something readable. Haiku later replaces it with an even
+// Clean, short display name for a field BEFORE Sonnet replies — turns the form's
+// raw legalese into something readable. Sonnet later replaces it with an even
 // simpler, plain-language label.
 const KEY_DISPLAY: Record<string, string> = {
   "__sensitive": "Sensitive number",
@@ -383,13 +383,13 @@ export default function FormFillClient({
   // precedence over any benefit/sample source.
   const uploadedRef = useRef<{ bytes: Uint8Array; name: string } | null>(null);
   const formInputRef = useRef<HTMLInputElement | null>(null);
-  // AI mapping pass (Haiku): runs once per form, after the deterministic fill.
+  // AI mapping pass (Sonnet): runs once per form, after the deterministic fill.
   const aiDoneRef = useRef(false);
   const pageTextsRef = useRef<TextItem[][]>([]);
   const [docsLoaded, setDocsLoaded] = useState(false);
   const [formSummary, setFormSummary] = useState("");
   // Preview-first: an uploaded form renders blank until the user clicks "Fill
-  // out with AI". aiTriggered gates both the deterministic fill and the Haiku pass.
+  // out with AI". aiTriggered gates both the deterministic fill and the Sonnet pass.
   const [aiTriggered, setAiTriggered] = useState(false);
   const [aiRunning, setAiRunning] = useState(false);
   // Save / resume progress (browser-local).
@@ -603,10 +603,10 @@ export default function FormFillClient({
               // INSTANT fill from the field's VISIBLE label. The PDF's own field
               // name is often a meaningless code (the W-9's "f1_01"), so we read
               // the label printed next to the box. This fills the obvious fields
-              // immediately; the Haiku pass refines the rest a moment later.
+              // immediately; the Sonnet pass refines the rest a moment later.
               if (kind !== "checkbox") {
                 const label = contextFor(box, pageTexts[pageIndex]);
-                box.name = cleanLabel(label); // readable name (Haiku refines it)
+                box.name = cleanLabel(label); // readable name (Sonnet refines it)
                 // Decide sensitivity from the cryptic name OR the visible label OR
                 // a heading in the surrounding text — this is what catches the
                 // W-9's SSN/EIN grids (field names like "f1_11" with a
@@ -641,7 +641,7 @@ export default function FormFillClient({
       }
 
       // Choose field positions: prefer EXACT AcroForm rectangles whenever the PDF
-      // has them (Haiku maps the values, so coded names like the W-9's no longer
+      // has them (Sonnet maps the values, so coded names like the W-9's no longer
       // matter). Only fall back to geometric label-anchored spots when there are
       // no form fields at all (XFA-with-text / flat scans). "Please wait" XFA
       // shells have neither → a single positioned input.
@@ -668,7 +668,7 @@ export default function FormFillClient({
       }
 
       // Restore saved progress for THIS exact form (values the user typed last
-      // time win over auto-fill, and are marked edited so Haiku won't change them).
+      // time win over auto-fill, and are marked edited so Sonnet won't change them).
       const saved = getProgress(progressKey(label, bytes.length));
       if (saved) {
         // A resumed form is already filled — restore it and skip the preview gate.
@@ -737,8 +737,8 @@ export default function FormFillClient({
     );
   }
 
-  // ── AI mapping pass (Haiku) ──────────────────────────────────────────────
-  // Hand every detected field's nearby label + the user's data to Haiku, which
+  // ── AI mapping pass (Sonnet) ──────────────────────────────────────────────
+  // Hand every detected field's nearby label + the user's data to Sonnet, which
   // decides what value belongs in each. Runs ONCE per form, after the fast
   // deterministic pass, and only overrides fields the user hasn't edited.
   async function enhanceWithAI(boxes: FieldBox[], texts: TextItem[][], data: ProfileValues) {
@@ -746,10 +746,10 @@ export default function FormFillClient({
     if (fillable.length === 0) return;
     setFormSummary("");
     const reqFields = fillable.map((b) => ({ id: b.id, label: contextFor(b, texts[b.pageIndex]) }));
-    // First-page visible text helps Haiku identify the form + read each field in
+    // First-page visible text helps Sonnet identify the form + read each field in
     // context (improves accuracy and powers the "About this form" summary).
     const formText = (texts[0] ?? []).map((t) => t.str).join(" ").replace(/\s+/g, " ").slice(0, 2500);
-    // Give Haiku a ready-made combined "City, State ZIP" so a single combined
+    // Give Sonnet a ready-made combined "City, State ZIP" so a single combined
     // field (like the W-9's line 6) fills correctly, not just the city.
     const region = [data.state, data.zip].filter(Boolean).join(" ");
     const cityStateZip = [data.city, region].filter(Boolean).join(", ");
@@ -771,7 +771,7 @@ export default function FormFillClient({
         prev.map((b) => {
           const m = map.get(b.id);
           if (!m) return b;
-          // Always adopt Haiku's plain-language name + help, even for fields the
+          // Always adopt Sonnet's plain-language name + help, even for fields the
           // user has edited (labels are display-only, never their typed value).
           const labelled = {
             ...b,
@@ -781,7 +781,7 @@ export default function FormFillClient({
           if (editedIds.current.has(b.id)) return labelled; // keep their value
           if (m.sensitive) return { ...labelled, value: "", flag: "sensitive" as FieldFlag };
           if (m.value) return { ...labelled, value: m.value, flag: "auto" as FieldFlag };
-          // Haiku says NOT sensitive and has no value. Only relax a "sensitive"
+          // Sonnet says NOT sensitive and has no value. Only relax a "sensitive"
           // flag if the field isn't INDEPENDENTLY provably sensitive — so a
           // mis-grabbed "City" can be cleared, but a real SSN/EIN box (cryptic
           // name + a "Social security number" heading) stays red even if the
@@ -805,7 +805,7 @@ export default function FormFillClient({
   }
 
   // "Fill out with AI": deterministic fill immediately from the saved profile,
-  // then the Haiku pass refines it (via the effect below).
+  // then the Sonnet pass refines it (via the effect below).
   function runFill() {
     setFields((prev) =>
       prev.map((b) => {

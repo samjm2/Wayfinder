@@ -6,7 +6,7 @@
 // "wayfinder.vercel.app". Must also be listed in manifest.json (host_permissions
 // and the appBridge content-script "matches").
 const TRUSTED_VERCEL_HOSTS = new Set<string>([
-  // "wayfinder.vercel.app",
+  "wayfinder-sigma-gold.vercel.app",
 ]);
 
 const content = document.getElementById("content")!;

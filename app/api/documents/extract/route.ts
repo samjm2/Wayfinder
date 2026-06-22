@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient, createServiceClient } from "@/lib/supabase/server";
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 import { normalizeImageForOcr } from "@/lib/onboarding/ocrImage";
 
 // Reads a document the user added in "My Documents" and stores the NON-sensitive
@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
   const claude = getClaudeClient();
   let text = "{}";
   try {
-    const response = await claude.messages.create({ model: HAIKU, max_tokens: 600, messages: [{ role: "user", content }] });
+    const response = await claude.messages.create({ model: SONNET, max_tokens: 600, messages: [{ role: "user", content }] });
     text = response.content[0]?.type === "text" ? response.content[0].text : "{}";
   } catch {
     return NextResponse.json({ error: "Extraction failed" }, { status: 502 });

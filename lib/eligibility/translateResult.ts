@@ -6,7 +6,7 @@
 //
 // Field names match what the eligibility route stores in eligibility_results.benefits.
 
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 import { SUPPORTED_LANGUAGES } from "@/lib/languages";
 
 interface StoredBenefit {
@@ -64,7 +64,7 @@ export async function translateEligibilityResult<T extends StoredResult>(
   try {
     const client = getClaudeClient();
     const resp = await client.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: 8000,
       system: `You translate a U.S. benefits result into ${langName} (language code ${targetLang}) for a refugee/immigrant reader.
 - Translate ONLY the string values. Keep every JSON key, every "id", the nesting, and every array's length identical.

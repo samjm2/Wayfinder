@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Form field mapping (Haiku).
+// Form field mapping (Sonnet).
 //
 // The browser detects a form's fields (exact AcroForm rectangles, or label-
 // anchored spots from the rendered text layer) and sends each one's nearby
 // label/context plus the user's NON-SENSITIVE saved data (onboarding profile +
-// document fields). Haiku decides, per field, which value belongs there — this
+// document fields). Sonnet decides, per field, which value belongs there — this
 // handles coded field names, abbreviations, and odd labels that regex can't.
 //
 // Safety:
@@ -17,7 +17,7 @@ import { getClaudeClient, HAIKU } from "@/lib/claude";
 //     signature) are NEVER filled — the model flags them and we also enforce it
 //     by scrubbing every returned value.
 //   • The model may only use values present in DATA; it is told never to invent.
-//   • One Haiku call per form load — cheap and bounded.
+//   • One Sonnet call per form load — cheap and bounded.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const runtime = "nodejs";
@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
   let rawText = "";
   try {
     const response = await claude.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: 2_000,
       system: SYSTEM,
       messages: [{ role: "user", content: userMessage }],

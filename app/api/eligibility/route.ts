@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient, createServiceClient } from "@/lib/supabase/server";
-import { getClaudeClient, HAIKU } from "@/lib/claude";
+import { getClaudeClient, SONNET } from "@/lib/claude";
 import { readFileSync } from "fs";
 import { join } from "path";
 import type { BenefitRecord, BenefitVerification, EligibilityBenefit, Profile } from "@/lib/types";
@@ -129,7 +129,7 @@ async function generateNarratives(
     const maxTokens = Math.min(16000, 4096 + 220 * count);
 
     const response = await client.messages.create({
-      model: HAIKU,
+      model: SONNET,
       max_tokens: maxTokens,
       system: `Return ONLY a JSON object {summary, items:[{id, why, steps:[...]}]} in language ${language}. why<=2 sentences, steps<=4 short imperative items. Do not change any eligibility status. Do not invent programs.`,
       messages: [

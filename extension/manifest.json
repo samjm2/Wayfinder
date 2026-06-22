@@ -8,6 +8,7 @@
     "http://localhost/*",
     "http://127.0.0.1/*",
     "https://wayfinder.app/*",
+    "https://wayfinder-sigma-gold.vercel.app/*",
     "http://*/*",
     "https://*/*"
   ],
@@ -33,7 +34,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://localhost/*", "http://127.0.0.1/*", "https://wayfinder.app/*"],
+      "matches": ["http://localhost/*", "http://127.0.0.1/*", "https://wayfinder.app/*", "https://wayfinder-sigma-gold.vercel.app/*"],
       "js": ["dist/appBridge.js"],
       "run_at": "document_start"
     },

@@ -275,13 +275,6 @@ export default function ActionPlan({
                   )}
                 </div>
 
-                {benefit.verification?.status === "flagged" && (
-                  <div className="mb-3 flex items-start gap-2 rounded-[--radius-md] bg-caution-50 px-3 py-2 text-sm text-caution-700 ring-1 ring-caution-100">
-                    <svg aria-hidden="true" viewBox="0 0 20 20" className="mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor"><path fillRule="evenodd" d="M8.49 2.6a1.7 1.7 0 0 1 3.02 0l6.4 11.3A1.7 1.7 0 0 1 16.4 16.5H3.6a1.7 1.7 0 0 1-1.51-2.6l6.4-11.3ZM10 7a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1Zm0 7.6a1.15 1.15 0 1 0 0-2.3 1.15 1.15 0 0 0 0 2.3Z" clipRule="evenodd" /></svg>
-                    <span>{ap.flaggedNote}</span>
-                  </div>
-                )}
-
                 <h3 className="mb-2 font-display text-xl font-bold text-text">{benefit.name}</h3>
                 <p className="mb-4 text-text">{benefit.whyPlainLanguage}</p>
 
